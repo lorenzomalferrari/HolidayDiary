@@ -10,7 +10,7 @@
         <item
             android:id="@+id/nav_travels"
             android:icon="@drawable/img_travels"
-            android:title="@string/travles" />
+            android:title="@string/travels" />
         <item
             android:id="@+id/nav_notes"
             android:icon="@drawable/img_notes"
@@ -22,11 +22,11 @@
         <item
             android:id="@+id/nav_places"
             android:icon="@drawable/img_position"
-            android:title="Places" />
+            android:title="@string/places" />
         <item
             android:id="@+id/nav_reservation"
             android:icon="@drawable/img_position"
-            android:title="Reservation" />
+            android:title="@string/reservation" />
     </group>
     <item android:title="@string/other">
         <menu>

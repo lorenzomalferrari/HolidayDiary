@@ -2,7 +2,7 @@
 <resources>
     <!-- Words for Italian -->
     <string name="homepage">Home Page</string>
-    <string name="travles">Viaggi</string>
+    <string name="travels">Viaggi</string>
     <string name="notes">Note</string>
     <string name="pictures">Immagini</string>
     <string name="position">Luoghi</string>
