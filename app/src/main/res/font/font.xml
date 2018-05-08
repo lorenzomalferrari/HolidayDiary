@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Deafaul Font: Cabin -->
+
+    <!-- Cabin Bold -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/cabin_bold"/>
+    <!-- Cabin Bold Italic -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/cabin_bold_italic"/>
+    <!-- Cabin Italic -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/cabin_italic"/>
+    <!-- Cabin Medium -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/cabin_medium"/>
+    <!-- Cabin Medium Italic -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/cabin_medium_italic"/>
+    <!-- Cabin Regular -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/cabin_regular"/>
+    <!-- Cabin Semi Bold -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/cabin_semi_bold"/>
+    <!-- Cabin Semi Bold Italic -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/cabin_semi_bold_italic"/>
+</font-family>
