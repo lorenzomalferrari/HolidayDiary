@@ -139,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/register_cityText"
             android:padding="15dp"
-            android:text="Paese"/>
+            android:text="@string/paese"/>
         <EditText
             android:id="@+id/register_countryValue"
             android:layout_width="wrap_content"
@@ -148,7 +148,7 @@
             android:layout_below="@id/register_cityValue"
             android:ems="10"
             android:inputType="text"
-            android:hint="Paese"/>
+            android:hint="@string/paese"/>
         <!-- Gender -->
         <TextView
             android:id="@+id/register_genderText"
