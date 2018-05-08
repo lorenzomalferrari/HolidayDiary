@@ -20,15 +20,6 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     public static final String DATABASE_NAME = "holidayDiary.db";
 
     /**
-     * Nome della tabella degli Utenti
-     */
-    //public static final String USER_TABLE = "User";
-    //public static final String TRAVEL_TABLE = "Travel";
-    //public static final String NOTE_TABLE = "Note";
-    //public static final String PICTURE_TABLE = "Picture";
-    //public static final String POSITION_TABLE = "Places";
-
-    /**
      * Lista delle tabelle del database
      */
     private final String[] TABLE_NAMES = new String[] {"User","Travel","Note","Picture","Places"};
