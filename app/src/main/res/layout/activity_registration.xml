@@ -4,14 +4,14 @@
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <!-- FirstName -->
         <TextView
             android:id="@+id/register_firstNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:text="Nome"/>
+            android:text="@string/first_Name"/>
         <EditText
             android:id="@+id/register_firstNameValue"
             android:layout_width="wrap_content"
@@ -20,7 +20,7 @@
             android:layout_toEndOf="@+id/register_firstNameText"
             android:layout_marginStart="26dp"
             android:ems="10"
-            android:hint="Nome"
+            android:hint="@string/first_Name"
             android:inputType="text"/>
         <!-- LastName -->
         <TextView
@@ -78,7 +78,7 @@
             android:layout_marginStart="56dp"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:hint="Email"/>
+            android:hint="@string/email"/>
         <!-- Password -->
         <TextView
             android:id="@+id/register_passwordText"
@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/register_emailText"
             android:padding="15dp"
-            android:text="Password"/>
+            android:text="@string/password"/>
         <EditText
             android:id="@+id/register_passwordValue"
             android:layout_width="wrap_content"
@@ -96,7 +96,7 @@
             android:layout_marginStart="11dp"
             android:ems="10"
             android:inputType="textPassword"
-            android:hint="Password" />
+            android:hint="@string/password" />
         <TextView
             android:id="@+id/register_passwordTextValidate"
             android:layout_width="wrap_content"
