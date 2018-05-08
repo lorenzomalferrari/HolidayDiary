@@ -124,7 +124,7 @@ public class MenuActivity extends AppCompatActivity
                 //fragment = new SettingsFragment();
                 break;
             case R.id.nav_privacytermsofuse:
-                //fragment = new PrivacyTermsFragment();
+                fragment = new PrivacyTermsFragment();
                 break;
             case R.id.nav_version:
                 myDialog = new Dialog(this);
