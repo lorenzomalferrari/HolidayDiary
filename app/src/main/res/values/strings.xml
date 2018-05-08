@@ -117,5 +117,6 @@
     <string name="citta">Città</string>
     <string name="email">Email</string>
     <string name="last_Name">Cognome</string>
+    <string name="paese">Paese</string>
 
 </resources>
