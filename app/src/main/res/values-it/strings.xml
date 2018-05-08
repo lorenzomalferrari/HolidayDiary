@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Words for Italian -->
+    <string name="homepage">Home Page</string>
+    <string name="travles">Viaggi</string>
+    <string name="notes">Note</string>
+    <string name="pictures">Immagini</string>
+    <string name="position">Luoghi</string>
+    <string name="account">Account</string>
+    <string name="settings">Impostazioni</string>
+    <string name="privacytermsofuse">Privacy e Termini di uso</string>
+    <string name="version">Versione</string>
+    <string name="other">Altro</string>
+    <string name="email_text">Email</string>
+    <string name="city_text">Città</string>
+    <string name="country_text">Stato</string>
+    <string name="gender_text">Sesso</string>
+    <string name="age_text">Età</string>
+    <string name="usarname_text">usarname</string>
+    <string name="privacy_title">Privacy</string>
+    <string name="terms_title">Termini di uso</string>
+    <string name="copyright">Tutti i diritti riservati</string>
+    <string name="numberVersion">Versione 1.5.0</string>
+    <string name="terms_of_use">Terms of Use</string>
+    <string name="privacy">Privacy</string>
+    <string name="pictures_text">Pictures</string>
+    <string name="settings_text">Settings</string>
+    <string name="website">www.lorenzomalferrari.com</string>
+    <string name="author">Lorenzo Malferrari</string>
+    <string name="number_version">Versione 1.7.4</string>
+    <string name="close_popup">X</string>
+
+</resources>
