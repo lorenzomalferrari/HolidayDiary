@@ -109,5 +109,8 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="reservation">Reservation</string>
     <string name="places">Places</string>
+    <string name="citta">Città</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
 
 </resources>

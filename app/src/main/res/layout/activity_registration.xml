@@ -121,7 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/register_passwordTextValidate"
             android:padding="15dp"
-            android:text="Città"/>
+            android:text="@string/citta"/>
         <EditText
             android:id="@+id/register_cityValue"
             android:layout_width="wrap_content"
@@ -221,7 +221,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/register_passwordTextValidate"
-            android:text="Update" />
+            android:text="@string/update" />
 
         <Button
             android:id="@+id/button_delete"
@@ -229,7 +229,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:text="Delete" />
+            android:text="@string/delete" />
 
     </RelativeLayout>
 </ScrollView>
