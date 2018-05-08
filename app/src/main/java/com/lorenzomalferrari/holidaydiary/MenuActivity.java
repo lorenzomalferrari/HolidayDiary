@@ -1,8 +1,14 @@
 package com.lorenzomalferrari.holidaydiary;
 
+import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,9 +18,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Dialog myDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,25 +86,74 @@ public class MenuActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        //calling the method displayselectedscreen and passing the id of selected menu
+        displaySelectedScreen(item.getItemId());
+        //make this method blank
+        return true;
+    }
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+    private void displaySelectedScreen(int itemId) {
+        //creating fragment object
+        Fragment fragment = null;
+        Intent intent = null;
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        //initializing the fragment object which is selected
+        switch (itemId) {
+            case R.id.nav_homepage:
+                //fragment = new HomePageFragment();
+                break;
+            case R.id.nav_travels:
+                //fragment = new TravelsFragment();
+                break;
+            case R.id.nav_notes:
+                //fragment = new NotesFragment();
+                break;
+            case R.id.nav_pictures:
+                //fragment = new PicturesFragment();
+                break;
+            case R.id.nav_places:
+                //intent = new Intent(this, MyPositionActivity.class);
+                //this.startActivity(intent);
+                break;
+            case R.id.nav_account:
+                //fragment = new AccountFragment();
+                //intent = new Intent(this, AccountActivity.class);
+                //this.startActivity(intent);
+                break;
+            case R.id.nav_settings:
+                //fragment = new SettingsFragment();
+                break;
+            case R.id.nav_privacytermsofuse:
+                //fragment = new PrivacyTermsFragment();
+                break;
+            case R.id.nav_version:
+                myDialog = new Dialog(this);
+                ShowPopup();
+                break;
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //replacing the fragment
+        if (fragment != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, fragment);
+            ft.commit();
+        }
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+    }
+
+    public void ShowPopup(){
+        TextView txtClose;
+        myDialog.setContentView(R.layout.versionpopup);
+        txtClose = myDialog.findViewById(R.id.txtClose);
+        txtClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+            }
+        });
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
     }
 }

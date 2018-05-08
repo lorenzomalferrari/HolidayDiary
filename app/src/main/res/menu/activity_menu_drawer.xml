@@ -2,37 +2,50 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_homepage"
+            android:icon="@drawable/img_homepage"
+            android:title="@string/homepage" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_travels"
+            android:icon="@drawable/img_travels"
+            android:title="@string/travles" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_notes"
+            android:icon="@drawable/img_notes"
+            android:title="@string/notes" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_pictures"
+            android:icon="@drawable/img_pictures"
+            android:title="@string/pictures" />
+        <item
+            android:id="@+id/nav_places"
+            android:icon="@drawable/img_position"
+            android:title="Places" />
+        <item
+            android:id="@+id/nav_reservation"
+            android:icon="@drawable/img_position"
+            android:title="Reservation" />
     </group>
-
-    <item android:title="Communicate">
+    <item android:title="@string/other">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_account"
+                android:icon="@drawable/img_account"
+                android:title="@string/account" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/img_settings"
+                android:title="@string/settings" />
+            <item
+                android:id="@+id/nav_privacytermsofuse"
+                android:icon="@drawable/img_privacy"
+                android:title="@string/privacytermsofuse" />
+            <item
+                android:id="@+id/nav_version"
+                android:icon="@drawable/img_version"
+                android:title="@string/version" />
         </menu>
     </item>
-
 </menu>
