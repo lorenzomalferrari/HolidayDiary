@@ -17,7 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     /**
      * Nome del file del database
      */
-    public static final String DATABASE_NAME = "holidayDiary.db";
+    private static final String DATABASE_NAME = "holidayDiary.db";
 
     /**
      * Lista delle tabelle del database
@@ -82,10 +82,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         //contentValues.put(COL_TABLE[9],calcAge());//con birthdate calcolare l'età
         contentValues.put(COL_TABLE[10],arrayList.get(8).toString());//data di nascita
         long result = db.insert(TABLE_NAMES[0],null ,contentValues);
-        if(result == -1)
-            return false;
-        else
-            return true;
+        return result != -1;
     }
 
     /**
