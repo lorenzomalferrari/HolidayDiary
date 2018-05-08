@@ -112,5 +112,10 @@
     <string name="citta">Città</string>
     <string name="delete">Delete</string>
     <string name="update">Update</string>
+    <string name="view_all">View All</string>
+    <string name="salva">Salva</string>
+    <string name="citta">Città</string>
+    <string name="email">Email</string>
+    <string name="last_Name">Cognome</string>
 
 </resources>
