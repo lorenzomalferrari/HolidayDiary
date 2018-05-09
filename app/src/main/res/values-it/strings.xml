@@ -105,7 +105,7 @@
     <string name="close_popup">X</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="nav_header_title">Android Studio</string>
-    <string name="reservation">Reservation</string>
+    <string name="reservation">Prenotazione</string>
     <string name="places">Luoghi</string>
     <string name="delete">Cancella</string>
     <string name="update">Agggiorna</string>
