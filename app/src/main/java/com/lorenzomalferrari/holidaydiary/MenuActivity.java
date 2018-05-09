@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.text.Html;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,12 +19,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
+
+import java.util.HashMap;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Dialog myDialog;
+    UserSessionManager userSessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +57,9 @@ public class MenuActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //check UserSessionManager
+        //checkUserSession();
     }
 
     @Override
@@ -155,5 +166,52 @@ public class MenuActivity extends AppCompatActivity
         });
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
+    }
+
+    private void checkUserSession(){
+        // Session class instance
+        userSessionManager = new UserSessionManager(getApplicationContext());
+
+        //TextView lblName = findViewById(R.id.lblName);
+        //TextView lblEmail = findViewById(R.id.lblEmail);
+
+        // Button logout
+        //btnLogout = findViewById(R.id.userSessionManager);
+
+        Toast.makeText(getApplicationContext(),
+                "User Login Status: " + userSessionManager.isUserLoggedIn(),
+                Toast.LENGTH_LONG).show();
+
+
+
+        // Check user login
+        // If User is not logged in , This will redirect user to LoginActivity.
+        if(userSessionManager.checkLogin())
+            finish();
+
+        // get user data from session
+        HashMap<String, String> user = userSessionManager.getUserDetails();
+
+        // get password
+        String password = user.get(UserSessionManager.KEY_PASSWORD);
+
+        // get email
+        String email = user.get(UserSessionManager.KEY_EMAIL);
+
+        // Show user data on activity
+        //lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
+        //lblEmail.setText(Html.fromHtml("Email: <b>" + email + "</b>"));
+
+
+        /*btnLogout.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                // Clear the User session data
+                // and redirect user to LoginActivity
+                userSessionManager.logoutUser();
+            }
+        });*/
     }
 }

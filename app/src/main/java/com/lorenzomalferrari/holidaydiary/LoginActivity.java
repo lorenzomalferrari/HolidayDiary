@@ -11,7 +11,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 //Import my classes
+import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
 import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.model.Validator;
 
@@ -28,6 +30,9 @@ public class LoginActivity extends AppCompatActivity {
     Animation uptodown, downtoup;
     Validator validator;
 
+    // User Session Manager Class
+    //UserSessionManager userSessionManager;
+
 
 
     //Testo in input
@@ -38,6 +43,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        // User Session Manager
+        //userSessionManager = new UserSessionManager(getApplicationContext());
 
         /* Eseguo l'animazione sulla LoginActivity */
 
@@ -63,6 +71,10 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         //id della password che viene inserita per il login
         password = findViewById(R.id.password);
+
+        /*Toast.makeText(getApplicationContext(),
+                "User Login Status: " + userSessionManager.isUserLoggedIn(),
+                Toast.LENGTH_LONG).show();*/
 
         /* Controllo che i dati inseriti siano corretti */
 
@@ -113,6 +125,11 @@ public class LoginActivity extends AppCompatActivity {
                             callRegister();
                         }
                         else {// se utente esiste esegu il login
+
+                            // Creating user login session
+                            // Statically storing name="Android Example"
+                            // and email="androidexample84@gmail.com"
+                            //userSessionManager.createUserLoginSession("User Session ", email.getText().toString());
                             // Visualizzo l'app
                             callMenu();
                         }
@@ -126,6 +143,10 @@ public class LoginActivity extends AppCompatActivity {
      */
     private void callMenu(){
         Intent intent = new Intent(this, MenuActivity.class);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        // Add new Flag to start new Activity
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         this.startActivity(intent);
     }
 
