@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- -->
-    <color name="primaryColor">#ef6300</color>
-    <color name="primaryLightColor">#ff943d</color>
-    <color name="primaryDarkColor">#b53200</color>
-    <color name="secondaryColor">#e65100</color>
-    <color name="secondaryLightColor">#ff833a</color>
-    <color name="secondaryDarkColor">#ac1900</color>
-    <color name="primaryTextColor">#fffcfa</color>
+    <color name="primaryColor">#ef6c00</color>
+    <color name="primaryLightColor">#ff9d3f</color>
+    <color name="primaryDarkColor">#b53d00</color>
+    <color name="secondaryColor">#d84315</color>
+    <color name="secondaryLightColor">#ff7543</color>
+    <color name="secondaryDarkColor">#9f0000</color>
+    <color name="primaryTextColor">#000000</color>
     <color name="secondaryTextColor">#000000</color>
     <!-- -->
     <color name="colorPrimaryVersion">#3f51b5</color>
@@ -16,9 +16,6 @@
     <color name="green">#45bc62</color>
     <color name="white">#ffffff</color>
     <color name="orange">#eaad43</color>
-
-
-
     <!--
                             Lista dei colori da usare nell'app
     -->
