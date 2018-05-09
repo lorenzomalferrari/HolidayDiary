@@ -42,7 +42,8 @@
 
         <activity
             android:name=".MyPositionActivity"
-            android:label="@string/title_activity_my_position"></activity>
+            android:label="@string/title_activity_my_position" />
+        <activity android:name=".RegistrationActivity"></activity>
     </application>
 
 </manifest>
