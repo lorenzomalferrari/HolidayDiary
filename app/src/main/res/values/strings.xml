@@ -122,7 +122,5 @@
     <string name="logout">Logout</string>
     <string name="welcome_in_holiday_diary">Welcome in Holiday Diary</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
