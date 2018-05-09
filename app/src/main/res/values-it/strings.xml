@@ -118,7 +118,7 @@
     <string name="paese">Paese</string>
     <string name="first_Name">Nome</string>
     <string name="password">Password</string>
-    <string name="logout">Logout</string>
+    <string name="logout">Esci</string>
     <string name="welcome_in_holiday_diary">Benvenuto in Holiday Diary</string>
 
 </resources>
