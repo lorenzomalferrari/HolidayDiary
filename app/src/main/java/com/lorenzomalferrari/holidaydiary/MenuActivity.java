@@ -37,10 +37,10 @@ public class MenuActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,17 +49,20 @@ public class MenuActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         //check UserSessionManager
         checkUserSession();
+
+        //set data in nav_header_menu
+        //setData();
     }
 
     @Override
@@ -174,12 +177,6 @@ public class MenuActivity extends AppCompatActivity
         // Session class instance
         userSessionManager = new UserSessionManager(getApplicationContext());
 
-        //TextView lblName = findViewById(R.id.lblName);
-        //TextView lblEmail = findViewById(R.id.lblEmail);
-
-        // Button logout
-        //btnLogout = findViewById(R.id.userSessionManager);
-
         /*Toast.makeText(getApplicationContext(),
                 "User Login Status: " + userSessionManager.isUserLoggedIn(),
                 Toast.LENGTH_LONG).show();*/
@@ -201,6 +198,30 @@ public class MenuActivity extends AppCompatActivity
         // Show user data on activity
         //lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
         //lblEmail.setText(Html.fromHtml("Email: <b>" + email + "</b>"));
+
+    }
+
+    /**
+     * Setto con i dati che ricevo dalla UserSessionManager la nav_header_menu.xml
+     */
+    private void setData(){
+
+
+        // get user data from session
+        HashMap<String, String> user = userSessionManager.getUserDetails();
+        // get password
+        String password = user.get(UserSessionManager.KEY_PASSWORD);
+        // get email
+        String email = user.get(UserSessionManager.KEY_EMAIL);
+
+
+        //Setto img
+
+        /* Setto nome e cognome */
+
+        /* Setto il campo email nella activity con il valore preso salla session */
+        TextView textView = findViewById(R.id.nav_header_menu_email);
+        textView.setText(email);
 
     }
 }
