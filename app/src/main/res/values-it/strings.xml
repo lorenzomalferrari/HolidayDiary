@@ -28,5 +28,7 @@
     <string name="author">Lorenzo Malferrari</string>
     <string name="number_version">Versione 1.7.4</string>
     <string name="close_popup">X</string>
+    <string name="logout">Esci</string>
+    <string name="welcome_in_holiday_diary">Benvenuto in Holiday Diary</string>
 
 </resources>
