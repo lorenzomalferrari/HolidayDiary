@@ -59,7 +59,7 @@ public class MenuActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //check UserSessionManager
-        //checkUserSession();
+        checkUserSession();
     }
 
     @Override
@@ -87,7 +87,9 @@ public class MenuActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_logout) {
+            //Eseguo il logout
+            userSessionManager.logoutUser();
             return true;
         }
 
@@ -178,11 +180,9 @@ public class MenuActivity extends AppCompatActivity
         // Button logout
         //btnLogout = findViewById(R.id.userSessionManager);
 
-        Toast.makeText(getApplicationContext(),
+        /*Toast.makeText(getApplicationContext(),
                 "User Login Status: " + userSessionManager.isUserLoggedIn(),
-                Toast.LENGTH_LONG).show();
-
-
+                Toast.LENGTH_LONG).show();*/
 
         // Check user login
         // If User is not logged in , This will redirect user to LoginActivity.
@@ -202,16 +202,5 @@ public class MenuActivity extends AppCompatActivity
         //lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
         //lblEmail.setText(Html.fromHtml("Email: <b>" + email + "</b>"));
 
-
-        /*btnLogout.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                // Clear the User session data
-                // and redirect user to LoginActivity
-                userSessionManager.logoutUser();
-            }
-        });*/
     }
 }
