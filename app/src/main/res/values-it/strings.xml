@@ -1,34 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Words for Italian -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_subtitle">lorenzomalferrari.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Impostazioni</string>
     <string name="homepage">Home Page</string>
     <string name="travels">Viaggi</string>
     <string name="notes">Note</string>
     <string name="pictures">Immagini</string>
-    <string name="position">Luoghi</string>
-    <string name="account">Account</string>
+    <string name="account">Profilo</string>
     <string name="settings">Impostazioni</string>
-    <string name="privacytermsofuse">Privacy e Termini di uso</string>
+    <string name="privacytermsofuse">Privacy and Termini di uso</string>
     <string name="version">Versione</string>
     <string name="other">Altro</string>
+    <string name="title_activity_login">Login</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="login_name">HolidayDiary - Login</string>
+    <string name="firstName">Nome</string>
+    <string name="lastName">Cognome</string>
+    <string name="usarname">Usarname</string>
     <string name="email_text">Email</string>
     <string name="city_text">Città</string>
-    <string name="country_text">Stato</string>
+    <string name="country_text">Paese</string>
     <string name="gender_text">Sesso</string>
     <string name="age_text">Età</string>
     <string name="usarname_text">usarname</string>
     <string name="privacy_title">Privacy</string>
     <string name="terms_title">Termini di uso</string>
+    <string name="numberVersion">Versione 1.0.5</string>
+    <string name="birthdate">Data di nascita</string>
     <string name="copyright">Tutti i diritti riservati</string>
+
+    <!-- Testo che rappresenta il testo della privacy -->
+    <string name="privacy_text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla dolor
+        at erat tempus faucibus. Sed massa odio, faucibus quis ipsum eu, luctus sodales ex. Integer
+        venenatis quam orci, ultricies accumsan libero laoreet id. Nulla facilisi. Aliquam laoreet
+        sapien ac eros iaculis, vel egestas lorem venenatis. Integer ornare fringilla cursus.
+        Nullam finibus commodo odio, vel placerat ante luctus in. Nam ut nunc eu eros sollicitudin
+        rutrum et a dolor. Sed velit sapien, vehicula a nisl a, molestie placerat sem.
+    </string>
+
+    <!-- Testo che rappresenta il testo dei termini d'uso -->
+    <string name="terms_text">
+        Sed lacinia lacus at orci venenatis lacinia. Quisque et ex sed ante
+        molestie molestie at sed risus. Vivamus mollis iaculis sem sit amet volutpat.
+        Proin vulputate arcu massa, sit amet placerat arcu elementum quis. Ut aliquet lacus nisi,
+        eget rutrum metus semper fringilla. Suspendisse eu porta libero, et tempor lacus.
+        Duis interdum dignissim nisi a efficitur. In erat urna, fringilla vel mi pharetra,
+        tincidunt commodo dui. Aenean laoreet lacus sed diam lobortis, euismod consectetur justo
+        maximus. Nulla facilisi. Cras sed massa leo. Etiam consequat justo ut erat venenatis aliquet.
+        Pellentesque luctus, neque et suscipit lobortis, sapien nulla vestibulum massa, a pharetra
+        lorem turpis at dui. Aliquam malesuada, lacus sit amet efficitur faucibus, dui urna pretium
+        massa, id lacinia risus ante at diam.
+    </string>
+
+    <!-- Testo per la activity Registrazione -->
+    <string name="firstNameTextView">Nome:</string>
+    <string name="firstNameEditText">Nome</string>
+    <string name="lastNameTextView">Cognome:</string>
+    <string name="lastNameEditText">Cognome</string>
+    <string name="usarnameTextView">Usarname:</string>
+    <string name="usarnameEditText">Usarname</string>
+    <string name="emailTextView">Email:</string>
+    <string name="emailEditText">Email</string>
+    <string name="insertPasswordTextView">Inserisci password:</string>
+    <string name="confirmPasswordTextView">Conferma password:</string>
+    <string name="cityTextView">Cità:</string>
+    <string name="cityEditText">Città</string>
+    <string name="countryTextView">Paese:</string>
+    <string name="countryEditText">Paese</string>
+    <string name="genderTextView">Sesso:</string>
+    <string name="maleRadioButton">Maschio</string>
+    <string name="femaleRadioButton">Femmina</string>
+    <string name="birthdateTextView">Data di nascita:</string>
+    <string name="birthdateEditText">Data di nascita</string>
+    <string name="btnSaveText">Salva</string>
+    <string name="title_activity_my_position">Mappa</string>
+
+    <!-- Dati dell'autore -->
+    <!-- Lorenzo Malferrari -->
+    <string name="author">Lorenzo Malferrari</string>
+    <!-- www.lorenzomalferrari.com -->
+    <string name="website">www.lorenzomalferrari.com</string>
+    <!-- malfe.lore@gmail.com || info@lorenzomalferrari.com -->
+    <string name="emailAuthor">malfe.lore@gmail.com</string>
+
     <string name="terms_of_use">Terms of Use</string>
     <string name="privacy">Privacy</string>
-    <string name="pictures_text">Pictures</string>
-    <string name="settings_text">Settings</string>
-    <string name="website">www.lorenzomalferrari.com</string>
-    <string name="author">Lorenzo Malferrari</string>
-    <string name="number_version">Versione 1.7.4</string>
+    <string name="pictures_text">Immagini</string>
+    <string name="settings_text">Impostazioni</string>
+    <string name="number_version">Versione 1.1.0</string>
     <string name="close_popup">X</string>
-    <string name="logout">Esci</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="reservation">Reservation</string>
+    <string name="places">Luoghi</string>
+    <string name="delete">Cancella</string>
+    <string name="update">Agggiorna</string>
+    <string name="view_all">Vedi Tuto</string>
+    <string name="salva">Salva</string>
+    <string name="citta">Città</string>
+    <string name="email">Email</string>
+    <string name="last_Name">Cognome</string>
+    <string name="paese">Paese</string>
+    <string name="first_Name">Nome</string>
+    <string name="password">Password</string>
+    <string name="logout">Logout</string>
     <string name="welcome_in_holiday_diary">Benvenuto in Holiday Diary</string>
 
 </resources>
