@@ -26,7 +26,7 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome in Holiday Diary"
+            android:text="@string/welcome_in_holiday_diary"
             android:layout_marginTop="15dp"
             android:textSize="23sp"
             android:textStyle="bold"
