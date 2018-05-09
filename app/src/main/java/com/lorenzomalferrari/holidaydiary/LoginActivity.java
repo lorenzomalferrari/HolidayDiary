@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     Validator validator;
 
     // User Session Manager Class
-    //UserSessionManager userSessionManager;
+    UserSessionManager userSessionManager;
 
 
 
@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // User Session Manager
-        //userSessionManager = new UserSessionManager(getApplicationContext());
+        userSessionManager = new UserSessionManager(getApplicationContext());
 
         /* Eseguo l'animazione sulla LoginActivity */
 
@@ -129,7 +129,7 @@ public class LoginActivity extends AppCompatActivity {
                             // Creating user login session
                             // Statically storing name="Android Example"
                             // and email="androidexample84@gmail.com"
-                            //userSessionManager.createUserLoginSession("User Session ", email.getText().toString());
+                            userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
                             // Visualizzo l'app
                             callMenu();
                         }
@@ -143,10 +143,10 @@ public class LoginActivity extends AppCompatActivity {
      */
     private void callMenu(){
         Intent intent = new Intent(this, MenuActivity.class);
-        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         // Add new Flag to start new Activity
-        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         this.startActivity(intent);
     }
 
