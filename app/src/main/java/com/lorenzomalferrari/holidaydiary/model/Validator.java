@@ -3,6 +3,7 @@ package com.lorenzomalferrari.holidaydiary.model;
 import android.util.Patterns;
 import android.widget.EditText;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -88,5 +89,13 @@ public class Validator {
             }
         }
         return flag;
+    }
+
+    public int calcAGe(){
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        Calendar oggi = Calendar.getInstance();
+        // dataDiNascita.getYear(); METODO DEPRECATO!!
+        return oggi.get(Calendar.YEAR) - c.get(Calendar.YEAR);
     }
 }
