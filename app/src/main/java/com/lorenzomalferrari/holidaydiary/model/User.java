@@ -14,7 +14,7 @@ public class User {
     private int id, age;
     private String firstName, lastName, username, password, email, city, country;
     private char gender;
-    private Date birthdate, registration_date, last_login;
+    private Date birthdate;
 
     /**
      * Costruttore di default
@@ -42,6 +42,31 @@ public class User {
     }
 
     /**
+     * Costruttore per RegistrationActivity
+     * Usato per creare l'oggetto Utente alla registrazione
+     * @param firstName
+     * @param lastName
+     * @param username
+     * @param password
+     * @param email
+     * @param city
+     * @param country
+     * @param gender
+     * @param birthdate
+     */
+    public User(String firstName, String lastName, String username, String password, String email, String city, String country, char gender, Date birthdate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.city = city;
+        this.country = country;
+        this.gender = gender;
+        this.birthdate = birthdate;
+    }
+
+    /**
      * Costruttore completo
      * @param id
      * @param firstName
@@ -54,8 +79,6 @@ public class User {
      * @param gender
      * @param age
      * @param birthdate
-     * @param registration_date
-     * @param last_login
      */
     public User(int id, String firstName, String lastName, String username, String password, String email, String city, String country, char gender,int age, Date birthdate, Date registration_date, Date last_login) {
         this.id = id;
@@ -69,8 +92,6 @@ public class User {
         this.gender = gender;
         this.age = age;
         this.birthdate = birthdate;
-        this.registration_date = registration_date;
-        this.last_login = last_login;
     }
 
     public int getId() {
@@ -161,29 +182,13 @@ public class User {
         this.birthdate = birthdate;
     }
 
-    public Date getRegistration_date() {
-        return registration_date;
-    }
-
-    public void setRegistration_date(Date registration_date) {
-        this.registration_date = registration_date;
-    }
-
-    public Date getLast_login() {
-        return last_login;
-    }
-
-    public void setLast_login(Date last_login) {
-        this.last_login = last_login;
-    }
-
     /**
      * Rappresentazione testuale della classe User
      * @return riga di testo con tutti gli attributi e i rispettivi valori
      */
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username + ", password=" + password + ", email=" + email + ", city=" + city + ", country=" + country + ", gender=" + gender + ", age=" + age + ", birthdate=" + birthdate + ", registration_date=" + registration_date + ", last_login=" + last_login + '}';
+        return "User{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username + ", password=" + password + ", email=" + email + ", city=" + city + ", country=" + country + ", gender=" + gender + ", age=" + age + ", birthdate=" + birthdate + '}';
     }
 
 }
