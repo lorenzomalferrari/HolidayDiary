@@ -207,11 +207,15 @@ public class RegistrationActivity extends AppCompatActivity {
         //Toast.makeText(RegistrationActivity.this,birthdate,Toast.LENGTH_LONG).show();
 
         try {
-            user = new User(firstName.getText().toString(),lastName.getText().toString(),
-                    username.getText().toString(),email.getText().toString(),
-                    password.getText().toString(),city.getText().toString(),
-                    country.getText().toString(),gender,
-                    simpleDateFormat.parse(format_birthdate));
+            user = new User(firstName.getText().toString().replace(" ",""),
+                            lastName.getText().toString().replace(" ",""),
+                            username.getText().toString().replace(" ",""),
+                            email.getText().toString().replace(" ",""),
+                            password.getText().toString().replace(" ",""),
+                            city.getText().toString().replace(" ",""),
+                            country.getText().toString().replace(" ",""),
+                            gender,
+                            simpleDateFormat.parse(format_birthdate));
         } catch (ParseException e) {
             e.printStackTrace();
         }
