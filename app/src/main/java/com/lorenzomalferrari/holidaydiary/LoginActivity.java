@@ -48,18 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         userSessionManager = new UserSessionManager(getApplicationContext());
 
         /* Eseguo l'animazione sulla LoginActivity */
-
-        //id del LinearLayout Top
-        layoutTop = findViewById(R.id.layoutTop);
-        //id del LinearLayout Down
-        layoutDown = findViewById(R.id.layoutDown);
-        //Animazione da top a down
-        uptodown = AnimationUtils.loadAnimation(this,R.anim.uptodown);
-        layoutTop.setAnimation(uptodown);
-        //Animazione da down a top
-        downtoup = AnimationUtils.loadAnimation(this,R.anim.downtoup);
-        layoutDown.setAnimation(downtoup);
-
+        runAnimation();
 
         /* Inizializzazione dei campi per l'esecuzione del login */
 
@@ -119,20 +108,30 @@ public class LoginActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Cursor res = databaseHelper.getData(email.getText().toString(),password.getText().toString());
-                        if(res.getCount() == 0 || res == null) {// se utente non esiste lo mando alla registrazione
-                            // Viasualizzo la pagina di registrazione
-                            callRegister();
-                        }
-                        else {// se utente esiste esegu il login
+                        // Campo email e password non devono essere vuoti
+                        if (email.getText().toString().trim().length() > 0 && password.getText().toString().trim().length() > 0)
+                        {
+                            Cursor res = databaseHelper.getData(email.getText().toString(),password.getText().toString());
+                            if(res.getCount() == 0 || res == null) {// se utente non esiste lo mando alla registrazione
+                                // Viasualizzo la pagina di registrazione
+                                callRegister();
+                            }
+                            else {// se utente esiste esegu il login
 
-                            // Creating user login session
-                            // Statically storing name="Android Example"
-                            // and email="androidexample84@gmail.com"
-                            userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
-                            // Visualizzo l'app
-                            callMenu();
+                                // Creating user login session
+                                // Statically storing name="Android Example"
+                                // and email="androidexample84@gmail.com"
+                                userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
+                                // Visualizzo l'app
+                                callMenu();
+                            }
                         }
+                        // Mandare messaggio che avverta che i campi vanno riempiti
+                        else
+                        {
+                            Toast.makeText(LoginActivity.this,"ATTENZIONE!! Campi vuoti",Toast.LENGTH_LONG).show();
+                        }
+
                     }
                 }
         );
@@ -156,5 +155,21 @@ public class LoginActivity extends AppCompatActivity {
     private void callRegister(){
         Intent intent = new Intent(this, RegistrationActivity.class);
         this.startActivity(intent);
+    }
+
+    /**
+     * Esecuzione della animazione nella LoginActivity
+     */
+    private void runAnimation(){
+        //id del LinearLayout Top
+        layoutTop = findViewById(R.id.layoutTop);
+        //id del LinearLayout Down
+        layoutDown = findViewById(R.id.layoutDown);
+        //Animazione da top a down
+        uptodown = AnimationUtils.loadAnimation(this,R.anim.uptodown);
+        layoutTop.setAnimation(uptodown);
+        //Animazione da down a top
+        downtoup = AnimationUtils.loadAnimation(this,R.anim.downtoup);
+        layoutDown.setAnimation(downtoup);
     }
 }
