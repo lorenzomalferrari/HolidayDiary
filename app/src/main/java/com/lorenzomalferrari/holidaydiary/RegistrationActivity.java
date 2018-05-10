@@ -49,9 +49,9 @@ public class RegistrationActivity extends AppCompatActivity {
 
         //
         AddData();
-        viewAll();
-        UpdateData();
-        DeleteData();
+        //viewAll();
+        //UpdateData();
+        //DeleteData();
     }
 
 
