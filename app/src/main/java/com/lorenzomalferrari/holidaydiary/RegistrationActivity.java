@@ -88,6 +88,9 @@ public class RegistrationActivity extends AppCompatActivity {
             return radioFemale;
     }
 
+    /**
+     * Cancello l' Utente sapendo il suo id
+     */
     public void DeleteData() {
         btnDelete.setOnClickListener(
                 new View.OnClickListener() {
@@ -103,6 +106,10 @@ public class RegistrationActivity extends AppCompatActivity {
         );
     }
 
+    /**
+     * Aggiorna campi dell' Utente
+     * id, firstName, lastName, password
+     */
     public void UpdateData() {
         btnviewUpdate.setOnClickListener(
                 new View.OnClickListener() {
@@ -120,6 +127,9 @@ public class RegistrationActivity extends AppCompatActivity {
         );
     }
 
+    /**
+     * Aggiunge Utente nel database
+     */
     public  void AddData() {
         btnAddData.setOnClickListener(
                 new View.OnClickListener() {
@@ -139,6 +149,9 @@ public class RegistrationActivity extends AppCompatActivity {
         );
     }
 
+    /**
+     * Visualizzo tutti i dati di tutti gli Utenti presenti nel database
+     */
     public void viewAll() {
         btnviewAll.setOnClickListener(
                 new View.OnClickListener() {
@@ -186,9 +199,8 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     /**
-     * hiamata alla MenuActivity (Navigation Drawer Activity)
+     * Chiamata alla MenuActivity (Navigation Drawer Activity)
      */
-    //Chiama la MenuActivity (Navigation Drawer Activity)
     private void callMenu(){
         Intent intent = new Intent(this, MenuActivity.class);
         this.startActivity(intent);
