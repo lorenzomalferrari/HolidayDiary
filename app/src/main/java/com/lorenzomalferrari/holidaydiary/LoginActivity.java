@@ -105,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         // Campo email e password non devono essere vuoti
-                        if (email.getText().toString().trim().length() > 0 && password.getText().toString().trim().length() > 0)
+                        if (email.getText().toString().trim().length() > 0 && password.getText().toString().trim().length() > 0 && validator.isEmailValid(email.getText().toString()))
                         {
                             Cursor res = databaseHelper.getData(email.getText().toString(),password.getText().toString());
                             if(res.getCount() == 0 || res == null) {// se utente non esiste lo mando alla registrazione
