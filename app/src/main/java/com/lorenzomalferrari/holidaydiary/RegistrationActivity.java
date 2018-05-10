@@ -12,12 +12,16 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
+import com.lorenzomalferrari.holidaydiary.model.User;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    DatabaseHelper myDb;
+    DatabaseHelper databaseHelper;
     Button btnAddData,btnviewAll,btnDelete;
     //
     RadioButton gender;
@@ -26,33 +30,17 @@ public class RegistrationActivity extends AppCompatActivity {
     //
     Button btnviewUpdate;
 
+    User user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        myDb = new DatabaseHelper(this);
+        databaseHelper = new DatabaseHelper(this);
 
-        // FirstName
-        firstName = findViewById(R.id.register_firstNameValue);
-        // LastName
-        lastName = findViewById(R.id.register_lastNameValue);
-        // Username
-        username =  findViewById(R.id.register_usarnameValue);
-        // Email
-        email =  findViewById(R.id.register_emailValue);
-        // Password
-        password =  findViewById(R.id.register_passwordValue);
-        // Confirm Password
-        conf_password =  findViewById(R.id.register_passwordValueValidate);
-        // City
-        city =  findViewById(R.id.register_cityValue);
-        // Country
-        country =  findViewById(R.id.register_countryValue);
-        // Gender
-        gender = getRadioButtonChecked();
-        // Birthdate
-        birthdate =  findViewById(R.id.register_birthdateValue);
+        //Ottengo i dati
+        this.getData();
 
         btnAddData = findViewById(R.id.btnSave);
         btnviewAll = findViewById(R.id.button_viewAll);
@@ -66,21 +54,23 @@ public class RegistrationActivity extends AppCompatActivity {
         DeleteData();
     }
 
+
+
     /**
      * Metodo che mi consente di raggruppare tutti i valori presi dalla registrazione
      * @return un oggetto di classe ArrayList
      */
     private ArrayList createArrayList(){
         ArrayList arrayList = new ArrayList();
-        arrayList.add(firstName.getText().toString());
-        arrayList.add(lastName.getText().toString());
-        arrayList.add(username.getText().toString());
-        arrayList.add(password.getText().toString());
-        arrayList.add(email.getText().toString());
-        arrayList.add(city.getText().toString());
-        arrayList.add(country.getText().toString());
-        arrayList.add(gender.getText().toString());
-        arrayList.add(birthdate.getText().toString());
+        arrayList.add(user.getFirstName());
+        arrayList.add(user.getLastName());
+        arrayList.add(user.getUsername());
+        arrayList.add(user.getPassword());
+        arrayList.add(user.getEmail());
+        arrayList.add(user.getCity());
+        arrayList.add(user.getCountry());
+        arrayList.add(user.getGender());
+        arrayList.add(user.getBirthdate());
         return arrayList;
     }
 
@@ -103,7 +93,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Integer deletedRows = myDb.deleteData(id.getText().toString());
+                        Integer deletedRows = databaseHelper.deleteData(id.getText().toString());
                         if(deletedRows > 0)
                             Toast.makeText(RegistrationActivity.this,"Data Deleted",Toast.LENGTH_LONG).show();
                         else
@@ -118,7 +108,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isUpdate = myDb.updateData(id.getText().toString(),
+                        boolean isUpdate = databaseHelper.updateData(id.getText().toString(),
                                 firstName.getText().toString(),
                                 lastName.getText().toString(),password.getText().toString());
                         if(isUpdate == true)
@@ -135,7 +125,9 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isInserted = myDb.insertData(createArrayList());
+                        //Creo l'oggetto User
+                        createUser();
+                        boolean isInserted = databaseHelper.insertData(createArrayList());
                         if(isInserted == true) {
                             Toast.makeText(RegistrationActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();
                             callMenu();
@@ -152,7 +144,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Cursor res = myDb.getAllUsers();
+                        Cursor res = databaseHelper.getAllUsers();
                         if(res.getCount() == 0) {
                             // show message
                             showMessage("Error","Nothing found");
@@ -200,5 +192,54 @@ public class RegistrationActivity extends AppCompatActivity {
     private void callMenu(){
         Intent intent = new Intent(this, MenuActivity.class);
         this.startActivity(intent);
+    }
+
+    /**
+     * Creo l'oggetto User
+     */
+    private void createUser() {
+        // Creo un oggetto per creare le date tramite stringhe
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        //Costruisco oggetto utente
+        char gender = this.gender.getText().charAt(0);
+        String format_birthdate = this.birthdate.getText().toString().replace("/","-");
+        //Test
+        //Toast.makeText(RegistrationActivity.this,birthdate,Toast.LENGTH_LONG).show();
+
+        try {
+            user = new User(firstName.getText().toString(),lastName.getText().toString(),
+                    username.getText().toString(),email.getText().toString(),
+                    password.getText().toString(),city.getText().toString(),
+                    country.getText().toString(),gender,
+                    simpleDateFormat.parse(format_birthdate));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Ottengo i dati inseriti dall'utente
+     */
+    private void getData(){
+        // FirstName
+        firstName = findViewById(R.id.register_firstNameValue);
+        // LastName
+        lastName = findViewById(R.id.register_lastNameValue);
+        // Username
+        username =  findViewById(R.id.register_usarnameValue);
+        // Email
+        email =  findViewById(R.id.register_emailValue);
+        // Password
+        password =  findViewById(R.id.register_passwordValue);
+        // Confirm Password
+        conf_password =  findViewById(R.id.register_passwordValueValidate);
+        // City
+        city =  findViewById(R.id.register_cityValue);
+        // Country
+        country =  findViewById(R.id.register_countryValue);
+        // Gender
+        gender = getRadioButtonChecked();
+        // Birthdate
+        birthdate =  findViewById(R.id.register_birthdateValue);
     }
 }
