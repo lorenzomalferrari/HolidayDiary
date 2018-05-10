@@ -103,7 +103,6 @@
     <string name="settings_text">Impostazioni</string>
     <string name="number_version">Versione 1.1.0</string>
     <string name="close_popup">X</string>
-    <string name="title_activity_menu">MenuActivity</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="reservation">Prenotazione</string>
     <string name="places">Luoghi</string>
