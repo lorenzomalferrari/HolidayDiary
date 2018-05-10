@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lorenzomalferrari.holidaydiary.control.Controller;
 import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
 
 import java.util.HashMap;
@@ -32,9 +33,13 @@ public class MenuActivity extends AppCompatActivity
 
     Dialog myDialog;
     UserSessionManager userSessionManager;
+    Controller controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        controller = new Controller();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = findViewById(R.id.toolbar);
