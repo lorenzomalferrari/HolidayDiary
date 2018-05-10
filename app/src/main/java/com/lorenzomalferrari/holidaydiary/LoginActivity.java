@@ -29,12 +29,8 @@ public class LoginActivity extends AppCompatActivity {
     LinearLayout layoutTop, layoutDown;
     Animation uptodown, downtoup;
     Validator validator;
-
     // User Session Manager Class
     UserSessionManager userSessionManager;
-
-
-
     //Testo in input
     TextInputLayout emailInputLayout, passwordInputLayout;
 
@@ -138,26 +134,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     /**
-     * Chiama la MenuActivity (Navigation Drawer Activity)
-     */
-    private void callMenu(){
-        Intent intent = new Intent(this, MenuActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-        // Add new Flag to start new Activity
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        this.startActivity(intent);
-    }
-
-    /**
-     * Chiama la RegisterActivity
-     */
-    private void callRegister(){
-        Intent intent = new Intent(this, RegistrationActivity.class);
-        this.startActivity(intent);
-    }
-
-    /**
      * Esecuzione della animazione nella LoginActivity
      */
     private void runAnimation(){
@@ -172,4 +148,24 @@ public class LoginActivity extends AppCompatActivity {
         downtoup = AnimationUtils.loadAnimation(this,R.anim.downtoup);
         layoutDown.setAnimation(downtoup);
     }
+
+    /**
+     * Chiama la MenuActivity (Navigation Drawer Activity)
+     */
+    private void callMenu(){
+        Intent intent = new Intent(this, MenuActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        // Add new Flag to start new Activity
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        this.startActivity(intent);
+    }
+
+    /**
+     * Chiama la RegisterActivity
+     */
+    private void callRegister(){
+        Intent intent = new Intent(this, RegistrationActivity.class);
+        this.startActivity(intent);
+    }
+
 }
