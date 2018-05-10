@@ -16,6 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- Activity iniziale -->
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Login se l'utente non è loggato-->
         <activity android:name=".LoginActivity" />
+
+        <!-- Contenuto dell'app -->
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
