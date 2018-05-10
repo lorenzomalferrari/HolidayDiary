@@ -27,6 +27,58 @@ public class Validator {
     }*/
 
     /**
+     * Metodo che controlla che il nome e cognome sia composto solamente da lettere
+     * @param firstName
+     * @param lastName
+     * @return
+     */
+    public boolean isNameValid(String firstName, String lastName){
+        //Array dei char di firstName
+        String[] firstNameSplit = firstName.split("");
+        //Array dei char di lastName
+        String[] lastNameSplit = lastName.split("");
+        //boolean var
+        boolean flag = false;
+
+        //Controllo firstName
+        for (int i = 0; i <= firstNameSplit.length; i ++){
+            try
+            {
+                double d = Double.parseDouble(firstNameSplit[0]);
+            }
+            catch(NumberFormatException nfe)
+            {
+                flag = false;
+            }
+            flag = true;
+        }
+
+        //Controllo lastName
+        for (int i = 0; i <= lastNameSplit.length; i ++){
+            try
+            {
+                double d = Double.parseDouble(lastNameSplit[0]);
+            }
+            catch(NumberFormatException nfe)
+            {
+                flag = false;
+            }
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * Controllo che il campo username non sia vuoto
+     * @param username
+     * @return true se non è vuoto || false se è campo è vuoto
+     */
+    public boolean isUsernameEmpty(String username){
+        if (username.trim().length() > 0) return true;
+        else return false;
+    }
+
+    /**
      * Controllo che la password rispetti Patterns.EMAIL_ADDRESS
      * @return true = password ok || false = pawword !ok
      */
@@ -61,35 +113,14 @@ public class Validator {
      * @param string
      * @return false = null || true = string
      */
-    public boolean isEmpty(String string) {
+    /*public boolean isEmpty(String string) {
         if (string.isEmpty()){
             return true;
         }
         else {
             return false;
         }
-    }
-
-    /**
-     * Controllo che nella stringa non ci siano numeri
-     * @param stringa
-     * @return
-     */
-    public boolean containsNumer(String stringa){
-        boolean flag = false;
-        String[] stringSplit = stringa.split("");
-        for (int i = 0; i <= stringSplit.length;i ++){
-            try {
-                int isString = Integer.parseInt(stringSplit[i]);
-                flag = true;
-            }
-            catch (NumberFormatException e){
-                flag =  false;
-                break;
-            }
-        }
-        return flag;
-    }
+    }*/
 
     public int calcAGe(){
         Calendar c = Calendar.getInstance();

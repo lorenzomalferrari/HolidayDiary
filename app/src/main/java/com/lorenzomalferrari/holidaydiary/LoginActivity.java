@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordInputLayout.setError(null);
 
         // Controllo l'email
-        if (validator.isEmpty(email)) {
+        if (email.trim().length() == 0 || email == null) {
             emailInputLayout.setError("Email is required");
             return false;
         } else if (!validator.isEmailValid(email)) {
@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         }
         // Controllo la password
-        if (validator.isEmpty(password)) {
+        if (password.trim().length() == 0 || password == null) {
             passwordInputLayout.setError("Password is required");
             return false;
         } else if (!validator.isPasswordValid(password)) {
