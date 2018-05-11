@@ -1,6 +1,7 @@
 package com.lorenzomalferrari.holidaydiary;
 
 import android.content.Intent;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -10,6 +11,7 @@ public class TravelActivity extends AppCompatActivity {
 
     private TextView txttitle,txtdescription, txtcategory;
     private ImageView img;
+    private CollapsingToolbarLayout collapsingToolbarLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,10 @@ public class TravelActivity extends AppCompatActivity {
         txtcategory = findViewById(R.id.categorytitle);
         img = findViewById(R.id.travelthumbnail);
 
+
+
+        collapsingToolbarLayout = findViewById(R.id.collappsingtoolbar);
+
         // Recieve data
         Intent intent = getIntent();
         String title = intent.getExtras().getString("TravelTitle");
@@ -28,9 +34,11 @@ public class TravelActivity extends AppCompatActivity {
         int image = intent.getExtras().getInt("Thumbnail");
 
         // Settings values
-        txttitle.setText(title);
+        //txttitle.setText(title);
         txtdescription.setText(description);
-        img.setImageResource(image);
+        //img.setImageResource(image);*/
+        collapsingToolbarLayout.setBackgroundResource(image);
+        collapsingToolbarLayout.setTitle(title);
 
     }
 }
