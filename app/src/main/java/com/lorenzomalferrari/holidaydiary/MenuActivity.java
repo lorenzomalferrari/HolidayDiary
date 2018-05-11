@@ -32,7 +32,7 @@ public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Dialog myDialog;
-    //UserSessionManager userSessionManager;
+    UserSessionManager userSessionManager;
     Controller controller;
 
     @Override
@@ -72,7 +72,7 @@ public class MenuActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -97,7 +97,7 @@ public class MenuActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_logout) {
             //Eseguo il logout
-            //userSessionManager.logoutUser();
+            userSessionManager.logoutUser();
             return true;
         }
 
@@ -184,25 +184,25 @@ public class MenuActivity extends AppCompatActivity
 
     private void checkUserSession(){
         // Session class instance
-        //userSessionManager = new UserSessionManager(getApplicationContext());
+        userSessionManager = new UserSessionManager(getApplicationContext());
 
-        /*Toast.makeText(getApplicationContext(),
+        Toast.makeText(getApplicationContext(),
                 "User Login Status: " + userSessionManager.isUserLoggedIn(),
-                Toast.LENGTH_LONG).show();*/
+                Toast.LENGTH_LONG).show();
 
         // Check user login
         // If User is not logged in , This will redirect user to LoginActivity.
-        //if(userSessionManager.checkLogin())
-            //finish();
+        if(userSessionManager.checkLogin())
+            finish();
 
         // get user data from session
-        //HashMap<String, String> user = userSessionManager.getUserDetails();
-
-        // get password
-        //String password = user.get(UserSessionManager.KEY_PASSWORD);
+        HashMap<String, String> user = userSessionManager.getUserDetails();
 
         // get email
-        //String email = user.get(UserSessionManager.KEY_EMAIL);
+        String email = user.get(UserSessionManager.KEY_EMAIL);
+
+        // get password
+        String password = user.get(UserSessionManager.KEY_PASSWORD);
 
         // Show user data on activity
         //lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));

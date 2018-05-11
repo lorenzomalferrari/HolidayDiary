@@ -23,15 +23,19 @@ import com.lorenzomalferrari.holidaydiary.model.Validator;
  */
 public class LoginActivity extends AppCompatActivity {
 
+    //Bottone che clicco
     Button btnLogin;
+    //Campi che prende
     EditText email,password;
+
+
     DatabaseHelper databaseHelper;
     LinearLayout layoutTop, layoutDown;
     Animation uptodown, downtoup;
     Validator validator;
 
     // User Session Manager Class
-    //UserSessionManager userSessionManager;
+    UserSessionManager userSessionManager;
 
     //Testo in input
     TextInputLayout emailInputLayout, passwordInputLayout;
@@ -43,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // User Session Manager
-        //userSessionManager = new UserSessionManager(getApplicationContext());
+        userSessionManager = new UserSessionManager(getApplicationContext());
 
         /* Eseguo l'animazione sulla LoginActivity */
         runAnimation();
@@ -52,16 +56,18 @@ public class LoginActivity extends AppCompatActivity {
 
         // oggetto DatabaseHelper, per la connessione del database SQLite
         databaseHelper = new DatabaseHelper(this);
-        //id del bottone che si clicca (Login)
-        btnLogin = findViewById(R.id.btnLogin);
+
         //id della email che viene inserita per il login
         email = findViewById(R.id.email);
         //id della password che viene inserita per il login
         password = findViewById(R.id.password);
 
-        /*Toast.makeText(getApplicationContext(),
+        Toast.makeText(getApplicationContext(),
                 "User Login Status: " + userSessionManager.isUserLoggedIn(),
-                Toast.LENGTH_LONG).show();*/
+                Toast.LENGTH_LONG).show();
+
+        //id del bottone che si clicca (Login)
+        btnLogin = findViewById(R.id.btnLogin);
 
         /* Controllo che i dati inseriti siano corretti */
 
@@ -130,14 +136,17 @@ public class LoginActivity extends AppCompatActivity {
                                 // Viasualizzo la pagina di registrazione
                                 callRegister();
                             }
-                            else {// se utente esiste esegu il login
+                            else if(res.getCount() != 0) {// se utente esiste esegu il login
 
                                 // Creating user login session
                                 // Statically storing name="Android Example"
                                 // and email="androidexample84@gmail.com"
-                                //userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
+                                userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
                                 // Visualizzo l'app
                                 callMenu();
+                            }
+                            else{
+                                Toast.makeText(LoginActivity.this,"Email o Password non corretti",Toast.LENGTH_LONG).show();
                             }
                         }
                         // Mandare messaggio che avverta che i campi vanno riempiti
@@ -171,11 +180,14 @@ public class LoginActivity extends AppCompatActivity {
      * Chiama la MenuActivity (Navigation Drawer Activity)
      */
     private void callMenu(){
-        Intent intent = new Intent(this, MenuActivity.class);
-        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
         // Add new Flag to start new Activity
-        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         this.startActivity(intent);
+
+        finish();
     }
 
     /**

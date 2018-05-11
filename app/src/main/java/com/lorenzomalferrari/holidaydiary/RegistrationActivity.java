@@ -41,6 +41,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
         //Ottengo i dati
         this.getData();
+        //Creo oggetto user
+        //createUser();
 
         btnAddData = findViewById(R.id.btnSave);
         btnviewAll = findViewById(R.id.button_viewAll);
@@ -54,13 +56,25 @@ public class RegistrationActivity extends AppCompatActivity {
         //DeleteData();
     }
 
-
-
     /**
      * Metodo che mi consente di raggruppare tutti i valori presi dalla registrazione
      * @return un oggetto di classe ArrayList
      */
     private ArrayList createArrayList(){
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(firstName.getText().toString());
+        arrayList.add(lastName.getText().toString());
+        arrayList.add(username.getText().toString());
+        arrayList.add(email.getText().toString());
+        arrayList.add(password.getText().toString());
+        arrayList.add(city.getText().toString());
+        arrayList.add(country.getText().toString());
+        arrayList.add(gender.getText().toString());
+        arrayList.add(birthdate.getText().toString());
+        return arrayList;
+    }
+
+    /*private ArrayList createArrayList(){
         ArrayList arrayList = new ArrayList();
         arrayList.add(user.getFirstName());
         arrayList.add(user.getLastName());
@@ -72,7 +86,7 @@ public class RegistrationActivity extends AppCompatActivity {
         arrayList.add(user.getGender());
         arrayList.add(user.getBirthdate());
         return arrayList;
-    }
+    }*/
 
     /**
      * Metodo per ottenere il radioButton selezionato
@@ -135,8 +149,6 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //Creo l'oggetto User
-                        createUser();
                         boolean isInserted = databaseHelper.insertData(createArrayList());
                         if(isInserted == true) {
                             Toast.makeText(RegistrationActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();

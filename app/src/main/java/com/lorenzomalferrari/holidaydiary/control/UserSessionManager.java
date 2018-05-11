@@ -13,18 +13,25 @@ public class UserSessionManager {
 
     // Shared Preferences reference
     SharedPreferences pref;
+
     // Editor reference for Shared preferences
     Editor editor;
+
     // Context
     Context _context;
+
     // Shared pref mode
     int PRIVATE_MODE = 0;
+
     // Sharedpref file name
-    private static final String PREFER_NAME = "AndroidExamplePref";
+    private static final String PREFER_NAME = "User ";
+
     // All Shared Preferences Keys
     private static final String IS_USER_LOGIN = "IsUserLoggedIn";
+
     // Password (make variable public to access from outside)
     public static final String KEY_PASSWORD = "password";
+
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "email";
 
