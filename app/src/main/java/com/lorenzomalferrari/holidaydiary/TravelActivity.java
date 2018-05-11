@@ -24,7 +24,6 @@ public class TravelActivity extends AppCompatActivity {
         img = findViewById(R.id.travelthumbnail);
 
 
-
         collapsingToolbarLayout = findViewById(R.id.collappsingtoolbar);
 
         // Recieve data
