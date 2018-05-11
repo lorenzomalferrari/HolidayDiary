@@ -1,4 +1,4 @@
-package com.lorenzomalferrari.holidaydiary.model;
+package com.lorenzomalferrari.holidaydiary.control;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.TravelActivity;
+import com.lorenzomalferrari.holidaydiary.model.Travel;
 
 import java.util.List;
 
