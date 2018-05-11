@@ -30,6 +30,7 @@ public class TravelsActivity extends AppCompatActivity {
 
 
 
+        //
         listTravel = new ArrayList<>();
         listTravel.add(new Travel("Spiaggia","Categorie Travel",sp,R.drawable.travel_1));
         listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
@@ -54,12 +55,10 @@ public class TravelsActivity extends AppCompatActivity {
         listTravel.add(new Travel("Spiaggia","Categorie Travel",sp,R.drawable.travel_1));
         listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
 
-
-
-
+        //
         RecyclerView myRecyclerView = findViewById(R.id.recyclerview_id);
         RecyclerViewAdapter myRecyclerViewAdapter = new RecyclerViewAdapter(this,listTravel);
-        myRecyclerView.setLayoutManager(new GridLayoutManager(this,3));
+        myRecyclerView.setLayoutManager(new GridLayoutManager(this,1));
         myRecyclerView.setAdapter(myRecyclerViewAdapter);
 
 
