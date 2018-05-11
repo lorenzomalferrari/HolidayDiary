@@ -50,11 +50,13 @@
             android:name=".MyPositionActivity"
             android:label="@string/title_activity_my_position" />
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".TravelsActivity"
+        <activity
+            android:name=".TravelsActivity"
             android:label="@string/travels"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".TravelActivity"/>
-
+            android:theme="@style/AppTheme" />
+        <activity android:name=".TravelActivity" />
+        <activity android:name=".NotesActivity" />
+        <activity android:name=".NotaActivity"></activity>
     </application>
 
 </manifest>
