@@ -19,7 +19,7 @@ import com.lorenzomalferrari.holidaydiary.model.Validator;
 
 /**
  *
- * @author Lorenzo Malferrari - www.lorenzomalferrari.com
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
  */
 public class LoginActivity extends AppCompatActivity {
 
@@ -29,8 +29,10 @@ public class LoginActivity extends AppCompatActivity {
     LinearLayout layoutTop, layoutDown;
     Animation uptodown, downtoup;
     Validator validator;
+
     // User Session Manager Class
     //UserSessionManager userSessionManager;
+    
     //Testo in input
     TextInputLayout emailInputLayout, passwordInputLayout;
 
@@ -104,6 +106,22 @@ public class LoginActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        /*if (email.getText().toString().trim().length() > 0 && password.getText().toString().trim().length() > 0 && validator.isEmailValid(email.getText().toString())) {
+                            /* Validazione sui campi email e password */
+                            /*if (isEmailValid(email.getText().toString()) && isPasswordValid(password.getText().toString())){
+                                callMenu();
+                            }
+                            else {
+                                callRegister();
+                            }
+                        }
+                        else
+                        {
+                            Toast.makeText(LoginActivity.this,"ATTENZIONE!! Campi vuoti",Toast.LENGTH_LONG).show();
+                        }*/
+
+
                         // Campo email e password non devono essere vuoti
                         if (email.getText().toString().trim().length() > 0 && password.getText().toString().trim().length() > 0 && validator.isEmailValid(email.getText().toString()))
                         {
@@ -154,9 +172,9 @@ public class LoginActivity extends AppCompatActivity {
      */
     private void callMenu(){
         Intent intent = new Intent(this, MenuActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         // Add new Flag to start new Activity
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         this.startActivity(intent);
     }
 
