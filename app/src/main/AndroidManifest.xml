@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Login se l'utente non è loggato-->
+        <!-- Login se l'utente non è loggato -->
         <activity android:name=".LoginActivity" />
 
         <!-- Contenuto dell'app -->
@@ -49,7 +49,8 @@
         <activity
             android:name=".MyPositionActivity"
             android:label="@string/title_activity_my_position" />
-        <activity android:name=".RegistrationActivity"></activity>
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".TravelsActivity"></activity>
     </application>
 
 </manifest>
