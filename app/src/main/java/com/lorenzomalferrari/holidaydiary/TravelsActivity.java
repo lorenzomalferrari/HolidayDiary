@@ -37,28 +37,28 @@ public class TravelsActivity extends AppCompatActivity {
         // Add Travels
         listTravel.add(new Travel("Spiaggia","Categorie Travel",sp,R.drawable.travel_1));
         listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
-        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",bici_fiori,R.drawable.bicifiori));
+        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",dueT,R.drawable.bicifiori));
         listTravel.add(new Travel("Spiaggia","Categorie Travel",sp,R.drawable.travel_1));
         listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
-        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",bici_fiori,R.drawable.bicifiori));
+        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",dueT,R.drawable.bicifiori));
         listTravel.add(new Travel("Spiaggia","Categorie Travel",sp,R.drawable.travel_1));
         listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
-        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",bici_fiori,R.drawable.bicifiori));
+        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",dueT,R.drawable.bicifiori));
         listTravel.add(new Travel("Spiaggia","Categorie Travel",sp,R.drawable.travel_1));
         listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
-        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",bici_fiori,R.drawable.bicifiori));
+        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",dueT,R.drawable.bicifiori));
         listTravel.add(new Travel("Spiaggia","Categorie Travel",sp,R.drawable.travel_1));
         listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
-        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",bici_fiori,R.drawable.bicifiori));
+        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",dueT,R.drawable.bicifiori));
         listTravel.add(new Travel("Spiaggia","Categorie Travel",sp,R.drawable.travel_1));
         listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
-        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",bici_fiori,R.drawable.bicifiori));
+        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",dueT,R.drawable.bicifiori));
         listTravel.add(new Travel("Spiaggia","Categorie Travel",sp,R.drawable.travel_1));
         listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
-        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",bici_fiori,R.drawable.bicifiori));
+        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",dueT,R.drawable.bicifiori));
         listTravel.add(new Travel("Spiaggia","Categorie Travel",sp,R.drawable.travel_1));
         listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
-        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",bici_fiori,R.drawable.bicifiori));
+        listTravel.add(new Travel("Bici con i fiori","Categorie Travel",dueT,R.drawable.bicifiori));
 
         // Set component for to see in Activity
         RecyclerView myRecyclerView = findViewById(R.id.recyclerview_id);
