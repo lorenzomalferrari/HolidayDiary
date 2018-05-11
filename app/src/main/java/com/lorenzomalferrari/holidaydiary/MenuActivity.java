@@ -130,6 +130,8 @@ public class MenuActivity extends AppCompatActivity
                 break;
             case R.id.nav_notes:
                 //fragment = new NotesFragment();
+                intent = new Intent(this, NotesActivity.class);
+                this.startActivity(intent);
                 break;
             case R.id.nav_pictures:
                 //fragment = new PicturesFragment();
