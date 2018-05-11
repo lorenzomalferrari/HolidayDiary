@@ -1,6 +1,8 @@
 package com.lorenzomalferrari.holidaydiary.model;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lorenzomalferrari.holidaydiary.R;
+import com.lorenzomalferrari.holidaydiary.TravelActivity;
 
 import java.util.List;
 
@@ -33,10 +36,27 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
 
         holder.travel_title.setText(myData.get(position).getTitle());
         holder.travel_img.setImageResource(myData.get(position).getThumbnail());
+
+        //SEt click listener
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // passing data to the TravelAcitivity
+                Intent intent = new Intent(myContext, TravelActivity.class);
+                intent.putExtra("TravelTitle",myData.get(position).getTitle());
+                intent.putExtra("Description",myData.get(position).getDescription());
+                intent.putExtra("Thumbnail",myData.get(position).getThumbnail());
+
+                // Start the Activity
+                myContext.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -48,12 +68,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         TextView travel_title;
         ImageView travel_img;
+        CardView cardView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             travel_title = (TextView) itemView.findViewById(R.id.travel_title_id);
             travel_img = (ImageView) itemView.findViewById(R.id.travel_img_id);
+            cardView = itemView.findViewById(R.id.cardview_id);
         }
     }
 }
