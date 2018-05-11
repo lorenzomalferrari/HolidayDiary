@@ -14,7 +14,7 @@ public class Travel {
     }
 
     /**
-     *
+     * Costruttore parametrico
      * @param title
      * @param category
      * @param description
