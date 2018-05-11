@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     Validator validator;
 
     // User Session Manager Class
-    UserSessionManager userSessionManager;
+    //UserSessionManager userSessionManager;
 
     //Testo in input
     TextInputLayout emailInputLayout, passwordInputLayout;
@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // User Session Manager
-        userSessionManager = new UserSessionManager(getApplicationContext());
+        //userSessionManager = new UserSessionManager(getApplicationContext());
 
         /* Eseguo l'animazione sulla LoginActivity */
         runAnimation();
@@ -62,9 +62,9 @@ public class LoginActivity extends AppCompatActivity {
         //id della password che viene inserita per il login
         password = findViewById(R.id.password);
 
-        Toast.makeText(getApplicationContext(),
+        /*Toast.makeText(getApplicationContext(),
                 "User Login Status: " + userSessionManager.isUserLoggedIn(),
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_LONG).show();*/
 
         //id del bottone che si clicca (Login)
         btnLogin = findViewById(R.id.btnLogin);
@@ -136,17 +136,14 @@ public class LoginActivity extends AppCompatActivity {
                                 // Viasualizzo la pagina di registrazione
                                 callRegister();
                             }
-                            else if(res.getCount() != 0) {// se utente esiste esegu il login
+                            else {// se utente esiste esegu il login
 
                                 // Creating user login session
                                 // Statically storing name="Android Example"
                                 // and email="androidexample84@gmail.com"
-                                userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
+                                //userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
                                 // Visualizzo l'app
                                 callMenu();
-                            }
-                            else{
-                                Toast.makeText(LoginActivity.this,"Email o Password non corretti",Toast.LENGTH_LONG).show();
                             }
                         }
                         // Mandare messaggio che avverta che i campi vanno riempiti
@@ -181,13 +178,13 @@ public class LoginActivity extends AppCompatActivity {
      */
     private void callMenu(){
         Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         // Add new Flag to start new Activity
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         this.startActivity(intent);
 
-        finish();
+        //finish();
     }
 
     /**

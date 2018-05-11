@@ -28,7 +28,6 @@
 
         <!-- Login se l'utente non è loggato -->
         <activity android:name=".LoginActivity" />
-
         <!-- Contenuto dell'app -->
         <activity
             android:name=".MenuActivity"

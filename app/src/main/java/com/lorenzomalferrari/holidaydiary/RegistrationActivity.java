@@ -51,7 +51,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         //
         AddData();
-        //viewAll();
+        viewAll();
         //UpdateData();
         //DeleteData();
     }
@@ -74,19 +74,6 @@ public class RegistrationActivity extends AppCompatActivity {
         return arrayList;
     }
 
-    /*private ArrayList createArrayList(){
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(user.getFirstName());
-        arrayList.add(user.getLastName());
-        arrayList.add(user.getUsername());
-        arrayList.add(user.getPassword());
-        arrayList.add(user.getEmail());
-        arrayList.add(user.getCity());
-        arrayList.add(user.getCountry());
-        arrayList.add(user.getGender());
-        arrayList.add(user.getBirthdate());
-        return arrayList;
-    }*/
 
     /**
      * Metodo per ottenere il radioButton selezionato
