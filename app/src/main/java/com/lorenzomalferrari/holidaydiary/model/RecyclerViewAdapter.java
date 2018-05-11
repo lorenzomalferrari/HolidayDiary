@@ -41,7 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.travel_title.setText(myData.get(position).getTitle());
         holder.travel_img.setImageResource(myData.get(position).getThumbnail());
 
-        //SEt click listener
+        //Set click listener
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
