@@ -73,8 +73,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            travel_title = (TextView) itemView.findViewById(R.id.travel_title_id);
-            travel_img = (ImageView) itemView.findViewById(R.id.travel_img_id);
+            travel_title = itemView.findViewById(R.id.travel_title_id);
+            travel_img = itemView.findViewById(R.id.travel_img_id);
             cardView = itemView.findViewById(R.id.cardview_id);
         }
     }
