@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     Animation uptodown, downtoup;
     Validator validator;
     // User Session Manager Class
-    UserSessionManager userSessionManager;
+    //UserSessionManager userSessionManager;
     //Testo in input
     TextInputLayout emailInputLayout, passwordInputLayout;
 
@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // User Session Manager
-        userSessionManager = new UserSessionManager(getApplicationContext());
+        //userSessionManager = new UserSessionManager(getApplicationContext());
 
         /* Eseguo l'animazione sulla LoginActivity */
         runAnimation();
@@ -117,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
                                 // Creating user login session
                                 // Statically storing name="Android Example"
                                 // and email="androidexample84@gmail.com"
-                                userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
+                                //userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
                                 // Visualizzo l'app
                                 callMenu();
                             }
