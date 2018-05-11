@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
 
     // User Session Manager Class
     //UserSessionManager userSessionManager;
-    
+
     //Testo in input
     TextInputLayout emailInputLayout, passwordInputLayout;
 
