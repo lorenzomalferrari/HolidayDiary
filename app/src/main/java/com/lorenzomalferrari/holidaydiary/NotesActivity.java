@@ -6,8 +6,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.lorenzomalferrari.holidaydiary.model.Note;
-import com.lorenzomalferrari.holidaydiary.model.RecyclerViewAdapter;
-import com.lorenzomalferrari.holidaydiary.model.Travel;
 
 import java.util.ArrayList;
 import java.util.List;
