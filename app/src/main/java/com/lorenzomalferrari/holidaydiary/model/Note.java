@@ -7,6 +7,11 @@ public class Note {
     public Note() {
     }
 
+    /**
+     * Costruttore parametrico
+     * @param title
+     * @param description
+     */
     public Note(String title, String description) {
         this.title = title;
         this.description = description;
