@@ -124,7 +124,9 @@ public class MenuActivity extends AppCompatActivity
                 //fragment = new HomePageFragment();
                 break;
             case R.id.nav_travels:
-                fragment = new TravelsFragment();
+                //fragment = new TravelsFragment();
+                intent = new Intent(this, TravelsActivity.class);
+                this.startActivity(intent);
                 break;
             case R.id.nav_notes:
                 //fragment = new NotesFragment();
