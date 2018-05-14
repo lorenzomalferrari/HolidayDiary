@@ -137,4 +137,8 @@ public class Validator {
         // dataDiNascita.getYear(); METODO DEPRECATO!!
         return oggi.get(Calendar.YEAR) - c.get(Calendar.YEAR);
     }
+
+    public boolean isBirthdateValid() {
+        return false;
+    }
 }
