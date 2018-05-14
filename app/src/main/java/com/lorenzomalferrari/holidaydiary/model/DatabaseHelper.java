@@ -110,7 +110,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         //Creazione della tabella Note
         //createNotesTable();
         //Creazione della tabella Travel
-        //createTravelsTable();
+        createTravelsTable();
     }
 
     /**
@@ -132,6 +132,19 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "birthdate DATE," +
                 "registration_date DATETIME," +
                 "last_login DATETIME)");
+    }
+
+    /**
+     * Costruzione della tabella utente
+     * @param db
+     */
+    private void createTravelsTable(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[1] + "(" +
+                "id INTEGER PRIMARY KEY," +
+                "title VARCHAR(255)," +
+                "category VARCHAR(255)," +
+                "description VARCHAR(255)," +
+                "registration_date DATETIME");
     }
 
 
