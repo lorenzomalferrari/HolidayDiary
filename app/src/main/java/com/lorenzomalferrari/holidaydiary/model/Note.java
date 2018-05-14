@@ -17,7 +17,7 @@ public class Note {
         this.id = 1;
         this.title = "Nota 1";
         this.content = "Questo è il testo della prima nota";
-        this.creation_date = new Date();
+        this.creation_date = new Date();//data corrente
         this.id_user = 1;
         this.id_travel = 1;
         this.id_picture = 1;
