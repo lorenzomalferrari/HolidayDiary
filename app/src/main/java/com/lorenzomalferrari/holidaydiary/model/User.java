@@ -8,90 +8,77 @@ import java.util.Date;
  */
 public class User {
 
-    /**
-     * Variabili che rappresentano i ccampi della tabella Users
-     */
-    private int id, age;
-    private String firstName, lastName, username, password, email, city, country;
+    private int id;
+    private String firstName, lastName, username, email, password, city, country;
     private char gender;
     private Date birthdate;
+    private int imgUser;
+    private Date last_access, registration_date;
+    private int id_travel, id_note, id_picture, id_place;
 
     /**
      * Costruttore di default
-     * (Usato per i test)
+     * Costruisco un oggetto con dati prescelti
      */
     public User() {
-        this.id = 0;
+        this.id = 1;
         this.firstName = "Lorenzo";
         this.lastName = "Malferrari";
-        this.username = "malfe.lore";
-        this.password = "123456";
+        this.username = "";
         this.email = "malfe.lore@gmail.com";
-    }
-
-
-    /**
-     * Costrutore base
-     * Usato al momento del login
-     * @param email
-     * @param password
-     */
-    public User(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
-
-    /**
-     * Costruttore per RegistrationActivity
-     * Usato per creare l'oggetto Utente alla registrazione
-     * @param firstName
-     * @param lastName
-     * @param username
-     * @param password
-     * @param email
-     * @param city
-     * @param country
-     * @param gender
-     * @param birthdate
-     */
-    public User(String firstName, String lastName, String username, String password, String email, String city, String country, char gender, Date birthdate) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.city = city;
-        this.country = country;
-        this.gender = gender;
-        this.birthdate = birthdate;
+        this.password = "123456";
+        this.city = "Bologna";
+        this.country = "Italy";
+        this.gender = 'M';
+        this.birthdate = new Date();
+        this.imgUser = 1;
+        this.last_access = new Date();
+        this.registration_date = new Date();
+        this.id_travel = 1;
+        this.id_note = 1;
+        this.id_picture = 1;
+        this.id_place = 1;
     }
 
     /**
-     * Costruttore completo
+     * Costruttore parametrico
+     * Inizializzo gli attributi della classe con i prametri d'ingreso
      * @param id
      * @param firstName
      * @param lastName
      * @param username
-     * @param password
      * @param email
+     * @param password
      * @param city
      * @param country
      * @param gender
-     * @param age
      * @param birthdate
+     * @param imgUser
+     * @param last_access
+     * @param registration_date
+     * @param id_travel
+     * @param id_note
+     * @param id_picture
+     * @param id_place
      */
-    public User(int id, String firstName, String lastName, String username, String password, String email, String city, String country, char gender,int age, Date birthdate, Date registration_date, Date last_login) {
+    public User(int id, String firstName, String lastName, String username, String email, String password, String city, String country, char gender, Date birthdate, int imgUser, Date last_access, Date registration_date, int id_travel, int id_note, int id_picture, int id_place) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
-        this.password = password;
         this.email = email;
+        this.password = password;
         this.city = city;
         this.country = country;
         this.gender = gender;
-        this.age = age;
         this.birthdate = birthdate;
+        this.imgUser = imgUser;
+        this.last_access = last_access;
+        this.registration_date = registration_date;
+        this.id_travel = id_travel;
+        this.id_note = id_note;
+        this.id_picture = id_picture;
+        this.id_place = id_place;
     }
 
     public int getId() {
@@ -100,14 +87,6 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public String getFirstName() {
@@ -134,20 +113,20 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getCity() {
@@ -182,13 +161,82 @@ public class User {
         this.birthdate = birthdate;
     }
 
-    /**
-     * Rappresentazione testuale della classe User
-     * @return riga di testo con tutti gli attributi e i rispettivi valori
-     */
-    @Override
-    public String toString() {
-        return "User{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username + ", password=" + password + ", email=" + email + ", city=" + city + ", country=" + country + ", gender=" + gender + ", age=" + age + ", birthdate=" + birthdate + '}';
+    public int getImgUser() {
+        return imgUser;
     }
 
+    public void setImgUser(int imgUser) {
+        this.imgUser = imgUser;
+    }
+
+    public Date getLast_access() {
+        return last_access;
+    }
+
+    public void setLast_access(Date last_access) {
+        this.last_access = last_access;
+    }
+
+    public Date getRegistration_date() {
+        return registration_date;
+    }
+
+    public void setRegistration_date(Date registration_date) {
+        this.registration_date = registration_date;
+    }
+
+    public int getId_travel() {
+        return id_travel;
+    }
+
+    public void setId_travel(int id_travel) {
+        this.id_travel = id_travel;
+    }
+
+    public int getId_note() {
+        return id_note;
+    }
+
+    public void setId_note(int id_note) {
+        this.id_note = id_note;
+    }
+
+    public int getId_picture() {
+        return id_picture;
+    }
+
+    public void setId_picture(int id_picture) {
+        this.id_picture = id_picture;
+    }
+
+    public int getId_place() {
+        return id_place;
+    }
+
+    public void setId_place(int id_place) {
+        this.id_place = id_place;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", gender=" + gender +
+                ", birthdate=" + birthdate +
+                ", imgUser=" + imgUser +
+                ", last_access=" + last_access +
+                ", registration_date=" + registration_date +
+                ", id_travel=" + id_travel +
+                ", id_note=" + id_note +
+                ", id_picture=" + id_picture +
+                ", id_place=" + id_place +
+                '}';
+    }
 }

@@ -13,11 +13,10 @@ import android.widget.Toast;
 
 import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.model.User;
+import com.lorenzomalferrari.holidaydiary.model.Validator;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -30,7 +29,10 @@ public class RegistrationActivity extends AppCompatActivity {
     //
     Button btnviewUpdate;
 
+    //Oggetto User
     User user;
+    //Oggetto Validator
+    Validator validator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         //Ottengo i dati
         this.getData();
+
         //Creo oggetto user
         //createUser();
 
@@ -50,13 +53,16 @@ public class RegistrationActivity extends AppCompatActivity {
         btnDelete= findViewById(R.id.button_delete);
 
         //Uso escusivo in sviluppo per fare pulidia degli utenti
-        id = findViewById(R.id.register_firstNameValue);
-        //
+        //id = findViewById(R.id.register_firstNameValue);
+        //Controllo che i dati ottenuti siano corretti
+
         AddData();
         viewAll();
         //UpdateData();
         DeleteData();
     }
+
+
 
     /**
      * Metodo che mi consente di raggruppare tutti i valori presi dalla registrazione
@@ -138,13 +144,11 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isInserted = databaseHelper.insertData(createArrayList());
-                        if(isInserted == true) {
-                            Toast.makeText(RegistrationActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();
-                            callMenu();
-                        }
-                        else
-                            Toast.makeText(RegistrationActivity.this,"Data not Inserted",Toast.LENGTH_LONG).show();
+                            boolean isInserted = databaseHelper.insertData(createArrayList());
+                            if (isInserted) {
+                                Toast.makeText(RegistrationActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
+                                callMenu();
+                            } else Toast.makeText(RegistrationActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
                     }
                 }
         );
@@ -220,19 +224,6 @@ public class RegistrationActivity extends AppCompatActivity {
         //Test
         //Toast.makeText(RegistrationActivity.this,birthdate,Toast.LENGTH_LONG).show();
 
-        try {
-            user = new User(firstName.getText().toString().replace(" ",""),
-                            lastName.getText().toString().replace(" ",""),
-                            username.getText().toString().replace(" ",""),
-                            email.getText().toString().replace(" ",""),
-                            password.getText().toString().replace(" ",""),
-                            city.getText().toString().replace(" ",""),
-                            country.getText().toString().replace(" ",""),
-                            gender,
-                            simpleDateFormat.parse(format_birthdate));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -259,5 +250,33 @@ public class RegistrationActivity extends AppCompatActivity {
         gender = getRadioButtonChecked();
         // Birthdate
         birthdate =  findViewById(R.id.register_birthdateValue);
+    }
+
+    /**
+     *
+     */
+    private boolean checkData() {
+        Toast.makeText(RegistrationActivity.this, "P: "+password.getText().toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(RegistrationActivity.this, "CP: "+conf_password.getText().toString(), Toast.LENGTH_LONG).show();
+        boolean flag;
+        if (validator.isEmailValid(email.getText().toString())){
+            flag = true;
+        }
+        else {
+            flag = false;
+        }
+        return flag;
+    }
+
+    /**
+     * Controllo che password sia uguale a conf_password
+     * @return
+     */
+    private boolean equalsPassword(){
+        if (password.getText().toString() == conf_password.getText().toString()){
+            Toast.makeText(RegistrationActivity.this,String.valueOf(true), Toast.LENGTH_LONG).show();
+            return true;
+        }
+        else return false;
     }
 }
