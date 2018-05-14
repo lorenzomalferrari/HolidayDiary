@@ -1,5 +1,6 @@
 package com.lorenzomalferrari.holidaydiary;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -12,5 +13,13 @@ public class NoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nota);
+
+        //txttitle =
+        
+        // Recieve data
+        //Intent intent = getIntent();
+        //String title = intent.getExtras().getString("TravelTitle");
+        //String description = intent.getExtras().getString("Description");
+        //String last_mod = intent.getExtra().getString();
     }
 }
