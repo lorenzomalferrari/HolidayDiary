@@ -2,6 +2,7 @@ package com.lorenzomalferrari.holidaydiary;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -20,11 +21,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lorenzomalferrari.holidaydiary.control.Controller;
 import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
+import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
 
 import java.util.HashMap;
 
@@ -34,6 +37,7 @@ public class MenuActivity extends AppCompatActivity
     Dialog myDialog;
     UserSessionManager userSessionManager;
     Controller controller;
+    DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +70,7 @@ public class MenuActivity extends AppCompatActivity
         //check UserSessionManager
         checkUserSession();
 
-        //set data in nav_header_menu
-        //setData();
+
     }
 
     @Override
@@ -84,6 +87,8 @@ public class MenuActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
+        //set data in nav_header_menu
+        setDataUser();
         return true;
     }
 
@@ -195,6 +200,34 @@ public class MenuActivity extends AppCompatActivity
         if(userSessionManager.checkLogin())
             finish();
 
+    }
+
+    private void setDataUser(){
+
+
+        // get user data from session
+        HashMap<String, String> user = userSessionManager.getUserDetails();
+        // get password
+        String password = user.get(UserSessionManager.KEY_PASSWORD);
+        // get email
+        String email = user.get(UserSessionManager.KEY_EMAIL);
+
+        // ottengo tutti i dati di utente che ha password e email della session
+        databaseHelper = new DatabaseHelper(this);
+        Cursor res = databaseHelper.getData(email,password);
+
+        // Cambio il testo nav_header_menu
+        // Cambio nav_header_menu_imgUser
+        ImageView imgUser = findViewById(R.id.nav_header_menu_imgUser);
+        //imgUser.setImageResource(R.drawable.v_0579);
+        // Cambio nav_header_menu_user
+        TextView name = findViewById(R.id.nav_header_menu_user);
+        //name.setText(res.getString(1).toString()+" "+res.getString(2).toString());
+        //name.setText(password);
+        // Cambio nav_header_menu_email
+        TextView emailUser = findViewById(R.id.nav_header_menu_email);
+        //emailUser.setText(res.getString(5).toString());
+        //emailUser.setText(email);
     }
 
 }
