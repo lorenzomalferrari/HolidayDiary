@@ -3,9 +3,9 @@ package com.lorenzomalferrari.holidaydiary.model;
 public class Travel {
 
     private String title;
-    private String Category;
-    private String Description;
-    private int Thumbnail;
+    private String category;
+    private String description;
+    private int thumbnail;
 
     /**
      *
@@ -22,9 +22,9 @@ public class Travel {
      */
     public Travel(String title, String category, String description, int thumbnail) {
         this.title = title;
-        Category = category;
-        Description = description;
-        Thumbnail = thumbnail;
+        this.category = category;
+        this.description = description;
+        this.thumbnail = thumbnail;
     }
 
     public String getTitle() {
@@ -36,36 +36,40 @@ public class Travel {
     }
 
     public String getCategory() {
-        return Category;
+        return category;
     }
 
     public void setCategory(String category) {
-        Category = category;
+        this.category = category;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
     public int getThumbnail() {
-        return Thumbnail;
+        return thumbnail;
     }
 
     public void setThumbnail(int thumbnail) {
-        Thumbnail = thumbnail;
+        this.thumbnail = thumbnail;
     }
 
+    /**
+     * Rappresentazione testuale della classe Travel
+     * @return riga di testo con tutti gli attributi e i rispettivi valori
+     */
     @Override
     public String toString() {
         return "Travel{" +
                 "title='" + title + '\'' +
-                ", Category='" + Category + '\'' +
-                ", Description='" + Description + '\'' +
-                ", Thumbnail=" + Thumbnail +
+                ", category='" + category + '\'' +
+                ", description='" + description + '\'' +
+                ", thumbnail=" + thumbnail +
                 '}';
     }
 }
