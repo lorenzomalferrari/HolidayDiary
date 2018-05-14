@@ -113,49 +113,41 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        /*if (email.getText().toString().trim().length() > 0 && password.getText().toString().trim().length() > 0 && validator.isEmailValid(email.getText().toString())) {
-                            /* Validazione sui campi email e password */
-                            /*if (isEmailValid(email.getText().toString()) && isPasswordValid(password.getText().toString())){
-                                callMenu();
+                        String emailLogin = email.getText().toString();
+                        String passwordLogin = password.getText().toString();
+                        if (validator.isFieldsEmpty(emailLogin,passwordLogin)){
+                            if (validator.isEmailValid(email.getText().toString())){
+                                if (validator.isPasswordValid(password.getText().toString())){
+                                    Cursor res = databaseHelper.getData(email.getText().toString(),password.getText().toString());
+                                    if(res.getCount() == 0 || res == null) {// se utente non esiste lo mando alla registrazione
+                                        // Viasualizzo la pagina di registrazione
+                                        callRegister();
+                                    }
+                                    else {// se utente esiste esegu il login
+                                        // Creating user login session
+                                        // Statically storing name="Android Example"
+                                        // and email="androidexample84@gmail.com"
+                                        userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
+                                        // Visualizzo l'app
+                                        callMenu();
+                                    }
+                                }
+                                else {
+                                    Toast.makeText(LoginActivity.this,"ATTENZIONE!! Password troppo corta",Toast.LENGTH_LONG).show();
+                                }
                             }
                             else {
-                                callRegister();
+                                Toast.makeText(LoginActivity.this,"ATTENZIONE!! Email non valida",Toast.LENGTH_LONG).show();
                             }
                         }
-                        else
-                        {
-                            Toast.makeText(LoginActivity.this,"ATTENZIONE!! Campi vuoti",Toast.LENGTH_LONG).show();
-                        }*/
-
-
-                        // Campo email e password non devono essere vuoti
-                        if (email.getText().toString().trim().length() > 0 && password.getText().toString().trim().length() > 0 && validator.isEmailValid(email.getText().toString()))
-                        {
-                            Cursor res = databaseHelper.getData(email.getText().toString(),password.getText().toString());
-                            if(res.getCount() == 0 || res == null) {// se utente non esiste lo mando alla registrazione
-                                // Viasualizzo la pagina di registrazione
-                                callRegister();
-                            }
-                            else {// se utente esiste esegu il login
-
-                                // Creating user login session
-                                // Statically storing name="Android Example"
-                                // and email="androidexample84@gmail.com"
-                                userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
-                                // Visualizzo l'app
-                                callMenu();
-                            }
+                        else {
+                            Toast.makeText(LoginActivity.this,"ATTENZIONE!! Campi sono vuoti",Toast.LENGTH_LONG).show();
                         }
-                        // Mandare messaggio che avverta che i campi vanno riempiti
-                        else
-                        {
-                            Toast.makeText(LoginActivity.this,"ATTENZIONE!! Campi vuoti",Toast.LENGTH_LONG).show();
-                        }
-
                     }
                 }
         );
     }
+
 
     /**
      * Esecuzione della animazione nella LoginActivity
