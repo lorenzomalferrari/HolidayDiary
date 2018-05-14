@@ -110,7 +110,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         //Creazione della tabella Note
         //createNotesTable();
         //Creazione della tabella Travel
-        createTravelsTable();
+        createTravelsTable(db);
     }
 
     /**
@@ -188,6 +188,11 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     public Integer deleteData (String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABLE_NAMES[0], "ID = ?",new String[] {id});
+    }
+
+    public void deleteTable(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        //db.
     }
 
 }
