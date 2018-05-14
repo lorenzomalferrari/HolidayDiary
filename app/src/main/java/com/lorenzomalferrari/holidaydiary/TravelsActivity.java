@@ -48,6 +48,7 @@ public class TravelsActivity extends AppCompatActivity {
         // Set component for to see in Activity
         RecyclerView myRecyclerView = findViewById(R.id.recyclerviewTravels_id);
         RecyclerViewAdapter myRecyclerViewAdapter = new RecyclerViewAdapter(this,listTravel);
+        // Visualizzazione dei viaggi a 1 colonna
         myRecyclerView.setLayoutManager(new GridLayoutManager(this,1));
         myRecyclerView.setAdapter(myRecyclerViewAdapter);
 
