@@ -37,10 +37,6 @@ public class LoginActivity extends AppCompatActivity {
     // User Session Manager Class
     UserSessionManager userSessionManager;
 
-    //Testo in input
-    TextInputLayout emailInputLayout, passwordInputLayout;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -145,12 +141,10 @@ public class LoginActivity extends AppCompatActivity {
     private void callMenu(){
         Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
         // Add new Flag to start new Activity
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         this.startActivity(intent);
-
-        //finish();
+        finish();
     }
 
     /**
