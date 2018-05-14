@@ -1,12 +1,12 @@
 package com.lorenzomalferrari.holidaydiary;
-
+// Librerie Android
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
+// Mie classi
 import com.lorenzomalferrari.holidaydiary.model.Note;
-
+// Librerie Java
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -14,7 +14,6 @@ import java.util.List;
 public class NotesActivity extends AppCompatActivity {
 
     List<Note> listNote;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +29,6 @@ public class NotesActivity extends AppCompatActivity {
 
         String bici_fiori = "Bici con i fiori";
 
-
-
         // Create list of Travel object
         listNote = new ArrayList<>();
         // Add Travels
@@ -42,8 +39,5 @@ public class NotesActivity extends AppCompatActivity {
         //RecyclerViewAdapter myRecyclerViewAdapter = new RecyclerViewAdapter(this,listNote);
         myRecyclerView.setLayoutManager(new GridLayoutManager(this,1));
         //myRecyclerView.setAdapter(myRecyclerViewAdapter);
-
-
-
     }
 }
