@@ -205,6 +205,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private void callMenu(){
         Intent intent = new Intent(this, MenuActivity.class);
         this.startActivity(intent);
+        finish();
     }
 
     /**

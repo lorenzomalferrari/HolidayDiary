@@ -153,6 +153,7 @@ public class LoginActivity extends AppCompatActivity {
     private void callRegister(){
         Intent intent = new Intent(this, RegistrationActivity.class);
         this.startActivity(intent);
+        finish();
     }
 
 }

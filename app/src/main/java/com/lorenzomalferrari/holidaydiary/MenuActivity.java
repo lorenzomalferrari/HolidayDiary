@@ -195,42 +195,6 @@ public class MenuActivity extends AppCompatActivity
         if(userSessionManager.checkLogin())
             finish();
 
-        // get user data from session
-        HashMap<String, String> user = userSessionManager.getUserDetails();
-
-        // get email
-        String email = user.get(UserSessionManager.KEY_EMAIL);
-
-        // get password
-        String password = user.get(UserSessionManager.KEY_PASSWORD);
-
-        // Show user data on activity
-        //lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
-        //lblEmail.setText(Html.fromHtml("Email: <b>" + email + "</b>"));
-
     }
 
-    /**
-     * Setto con i dati che ricevo dalla UserSessionManager la nav_header_menu.xml
-     */
-    private void setData(){
-
-
-        // get user data from session
-        //HashMap<String, String> user = userSessionManager.getUserDetails();
-        // get password
-        //String password = user.get(UserSessionManager.KEY_PASSWORD);
-        // get email
-        //String email = user.get(UserSessionManager.KEY_EMAIL);
-
-
-        //Setto img
-
-        /* Setto nome e cognome */
-
-        /* Setto il campo email nella activity con il valore preso salla session */
-        TextView textView = findViewById(R.id.nav_header_menu_email);
-        //textView.setText(email);
-
-    }
 }
