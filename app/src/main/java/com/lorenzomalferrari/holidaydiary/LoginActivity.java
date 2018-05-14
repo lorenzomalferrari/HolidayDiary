@@ -73,35 +73,10 @@ public class LoginActivity extends AppCompatActivity {
 
         // oggetto Validator, per la validazione dei campi
         validator = new Validator();
-        //if (validate(email.getText().toString(), password.getText().toString())) {
-        //Sign up or login User
+
+        //Eseguo il login con controlli
         checkLogin();
-        //}
-    }
 
-    private boolean validate(String email, String password) {
-
-        // Reset errors.
-        emailInputLayout.setError(null);
-        passwordInputLayout.setError(null);
-
-        // Controllo l'email
-        if (email.trim().length() == 0 || email == null) {
-            emailInputLayout.setError("Email is required");
-            return false;
-        } else if (!validator.isEmailValid(email)) {
-            emailInputLayout.setError("Enter a valid email");
-            return false;
-        }
-        // Controllo la password
-        if (password.trim().length() == 0 || password == null) {
-            passwordInputLayout.setError("Password is required");
-            return false;
-        } else if (!validator.isPasswordValid(password)) {
-            passwordInputLayout.setError("Password must contain at least 6 characters");
-            return false;
-        }
-        return true;
     }
 
     /**
