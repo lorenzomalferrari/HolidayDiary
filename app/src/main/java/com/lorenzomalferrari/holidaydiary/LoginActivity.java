@@ -115,6 +115,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         String emailLogin = email.getText().toString();
                         String passwordLogin = password.getText().toString();
+                        // Start checks
                         if (validator.isFieldsEmpty(emailLogin,passwordLogin)){
                             if (validator.isEmailValid(email.getText().toString())){
                                 if (validator.isPasswordValid(password.getText().toString())){
@@ -125,8 +126,6 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                     else {// se utente esiste esegu il login
                                         // Creating user login session
-                                        // Statically storing name="Android Example"
-                                        // and email="androidexample84@gmail.com"
                                         userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
                                         // Visualizzo l'app
                                         callMenu();
