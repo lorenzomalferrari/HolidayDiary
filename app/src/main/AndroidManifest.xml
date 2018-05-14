@@ -55,7 +55,7 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".TravelActivity" />
         <activity android:name=".NotesActivity" />
-        <activity android:name=".NotaActivity"></activity>
+        <activity android:name=".NoteActivity"></activity>
     </application>
 
 </manifest>
