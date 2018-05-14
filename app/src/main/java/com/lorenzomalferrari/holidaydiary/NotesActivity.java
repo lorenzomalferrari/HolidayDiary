@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import com.lorenzomalferrari.holidaydiary.model.Note;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class NotesActivity extends AppCompatActivity {
@@ -34,7 +35,7 @@ public class NotesActivity extends AppCompatActivity {
         // Create list of Travel object
         listNote = new ArrayList<>();
         // Add Travels
-        listNote.add(new Note("Nota n°1","Questa è la nota numero 1"));
+        listNote.add(new Note(1,"Nota n°1","Qeusto è il testo della prima nota",new Date(),1,1,1, 1));
 
         // Set component for to see in Activity
         RecyclerView myRecyclerView = findViewById(R.id.recyclerviewNotes_id);
