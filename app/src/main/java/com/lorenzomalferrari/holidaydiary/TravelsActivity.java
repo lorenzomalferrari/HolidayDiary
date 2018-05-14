@@ -35,7 +35,7 @@ public class TravelsActivity extends AppCompatActivity {
         // Create list of Travel object
         listTravel = new ArrayList<>();
         // Add Travels
-        for (int i = 0; i <= 5; i++)
+        for (int i = 0; i <= 7; i++)
         {
             listTravel.add(new Travel("Spiaggia","Categorie Travel",sp,R.drawable.travel_1));
             listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
