@@ -49,11 +49,13 @@ public class RegistrationActivity extends AppCompatActivity {
         btnviewUpdate= findViewById(R.id.button_update);
         btnDelete= findViewById(R.id.button_delete);
 
+        //Uso escusivo in sviluppo per fare pulidia degli utenti
+        id = findViewById(R.id.register_firstNameValue);
         //
         AddData();
         viewAll();
         //UpdateData();
-        //DeleteData();
+        DeleteData();
     }
 
     /**
@@ -65,8 +67,8 @@ public class RegistrationActivity extends AppCompatActivity {
         arrayList.add(firstName.getText().toString());
         arrayList.add(lastName.getText().toString());
         arrayList.add(username.getText().toString());
-        arrayList.add(email.getText().toString());
         arrayList.add(password.getText().toString());
+        arrayList.add(email.getText().toString());
         arrayList.add(city.getText().toString());
         arrayList.add(country.getText().toString());
         arrayList.add(gender.getText().toString());
@@ -165,16 +167,16 @@ public class RegistrationActivity extends AppCompatActivity {
 
                         StringBuffer buffer = new StringBuffer();
                         while (res.moveToNext()) {
-                            buffer.append("Id :"+ res.getString(0)+"\n");
-                            buffer.append("Nome :"+ res.getString(1)+"\n");
-                            buffer.append("Cognome :"+ res.getString(2)+"\n");
-                            buffer.append("Username :"+ res.getString(3)+"\n");
-                            buffer.append("Password :"+ res.getString(4)+"\n");
-                            buffer.append("Email :"+ res.getString(5)+"\n");
-                            buffer.append("City :"+ res.getString(6)+"\n");
-                            buffer.append("Country :"+ res.getString(7)+"\n");
-                            buffer.append("Gender :"+ res.getString(8)+"\n");
-                            buffer.append("Birthdate :"+ res.getString(10)+"\n\n");
+                            buffer.append("Id: "+ res.getString(0)+"\n");
+                            buffer.append("Nome: "+ res.getString(1)+"\n");
+                            buffer.append("Cognome: "+ res.getString(2)+"\n");
+                            buffer.append("Username: "+ res.getString(3)+"\n");
+                            buffer.append("Password: "+ res.getString(4)+"\n");
+                            buffer.append("Email: "+ res.getString(5)+"\n");
+                            buffer.append("City: "+ res.getString(6)+"\n");
+                            buffer.append("Country: "+ res.getString(7)+"\n");
+                            buffer.append("Gender: "+ res.getString(8)+"\n");
+                            buffer.append("Birthdate: "+ res.getString(10)+"\n\n");
                         }
 
                         // Show all data
