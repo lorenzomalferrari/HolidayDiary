@@ -160,7 +160,7 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-    private void createUser(Cursor res){
+    /*private void createUser(Cursor res){
         user = new User(Integer.parseInt(res.getString(0).toString()),
                 res.getString(1),
                 res.getString(2),
@@ -172,6 +172,6 @@ public class LoginActivity extends AppCompatActivity {
                 res.getString(8),
                 res.getString(9),
                 res.getString(10));
-    }
+    }*/
 
 }
