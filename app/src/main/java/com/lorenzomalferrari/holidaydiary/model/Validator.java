@@ -96,6 +96,14 @@ public class Validator {
         return password.length() >= 6;
     }
 
+    public boolean isFieldsEmpty(String email, String password){
+        if (email.trim().length() > 0 && password.trim().length() > 0)
+        {
+            return true;
+        }
+        else return false;
+    }
+
     /**
      * Metodo che mi controlla che l'età non sia negativa
      * @param age
