@@ -229,13 +229,13 @@
             android:layout_below="@+id/register_passwordTextValidate"
             android:text="@string/update" /> -->
 
-       <!-- <Button
+        <Button
             android:id="@+id/button_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:text="@string/delete" /> -->
+            android:text="@string/delete" />
 
     </RelativeLayout>
 </ScrollView>
