@@ -186,9 +186,9 @@ public class MenuActivity extends AppCompatActivity
         // Session class instance
         userSessionManager = new UserSessionManager(getApplicationContext());
 
-        Toast.makeText(getApplicationContext(),
+        /*Toast.makeText(getApplicationContext(),
                 "User Login Status: " + userSessionManager.isUserLoggedIn(),
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_LONG).show();*/
 
         // Check user login
         // If User is not logged in , This will redirect user to LoginActivity.
