@@ -24,7 +24,7 @@
         android:id="@+id/addImage_img"
         android:layout_width="200dp"
         android:layout_height="200dp"
-
+        android:background="@mipmap/ic_add_image"
         android:layout_below="@+id/addImage_description" />
 
     <!-- Scelgo la immagine-->
