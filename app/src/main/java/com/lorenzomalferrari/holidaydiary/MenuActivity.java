@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -22,6 +20,8 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.github.clans.fab.FloatingActionMenu;
+import com.github.clans.fab.FloatingActionButton;
 import com.lorenzomalferrari.holidaydiary.control.Controller;
 import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
@@ -36,6 +36,9 @@ public class MenuActivity extends AppCompatActivity
     Controller controller;
     DatabaseHelper databaseHelper;
 
+    FloatingActionMenu floatingActionMenu;
+    FloatingActionButton travel,note,picture,place;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -46,14 +49,17 @@ public class MenuActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        floatingActionMenu = findViewById(R.id.floatingActionMenu);
+        travel = findViewById(R.id.floatingActionButtonTravel);
+        note = findViewById(R.id.floatingActionButtonNote);
+        picture = findViewById(R.id.floatingActionButtonPicture);
+        place = findViewById(R.id.floatingActionButtonPlace);
+
+        actionTravel();
+        actionNote();
+        actionPicture();
+        actionPlace();
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -133,7 +139,7 @@ public class MenuActivity extends AppCompatActivity
                 this.startActivity(intent);
                 break;
             case R.id.nav_pictures:
-                intent = new Intent(this, AddImageActivity.class);
+                intent = new Intent(this, AddPictureActivity.class);
                 this.startActivity(intent);
                 break;
             case R.id.nav_places:
@@ -223,6 +229,49 @@ public class MenuActivity extends AppCompatActivity
         TextView emailUser = findViewById(R.id.nav_header_menu_email);
         //emailUser.setText(res.getString(5).toString());
         //emailUser.setText(email);
+    }
+
+
+    private void actionTravel(){
+        travel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = null;
+                intent = new Intent(MenuActivity.this, AddTravelActivity.class);
+                MenuActivity.this.startActivity(intent);
+            }
+        });
+    }
+
+    private void actionNote(){
+        note.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = null;
+                intent = new Intent(MenuActivity.this, AddNoteActivity.class);
+                MenuActivity.this.startActivity(intent);
+            }
+        });
+    }
+
+    private void actionPicture(){
+        picture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = null;
+                intent = new Intent(MenuActivity.this, AddPictureActivity.class);
+                MenuActivity.this.startActivity(intent);
+            }
+        });
+    }
+
+    private void actionPlace(){
+        place.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
 }
