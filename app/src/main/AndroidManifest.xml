@@ -18,9 +18,12 @@
         android:theme="@style/AppTheme">
 
         <!-- Activity iniziale -->
-        <activity android:name=".SplashActivity" android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -50,11 +53,11 @@
         <activity android:name=".RegistrationActivity" />
         <activity
             android:name=".TravelsActivity"
-            android:label="@string/travels">
-        </activity>
+            android:label="@string/travels"></activity>
         <activity android:name=".TravelActivity" />
         <activity android:name=".NotesActivity" />
         <activity android:name=".NoteActivity" />
+        <activity android:name=".AddImageActivity"></activity>
     </application>
 
 </manifest>
