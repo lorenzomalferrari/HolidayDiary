@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     /**
      * Lista delle tabelle del database
      */
-    private final String[] TABLE_NAMES = new String[] {"User","Travel","Note","Picture","Places"};
+    private final String[] TABLE_NAMES = new String[] {"Users","Travels","Notes","Pictures","Places"};
 
 
     /**
@@ -121,12 +121,13 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     * Ottengo tutti i dati degli utenti presenti nella tabella
-     * @return
+     * Ottengo tutti i dati della tabella richiesta
+     * @param table
+     * @return tutti i dati
      */
-    public Cursor getAllUsers() {
+    public Cursor getAll(String table) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAMES[0],null);
+        Cursor res = db.rawQuery("SELECT * FROM "+ table ,null);
         return res;
     }
 
@@ -139,9 +140,9 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         //Creazione della tabella User
         crateUsersTable(db);
         //Creazione della tabella Travel
-        //createTravelsTable(db);
+        createTravelsTable(db);
         //Creazione della tabella Note
-        //createNotesTable(db);
+        createNotesTable(db);
         //Creazione della tabella Picture
         createPicturesTable(db);
         //Creazione della tabella Position
@@ -160,8 +161,8 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "firstName VARCHAR(255)," +
                 "lastName VARCHAR(255)," +
                 "username VARCHAR(255)," +
-                "password VARCHAR(255)," +
-                "email VARCHAR(255)," +
+                "password VARCHAR(255) not null," +
+                "email VARCHAR(255) not null," +
                 "city VARCHAR(255)," +
                 "country VARCHAR(255)," +
                 "gender CHAR(1)," +
@@ -176,12 +177,24 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @param db
      */
     private void createTravelsTable(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[1] + "(" +
-                "id INTEGER PRIMARY KEY," +
-                "title VARCHAR(255)," +
-                "category VARCHAR(255)," +
-                "description VARCHAR(255)," +
-                "registration_date DATETIME");
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[1] + " (" +
+                "id integer PRIMARY KEY," +
+                "title text not null," +
+                "description text not null," +
+                "img_list integer," +
+                "city text," +
+                "country text," +
+                "start_travel Date," +
+                "finish_travel Date," +
+                "registration_date Date," +
+                "id_user integer not null," +
+                "id_note integer," +
+                "id_picture integer," +
+                "id_place integer," +
+                "foreign key (id_user) references User (id)," +
+                "foreign key (id_note) references Note (id)," +
+                "foreign key (id_picture) references Picture (id)," +
+                "foreign key (id_place) references Place (id));");
     }
 
     /**
@@ -189,7 +202,19 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @param db
      */
     private void createNotesTable(SQLiteDatabase db){
-
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[2] + " (" +
+                "id integer PRIMARY KEY," +
+                "title text not null," +
+                "description text not null," +
+                "creation_data DATA," +
+                "id_user integer not null," +
+                "id_travel integer," +
+                "id_place integer," +
+                "id_picture integer," +
+                "foreign key (id_user) references User (id)," +
+                "foreign key (id_travel) references Travel (id)," +
+                "foreign key (id_place) references Place (id)," +
+                "foreign key (id_picture) references Picture (id));");
     }
 
     /**

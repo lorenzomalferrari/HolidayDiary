@@ -53,11 +53,11 @@ public class RegistrationActivity extends AppCompatActivity {
         btnDelete= findViewById(R.id.button_delete);
 
         //Uso escusivo in sviluppo per fare pulidia degli utenti
-        //id = findViewById(R.id.register_firstNameValue);
+        id = findViewById(R.id.register_firstNameValue);
         //Controllo che i dati ottenuti siano corretti
 
         AddData();
-        viewAll();
+        viewAllUsers();
         //UpdateData();
         DeleteData();
     }
@@ -157,12 +157,12 @@ public class RegistrationActivity extends AppCompatActivity {
     /**
      * Visualizzo tutti i dati di tutti gli Utenti presenti nel database
      */
-    public void viewAll() {
+    public void viewAllUsers() {
         btnviewAll.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Cursor res = databaseHelper.getAllUsers();
+                        Cursor res = databaseHelper.getAll("Users");
                         if(res.getCount() == 0) {
                             // show message
                             showMessage("Error","Nothing found");
