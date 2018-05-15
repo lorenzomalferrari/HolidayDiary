@@ -201,7 +201,7 @@
             android:layout_below="@+id/radioGroup"
             android:ems="10"
             android:hint="Data"
-            android:inputType="datetime" />
+            android:inputType="datetime|date" />
         <!-- Save Botton -->
         <Button
             android:id="@+id/btnSave"
