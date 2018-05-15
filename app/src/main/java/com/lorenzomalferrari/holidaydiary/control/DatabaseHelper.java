@@ -100,7 +100,13 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     public boolean insertDataNote(Note note){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_TABLE[10],note.getTitle());//data di nascita
+        contentValues.put(COL_TABLE[2],note.getTitle());//title
+        contentValues.put(COL_TABLE[3],note.getContent());//content
+        contentValues.put(COL_TABLE[4],note.getCreation_date().toString());//creation_date
+        //contentValues.put(COL_TABLE[5],note.getId_user());//id_user
+        //contentValues.put(COL_TABLE[6],note.getId_travel());//id_travel
+        //contentValues.put(COL_TABLE[7],note.getId_place());//id_place
+        //contentValues.put(COL_TABLE[8],note.getId_picture());//id_picture
         long result = db.insert(TABLE_NAMES[2],null ,contentValues);
         return result != -1;
     }
@@ -217,11 +223,6 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     public Integer deleteData (String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABLE_NAMES[0], "ID = ?",new String[] {id});
-    }
-
-    public void deleteTable(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        //db.
     }
 
 }
