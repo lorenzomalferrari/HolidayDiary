@@ -16,6 +16,8 @@
     <color name="green">#45bc62</color>
     <color name="white">#ffffff</color>
     <color name="orange">#eaad43</color>
+
+    <color name="trasparent">@android:color/transparent</color>
     <!--
                             Lista dei colori da usare nell'app
     -->
