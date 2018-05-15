@@ -210,7 +210,7 @@ public class MenuActivity extends AppCompatActivity
 
         // ottengo tutti i dati di utente che ha password e email della session
         databaseHelper = new DatabaseHelper(this);
-        Cursor res = databaseHelper.getData(email,password);
+        Cursor res = databaseHelper.getDataUser(email,password);
 
         // Cambio il testo nav_header_menu
         // Cambio nav_header_menu_imgUser

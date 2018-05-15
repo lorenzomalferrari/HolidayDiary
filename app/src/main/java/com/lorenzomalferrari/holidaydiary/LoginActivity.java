@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (validator.isFieldsEmpty(emailLogin,passwordLogin)){
                             if (validator.isEmailValid(email.getText().toString())){
                                 if (validator.isPasswordValid(password.getText().toString())){
-                                    Cursor res = databaseHelper.getData(email.getText().toString(),password.getText().toString());
+                                    Cursor res = databaseHelper.getDataUser(email.getText().toString(),password.getText().toString());
                                     if(res.getCount() == 0 || res == null) {// se utente non esiste lo mando alla registrazione
                                         // Viasualizzo la pagina di registrazione
                                         callRegister();
