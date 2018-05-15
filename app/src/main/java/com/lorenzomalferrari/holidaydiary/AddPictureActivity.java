@@ -75,12 +75,10 @@ public class AddPictureActivity extends AppCompatActivity {
 
         if (requestCode == REQUEST_CODE_GALLERY && resultCode == RESULT_OK && data != null){
             Uri uri = data.getData();
-
             try {
                 InputStream inputStream = getContentResolver().openInputStream(uri);
-
+                //Setto immagine caricata
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                img.setBackgroundResource(R.color.trasparent);
                 img.setImageBitmap(bitmap);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
