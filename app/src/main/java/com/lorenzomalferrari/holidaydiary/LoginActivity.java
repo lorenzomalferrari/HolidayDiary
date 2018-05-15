@@ -2,7 +2,6 @@ package com.lorenzomalferrari.holidaydiary;
 //Import java classes
 import android.content.Intent;
 import android.database.Cursor;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 //Import my classes
 import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
-import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
+import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.model.User;
 import com.lorenzomalferrari.holidaydiary.model.Validator;
 
