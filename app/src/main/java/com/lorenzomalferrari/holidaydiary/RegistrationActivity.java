@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
+import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.model.User;
 import com.lorenzomalferrari.holidaydiary.model.Validator;
 
@@ -144,7 +144,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                            boolean isInserted = databaseHelper.insertData(createArrayList());
+                            boolean isInserted = databaseHelper.insertDataUser(createArrayList());
                             if (isInserted) {
                                 Toast.makeText(RegistrationActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
                                 callMenu();
