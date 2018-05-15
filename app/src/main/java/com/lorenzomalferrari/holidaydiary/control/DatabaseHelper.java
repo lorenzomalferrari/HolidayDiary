@@ -168,7 +168,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "age VARCHAR(255)," +
                 "birthdate DATE," +
                 "registration_date DATETIME," +
-                "last_login DATETIME)");
+                "last_login DATETIME);");
     }
 
     /**
@@ -197,7 +197,24 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @param db
      */
     private void createPicturesTable(SQLiteDatabase db){
-
+        db.execSQL("CREATE TABLE Pictures (\n" +
+                "\tid integer PRImary key,\n" +
+                "\n" +
+                "  \ttitle text not null,\n" +
+                "  \tdescription text,\n" +
+                " \tpath text not null,\n" +
+                "\n" +
+                "  \tid_user text not null,\n" +
+                "\tid_travel integer,\n" +
+                "\tid_place integer,\n" +
+                "\tid_note integer,\n" +
+                "\n" +
+                "  \tforeign key (id_user) references User (id),\n" +
+                "\tforeign key (id_travel) references Travel (id),\n" +
+                "\tforeign key (id_place) references Place (id),\n" +
+                "\tforeign key (id_note) references Note (id)\n" +
+                "\n" +
+                ");");
     }
 
     /**
