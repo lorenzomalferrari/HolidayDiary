@@ -138,18 +138,20 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     private void createStructureDatabase(SQLiteDatabase db){
         //Creazione della tabella User
         crateUsersTable(db);
-        //Creazione della tabella Picture
-        //createPicturesTable();
-        //Creazione della tabella Position
-        //createPositionsTable();
-        //Creazione della tabella Note
-        //createNotesTable();
         //Creazione della tabella Travel
         createTravelsTable(db);
+        //Creazione della tabella Note
+        createNotesTable(db);
+        //Creazione della tabella Picture
+        createPicturesTable(db);
+        //Creazione della tabella Position
+        createPlacesTable(db);
+
+
     }
 
     /**
-     * Costruzione della tabella utente
+     * Costruzione della tabella Users
      * @param db
      */
     private void crateUsersTable(SQLiteDatabase db) {
@@ -170,7 +172,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     * Costruzione della tabella utente
+     * Costruzione della tabella Travels
      * @param db
      */
     private void createTravelsTable(SQLiteDatabase db) {
@@ -182,7 +184,29 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "registration_date DATETIME");
     }
 
+    /**
+     * Costruzione della tabella Notes
+     * @param db
+     */
+    private void createNotesTable(SQLiteDatabase db){
 
+    }
+
+    /**
+     * Costruzione della tabella Pitures
+     * @param db
+     */
+    private void createPicturesTable(SQLiteDatabase db){
+
+    }
+
+    /**
+     * Costruzione della tabella Places
+     * @param db
+     */
+    private void createPlacesTable(SQLiteDatabase db){
+
+    }
 
     /**
      * Ottengo tutti i dati di un utente preciso con i seguenti parametri
@@ -190,7 +214,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @param password
      * @return
      */
-    public Cursor getData(String email,String password) {
+    public Cursor getDataUser(String email,String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAMES[0] + " WHERE email = '"+email+"' AND password = '"+password+"'",null);
         return res;
