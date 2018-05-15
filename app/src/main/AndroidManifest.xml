@@ -53,11 +53,13 @@
         <activity android:name=".RegistrationActivity" />
         <activity
             android:name=".TravelsActivity"
-            android:label="@string/travels"></activity>
+            android:label="@string/travels" />
         <activity android:name=".TravelActivity" />
         <activity android:name=".NotesActivity" />
         <activity android:name=".NoteActivity" />
-        <activity android:name=".AddImageActivity"></activity>
+        <activity android:name=".AddPictureActivity" />
+        <activity android:name=".AddTravelActivity" />
+        <activity android:name=".AddNoteActivity"></activity>
     </application>
 
 </manifest>
