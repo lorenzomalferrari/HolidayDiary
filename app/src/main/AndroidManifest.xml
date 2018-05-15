@@ -51,8 +51,7 @@
         <activity android:name=".RegistrationActivity" />
         <activity
             android:name=".TravelsActivity"
-            android:label="@string/travels"
-            android:theme="@style/AppThemeTravels">
+            android:label="@string/travels">
         </activity>
         <activity android:name=".TravelActivity" />
         <activity android:name=".NotesActivity" />
