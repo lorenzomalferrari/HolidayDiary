@@ -2,6 +2,7 @@ package com.lorenzomalferrari.holidaydiary.model;
 
 public class Picture {
 
+    // Attributi della tabella Pictures presente sul database holidayDiary.db
     private int id, id_user;
     private String title, description, path;
 

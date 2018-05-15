@@ -8,6 +8,7 @@ import java.util.Date;
  */
 public class User {
 
+    // Attributi della tabella Users presente sul database holidayDiary.db
     private int id;
     private String firstName, lastName, username, email, password, city, country;
     private char gender;
