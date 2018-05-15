@@ -15,7 +15,6 @@ public class NoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_nota);
 
         //txttitle =
-        
         // Recieve data
         //Intent intent = getIntent();
         //String title = intent.getExtras().getString("TravelTitle");
