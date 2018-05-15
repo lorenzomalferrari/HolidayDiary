@@ -15,7 +15,7 @@
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
 
-    <!-- <include layout="@layout/content_menu" /> -->
+     <include layout="@layout/content_menu" />
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/floatingActionMenu"
