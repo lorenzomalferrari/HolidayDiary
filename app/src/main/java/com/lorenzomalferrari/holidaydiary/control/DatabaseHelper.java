@@ -139,13 +139,13 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         //Creazione della tabella User
         crateUsersTable(db);
         //Creazione della tabella Travel
-        createTravelsTable(db);
+        //createTravelsTable(db);
         //Creazione della tabella Note
-        createNotesTable(db);
+        //createNotesTable(db);
         //Creazione della tabella Picture
         createPicturesTable(db);
         //Creazione della tabella Position
-        createPlacesTable(db);
+        //createPlacesTable(db);
 
 
     }
@@ -209,8 +209,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "foreign key (id_user) references User (id)," +
                 "foreign key (id_travel) references Travel (id)," +
                 "foreign key (id_place) references Place (id)," +
-                "foreign key (id_note) references Note (id)" +
-                ");");
+                "foreign key (id_note) references Note (id));");
     }
 
     /**
