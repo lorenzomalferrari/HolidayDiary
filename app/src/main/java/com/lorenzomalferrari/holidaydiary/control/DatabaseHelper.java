@@ -155,7 +155,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @param db
      */
     private void crateUsersTable(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[0] + "(" +
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[0] + " (" +
                 "id INTEGER PRIMARY KEY," +
                 "firstName VARCHAR(255)," +
                 "lastName VARCHAR(255)," +
@@ -197,23 +197,19 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @param db
      */
     private void createPicturesTable(SQLiteDatabase db){
-        db.execSQL("CREATE TABLE Pictures (\n" +
-                "\tid integer PRImary key,\n" +
-                "\n" +
-                "  \ttitle text not null,\n" +
-                "  \tdescription text,\n" +
-                " \tpath text not null,\n" +
-                "\n" +
-                "  \tid_user text not null,\n" +
-                "\tid_travel integer,\n" +
-                "\tid_place integer,\n" +
-                "\tid_note integer,\n" +
-                "\n" +
-                "  \tforeign key (id_user) references User (id),\n" +
-                "\tforeign key (id_travel) references Travel (id),\n" +
-                "\tforeign key (id_place) references Place (id),\n" +
-                "\tforeign key (id_note) references Note (id)\n" +
-                "\n" +
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[3] + " (" +
+                "id integer PRImary key," +
+                "title text not null," +
+                "description text," +
+                "path text not null," +
+                "id_user text not null," +
+                "id_travel integer," +
+                "id_place integer," +
+                "id_note integer," +
+                "foreign key (id_user) references User (id)," +
+                "foreign key (id_travel) references Travel (id)," +
+                "foreign key (id_place) references Place (id)," +
+                "foreign key (id_note) references Note (id)" +
                 ");");
     }
 
