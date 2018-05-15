@@ -66,7 +66,6 @@ public class MenuActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
         //check UserSessionManager
         checkUserSession();
 
