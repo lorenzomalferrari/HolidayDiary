@@ -10,14 +10,17 @@
     <EditText
         android:id="@+id/addImage_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        android:inputType="text" />
 
     <!-- Descrizione che avrà l'immagine -->
     <EditText
         android:id="@+id/addImage_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addImage_name"/>
+        android:layout_below="@+id/addImage_name"
+        android:hint="Description" />
 
     <!-- Immagine -->
     <ImageView
@@ -36,7 +39,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="165dp"
         android:gravity="center"
-        android:title="Add Image" />
+        android:text="Add Image" />
 
     <!-- Salvataggoi dei dati -->
     <Button
@@ -46,5 +49,5 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="92dp"
-        android:title="Add Image" />
+        android:text="Save" />
 </RelativeLayout>
