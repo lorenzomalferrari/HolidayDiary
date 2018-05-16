@@ -14,17 +14,11 @@ import java.util.regex.Pattern;
 public class Validator {
 
     /**
-     *
-     * @return
+     * Costruttore di default
      */
-    /*public boolean isValidLogin(String email,String password){
-        if (isEmailValid(email) == true && isPasswordValid(password) == true){
-            return true;
-        }
-        else {
-            return true;
-        }
-    }*/
+    public Validator() {
+        // Set attributes
+    }
 
     /**
      * Metodo che controlla che il nome e cognome sia composto solamente da lettere
@@ -116,21 +110,7 @@ public class Validator {
         else return true;
     }
 
-    /**
-     * Controllo che il valore non sia null ma che contenga qualcosa
-     * @param string
-     * @return false = null || true = string
-     */
-    /*public boolean isEmpty(String string) {
-        if (string.isEmpty()){
-            return true;
-        }
-        else {
-            return false;
-        }
-    }*/
-
-    public int calcAGe(){
+    public int calcAge(){
         Calendar c = Calendar.getInstance();
         c.setTime(new Date());
         Calendar oggi = Calendar.getInstance();
