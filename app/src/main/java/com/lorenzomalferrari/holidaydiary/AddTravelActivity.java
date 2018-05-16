@@ -9,5 +9,7 @@ public class AddTravelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_travel);
+        //Cambio il titolo della Activity
+        this.setTitle("Add Travel");
     }
 }

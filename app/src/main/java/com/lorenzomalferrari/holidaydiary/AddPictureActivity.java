@@ -34,6 +34,8 @@ public class AddPictureActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_picture);
+        //Cambio il titolo della Activity
+        this.setTitle("Add Picture");
 
         //ottengo i dati dal layout
         getDataByID();
