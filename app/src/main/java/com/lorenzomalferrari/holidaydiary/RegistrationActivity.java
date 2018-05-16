@@ -12,6 +12,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
+import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
 import com.lorenzomalferrari.holidaydiary.model.User;
 import com.lorenzomalferrari.holidaydiary.model.Validator;
 
@@ -33,6 +34,8 @@ public class RegistrationActivity extends AppCompatActivity {
     User user;
     //Oggetto Validator
     Validator validator;
+    // User Session Manager Class
+    UserSessionManager userSessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,8 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         databaseHelper = new DatabaseHelper(this);
+        // User Session Manager
+        userSessionManager = new UserSessionManager(getApplicationContext());
 
         //Ottengo i dati
         this.getData();
@@ -147,6 +152,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             boolean isInserted = databaseHelper.insertDataUser(createArrayList());
                             if (isInserted) {
                                 Toast.makeText(RegistrationActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
+                                userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
                                 callMenu();
                             } else Toast.makeText(RegistrationActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
                     }
