@@ -2,7 +2,7 @@ package com.lorenzomalferrari.holidaydiary.model;
 
 public class Place {
 
-    // Attributi della tabella Places presente sul database holidayDiary.db
+    // Attributi della tabella Places presente sul database HolidayDiary.db
     private int id, latitude,longitude, id_user, id_picture, id_travel, id_note;
     private String name, city, country;
 

@@ -2,7 +2,7 @@ package com.lorenzomalferrari.holidaydiary.model;
 
 public class Travel {
 
-    // Attributi della tabella Travels presente sul database holidayDiary.db
+    // Attributi della tabella Travels presente sul database HolidayDiary.db
     private String title;
     private String category;
     private String description;

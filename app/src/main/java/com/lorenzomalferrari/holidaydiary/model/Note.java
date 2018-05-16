@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Note {
 
-    // Attributi della tabella Notes presente sul database holidayDiary.db
+    // Attributi della tabella Notes presente sul database HolidayDiary.db
     private int id;
     private String title;
     private String content;
