@@ -15,6 +15,7 @@ public class NoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_note);
         setTitle("Note");
 
+        // Inizializzazione dei componenti del layout
         init();
 
         // Recieve data
