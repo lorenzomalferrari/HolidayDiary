@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 public class TravelActivity extends AppCompatActivity {
 
+
     private TextView txttitle,txtdescription, txtcategory;
     private ImageView img;
     private CollapsingToolbarLayout collapsingToolbarLayout;
