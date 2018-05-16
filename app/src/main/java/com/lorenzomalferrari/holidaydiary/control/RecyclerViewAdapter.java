@@ -22,6 +22,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private Context myContext;
     private List<Travel> myData;
 
+    /**
+     * Costruttore parametrico
+     * @param myContext
+     * @param myData
+     */
     public RecyclerViewAdapter(Context myContext, List<Travel> myData) {
         this.myContext = myContext;
         this.myData = myData;
