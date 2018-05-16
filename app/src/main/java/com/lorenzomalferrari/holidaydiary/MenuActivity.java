@@ -49,6 +49,19 @@ public class MenuActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        //check UserSessionManager
+        checkUserSession();
+
+
         floatingActionMenu = findViewById(R.id.floatingActionMenu);
         travel = findViewById(R.id.floatingActionButtonTravel);
         note = findViewById(R.id.floatingActionButtonNote);
@@ -59,18 +72,6 @@ public class MenuActivity extends AppCompatActivity
         actionNote();
         actionPicture();
         actionPlace();
-
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        //check UserSessionManager
-        checkUserSession();
 
 
     }
@@ -207,15 +208,15 @@ public class MenuActivity extends AppCompatActivity
 
 
         // get user data from session
-        HashMap<String, String> user = userSessionManager.getUserDetails();
+        //HashMap<String, String> user = userSessionManager.getUserDetails();
         // get password
-        String password = user.get(UserSessionManager.KEY_PASSWORD);
+        //String password = user.get(UserSessionManager.KEY_PASSWORD);
         // get email
-        String email = user.get(UserSessionManager.KEY_EMAIL);
+        //String email = user.get(UserSessionManager.KEY_EMAIL);
 
         // ottengo tutti i dati di utente che ha password e email della session
         databaseHelper = new DatabaseHelper(this);
-        Cursor res = databaseHelper.getDataUser(email,password);
+        //Cursor res = databaseHelper.getDataUser(email,password);
 
         // Cambio il testo nav_header_menu
         // Cambio nav_header_menu_imgUser
