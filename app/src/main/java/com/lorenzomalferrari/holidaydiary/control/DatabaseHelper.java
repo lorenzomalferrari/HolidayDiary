@@ -54,7 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     *
+     * Metodo che mi aggiorna il database
      * @param db
      * @param oldVersion
      * @param newVersion
@@ -66,7 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     * Inserisco i dati nel database
+     * Inserisco i dati dell' utente nel database
      *
      * (Ulteriormente da migliorare)
      * @param arrayList
@@ -89,6 +89,11 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         return result != -1;
     }
 
+    /**
+     * Metodo che aggiunge i dati della Immagine all'interno del database
+     * @param picture
+     * @return
+     */
     public boolean inserDataImage(Picture picture){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -97,6 +102,11 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         return result != -1;
     }
 
+    /**
+     * Metodo che aggiunge i dati della Nota all'interno del database
+     * @param note
+     * @return
+     */
     public boolean insertDataNote(Note note){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -273,6 +283,18 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @return
      */
     public Cursor getDataUser(String email,String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAMES[0] + " WHERE email = '"+email+"' AND password = '"+password+"'",null);
+        return res;
+    }
+
+    /**
+     * Ottengo tutti i dati di una nota precisa con i seguenti parametri
+     * @param email
+     * @param password
+     * @return
+     */
+    public Cursor getDataNote(String email,String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAMES[0] + " WHERE email = '"+email+"' AND password = '"+password+"'",null);
         return res;
