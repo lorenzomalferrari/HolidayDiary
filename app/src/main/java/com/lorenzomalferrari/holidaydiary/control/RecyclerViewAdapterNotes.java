@@ -13,47 +13,50 @@ import android.widget.TextView;
 
 import com.lorenzomalferrari.holidaydiary.NoteActivity;
 import com.lorenzomalferrari.holidaydiary.R;
+import com.lorenzomalferrari.holidaydiary.model.Note;
 import com.lorenzomalferrari.holidaydiary.model.Travel;
 
 import java.util.List;
 
-public class RecyclerViewAdapterNotes extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
+public class RecyclerViewAdapterNotes extends RecyclerView.Adapter<RecyclerViewAdapterNotes.MyViewHolder>  {
 
-    private Context myContext;
-    private List<Travel> myData;
+    private Context context;
+    private List<Note> myData;
 
-    public RecyclerViewAdapterNotes (Context myContext, List<Travel> myData) {
-        this.myContext = myContext;
+    public RecyclerViewAdapterNotes(Context context, List<Note> myData) {
+        this.context = context;
         this.myData = myData;
     }
 
     @NonNull
     @Override
-    public RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View view;
-        LayoutInflater myInflater = LayoutInflater.from(myContext);
-        view = myInflater.inflate(R.layout.card_view_item_travel,parent,false);
-        return new RecyclerViewAdapter.MyViewHolder(view);
+        LayoutInflater myLayoutInflater = LayoutInflater.from(context);
+        view = myLayoutInflater.inflate(R.layout.card_view_item_note,parent,false);
+        return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapter.MyViewHolder holder, final int position) {
-        holder.travel_title.setText(myData.get(position).getTitle());
-        holder.travel_img.setImageResource(myData.get(position).getThumbnail());
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
-        //Set click listener
+        holder.title.setText(myData.get(position).getTitle());
+        holder.data.setText(myData.get(position).getCreation_date().toString());
+        //holder.description.setText(myData.get(position).getDescription());
+
+        // Set click listener
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(context,NoteActivity.class);
 
-                // passing data to the TravelAcitivity
-                Intent intent = new Intent(myContext, NoteActivity.class);
-                //intent.putExtra("TravelTitle",myData.get(position)).getTitle());
+                // Passing data to the note activity
+                intent.putExtra("Title",myData.get(position).getTitle());
+                intent.putExtra("Data",myData.get(position).getCreation_date().toString());
                 //intent.putExtra("Description",myData.get(position).getDescription());
-                //intent.putExtra("Thumbnail",myData.get(position).getThumbnail());
-
-                // Start the Activity
-                myContext.startActivity(intent);
+                // start activity
+                context.startActivity(intent);
             }
         });
     }
@@ -63,19 +66,18 @@ public class RecyclerViewAdapterNotes extends RecyclerView.Adapter<RecyclerViewA
         return myData.size();
     }
 
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
-
-        TextView travel_title;
-        ImageView travel_img;
+        TextView title, data, description;
         CardView cardView;
 
-        public MyViewHolder (View itemView) {
+        public MyViewHolder(View itemView) {
             super(itemView);
 
-            travel_title = itemView.findViewById(R.id.travel_title_id);
-            travel_img = itemView.findViewById(R.id.travel_img_id);
-            cardView = itemView.findViewById(R.id.cardview_id);
+            title = itemView.findViewById(R.id.note_title_id);
+            data = itemView.findViewById(R.id.note_data_id);
+            //description = itemView.findViewById(R.id.note_description);
+            cardView = itemView.findViewById(R.id.cardviewNote_id);
         }
     }
 }
