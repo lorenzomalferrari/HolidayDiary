@@ -51,6 +51,51 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     public void onCreate(SQLiteDatabase db) {
         //Creazione del Database
         createStructureDatabase(db);
+        //Aggiunta di dati nel databse
+        addDataDatabase(db);
+    }
+
+    private void addDataDatabase(SQLiteDatabase db) {
+
+        //Aggiungo Notes
+        db.execSQL("INSERT INTO 'Notes' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Fare la spesa\", \"Questa è la nota numero 1\",1);\n");
+        db.execSQL("INSERT INTO 'Notes' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Andare dal dentista\", \"Questa è la nota numero 2\",1);\n");
+        db.execSQL("INSERT INTO 'Notes' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Appuntamento cena\", \"Questa è la nota numero 3\",1);\n");
+        db.execSQL("INSERT INTO 'Notes' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Prendere fiori\", \"Questa è la nota numero 4\",1);\n");
+        db.execSQL("INSERT INTO 'Notes' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Benzina\", \"Ricordarsi di fare benzina\",1);\n");
+        db.execSQL("INSERT INTO 'Notes' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Notaio\", \"Mercoledì pomeriggio andare dal notaio\",1);\n");
+        db.execSQL("INSERT INTO 'Notes' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Nuoto\", \"Andare a iscriversi a nuoto\",1);\n");
+        db.execSQL("INSERT INTO 'Notes' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Palestra\", \"Disdire la palestra\",1);\n");
+
+        //Aggiungo Travels
+
+        db.execSQL("INSERT INTO 'Travels' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Monaco\", \"Bellissima città e tanta birra\" ,1);");
+        db.execSQL("INSERT INTO 'Travels' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Parigi\", \"Bellissimi monumenti\" ,1);");
+        db.execSQL("INSERT INTO 'Travels' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Berlino\", \"Molto freddo\" ,1);");
+        db.execSQL("INSERT INTO 'Travels' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Bologna\", \"Viva le due torri\" ,1);");
+        db.execSQL("INSERT INTO 'Travels' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Cesenatico\", \"Buono il pesce\" ,1);");
+        db.execSQL("INSERT INTO 'Travels' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Ravenna\", \"Città carina\" ,1);");
+        db.execSQL("INSERT INTO 'Travels' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Ferrara\", \"Buon cibo\" ,1);");
+        db.execSQL("INSERT INTO 'Travels' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Milano\", \"Mila vs Bologna\" ,1);");
+        db.execSQL("INSERT INTO 'Travels' ('title', 'description' , 'id_user' )\n" +
+                "VALUES (\"Torino\", \"Droidcon\" ,1);");
+
     }
 
     /**
@@ -111,7 +156,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_TABLE[2],note.getTitle());//title
-        contentValues.put(COL_TABLE[3],note.getContent());//content
+        contentValues.put(COL_TABLE[3],note.getDescription());//content
         contentValues.put(COL_TABLE[4],note.getCreation_date().toString());//creation_date
         //contentValues.put(COL_TABLE[5],note.getId_user());//id_user
         //contentValues.put(COL_TABLE[6],note.getId_travel());//id_travel

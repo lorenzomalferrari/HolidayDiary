@@ -169,7 +169,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Cursor res = databaseHelper.getAll("Users");
+                        Cursor res = databaseHelper.getAll("Travels");
                         if(res.getCount() == 0) {
                             // show message
                             showMessage("Error","Nothing found");
@@ -178,16 +178,16 @@ public class RegistrationActivity extends AppCompatActivity {
 
                         StringBuffer buffer = new StringBuffer();
                         while (res.moveToNext()) {
-                            buffer.append("Id: "+ res.getString(0)+"\n");
+                            //buffer.append("Id: "+ res.getString(0)+"\n");
                             buffer.append("Nome: "+ res.getString(1)+"\n");
                             buffer.append("Cognome: "+ res.getString(2)+"\n");
-                            buffer.append("Username: "+ res.getString(3)+"\n");
-                            buffer.append("Password: "+ res.getString(4)+"\n");
-                            buffer.append("Email: "+ res.getString(5)+"\n");
-                            buffer.append("City: "+ res.getString(6)+"\n");
-                            buffer.append("Country: "+ res.getString(7)+"\n");
-                            buffer.append("Gender: "+ res.getString(8)+"\n");
-                            buffer.append("Birthdate: "+ res.getString(10)+"\n\n");
+                            //buffer.append("Username: "+ res.getString(3)+"\n");
+                            //buffer.append("Password: "+ res.getString(4)+"\n");
+                            //buffer.append("Email: "+ res.getString(5)+"\n");
+                            //buffer.append("City: "+ res.getString(6)+"\n");
+                            //buffer.append("Country: "+ res.getString(7)+"\n");
+                            //buffer.append("Gender: "+ res.getString(8)+"\n");
+                            //buffer.append("Birthdate: "+ res.getString(10)+"\n\n");
                         }
 
                         // Show all data

@@ -1,10 +1,12 @@
 package com.lorenzomalferrari.holidaydiary;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.control.RecyclerViewAdapter;
 import com.lorenzomalferrari.holidaydiary.model.Travel;
 
@@ -14,6 +16,7 @@ import java.util.List;
 public class TravelsActivity extends AppCompatActivity {
 
     List<Travel> listTravel;
+    DatabaseHelper databaseHelper;
 
 
     @Override
@@ -34,16 +37,21 @@ public class TravelsActivity extends AppCompatActivity {
 
         // Create list of Travel object
         listTravel = new ArrayList<>();
+        databaseHelper = new DatabaseHelper(this);
+        Cursor res = databaseHelper.getAll("Travels");
         // Add Travels
-        for (int i = 0; i <= 7; i++)
-        {
-            listTravel.add(new Travel("Spiaggia","Categorie Travel",sp,R.drawable.travel_1));
-            listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
+
+        while (res.moveToNext()) {
+
+            listTravel.add(new Travel(res.getString(1),res.getString(8),res.getString(2),R.drawable.travel_1));
+            /*listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
             listTravel.add(new Travel("Bici con i fiori","Categorie Travel",dueT,R.drawable.bicifiori));
             listTravel.add(new Travel("Castel D'Aiano","Categorie Travel",dueT,R.drawable.bosco_1));
             listTravel.add(new Travel("Bosco","Categorie Travel",dueT,R.drawable.bosco_2));
-            listTravel.add(new Travel("Piana de Rossi","Categorie Travel",dueT,R.drawable.bosco_3));
+            listTravel.add(new Travel("Piana de Rossi","Categorie Travel",dueT,R.drawable.bosco_3));*/
+
         }
+
 
         // Set component for to see in Activity
         RecyclerView myRecyclerView = findViewById(R.id.recyclerviewTravels_id);
