@@ -41,6 +41,7 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+        this.setTitle("Registration");
 
         databaseHelper = new DatabaseHelper(this);
         // User Session Manager
