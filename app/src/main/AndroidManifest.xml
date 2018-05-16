@@ -60,7 +60,8 @@
         <activity android:name=".NoteActivity" />
         <activity android:name=".AddPictureActivity" />
         <activity android:name=".AddTravelActivity" />
-        <activity android:name=".AddNoteActivity"></activity>
+        <activity android:name=".AddNoteActivity" />
+        <activity android:name=".PicturesActivity"></activity>
     </application>
 
 </manifest>
