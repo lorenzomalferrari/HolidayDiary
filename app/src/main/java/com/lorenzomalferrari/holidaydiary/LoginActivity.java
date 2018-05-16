@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                                         // Creating user login session
                                         userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
                                         // Creo l'oggetto User con i dati presi dal database
-                                        // createUser(res);
+                                        //createUser(res);
                                         // Visualizzo l'app
                                         callMenu();
                                     }
@@ -159,18 +159,8 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-    /*private void createUser(Cursor res){
-        user = new User(Integer.parseInt(res.getString(0).toString()),
-                res.getString(1),
-                res.getString(2),
-                res.getString(3),
-                res.getString(4),
-                res.getString(5),
-                res.getString(6),
-                res.getString(7),
-                res.getString(8),
-                res.getString(9),
-                res.getString(10));
-    }*/
+    private void createUser(Cursor res){
+        user = new User();
+    }
 
 }
