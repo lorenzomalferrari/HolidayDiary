@@ -20,9 +20,9 @@ public class AddNoteActivity extends AppCompatActivity {
         //Cambio il titolo della Activity
         this.setTitle("Add Note");
 
+        //Inizializzazione degli attributi
         init();
     }
-
 
     /**
      * Inizializzo gli attributi con i dati ricevuti dal layout
@@ -34,8 +34,8 @@ public class AddNoteActivity extends AppCompatActivity {
         country = findViewById(R.id.addNote_country);
         startData = findViewById(R.id.addNote_start_data);
         finishData = findViewById(R.id.addNote_finish_data);
-        image = findViewById(R.id.addNote_img);
-        chooseImage = findViewById(R.id.addNote_choose_image);
+        //image = findViewById(R.id.addNote_img);
+        //chooseImage = findViewById(R.id.addNote_choose_image);
         addTravel = findViewById(R.id.addNote_save_note);
     }
 }
