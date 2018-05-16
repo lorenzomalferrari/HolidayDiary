@@ -154,9 +154,10 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
     private void requestRuntimePermission() {
         android.support.v4.app.ActivityCompat.requestPermissions(this,new String[]
                 {
-                        Manifest.permission.ACCESS_COARSE_LOCATION,
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                },MY_PERMISSION_REQUEST_CODE);
+                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                },
+                    MY_PERMISSION_REQUEST_CODE);
     }
 
     private void startLocationUpdates()
