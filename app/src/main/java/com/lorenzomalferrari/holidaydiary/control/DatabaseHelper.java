@@ -55,8 +55,12 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         addDataDatabase(db);
     }
 
+    /**
+     * Aggiunta di dati nelle tabelle
+     * (Così alla chiamata delle Activity saranno visualizzati i dati presenti nel db)
+     * @param db
+     */
     private void addDataDatabase(SQLiteDatabase db) {
-
         //Aggiungo Notes
         db.execSQL("INSERT INTO 'Notes' ('title', 'description' , 'id_user' )\n" +
                 "VALUES (\"Fare la spesa\", \"Questa è la nota numero 1\",1);\n");
@@ -76,7 +80,6 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "VALUES (\"Palestra\", \"Disdire la palestra\",1);\n");
 
         //Aggiungo Travels
-
         db.execSQL("INSERT INTO 'Travels' ('title', 'description' , 'id_user' )\n" +
                 "VALUES (\"Monaco\", \"Bellissima città e tanta birra\" ,1);");
         db.execSQL("INSERT INTO 'Travels' ('title', 'description' , 'id_user' )\n" +
@@ -95,7 +98,6 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "VALUES (\"Milano\", \"Mila vs Bologna\" ,1);");
         db.execSQL("INSERT INTO 'Travels' ('title', 'description' , 'id_user' )\n" +
                 "VALUES (\"Torino\", \"Droidcon\" ,1);");
-
     }
 
     /**
