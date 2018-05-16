@@ -43,7 +43,6 @@ public class RecyclerViewAdapterNotes extends RecyclerView.Adapter<RecyclerViewA
 
         holder.title.setText(myData.get(position).getTitle());
         holder.data.setText(myData.get(position).getCreation_date().toString());
-        //holder.description.setText(myData.get(position).getDescription());
 
         // Set click listener
         holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +53,7 @@ public class RecyclerViewAdapterNotes extends RecyclerView.Adapter<RecyclerViewA
                 // Passing data to the note activity
                 intent.putExtra("Title",myData.get(position).getTitle());
                 intent.putExtra("Data",myData.get(position).getCreation_date().toString());
-                //intent.putExtra("Description",myData.get(position).getDescription());
+                intent.putExtra("Description",myData.get(position).getDescription());
                 // start activity
                 context.startActivity(intent);
             }
@@ -68,7 +67,7 @@ public class RecyclerViewAdapterNotes extends RecyclerView.Adapter<RecyclerViewA
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title, data, description;
+        TextView title, data;
         CardView cardView;
 
         public MyViewHolder(View itemView) {
@@ -76,7 +75,6 @@ public class RecyclerViewAdapterNotes extends RecyclerView.Adapter<RecyclerViewA
 
             title = itemView.findViewById(R.id.note_title_id);
             data = itemView.findViewById(R.id.note_data_id);
-            //description = itemView.findViewById(R.id.note_description);
             cardView = itemView.findViewById(R.id.cardviewNote_id);
         }
     }
