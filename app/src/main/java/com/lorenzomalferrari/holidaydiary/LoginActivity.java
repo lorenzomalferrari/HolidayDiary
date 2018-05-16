@@ -27,8 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     //Campi che prende
     EditText email,password;
-
-
+    
     DatabaseHelper databaseHelper;
     LinearLayout layoutTop, layoutDown;
     Animation uptodown, downtoup;
