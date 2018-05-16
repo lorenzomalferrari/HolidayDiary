@@ -86,7 +86,7 @@ public class UserSessionManager {
         //Use hashmap to store user credentials
         HashMap<String, String> user = new HashMap<String, String>();
 
-        // user email id
+        // user email
         user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
 
         // user name
@@ -106,16 +106,16 @@ public class UserSessionManager {
         editor.commit();
 
         // After logout redirect user to Login Activity
-        Intent i = new Intent(_context, LoginActivity.class);
+        Intent intent = new Intent(_context, LoginActivity.class);
 
         // Closing all the Activities
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         // Add new Flag to start new Activity
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         // Staring Login Activity
-        _context.startActivity(i);
+        _context.startActivity(intent);
     }
 
 
