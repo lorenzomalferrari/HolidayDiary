@@ -21,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     /**
      * Nome del file del database
      */
-    private static final String DATABASE_NAME = "holidayDiary.db";
+    private static final String DATABASE_NAME = "HolidayDiary.db";
 
     /**
      * Lista delle tabelle del database
@@ -133,7 +133,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
 
 
     /**
-     * Costruzione del database holidayDiary
+     * Costruzione del database HolidayDiary
      * @param db
      */
     private void createStructureDatabase(SQLiteDatabase db){
@@ -146,9 +146,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         //Creazione della tabella Picture
         createPicturesTable(db);
         //Creazione della tabella Position
-        //createPlacesTable(db);
-
-
+        createPlacesTable(db);
     }
 
     /**
@@ -157,19 +155,27 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     private void crateUsersTable(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[0] + " (" +
-                "id INTEGER PRIMARY KEY," +
-                "firstName VARCHAR(255)," +
-                "lastName VARCHAR(255)," +
-                "username VARCHAR(255)," +
-                "password VARCHAR(255) not null," +
-                "email VARCHAR(255) not null," +
-                "city VARCHAR(255)," +
-                "country VARCHAR(255)," +
-                "gender CHAR(1)," +
-                "age VARCHAR(255)," +
+                "id integer PRIMARY KEY," +
+                "firstName text," +
+                "lastName text," +
+                "username text," +
+                "password text not null," +
+                "email text not null," +
+                "city text," +
+                "country text," +
+                "gender text," +
+                "age text," +
                 "birthdate DATE," +
                 "registration_date DATETIME," +
-                "last_login DATETIME);");
+                "last_login DATETIME," +
+                "id_travel integer," +
+                "id_note integer," +
+                "id_picture integer," +
+                "id_place integer," +
+                "foreign key (id_travel) references "+ TABLE_NAMES[1] +" (id)," +
+                "foreign key (id_note) references "+ TABLE_NAMES[2] +" (id)," +
+                "foreign key (id_picture) references "+ TABLE_NAMES[3] +" (id)," +
+                "foreign key (id_place) references "+ TABLE_NAMES[4] +" (id));");
     }
 
     /**
@@ -191,10 +197,10 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "id_note integer," +
                 "id_picture integer," +
                 "id_place integer," +
-                "foreign key (id_user) references User (id)," +
-                "foreign key (id_note) references Note (id)," +
-                "foreign key (id_picture) references Picture (id)," +
-                "foreign key (id_place) references Place (id));");
+                "foreign key (id_user) references "+ TABLE_NAMES[0] +" (id)," +
+                "foreign key (id_note) references "+ TABLE_NAMES[2] +" (id)," +
+                "foreign key (id_picture) references "+ TABLE_NAMES[3] +" (id)," +
+                "foreign key (id_place) references "+ TABLE_NAMES[4] +" (id));");
     }
 
     /**
@@ -211,10 +217,10 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "id_travel integer," +
                 "id_place integer," +
                 "id_picture integer," +
-                "foreign key (id_user) references User (id)," +
-                "foreign key (id_travel) references Travel (id)," +
-                "foreign key (id_place) references Place (id)," +
-                "foreign key (id_picture) references Picture (id));");
+                "foreign key (id_user) references "+ TABLE_NAMES[0] +" (id)," +
+                "foreign key (id_travel) references "+ TABLE_NAMES[1] +" (id)," +
+                "foreign key (id_picture) references "+ TABLE_NAMES[3] +" (id)," +
+                "foreign key (id_place) references "+ TABLE_NAMES[4] +" (id));");
     }
 
     /**
@@ -231,10 +237,10 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "id_travel integer," +
                 "id_place integer," +
                 "id_note integer," +
-                "foreign key (id_user) references User (id)," +
-                "foreign key (id_travel) references Travel (id)," +
-                "foreign key (id_place) references Place (id)," +
-                "foreign key (id_note) references Note (id));");
+                "foreign key (id_user) references "+ TABLE_NAMES[0] +" (id)," +
+                "foreign key (id_travel) references "+ TABLE_NAMES[1] +" (id)," +
+                "foreign key (id_note) references "+ TABLE_NAMES[2] +" (id)," +
+                "foreign key (id_place) references "+ TABLE_NAMES[4] +" (id));");
     }
 
     /**
@@ -242,7 +248,22 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @param db
      */
     private void createPlacesTable(SQLiteDatabase db){
-
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[4] + " (" +
+                "id integer not null," +
+                "title text," +
+                "description text," +
+                "latitude integer not null," +
+                "longitude integer not null," +
+                "city text," +
+                "country text," +
+                "id_user text not null," +
+                "id_picture integer," +
+                "id_travel integer," +
+                "id_note integer," +
+                "foreign key (id_user) references "+ TABLE_NAMES[0] +" (id)," +
+                "foreign key (id_travel) references "+ TABLE_NAMES[1] +" (id)," +
+                "foreign key (id_note) references "+ TABLE_NAMES[2] +" (id)," +
+                "foreign key (id_picture) references "+ TABLE_NAMES[3] +" (id));");
     }
 
     /**
