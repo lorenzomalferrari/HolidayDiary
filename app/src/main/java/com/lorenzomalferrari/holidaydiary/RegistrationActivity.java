@@ -48,7 +48,7 @@ public class RegistrationActivity extends AppCompatActivity {
         userSessionManager = new UserSessionManager(getApplicationContext());
 
         //Ottengo i dati
-        this.getData();
+        this.init();
 
         //Creo oggetto user
         //createUser();
@@ -236,7 +236,7 @@ public class RegistrationActivity extends AppCompatActivity {
     /**
      * Ottengo i dati inseriti dall'utente
      */
-    private void getData(){
+    private void init(){
         // FirstName
         firstName = findViewById(R.id.register_firstNameValue);
         // LastName
