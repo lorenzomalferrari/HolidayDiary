@@ -140,7 +140,7 @@ public class MenuActivity extends AppCompatActivity
                 this.startActivity(intent);
                 break;
             case R.id.nav_pictures:
-                intent = new Intent(this, AddPictureActivity.class);
+                intent = new Intent(this, PicturesActivity.class);
                 this.startActivity(intent);
                 break;
             case R.id.nav_places:
