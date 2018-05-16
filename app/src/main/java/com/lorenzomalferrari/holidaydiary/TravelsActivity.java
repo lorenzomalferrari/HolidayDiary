@@ -40,16 +40,8 @@ public class TravelsActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(this);
         Cursor res = databaseHelper.getAll("Travels");
         // Add Travels
-
         while (res.moveToNext()) {
-
             listTravel.add(new Travel(res.getString(1),res.getString(8),res.getString(2),R.drawable.travel_1));
-            /*listTravel.add(new Travel("Due Torri","Categorie Travel",dueT,R.drawable.due_torri));
-            listTravel.add(new Travel("Bici con i fiori","Categorie Travel",dueT,R.drawable.bicifiori));
-            listTravel.add(new Travel("Castel D'Aiano","Categorie Travel",dueT,R.drawable.bosco_1));
-            listTravel.add(new Travel("Bosco","Categorie Travel",dueT,R.drawable.bosco_2));
-            listTravel.add(new Travel("Piana de Rossi","Categorie Travel",dueT,R.drawable.bosco_3));*/
-
         }
 
 
