@@ -159,7 +159,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         ContentValues contentValues = new ContentValues();
         contentValues.put("title",note.getTitle());//title
         contentValues.put("description",note.getDescription());//content
-        contentValues.put("creation_data",note.getCreation_date().toString());//creation_date
+        contentValues.put("creation_data",note.getCreation_data().toString());//creation_date
         contentValues.put("id_user",note.getId_user());//id_user
         //contentValues.put(COL_TABLE[6],note.getId_travel());//id_travel
         //contentValues.put(COL_TABLE[7],note.getId_place());//id_place
@@ -289,7 +289,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     private void createPicturesTable(SQLiteDatabase db){
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[3] + " (" +
-                "id integer PRImary key," +
+                "id integer PRIMARY KEY," +
                 "title text not null," +
                 "description text," +
                 "path text not null," +
@@ -309,13 +309,14 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     private void createPlacesTable(SQLiteDatabase db){
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[4] + " (" +
-                "id integer not null," +
+                "id integer PRIMARY KEY," +
                 "title text," +
                 "description text," +
                 "latitude integer not null," +
                 "longitude integer not null," +
                 "city text," +
                 "country text," +
+                "creation_data DATA," +
                 "id_user text not null," +
                 "id_picture integer," +
                 "id_travel integer," +
