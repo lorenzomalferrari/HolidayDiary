@@ -28,10 +28,13 @@ public class TravelsActivity extends AppCompatActivity {
 
         // Create list of Travel object
         listTravel = new ArrayList<>();
+        // Setta la var dell'oggetto DatabaseHelper con il context della classe stessa
         databaseHelper = new DatabaseHelper(this);
+        // Salvo tutte i Viaggi
         Cursor res = databaseHelper.getAll("Travels");
         // Add Travels
         while (res.moveToNext()) {
+            //Aggiungo nella mia lista di Viaggi, un nuovo oggetto con i parametri presi dal tabella Travels presente nel database
             listTravel.add(new Travel(res.getString(1),res.getString(8),res.getString(2),R.drawable.travel_1));
         }
 

@@ -34,7 +34,7 @@ public class NotesActivity extends AppCompatActivity {
         Cursor res = databaseHelper.getAll("Notes");
         // Add Notes
         while (res.moveToNext()) {
-            //Aggiungo nella mia lista di Note, un nuovo oggetto con i parametri presi dal database
+            //Aggiungo nella mia lista di Note, un nuovo oggetto con i parametri presi dal tabella Notes presente nel database
             listNote.add(new Note(res.getString(1),new Date(),res.getString(2),res.getInt(4)));
         }
         // Set component for to see in Activity
