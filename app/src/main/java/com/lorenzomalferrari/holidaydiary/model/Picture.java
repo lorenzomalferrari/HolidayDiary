@@ -5,7 +5,8 @@ import java.util.Date;
 public class Picture {
 
     private int id, id_user, id_travel, id_place, id_note;
-    private String title, description, path;
+    private String title, description;
+    private byte[] image;
 
     /**
      * Costruttore di default
@@ -19,20 +20,20 @@ public class Picture {
         this.id_note = 1;
         this.title = "Immagine CIAO";
         this.description = "Questa è la descrizione della immagine di test";
-        this.path = "";
     }
 
     /**
      * Costruttore parametrico
      * Richiesta dei parametri base per l'esecuzione dell'app
      * @param title
-     * @param path
+     * @param image
      * @param id_user
      */
-    public Picture(String title, String path, int id_user) {
+    public Picture(String title, byte[] image, int id_user) {
         this.id_user = id_user;
         this.title = title;
-        this.path = path;
+        this.image = image;
+
     }
 
     /**
@@ -44,9 +45,9 @@ public class Picture {
      * @param id_note
      * @param title
      * @param description
-     * @param path
+     * @param image
      */
-    public Picture(int id, int id_user, int id_travel, int id_place, int id_note, String title, String description, String path) {
+    public Picture(int id, String title, String description, byte[] image, int id_user, int id_travel, int id_place, int id_note) {
         this.id = id;
         this.id_user = id_user;
         this.id_travel = id_travel;
@@ -54,7 +55,7 @@ public class Picture {
         this.id_note = id_note;
         this.title = title;
         this.description = description;
-        this.path = path;
+        this.image = image;
     }
 
     public int getId() {
@@ -113,12 +114,12 @@ public class Picture {
         this.description = description;
     }
 
-    public String getPath() {
-        return path;
+    public byte[] getImage() {
+        return image;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     @Override
@@ -127,7 +128,7 @@ public class Picture {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", path='" + path + '\'' +
+                ", image='" + image + '\'' +
                 ", id_user=" + id_user +
                 ", id_travel=" + id_travel +
                 ", id_place=" + id_place +
