@@ -6,7 +6,7 @@ public class Travel {
     private String title;
     private String category;
     private String description;
-    private int thumbnail;
+    private int thumbnail, id_user;
 
     /**
      *
@@ -26,6 +26,12 @@ public class Travel {
         this.category = category;
         this.description = description;
         this.thumbnail = thumbnail;
+    }
+
+    public Travel(String title, String description, int id_user) {
+        this.title = title;
+        this.description = description;
+        this.id_user = id_user;
     }
 
     public String getTitle() {
@@ -58,6 +64,14 @@ public class Travel {
 
     public void setThumbnail(int thumbnail) {
         this.thumbnail = thumbnail;
+    }
+
+    public int getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
     }
 
     /**
