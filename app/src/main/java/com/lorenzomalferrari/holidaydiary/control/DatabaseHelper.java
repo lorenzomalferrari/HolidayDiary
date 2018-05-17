@@ -140,8 +140,11 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     public boolean inserDataImage(Picture picture){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("campo",picture.getTitle());//data di nascita
-        long result = db.insert(TABLE_NAMES[2],null ,contentValues);
+        contentValues.put("title",picture.getTitle());//data di nascita
+        //contentValues.put("description",picture.getImage());//data di nascita
+        contentValues.put("image",picture.getImage());//data di nascita
+        contentValues.put("id_user",picture.getId_user());//data di nascita
+        long result = db.insert(TABLE_NAMES[3],null ,contentValues);
         return result != -1;
     }
 
@@ -289,11 +292,11 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @param db
      */
     private void createPicturesTable(SQLiteDatabase db){
-        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[3] + " (" +
+        db.execSQL("CREATE TABLE "+ TABLE_NAMES[3] + " (" +
                 "id integer PRIMARY KEY," +
                 "title text not null," +
                 "description text," +
-                "path text not null," +
+                "image BLOG not null," +
                 "id_user text not null," +
                 "id_travel integer," +
                 "id_place integer," +
