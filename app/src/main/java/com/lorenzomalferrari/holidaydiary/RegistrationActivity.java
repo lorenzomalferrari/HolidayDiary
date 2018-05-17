@@ -76,15 +76,15 @@ public class RegistrationActivity extends AppCompatActivity {
      */
     private ArrayList createArrayList(){
         ArrayList arrayList = new ArrayList();
-        arrayList.add(firstName.getText().toString());
-        arrayList.add(lastName.getText().toString());
-        arrayList.add(username.getText().toString());
-        arrayList.add(password.getText().toString());
-        arrayList.add(email.getText().toString());
-        arrayList.add(city.getText().toString());
-        arrayList.add(country.getText().toString());
-        arrayList.add(gender.getText().toString());
-        arrayList.add(birthdate.getText().toString());
+        arrayList.add(firstName.getText().toString().replace(" ",""));
+        arrayList.add(lastName.getText().toString().replace(" ",""));
+        arrayList.add(username.getText().toString().replace(" ",""));
+        arrayList.add(password.getText().toString().replace(" ",""));
+        arrayList.add(email.getText().toString().replace(" ",""));
+        arrayList.add(city.getText().toString().replace(" ",""));
+        arrayList.add(country.getText().toString().replace(" ",""));
+        arrayList.add(gender.getText().toString().replace(" ",""));
+        arrayList.add(birthdate.getText().toString().replace(" ",""));
         return arrayList;
     }
 
