@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.control.RecyclerViewAdapter;
+import com.lorenzomalferrari.holidaydiary.control.RecyclerViewAdapterTravels;
 import com.lorenzomalferrari.holidaydiary.model.Travel;
 
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class TravelsActivity extends AppCompatActivity {
 
         // Set component for to see in Activity
         RecyclerView myRecyclerView = findViewById(R.id.recyclerviewTravels_id);
-        RecyclerViewAdapter myRecyclerViewAdapter = new RecyclerViewAdapter(this,listTravel);
+        RecyclerViewAdapterTravels myRecyclerViewAdapter = new RecyclerViewAdapterTravels(this,listTravel);
         // Visualizzazione dei viaggi a 1 colonna
         myRecyclerView.setLayoutManager(new GridLayoutManager(this,1));
         myRecyclerView.setAdapter(myRecyclerViewAdapter);
