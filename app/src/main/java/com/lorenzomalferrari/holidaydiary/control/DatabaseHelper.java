@@ -157,10 +157,10 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     public boolean insertDataNote(Note note){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_TABLE[2],note.getTitle());//title
-        contentValues.put(COL_TABLE[3],note.getDescription());//content
-        contentValues.put(COL_TABLE[4],note.getCreation_date().toString());//creation_date
-        //contentValues.put(COL_TABLE[5],note.getId_user());//id_user
+        contentValues.put("title",note.getTitle());//title
+        contentValues.put("description",note.getDescription());//content
+        contentValues.put("creation_data",note.getCreation_date().toString());//creation_date
+        contentValues.put("id_user",note.getId_user());//id_user
         //contentValues.put(COL_TABLE[6],note.getId_travel());//id_travel
         //contentValues.put(COL_TABLE[7],note.getId_place());//id_place
         //contentValues.put(COL_TABLE[8],note.getId_picture());//id_picture
@@ -171,7 +171,10 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     public boolean insertDataTravel(Travel travel){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_TABLE[1],travel.getTitle());//Inserisco il titolo
+        contentValues.put("title",travel.getTitle());//Inserisco il titolo
+        //contentValues.put("",travel.getCategory());//Inserisco il titolo
+        contentValues.put("description",travel.getDescription());//Inserisco il titolo
+        contentValues.put("id_user",travel.getId_user());//Inserisco il titolo
         long result = db.insert(TABLE_NAMES[1],null ,contentValues);
         return result != -1;
 
