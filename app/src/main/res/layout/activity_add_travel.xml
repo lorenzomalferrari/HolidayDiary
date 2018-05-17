@@ -37,19 +37,19 @@
             android:hint="Description"/>
 
         <!-- Visualizzazione delle immagini -->
-        <ImageView
+        <!--<ImageView
             android:id="@+id/addTravel_images"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_below="@+id/addTravel_description"/>
+            android:layout_below="@+id/addTravel_description"/>-->
 
         <!-- Bottone per scegliere le immagini -->
-        <Button
+        <!--<Button
             android:id="@+id/addTravel_chooseImages"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/addTravel_images"
-            android:text="Choose Images"/>
+            android:text="Choose Images"/>-->
 
         <!-- Bottone per salvare il viaggio -->
         <Button
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/addTravel_chooseImages"
+            android:layout_below="@+id/addTravel_description"
             android:text="Add" />
 
     </RelativeLayout>
