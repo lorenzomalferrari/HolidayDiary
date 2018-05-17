@@ -28,13 +28,6 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     private final String[] TABLE_NAMES = new String[] {"Users","Travels","Notes","Pictures","Places"};
 
-
-    /**
-     * Lista delle colonne presenti nella tabella User
-     */
-    private String[] COL_TABLE = new String[]{"id","firstName","lastName","username","password","email",
-            "city","country","gender","age","birthdate","registration_date","last_login"};
-
     /**
      * Costruttore
      * @param context
@@ -122,16 +115,19 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     public boolean insertDataUser(ArrayList arrayList) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_TABLE[1],arrayList.get(0).toString());//nome
-        contentValues.put(COL_TABLE[2],arrayList.get(1).toString());//cognome
-        contentValues.put(COL_TABLE[3],arrayList.get(2).toString());//username
-        contentValues.put(COL_TABLE[4],arrayList.get(3).toString());//password
-        contentValues.put(COL_TABLE[5],arrayList.get(4).toString());//email
-        contentValues.put(COL_TABLE[6],arrayList.get(5).toString());//città
-        contentValues.put(COL_TABLE[7],arrayList.get(6).toString());//pease
-        contentValues.put(COL_TABLE[8],arrayList.get(7).toString());//sesso
-        //contentValues.put(COL_TABLE[9],calcAge());//con birthdate calcolare l'età
-        contentValues.put(COL_TABLE[10],arrayList.get(8).toString());//data di nascita
+        //contentValues.put("id",arrayList.get(0).toString());//nome
+        contentValues.put("firstName",arrayList.get(0).toString());//nome
+        contentValues.put("lastName",arrayList.get(1).toString());//cognome
+        contentValues.put("username",arrayList.get(2).toString());//username
+        contentValues.put("password",arrayList.get(3).toString());//password
+        contentValues.put("email",arrayList.get(4).toString());//email
+        contentValues.put("city",arrayList.get(5).toString());//città
+        contentValues.put("country",arrayList.get(6).toString());//pease
+        contentValues.put("gender",arrayList.get(7).toString());//sesso
+        //contentValues.put("age",calcAge());//con birthdate calcolare l'età
+        contentValues.put("birthdate",arrayList.get(8).toString());//data di nascita
+        //contentValues.put("registration_date",new Date());//data di nascita
+        //contentValues.put("last_login",arrayList.get(8).toString());//data di nascita
         long result = db.insert(TABLE_NAMES[0],null ,contentValues);
         return result != -1;
     }
@@ -144,7 +140,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     public boolean inserDataImage(Picture picture){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_TABLE[10],picture.getTitle());//data di nascita
+        contentValues.put("campo",picture.getTitle());//data di nascita
         long result = db.insert(TABLE_NAMES[2],null ,contentValues);
         return result != -1;
     }
@@ -362,10 +358,10 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     public boolean updateData(String id,String firstName,String lastName,String username) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_TABLE[0],id);
-        contentValues.put(COL_TABLE[1],firstName);
-        contentValues.put(COL_TABLE[2],lastName);
-        contentValues.put(COL_TABLE[3],username);
+        contentValues.put("id",id);
+        contentValues.put("firstName",firstName);
+        contentValues.put("lastName",lastName);
+        contentValues.put("username",username);
         db.update(TABLE_NAMES[0], contentValues, "ID = ?",new String[] { id });
         return true;
     }
