@@ -164,6 +164,11 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         return result != -1;
     }
 
+    /**
+     * Metodo che aggiunge i dati del Travel all'interno del database
+     * @param travel
+     * @return
+     */
     public boolean insertDataTravel(Travel travel){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
