@@ -1,57 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.AddTravelActivity">
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <!-- Titolo del viaggio -->
-    <EditText
-        android:id="@+id/addTravel_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Title"/>
+        <!-- Titolo del viaggio -->
+        <EditText
+            android:id="@+id/addTravel_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:hint="Title"/>
 
-    <!-- Categoria del viaggio -->
-    <EditText
-        android:id="@+id/addTravel_category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/addTravel_title"
-        android:hint="Category"/>
+        <!-- Categoria del viaggio -->
+        <EditText
+            android:id="@+id/addTravel_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_below="@+id/addTravel_title"
+            android:hint="Category"/>
 
-    <!-- Descrizione del viaggio -->
-    <EditText
-        android:id="@+id/addTravel_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/addTravel_category"
-        android:hint="Description"/>
+        <!-- Descrizione del viaggio -->
+        <EditText
+            android:id="@+id/addTravel_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_below="@+id/addTravel_category"
+            android:hint="Description"/>
 
-    <!-- Visualizzazione delle immagini -->
-    <ImageView
-        android:id="@+id/addTravel_images"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_below="@+id/addTravel_description"/>
+        <!-- Visualizzazione delle immagini -->
+        <ImageView
+            android:id="@+id/addTravel_images"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/addTravel_description"/>
 
-    <!-- Bottone per scegliere le immagini -->
-    <Button
-        android:id="@+id/addTravel_chooseImages"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/addTravel_images"
-        android:text="Choose Images"/>
+        <!-- Bottone per scegliere le immagini -->
+        <Button
+            android:id="@+id/addTravel_chooseImages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addTravel_images"
+            android:text="Choose Images"/>
 
-    <!-- Bottone per salvare il viaggio -->
-    <Button
-        android:id="@+id/addTravel_save_travel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:text="Add" />
+        <!-- Bottone per salvare il viaggio -->
+        <Button
+            android:id="@+id/addTravel_save_travel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/addTravel_chooseImages"
+            android:text="Add" />
 
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
