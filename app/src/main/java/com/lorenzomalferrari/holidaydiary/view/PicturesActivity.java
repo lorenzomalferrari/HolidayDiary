@@ -11,6 +11,7 @@ public class PicturesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pictures);
+        //Set title with @string
         this.setTitle("Pictures");
     }
 }
