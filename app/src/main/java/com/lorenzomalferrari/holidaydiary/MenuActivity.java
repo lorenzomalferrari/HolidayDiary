@@ -61,7 +61,6 @@ public class MenuActivity extends AppCompatActivity
         //check UserSessionManager
         checkUserSession();
 
-
         floatingActionMenu = findViewById(R.id.floatingActionMenu);
         travel = findViewById(R.id.floatingActionButtonTravel);
         note = findViewById(R.id.floatingActionButtonNote);
@@ -72,7 +71,6 @@ public class MenuActivity extends AppCompatActivity
         actionNote();
         actionPicture();
         actionPlace();
-
 
     }
 
@@ -240,6 +238,7 @@ public class MenuActivity extends AppCompatActivity
                 Intent intent = null;
                 intent = new Intent(MenuActivity.this, AddTravelActivity.class);
                 MenuActivity.this.startActivity(intent);
+                floatingActionMenu.close(true);
             }
         });
     }
@@ -251,6 +250,7 @@ public class MenuActivity extends AppCompatActivity
                 Intent intent = null;
                 intent = new Intent(MenuActivity.this, AddNoteActivity.class);
                 MenuActivity.this.startActivity(intent);
+                floatingActionMenu.close(true);
             }
         });
     }
@@ -262,6 +262,7 @@ public class MenuActivity extends AppCompatActivity
                 Intent intent = null;
                 intent = new Intent(MenuActivity.this, AddPictureActivity.class);
                 MenuActivity.this.startActivity(intent);
+                floatingActionMenu.close(true);
             }
         });
     }
@@ -270,7 +271,7 @@ public class MenuActivity extends AppCompatActivity
         place.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                floatingActionMenu.close(true);
             }
         });
     }
