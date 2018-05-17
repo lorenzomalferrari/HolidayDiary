@@ -66,7 +66,6 @@ public class MenuActivity extends AppCompatActivity
         picture = findViewById(R.id.floatingActionButtonPicture);
         place = findViewById(R.id.floatingActionButtonPlace);
 
-
         actionTravel();
         actionNote();
         actionPicture();
@@ -99,7 +98,6 @@ public class MenuActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_logout) {
             //Eseguo il logout
@@ -123,7 +121,6 @@ public class MenuActivity extends AppCompatActivity
         //creating fragment object
         Fragment fragment = null;
         Intent intent = null;
-
         //initializing the fragment object which is selected
         switch (itemId) {
             case R.id.nav_homepage:
@@ -170,7 +167,6 @@ public class MenuActivity extends AppCompatActivity
             ft.replace(R.id.content_frame, fragment);
             ft.commit();
         }
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
     }
@@ -200,16 +196,12 @@ public class MenuActivity extends AppCompatActivity
                         Toast.LENGTH_LONG)
                     .show();
         */
-
         // Check user login
         // If User is not logged in , This will redirect user to LoginActivity.
-        if(userSessionManager.checkLogin())
-            finish();
-
+        if(userSessionManager.checkLogin()) finish();
     }
 
     private void setDataUser(){
-
 
         // get user data from session
         //HashMap<String, String> user = userSessionManager.getUserDetails();
