@@ -1,5 +1,5 @@
 package com.lorenzomalferrari.holidaydiary;
-
+//
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
@@ -20,9 +20,10 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+//
 import com.github.clans.fab.FloatingActionMenu;
 import com.github.clans.fab.FloatingActionButton;
+//
 import com.lorenzomalferrari.holidaydiary.control.Controller;
 import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
@@ -153,7 +154,7 @@ public class MenuActivity extends AppCompatActivity
                 //this.startActivity(intent);
                 break;
             case R.id.nav_settings:
-                //fragment = new SettingsFragment();
+                fragment = new SettingsFragment();
                 break;
             case R.id.nav_privacytermsofuse:
                 //fragment = new PrivacyTermsFragment();
