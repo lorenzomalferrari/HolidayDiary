@@ -4,53 +4,62 @@ import java.util.Date;
 
 public class Note {
 
-    // Attributi della tabella Notes presente sul database HolidayDiary.db
-    private int id;
-    private String title;
-    private String description;
-    private Date creation_date;
-    private int id_user, id_travel, id_place, id_picture;
+    private int id, id_user, id_travel, id_place, id_picture;
+    private String title, description;
+    private Date creation_data;
+
 
     /**
      * Costruttore di default
+     * Nota pre-costruita
      */
     public Note() {
         this.id = 1;
-        this.title = "Nota 1";
-        this.description = "Questo è il testo della prima nota";
-        this.creation_date = new Date();//data corrente
         this.id_user = 1;
         this.id_travel = 1;
-        this.id_picture = 1;
         this.id_place = 1;
-    }
-
-    public Note(String title, Date creation_date, String description, int id_user) {
-        this.title = title;
-        this.description = description;
-        this.creation_date = creation_date;
-        this.id_user = id_user;
+        this.id_picture = 1;
+        this.title = "Nota 1";
+        this.description = "Questo è il testo della nota n° 1";
+        this.creation_data = new Date();
     }
 
     /**
      * Costruttore parametrico
-     * Inizializza l'oggetto con i parametri passati
+     * Richiesta dei parametri base per l'esecuzione dell'app
+     * @param title
+     * @param creation_data
+     * @param description
+     * @param id_user
+     */
+    public Note(String title, Date creation_data, String description,int id_user) {
+        this.id_user = id_user;
+        this.title = title;
+        this.description = description;
+        this.creation_data = creation_data;
+    }
+
+    /**
+     * Costruttore parametrico completo
+     * Richiesta di tutti i parametri per una completa creazione della nota
+     * @param id
      * @param title
      * @param description
-     * @param creation_date
+     * @param creation_data
      * @param id_user
      * @param id_travel
      * @param id_place
      * @param id_picture
      */
-    public Note(String title, String description, Date creation_date, int id_user, int id_travel, int id_picture, int id_place) {
-        this.title = title;
-        this.description = description;
-        this.creation_date = creation_date;
+    public Note(int id, String title, String description, Date creation_data, int id_user, int id_travel, int id_place, int id_picture) {
+        this.id = id;
         this.id_user = id_user;
         this.id_travel = id_travel;
-        this.id_picture = id_picture;
         this.id_place = id_place;
+        this.id_picture = id_picture;
+        this.title = title;
+        this.description = description;
+        this.creation_data = creation_data;
     }
 
     public int getId() {
@@ -59,30 +68,6 @@ public class Note {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Date getCreation_date() {
-        return creation_date;
-    }
-
-    public void setCreation_date(Date creation_date) {
-        this.creation_date = creation_date;
     }
 
     public int getId_user() {
@@ -117,17 +102,37 @@ public class Note {
         this.id_picture = id_picture;
     }
 
-    /**
-     * Rappresentazione testuale della classe Note
-     * @return riga di testo con tutti gli attributi e i rispettivi valori
-     */
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Date getCreation_data() {
+        return creation_data;
+    }
+
+    public void setCreation_data(Date creation_data) {
+        this.creation_data = creation_data;
+    }
+
     @Override
     public String toString() {
         return "Note{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", creation_date=" + creation_date +
+                ", creation_data=" + creation_data +
                 ", id_user=" + id_user +
                 ", id_travel=" + id_travel +
                 ", id_place=" + id_place +
