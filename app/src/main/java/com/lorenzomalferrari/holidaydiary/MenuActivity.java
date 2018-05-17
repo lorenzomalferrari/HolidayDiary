@@ -67,6 +67,7 @@ public class MenuActivity extends AppCompatActivity
         picture = findViewById(R.id.floatingActionButtonPicture);
         place = findViewById(R.id.floatingActionButtonPlace);
 
+        
         actionTravel();
         actionNote();
         actionPicture();
