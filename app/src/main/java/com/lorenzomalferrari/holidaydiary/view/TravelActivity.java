@@ -22,13 +22,7 @@ public class TravelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_travel);
         setTitle("Travel");
 
-        txttitle = findViewById(R.id.traveltitle);
-        txtdescription = findViewById(R.id.descriptiontitle);
-        txtcategory = findViewById(R.id.categorytitle);
-        img = findViewById(R.id.travelthumbnail);
-
-
-        collapsingToolbarLayout = findViewById(R.id.collappsingtoolbar);
+        init();
 
         // Recieve data
         Intent intent = getIntent();
@@ -36,6 +30,21 @@ public class TravelActivity extends AppCompatActivity {
         String description = intent.getExtras().getString("Description");
         int image = intent.getExtras().getInt("Thumbnail");
 
+        setComponents(title,description,image);
+
+    }
+
+    private void init(){
+        txttitle = findViewById(R.id.traveltitle);
+        txtdescription = findViewById(R.id.descriptiontitle);
+        txtcategory = findViewById(R.id.categorytitle);
+        img = findViewById(R.id.travelthumbnail);
+
+        //Inizializzo la Toolbar
+        collapsingToolbarLayout = findViewById(R.id.collappsingtoolbar);
+    }
+
+    private void setComponents(String title, String description, int image){
         // Settings values
         //txttitle.setText(title);
         txtdescription.setText(description);

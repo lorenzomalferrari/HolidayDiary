@@ -22,14 +22,10 @@ import java.util.ArrayList;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    DatabaseHelper databaseHelper;
-    Button btnAddData,btnviewAll,btnDelete;
     //
+    Button btnAddData,btnviewAll,btnDelete,btnviewUpdate;
     RadioButton gender;
-    //
     EditText id,firstName,lastName,username,password,conf_password,email,city,country,birthdate;
-    //
-    Button btnviewUpdate;
 
     //Oggetto User
     User user;
@@ -37,6 +33,8 @@ public class RegistrationActivity extends AppCompatActivity {
     Validator validator;
     // User Session Manager Class
     UserSessionManager userSessionManager;
+    //
+    DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
