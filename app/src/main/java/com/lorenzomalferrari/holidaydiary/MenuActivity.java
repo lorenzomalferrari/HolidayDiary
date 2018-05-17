@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionMenu;
 import com.github.clans.fab.FloatingActionButton;
@@ -67,7 +68,7 @@ public class MenuActivity extends AppCompatActivity
         picture = findViewById(R.id.floatingActionButtonPicture);
         place = findViewById(R.id.floatingActionButtonPlace);
 
-        
+
         actionTravel();
         actionNote();
         actionPicture();
@@ -192,9 +193,11 @@ public class MenuActivity extends AppCompatActivity
         // Session class instance
         userSessionManager = new UserSessionManager(getApplicationContext());
 
-        /*Toast.makeText(getApplicationContext(),
-                "User Login Status: " + userSessionManager.isUserLoggedIn(),
-                Toast.LENGTH_LONG).show();*/
+        /*Toast.makeText(
+                    getApplicationContext(),
+                    "User Login Status: " + userSessionManager.isUserLoggedIn(),
+                    Toast.LENGTH_LONG)
+                .show();*/
 
         // Check user login
         // If User is not logged in , This will redirect user to LoginActivity.
@@ -239,8 +242,7 @@ public class MenuActivity extends AppCompatActivity
                 Intent intent = null;
                 intent = new Intent(MenuActivity.this, AddTravelActivity.class);
                 MenuActivity.this.startActivity(intent);
-                floatingActionMenu.setAnimated(false);
-                floatingActionMenu.close(false);
+                closeFloatingActionMenu();
             }
         });
     }
@@ -252,8 +254,7 @@ public class MenuActivity extends AppCompatActivity
                 Intent intent = null;
                 intent = new Intent(MenuActivity.this, AddNoteActivity.class);
                 MenuActivity.this.startActivity(intent);
-                floatingActionMenu.setAnimated(false);
-                floatingActionMenu.close(false);
+                closeFloatingActionMenu();
             }
         });
     }
@@ -265,8 +266,7 @@ public class MenuActivity extends AppCompatActivity
                 Intent intent = null;
                 intent = new Intent(MenuActivity.this, AddPictureActivity.class);
                 MenuActivity.this.startActivity(intent);
-                floatingActionMenu.setAnimated(false);
-                floatingActionMenu.close(false);
+                closeFloatingActionMenu();
             }
         });
     }
@@ -275,10 +275,17 @@ public class MenuActivity extends AppCompatActivity
         place.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                floatingActionMenu.setAnimated(false);
-                floatingActionMenu.close(false);
+                closeFloatingActionMenu();
             }
         });
+    }
+
+    /**
+     * 
+     */
+    private void closeFloatingActionMenu(){
+        floatingActionMenu.setAnimated(false);
+        floatingActionMenu.close(false);
     }
 
 }
