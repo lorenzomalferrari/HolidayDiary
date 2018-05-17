@@ -238,7 +238,8 @@ public class MenuActivity extends AppCompatActivity
                 Intent intent = null;
                 intent = new Intent(MenuActivity.this, AddTravelActivity.class);
                 MenuActivity.this.startActivity(intent);
-                floatingActionMenu.close(true);
+                floatingActionMenu.setAnimated(false);
+                floatingActionMenu.close(false);
             }
         });
     }
@@ -250,7 +251,8 @@ public class MenuActivity extends AppCompatActivity
                 Intent intent = null;
                 intent = new Intent(MenuActivity.this, AddNoteActivity.class);
                 MenuActivity.this.startActivity(intent);
-                floatingActionMenu.close(true);
+                floatingActionMenu.setAnimated(false);
+                floatingActionMenu.close(false);
             }
         });
     }
@@ -262,7 +264,8 @@ public class MenuActivity extends AppCompatActivity
                 Intent intent = null;
                 intent = new Intent(MenuActivity.this, AddPictureActivity.class);
                 MenuActivity.this.startActivity(intent);
-                floatingActionMenu.close(true);
+                floatingActionMenu.setAnimated(false);
+                floatingActionMenu.close(false);
             }
         });
     }
@@ -271,7 +274,8 @@ public class MenuActivity extends AppCompatActivity
         place.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                floatingActionMenu.close(true);
+                floatingActionMenu.setAnimated(false);
+                floatingActionMenu.close(false);
             }
         });
     }
