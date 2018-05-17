@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -18,7 +19,9 @@ import android.widget.Toast;
 
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
+import com.lorenzomalferrari.holidaydiary.model.Picture;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
@@ -54,6 +57,38 @@ public class AddPictureActivity extends AppCompatActivity {
                 );
             }
         });
+
+
+        //Buttone per salvare l'immagine
+        saveImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    databaseHelper.inserDataImage(
+                            new Picture(name.getText().toString().trim(),getImageViewByte(img),1)
+                    );
+                    Toast.makeText(getApplicationContext(),"Aggiunta immagine con successo",Toast.LENGTH_LONG).show();
+                    clearComponents();
+                    callPictures();
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+
+    }
+
+    private void callPictures() {
+        Intent intent = new Intent(this,PicturesActivity.class);
+        this.startActivity(intent);
+
+    }
+
+    private void clearComponents() {
+        name.setText("");
+        description.setText("");
+        img.setImageResource(R.mipmap.ic_launcher_round);
     }
 
     @Override
@@ -99,5 +134,13 @@ public class AddPictureActivity extends AppCompatActivity {
         img = findViewById(R.id.addImage_img);
         chooseImg = findViewById(R.id.addImage_choose_image);
         saveImg = findViewById(R.id.addImage_save_img);
+    }
+
+    private byte[] getImageViewByte(ImageView imageView){
+        Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
+        byte[] byteArray = stream.toByteArray();
+        return byteArray;
     }
 }
