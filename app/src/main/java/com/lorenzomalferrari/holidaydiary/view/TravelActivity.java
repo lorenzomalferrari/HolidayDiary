@@ -21,7 +21,7 @@ public class TravelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travel);
         setTitle("Travel");
-
+        // Inizializzo i componenti
         init();
 
         // Recieve data
@@ -29,11 +29,14 @@ public class TravelActivity extends AppCompatActivity {
         String title = intent.getExtras().getString("TravelTitle");
         String description = intent.getExtras().getString("Description");
         int image = intent.getExtras().getInt("Thumbnail");
-
+        // Setto i componenti
         setComponents(title,description,image);
 
     }
 
+    /**
+     * Inizializzo gli attributi
+     */
     private void init(){
         txttitle = findViewById(R.id.traveltitle);
         txtdescription = findViewById(R.id.descriptiontitle);
@@ -44,6 +47,12 @@ public class TravelActivity extends AppCompatActivity {
         collapsingToolbarLayout = findViewById(R.id.collappsingtoolbar);
     }
 
+    /**
+     * Setto i componenti con i parametri d'ingresso
+     * @param title
+     * @param description
+     * @param image
+     */
     private void setComponents(String title, String description, int image){
         // Settings values
         //txttitle.setText(title);
