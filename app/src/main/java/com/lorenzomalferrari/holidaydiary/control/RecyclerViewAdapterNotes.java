@@ -8,13 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.lorenzomalferrari.holidaydiary.NoteActivity;
+import com.lorenzomalferrari.holidaydiary.view.NoteActivity;
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.model.Note;
-import com.lorenzomalferrari.holidaydiary.model.Travel;
 
 import java.util.List;
 

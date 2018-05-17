@@ -1,7 +1,9 @@
-package com.lorenzomalferrari.holidaydiary;
+package com.lorenzomalferrari.holidaydiary.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.lorenzomalferrari.holidaydiary.R;
 
 public class PicturesActivity extends AppCompatActivity {
 

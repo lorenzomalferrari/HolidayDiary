@@ -1,4 +1,4 @@
-package com.lorenzomalferrari.holidaydiary;
+package com.lorenzomalferrari.holidaydiary.view;
 
 import android.Manifest;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 
 import java.io.FileNotFoundException;

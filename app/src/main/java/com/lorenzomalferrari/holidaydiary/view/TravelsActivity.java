@@ -1,4 +1,4 @@
-package com.lorenzomalferrari.holidaydiary;
+package com.lorenzomalferrari.holidaydiary.view;
 
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.control.RecyclerViewAdapter;
 import com.lorenzomalferrari.holidaydiary.control.RecyclerViewAdapterTravels;

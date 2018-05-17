@@ -1,9 +1,11 @@
-package com.lorenzomalferrari.holidaydiary;
+package com.lorenzomalferrari.holidaydiary.view;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.lorenzomalferrari.holidaydiary.R;
 
 public class NoteActivity extends AppCompatActivity {
 

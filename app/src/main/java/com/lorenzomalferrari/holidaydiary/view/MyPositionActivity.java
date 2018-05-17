@@ -1,4 +1,4 @@
-package com.lorenzomalferrari.holidaydiary;
+package com.lorenzomalferrari.holidaydiary.view;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -22,6 +22,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.lorenzomalferrari.holidaydiary.R;
 
 public class MyPositionActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,

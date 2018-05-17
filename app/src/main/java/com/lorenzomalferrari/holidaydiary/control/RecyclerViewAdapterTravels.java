@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lorenzomalferrari.holidaydiary.R;
-import com.lorenzomalferrari.holidaydiary.TravelActivity;
+import com.lorenzomalferrari.holidaydiary.view.TravelActivity;
 import com.lorenzomalferrari.holidaydiary.model.Travel;
 
 import java.util.List;
