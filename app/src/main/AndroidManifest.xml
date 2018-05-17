@@ -61,7 +61,8 @@
         <activity android:name=".AddPictureActivity" />
         <activity android:name=".AddTravelActivity" />
         <activity android:name=".AddNoteActivity" />
-        <activity android:name=".PicturesActivity"></activity>
+        <activity android:name=".PicturesActivity" />
+        <activity android:name=".PrivacyTermsActivity"></activity>
     </application>
 
 </manifest>
