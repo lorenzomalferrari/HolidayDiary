@@ -281,7 +281,7 @@ public class MenuActivity extends AppCompatActivity
     }
 
     /**
-     * 
+     * Chiudo il menu
      */
     private void closeFloatingActionMenu(){
         floatingActionMenu.setAnimated(false);
