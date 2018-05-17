@@ -42,7 +42,7 @@ public class RecyclerViewAdapterNotes extends RecyclerView.Adapter<RecyclerViewA
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
         holder.title.setText(myData.get(position).getTitle());
-        holder.data.setText(myData.get(position).getCreation_date().toString());
+        holder.data.setText(myData.get(position).getCreation_data().toString());
 
         // Set click listener
         holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +52,7 @@ public class RecyclerViewAdapterNotes extends RecyclerView.Adapter<RecyclerViewA
 
                 // Passing data to the note activity
                 intent.putExtra("Title",myData.get(position).getTitle());
-                intent.putExtra("Data",myData.get(position).getCreation_date().toString());
+                intent.putExtra("Data",myData.get(position).getCreation_data().toString());
                 intent.putExtra("Description",myData.get(position).getDescription());
                 // start activity
                 context.startActivity(intent);
