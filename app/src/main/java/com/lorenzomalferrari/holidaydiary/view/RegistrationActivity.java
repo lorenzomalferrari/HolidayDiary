@@ -264,15 +264,16 @@ public class RegistrationActivity extends AppCompatActivity {
      *
      */
     private boolean checkData() {
-        Toast.makeText(RegistrationActivity.this, "P: "+password.getText().toString(), Toast.LENGTH_LONG).show();
-        Toast.makeText(RegistrationActivity.this, "CP: "+conf_password.getText().toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(RegistrationActivity.this, "Pw: "+password.getText().toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(RegistrationActivity.this, "Conf_Pw: "+conf_password.getText().toString(), Toast.LENGTH_LONG).show();
         boolean flag;
-        if (validator.isEmailValid(email.getText().toString())){
+        // Controllo
+        if (validator.isEmailValid(email.getText().toString()) &&
+            validator.isPasswordValid(password.getText().toString()) &&
+            equalsPassword())
             flag = true;
-        }
-        else {
-            flag = false;
-        }
+        // Alternativa
+        else flag = false;
         return flag;
     }
 
@@ -281,7 +282,7 @@ public class RegistrationActivity extends AppCompatActivity {
      * @return
      */
     private boolean equalsPassword(){
-        if (password.getText().toString() == conf_password.getText().toString()){
+        if (password.getText().toString().equals(conf_password.getText().toString())){
             Toast.makeText(RegistrationActivity.this,String.valueOf(true), Toast.LENGTH_LONG).show();
             return true;
         }
