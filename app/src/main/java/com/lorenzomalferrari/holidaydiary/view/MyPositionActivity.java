@@ -55,7 +55,6 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
         //set location
         setUpLocation();
     }
@@ -77,8 +76,9 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
     }
 
     private void setUpLocation() {
-        if (android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                && android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+        if (android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
             requestRuntimePermission();
         }
         else {
@@ -91,8 +91,8 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
     }
 
     private void displayLocation() {
-        if (android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                && android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        if (android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
         {
             return;
         }
@@ -104,10 +104,8 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
 
 
             //add Marker
-            if (myCurrent != null)
-            {
-                myCurrent.remove(); // remove old marker
-            }
+            if (myCurrent != null) myCurrent.remove(); // remove old marker
+            
             myCurrent = mMap.addMarker(new MarkerOptions()
                     .position(new LatLng(latitude,longitude))
                     .title(getString(R.string.text_myposition)));
