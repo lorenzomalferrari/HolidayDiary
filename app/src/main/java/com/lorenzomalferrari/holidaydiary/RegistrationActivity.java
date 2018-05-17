@@ -169,7 +169,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Cursor res = databaseHelper.getAll("Travels");
+                        Cursor res = databaseHelper.getAll("Users");
                         if(res.getCount() == 0) {
                             // show message
                             showMessage("Error","Nothing found");
