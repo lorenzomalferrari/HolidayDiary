@@ -25,10 +25,11 @@ public class Note {
         this.id_place = 1;
     }
 
-    public Note(String title, Date creation_date, String description) {
+    public Note(String title, Date creation_date, String description, int id_user) {
         this.title = title;
         this.description = description;
         this.creation_date = creation_date;
+        this.id_user = id_user;
     }
 
     /**
