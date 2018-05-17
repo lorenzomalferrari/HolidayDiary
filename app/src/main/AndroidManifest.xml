@@ -62,7 +62,7 @@
         <activity android:name=".view.AddTravelActivity" />
         <activity android:name=".view.AddNoteActivity" />
         <activity android:name=".view.PicturesActivity" />
-        <activity android:name=".view.PrivacyTermsActivity"></activity>
+        <activity android:name=".view.PrivacyTermsActivity" />
     </application>
 
 </manifest>
