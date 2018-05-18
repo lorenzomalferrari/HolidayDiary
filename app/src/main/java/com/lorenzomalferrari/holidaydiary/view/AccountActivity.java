@@ -69,7 +69,9 @@ public class AccountActivity extends AppCompatActivity {
      * Setto i campi con i dati presi dal database
      */
     private void setAccountData(Cursor res){
-        //firstName.setText(String.valueOf(res.getCount()));
+        //Setto immagine nella AccountActivity
+        imgUser.setImageResource(R.drawable.v_0578);
+        //Setto i campi della AccountActivity con i dati dell'utente che è loggato
         while (res.moveToNext()){
             firstName.setText(res.getString(1).toString());
             lastName.setText(res.getString(2).toString());
