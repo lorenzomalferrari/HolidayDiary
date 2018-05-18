@@ -29,18 +29,17 @@ public class AccountActivity extends AppCompatActivity {
 
         //
         databaseHelper = new DatabaseHelper(this);
-        //check UserSessionManager
-        checkUserSession();
+
 
         // Set title
         this.setTitle("Account");
-
+        userSessionManager = new UserSessionManager(getApplicationContext());
         //Inizializzo gli attributi dei campi
         init();
 
         String email = userSessionManager.getKEY_EMAIL();
         String password = userSessionManager.getKEY_PASSWORD();
-        Cursor res = databaseHelper.getDataUser(email,password);
+        Cursor res = databaseHelper.getDataUser("malfe.lore@gmail.com","123456");
         //
         setAccountData(res);
 
@@ -79,22 +78,5 @@ public class AccountActivity extends AppCompatActivity {
             birthdate.setText(res.getString(10).toString());
         }
 
-    }
-
-    private void checkUserSession(){
-        // Session class instance
-        userSessionManager = new UserSessionManager(getApplicationContext());
-
-        /*
-        Toast.makeText(
-                        getApplicationContext(),
-                        "User Login Status: " + userSessionManager.isUserLoggedIn(),
-                        Toast.LENGTH_LONG)
-                    .show();
-        */
-        
-        // Check user login
-        // If User is not logged in , This will redirect user to LoginActivity.
-        if(userSessionManager.checkLogin()) finish();
     }
 }
