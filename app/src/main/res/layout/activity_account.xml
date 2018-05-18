@@ -1,9 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.AccountActivity">
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+        <!-- -->
+        <ImageView
+            android:id="@+id/account_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_margin="20sp"/>
+
+        <!-- FirstName -->
+        <TextView
+            android:id="@+id/account_firstName_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_below="@+id/account_image"
+            android:text="FirstName"/>
+
+        <TextView
+            android:id="@+id/account_firstName_value"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:layout_below="@+id/account_image"
+            android:text="FirstName" />
+
+        <!-- LastName -->
+        <TextView
+            android:id="@+id/account_lastName_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_below="@+id/account_firstName_text"
+            android:text="LastName"/>
+
+        <TextView
+            android:id="@+id/account_lastName_value"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:layout_below="@+id/account_firstName_value"
+            android:text="LastName" />
+
+        <!-- Username -->
+        <TextView
+            android:id="@+id/account_username_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_below="@+id/account_lastName_text"
+            android:text="Username"/>
+
+        <TextView
+            android:id="@+id/account_username_value"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:layout_below="@+id/account_lastName_value"
+            android:text="Username" />
+
+        <!-- Email -->
+        <TextView
+            android:id="@+id/account_email_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_below="@+id/account_username_text"
+            android:text="Email"/>
+
+        <TextView
+            android:id="@+id/account_email_value"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:layout_below="@+id/account_username_value"
+            android:text="Email" />
+
+        <!-- Password -->
+        <TextView
+            android:id="@+id/account_password_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_below="@+id/account_email_text"
+            android:text="Password"/>
+
+        <TextView
+            android:id="@+id/account_password_value"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:layout_below="@+id/account_email_value"
+            android:text="Password" />
+
+        <!-- City -->
+        <TextView
+            android:id="@+id/account_city_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_below="@+id/account_password_text"
+            android:text="City"/>
+
+        <TextView
+            android:id="@+id/account_city_value"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:layout_below="@+id/account_password_value"
+            android:text="City" />
+
+        <!-- Country -->
+        <TextView
+            android:id="@+id/account_country_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_below="@+id/account_city_text"
+            android:text="Country"/>
+
+        <TextView
+            android:id="@+id/account_country_value"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:layout_below="@+id/account_city_value"
+            android:text="Country" />
+
+        <!-- Gender -->
+        <TextView
+            android:id="@+id/account_gender_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_below="@+id/account_country_text"
+            android:text="Gender"/>
+
+        <TextView
+            android:id="@+id/account_gender_value"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:layout_below="@+id/account_country_value"
+            android:text="Gender" />
+
+        <!-- Birthdate -->
+        <TextView
+            android:id="@+id/account_birthdate_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/account_gender_text"
+            android:padding="10dp"
+            android:layout_marginBottom="15dp"
+            android:text="Birthdate" />
+
+        <TextView
+            android:id="@+id/account_birthdate_value"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@+id/account_gender_value"
+            android:text="Birthdate" />
+
+    </RelativeLayout>
+</ScrollView>
