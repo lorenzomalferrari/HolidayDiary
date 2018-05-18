@@ -62,9 +62,9 @@ public class RegistrationActivity extends AppCompatActivity {
         //Controllo che i dati ottenuti siano corretti
 
         AddData();
-        viewAllUsers();
+        //viewAllUsers();
         //UpdateData();
-        DeleteData();
+        //DeleteData();
     }
 
 
@@ -106,7 +106,7 @@ public class RegistrationActivity extends AppCompatActivity {
      * Cancello l' Utente sapendo il suo id
      */
     public void DeleteData() {
-        btnDelete.setOnClickListener(
+        /*btnDelete.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -117,7 +117,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             Toast.makeText(RegistrationActivity.this,"Data not Deleted",Toast.LENGTH_LONG).show();
                     }
                 }
-        );
+        );*/
     }
 
     /**
@@ -164,7 +164,7 @@ public class RegistrationActivity extends AppCompatActivity {
      * Visualizzo tutti i dati di tutti gli Utenti presenti nel database
      */
     public void viewAllUsers() {
-        btnviewAll.setOnClickListener(
+        /*btnviewAll.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -193,7 +193,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         showMessage("Data",buffer.toString());
                     }
                 }
-        );
+        );*/
     }
 
     /**
