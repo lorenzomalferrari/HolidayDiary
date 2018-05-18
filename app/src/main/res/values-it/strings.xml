@@ -91,11 +91,11 @@
 
     <!-- Dati dell'autore -->
     <!-- Lorenzo Malferrari -->
-    <string name="author">Lorenzo Malferrari</string>
+    <string name="author">User User</string>
     <!-- www.lorenzomalferrari.com -->
     <string name="website">www.lorenzomalferrari.com</string>
     <!-- malfe.lore@gmail.com || info@lorenzomalferrari.com -->
-    <string name="emailAuthor">malfe.lore@gmail.com</string>
+    <string name="emailAuthor">user.user@user.com</string>
 
     <string name="terms_of_use">Termini di uso</string>
     <string name="privacy">Privacy</string>

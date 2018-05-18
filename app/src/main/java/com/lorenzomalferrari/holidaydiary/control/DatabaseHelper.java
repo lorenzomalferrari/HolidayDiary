@@ -54,6 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @param db
      */
     private void addDataDatabase(SQLiteDatabase db) {
+
         //Aggiungo Notes
         db.execSQL("INSERT INTO 'Notes' ('title', 'description' , 'id_user' )\n" +
                 "VALUES (\"Fare la spesa\", \"Questa è la nota numero 1\",1);\n");
@@ -107,7 +108,6 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
 
     /**
      * Inserisco i dati dell' utente nel database
-     *
      * (Ulteriormente da migliorare)
      * @param arrayList
      * @return
