@@ -93,7 +93,8 @@
 
     <!-- Dati dell'autore -->
     <!-- Lorenzo Malferrari -->
-    <string name="author">User User</string>
+    <string name="user">User User</string>
+    <string name="author">Lorenzo Malferrari</string>
     <!-- www.lorenzomalferrari.com -->
     <string name="website">www.lorenzomalferrari.com</string>
     <!-- malfe.lore@gmail.com || info@lorenzomalferrari.com -->
