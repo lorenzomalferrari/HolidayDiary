@@ -30,11 +30,15 @@ import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    //
+    Controller controller;
+    //
     Dialog myDialog;
     UserSessionManager userSessionManager;
-    Controller controller;
     DatabaseHelper databaseHelper;
 
+    //
     FloatingActionMenu floatingActionMenu;
     FloatingActionButton travel,note,picture,place;
 
@@ -59,18 +63,27 @@ public class MenuActivity extends AppCompatActivity
 
         //check UserSessionManager
         checkUserSession();
+        //inizializzazione dei componenti
+        init();
 
-        floatingActionMenu = findViewById(R.id.floatingActionMenu);
-        travel = findViewById(R.id.floatingActionButtonTravel);
-        note = findViewById(R.id.floatingActionButtonNote);
-        picture = findViewById(R.id.floatingActionButtonPicture);
-        place = findViewById(R.id.floatingActionButtonPlace);
 
+        //Esecuzione dei bottoni
         actionTravel();
         actionNote();
         actionPicture();
         actionPlace();
 
+    }
+
+    /**
+     * Inizializzazione degli attributi dei componenti
+     */
+    private void init() {
+        floatingActionMenu = findViewById(R.id.floatingActionMenu);
+        travel = findViewById(R.id.floatingActionButtonTravel);
+        note = findViewById(R.id.floatingActionButtonNote);
+        picture = findViewById(R.id.floatingActionButtonPicture);
+        place = findViewById(R.id.floatingActionButtonPlace);
     }
 
     @Override
@@ -117,6 +130,10 @@ public class MenuActivity extends AppCompatActivity
         return true;
     }
 
+    /**
+     * Compilo le chiamate delle voci presenti nel menù
+     * @param itemId
+     */
     private void displaySelectedScreen(int itemId) {
         //creating fragment object
         Fragment fragment = null;
@@ -170,6 +187,9 @@ public class MenuActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
     }
 
+    /**
+     * Mostra il popup con i dati della versione
+     */
     public void ShowPopup(){
         TextView txtClose;
         myDialog.setContentView(R.layout.versionpopup);
@@ -184,6 +204,9 @@ public class MenuActivity extends AppCompatActivity
         myDialog.show();
     }
 
+    /**
+     * Controllo i dati della sessione utente
+     */
     private void checkUserSession(){
         // Session class instance
         userSessionManager = new UserSessionManager(getApplicationContext());
@@ -228,6 +251,9 @@ public class MenuActivity extends AppCompatActivity
     }
 
 
+    /**
+     * Chiamo l'attività per visualizzare la lista dei viaggi
+     */
     private void actionTravel(){
         travel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -240,6 +266,9 @@ public class MenuActivity extends AppCompatActivity
         });
     }
 
+    /**
+     * Chiamo l'attività per visualizzare la lista delle note
+     */
     private void actionNote(){
         note.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -252,6 +281,9 @@ public class MenuActivity extends AppCompatActivity
         });
     }
 
+    /**
+     * Chiamo l'attività per visualizzare la lista delle immagini
+     */
     private void actionPicture(){
         picture.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -264,6 +296,9 @@ public class MenuActivity extends AppCompatActivity
         });
     }
 
+    /**
+     * Chiamo l'attività per visualizzare la lista dei luoghi
+     */
     private void actionPlace(){
         place.setOnClickListener(new View.OnClickListener() {
             @Override
