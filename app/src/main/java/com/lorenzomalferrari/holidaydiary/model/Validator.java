@@ -10,6 +10,8 @@ import java.util.regex.Pattern;
 
 /**
  * Classe che controlla che i dati sia validi, ovvero email password etc.....
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
  */
 public class Validator {
 

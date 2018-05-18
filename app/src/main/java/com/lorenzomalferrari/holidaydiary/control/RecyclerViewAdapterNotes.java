@@ -16,6 +16,10 @@ import com.lorenzomalferrari.holidaydiary.model.Note;
 
 import java.util.List;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class RecyclerViewAdapterNotes extends RecyclerView.Adapter<RecyclerViewAdapterNotes.MyViewHolder>  {
 
     private Context context;

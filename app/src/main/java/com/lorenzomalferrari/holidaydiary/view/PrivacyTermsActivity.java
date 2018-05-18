@@ -5,6 +5,10 @@ import android.os.Bundle;
 
 import com.lorenzomalferrari.holidaydiary.R;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class PrivacyTermsActivity extends AppCompatActivity {
 
     @Override

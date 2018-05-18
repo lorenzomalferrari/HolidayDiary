@@ -24,6 +24,10 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.lorenzomalferrari.holidaydiary.R;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class MyPositionActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,

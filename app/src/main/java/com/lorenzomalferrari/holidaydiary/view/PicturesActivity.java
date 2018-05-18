@@ -15,6 +15,10 @@ import com.lorenzomalferrari.holidaydiary.model.Travel;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class PicturesActivity extends AppCompatActivity {
 
     GridView gridView;

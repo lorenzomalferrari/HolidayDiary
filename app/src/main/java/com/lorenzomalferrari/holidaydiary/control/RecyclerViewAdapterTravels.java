@@ -17,6 +17,10 @@ import com.lorenzomalferrari.holidaydiary.model.Travel;
 
 import java.util.List;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class RecyclerViewAdapterTravels extends RecyclerView.Adapter<RecyclerViewAdapterTravels.MyViewHolder>{
 
     private Context myContext;

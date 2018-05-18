@@ -9,6 +9,10 @@ import android.view.ViewGroup;
 
 import com.lorenzomalferrari.holidaydiary.R;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class SettingsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

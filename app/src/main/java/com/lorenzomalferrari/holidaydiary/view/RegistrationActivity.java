@@ -20,6 +20,10 @@ import com.lorenzomalferrari.holidaydiary.model.Validator;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class RegistrationActivity extends AppCompatActivity {
 
     //

@@ -11,6 +11,10 @@ import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.model.Travel;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class AddTravelActivity extends AppCompatActivity {
 
     EditText txttitle, txtcategory, txtdescription;

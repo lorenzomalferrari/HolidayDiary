@@ -9,6 +9,10 @@ import com.lorenzomalferrari.holidaydiary.view.LoginActivity;
 
 import java.util.HashMap;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class UserSessionManager {
 
     // Shared Preferences reference

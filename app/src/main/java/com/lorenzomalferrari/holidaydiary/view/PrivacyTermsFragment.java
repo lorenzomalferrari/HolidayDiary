@@ -9,6 +9,10 @@ import android.view.ViewGroup;
 
 import com.lorenzomalferrari.holidaydiary.R;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class PrivacyTermsFragment extends Fragment {
     public PrivacyTermsFragment() {
         // Required empty public constructor

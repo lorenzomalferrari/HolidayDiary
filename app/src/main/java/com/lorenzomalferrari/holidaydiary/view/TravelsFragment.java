@@ -11,6 +11,10 @@ import com.lorenzomalferrari.holidaydiary.R;
 
 import java.util.List;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class TravelsFragment extends Fragment {
 
     @Override

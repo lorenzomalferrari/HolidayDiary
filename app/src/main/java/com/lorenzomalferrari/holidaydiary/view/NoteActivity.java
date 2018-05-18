@@ -7,6 +7,10 @@ import android.widget.TextView;
 
 import com.lorenzomalferrari.holidaydiary.R;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class NoteActivity extends AppCompatActivity {
 
     private TextView txttitle,txtdata,txtdescription;

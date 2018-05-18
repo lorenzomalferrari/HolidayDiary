@@ -2,6 +2,10 @@ package com.lorenzomalferrari.holidaydiary.model;
 
 import java.util.Date;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class Place {
 
     private int id, id_user, id_picture, id_travel, id_note;

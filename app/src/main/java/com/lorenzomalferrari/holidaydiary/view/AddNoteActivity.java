@@ -14,6 +14,10 @@ import com.lorenzomalferrari.holidaydiary.model.Note;
 
 import java.util.Date;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class AddNoteActivity extends AppCompatActivity {
 
     //Attributi che rapresentano i campi nella Activity

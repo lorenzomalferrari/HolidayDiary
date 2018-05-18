@@ -14,6 +14,10 @@ import com.lorenzomalferrari.holidaydiary.model.Picture;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class PictureListAdapter extends BaseAdapter {
 
     private Context context;

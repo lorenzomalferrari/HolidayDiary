@@ -14,6 +14,10 @@ import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
 
 import java.util.Date;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class AccountActivity extends AppCompatActivity {
 
     TextView firstName, lastName, username, email, password, city, country, gender, birthdate;

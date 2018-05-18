@@ -1,5 +1,9 @@
 package com.lorenzomalferrari.holidaydiary.model;
 
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class Travel {
 
     // Attributi della tabella Travels presente sul database HolidayDiary.db
