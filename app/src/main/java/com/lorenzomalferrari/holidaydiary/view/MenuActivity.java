@@ -143,9 +143,9 @@ public class MenuActivity extends AppCompatActivity
                 this.startActivity(intent);
                 break;
             case R.id.nav_account:
-                fragment = new AccountFragment();
-                //intent = new Intent(this, AccountActivity.class);
-                //this.startActivity(intent);
+                //fragment = new AccountFragment();
+                intent = new Intent(this, AccountActivity.class);
+                this.startActivity(intent);
                 break;
             case R.id.nav_settings:
                 fragment = new SettingsFragment();
