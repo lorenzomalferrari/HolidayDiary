@@ -63,6 +63,7 @@
         <activity android:name=".view.AddNoteActivity" />
         <activity android:name=".view.PicturesActivity" />
         <activity android:name=".view.PrivacyTermsActivity" />
+        <activity android:name=".view.AccountActivity"></activity>
     </application>
 
 </manifest>
