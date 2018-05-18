@@ -20,13 +20,13 @@ public class UserSessionManager {
     // Shared pref mode
     int PRIVATE_MODE = 0;
     // Sharedpref file name
-    private static final String PREFER_NAME = "User ";
+    private static final String PREFER_NAME = "User";
     // All Shared Preferences Keys
     private static final String IS_USER_LOGIN = "IsUserLoggedIn";
     // Password (make variable public to access from outside)
-    public static final String KEY_PASSWORD = "password";
+    private String KEY_PASSWORD = "password";
     // Email address (make variable public to access from outside)
-    public static final String KEY_EMAIL = "email";
+    private String KEY_EMAIL = "email";
 
     // Constructor
     public UserSessionManager(Context context){
@@ -40,9 +40,12 @@ public class UserSessionManager {
         // Storing login value as TRUE
         editor.putBoolean(IS_USER_LOGIN, true);
 
+        //
+        KEY_EMAIL = email;
         // Storing email in pref
         editor.putString(KEY_EMAIL, email);
 
+        KEY_PASSWORD = password;
         // Storing password in pref
         editor.putString(KEY_PASSWORD, password);
 
@@ -118,6 +121,17 @@ public class UserSessionManager {
         _context.startActivity(intent);
     }
 
+    public String getKEY_PASSWORD() {
+        return KEY_PASSWORD;
+    }
+
+    public String getKEY_EMAIL() {
+        return KEY_EMAIL;
+    }
+
+    public Editor getEditor() {
+        return editor;
+    }
 
     // Check for login
     public boolean isUserLoggedIn(){
