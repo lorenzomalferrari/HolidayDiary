@@ -92,6 +92,7 @@ public class AccountActivity extends AppCompatActivity {
                         Toast.LENGTH_LONG)
                     .show();
         */
+        
         // Check user login
         // If User is not logged in , This will redirect user to LoginActivity.
         if(userSessionManager.checkLogin()) finish();
