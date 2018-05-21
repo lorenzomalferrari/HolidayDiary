@@ -68,7 +68,7 @@ public class RegistrationActivity extends AppCompatActivity {
         //Controllo che i dati ottenuti siano corretti
 
         AddData();
-        viewAllUsers();
+        //viewAllUsers();
         //UpdateData();
         //DeleteData();
     }
