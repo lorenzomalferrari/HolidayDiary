@@ -28,8 +28,10 @@ public class RegistrationActivity extends AppCompatActivity {
 
     //
     Button btnAddData,btnviewAll,btnDelete,btnviewUpdate;
-    RadioButton gender;
+    RadioButton male, female;
     EditText id,firstName,lastName,username,password,conf_password,email,city,country,birthdate;
+
+    String genderSelected = "";
 
     //Oggetto User
     User user;
@@ -66,7 +68,7 @@ public class RegistrationActivity extends AppCompatActivity {
         //Controllo che i dati ottenuti siano corretti
 
         AddData();
-        //viewAllUsers();
+        viewAllUsers();
         //UpdateData();
         //DeleteData();
     }
@@ -86,7 +88,7 @@ public class RegistrationActivity extends AppCompatActivity {
         arrayList.add(email.getText().toString().replace(" ",""));
         arrayList.add(city.getText().toString().replace(" ",""));
         arrayList.add(country.getText().toString().replace(" ",""));
-        arrayList.add(gender.getText().toString().replace(" ",""));
+        arrayList.add(genderSelected);
         arrayList.add(birthdate.getText().toString().replace(" ",""));
         return arrayList;
     }
@@ -96,14 +98,11 @@ public class RegistrationActivity extends AppCompatActivity {
      * Metodo per ottenere il radioButton selezionato
      * @return
      */
-    private RadioButton getRadioButtonChecked(){
-        RadioButton radioMale =  findViewById(R.id.radioButtonMale);
-        RadioButton radioFemale =  findViewById(R.id.radioButtonFemale);
-        if (radioMale.isChecked() == true){
-            return radioMale;
-        }
+    private void getRadioButtonChecked(){
+        if (male.isChecked() == true)
+            genderSelected = male.getText().toString();
         else
-            return radioFemale;
+            genderSelected = female.getText().toString();
     }
 
     /**
@@ -154,7 +153,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                             //Creo utente
-
+                            getRadioButtonChecked();
                             boolean isInserted = databaseHelper.insertDataUser(createArrayList());
                             if (isInserted) {
                                 Toast.makeText(RegistrationActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
@@ -171,7 +170,7 @@ public class RegistrationActivity extends AppCompatActivity {
      * Visualizzo tutti i dati di tutti gli Utenti presenti nel database
      */
     public void viewAllUsers() {
-        /*btnviewAll.setOnClickListener(
+        btnviewAll.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -200,7 +199,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         showMessage("Data",buffer.toString());
                     }
                 }
-        );*/
+        );
     }
 
     /**
@@ -233,7 +232,7 @@ public class RegistrationActivity extends AppCompatActivity {
         // Creo un oggetto per creare le date tramite stringhe
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
         //Costruisco oggetto utente
-        char gender = this.gender.getText().charAt(0);
+        char gender = this.genderSelected.charAt(0);
         String format_birthdate = this.birthdate.getText().toString().replace("/","-");
         //Test
         //Toast.makeText(RegistrationActivity.this,birthdate,Toast.LENGTH_LONG).show();
@@ -262,7 +261,8 @@ public class RegistrationActivity extends AppCompatActivity {
         // Country
         country =  findViewById(R.id.register_countryValue);
         // Gender
-        gender = getRadioButtonChecked();
+        male = findViewById(R.id.radioButtonMale);
+        female = findViewById(R.id.radioButtonFemale);
         // Birthdate
         birthdate =  findViewById(R.id.register_birthdateValue);
     }
@@ -277,11 +277,14 @@ public class RegistrationActivity extends AppCompatActivity {
         // Controllo
         if (validator.isEmailValid(email.getText().toString()) &&
             validator.isPasswordValid(password.getText().toString()) &&
-            equalsPassword())
+            equalsPassword()
+            )
             flag = true;
         // Alternativa
-        else flag = false;
-        return flag;
+        else
+            flag = false;
+        return
+            flag;
     }
 
     /**
