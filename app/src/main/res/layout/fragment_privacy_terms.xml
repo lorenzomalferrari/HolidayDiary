@@ -13,14 +13,14 @@
             android:padding="20dp"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:text="@string/privacy"/>
+            android:text="Privacy"/>
         <TextView
             android:id="@+id/privacyterms_privacyText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/privacyterms_privacyTitle"
             android:padding="20dp"
-            android:text="@string/privacy_text" />
+            android:text="Privacy" />
         <TextView
             android:id="@+id/privacyterms_termsofuseTitle"
             android:layout_width="wrap_content"
@@ -30,14 +30,14 @@
             android:layout_below="@id/privacyterms_privacyText"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:text="@string/terms_of_use"/>
+            android:text="Terms of Use"/>
         <TextView
             android:id="@+id/privacyterms_termsofuseText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
             android:layout_below="@id/privacyterms_termsofuseTitle"
-            android:text="@string/terms_text"/>
+            android:text="Terms_text"/>
     </RelativeLayout>
 
 </ScrollView>

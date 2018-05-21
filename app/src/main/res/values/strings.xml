@@ -7,17 +7,7 @@
     <string name="action_settings">Settings</string>
 
     <!-- Words for English -->
-    <string name="homepage">Home Page</string>
     <string name="travels">Travels</string>
-    <string name="notes">Notes</string>
-    <string name="pictures">Pictures</string>
-    <string name="position">Position</string>
-    <string name="account">Account</string>
-    <string name="settings">Settings</string>
-    <string name="privacytermsofuse">Privacy and Terms of use</string>
-    <string name="version">Version</string>
-    <string name="other">Other</string>
-    <string name="title_activity_login">Login</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -29,108 +19,13 @@
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
-    <string name="login_name">HolidayDiary - Login</string>
-    <string name="firstName">FirstName</string>
-    <string name="lastName">LastName</string>
-    <string name="usarname">Usarname</string>
-    <string name="email_text">Email</string>
-    <string name="city_text">City</string>
-    <string name="country_text">Country</string>
-    <string name="gender_text">Gender</string>
-    <string name="age_text">Age</string>
-    <string name="usarname_text">usarname</string>
-    <string name="privacy_title">Privacy</string>
-    <string name="terms_title">Terms of use</string>
-    <string name="birthdate">Birthdate</string>
-    <string name="copyright">All rights reserved</string>
 
-    <!-- Testo che rappresenta il testo della privacy -->
-    <string name="privacy_text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla dolor
-        at erat tempus faucibus. Sed massa odio, faucibus quis ipsum eu, luctus sodales ex. Integer
-        venenatis quam orci, ultricies accumsan libero laoreet id. Nulla facilisi. Aliquam laoreet
-        sapien ac eros iaculis, vel egestas lorem venenatis. Integer ornare fringilla cursus.
-        Nullam finibus commodo odio, vel placerat ante luctus in. Nam ut nunc eu eros sollicitudin
-        rutrum et a dolor. Sed velit sapien, vehicula a nisl a, molestie placerat sem.
-    </string>
-
-    <!-- Testo che rappresenta il testo dei termini d'uso -->
-    <string name="terms_text">
-        Sed lacinia lacus at orci venenatis lacinia. Quisque et ex sed ante
-        molestie molestie at sed risus. Vivamus mollis iaculis sem sit amet volutpat.
-        Proin vulputate arcu massa, sit amet placerat arcu elementum quis. Ut aliquet lacus nisi,
-        eget rutrum metus semper fringilla. Suspendisse eu porta libero, et tempor lacus.
-        Duis interdum dignissim nisi a efficitur. In erat urna, fringilla vel mi pharetra,
-        tincidunt commodo dui. Aenean laoreet lacus sed diam lobortis, euismod consectetur justo
-        maximus. Nulla facilisi. Cras sed massa leo. Etiam consequat justo ut erat venenatis aliquet.
-        Pellentesque luctus, neque et suscipit lobortis, sapien nulla vestibulum massa, a pharetra
-        lorem turpis at dui. Aliquam malesuada, lacus sit amet efficitur faucibus, dui urna pretium
-        massa, id lacinia risus ante at diam.
-    </string>
-
+-->
     <!-- Testo per la activity Registrazione -->
-    <string name="firstNameTextView">FirstName:</string>
-    <string name="firstNameEditText">FirstName</string>
-    <string name="lastNameTextView">LastName:</string>
-    <string name="lastNameEditText">LastName</string>
-    <string name="usarnameTextView">Usarname:</string>
-    <string name="usarnameEditText">Usarname</string>
-    <string name="emailTextView">Email:</string>
-    <string name="emailEditText">Email</string>
-    <string name="insertPasswordTextView">Inserisci password:</string>
-    <string name="confirmPasswordTextView">Conferma password:</string>
-    <string name="cityTextView">City:</string>
-    <string name="cityEditText">City</string>
-    <string name="countryTextView">Country:</string>
-    <string name="countryEditText">Country</string>
-    <string name="genderTextView">Gender:</string>
-    <string name="maleRadioButton">Male</string>
-    <string name="femaleRadioButton">Female</string>
-    <string name="birthdateTextView">Birthdate:</string>
-    <string name="birthdateEditText">Birthdate</string>
-    <string name="btnSaveText">Save</string>
     <string name="title_activity_my_position">Map</string>
-
     <!-- Dati dell'autore -->
     <!-- Lorenzo Malferrari -->
-    <string name="user">User User</string>
-    <string name="author">Lorenzo Malferrari</string>
     <!-- www.lorenzomalferrari.com -->
-    <string name="website">www.lorenzomalferrari.com</string>
-    <!-- malfe.lore@gmail.com || info@lorenzomalferrari.com -->
-    <string name="emailAuthor">malfe.lore@gmail.com</string>
 
-    <string name="terms_of_use">Terms of Use</string>
-    <string name="privacy">Privacy</string>
-    <string name="pictures_text">Pictures</string>
-    <string name="settings_text">Settings</string>
-    <string name="number_version">Versione 1.2.0</string>
-    <string name="close_popup">X</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="reservation">Reservation</string>
-    <string name="places">Places</string>
-    <string name="delete">Delete</string>
-    <string name="update">Update</string>
-    <string name="view_all">View All</string>
-    <string name="salva">Salva</string>
-    <string name="citta">Città</string>
-    <string name="email">Email</string>
-    <string name="last_Name">Cognome</string>
-    <string name="paese">Paese</string>
-    <string name="first_Name">Nome</string>
-    <string name="password">Password</string>
-    <string name="logout">Logout</string>
-    <string name="welcome_in_holiday_diary">Welcome in Holiday Diary</string>
-    <string name="text_myposition">YUO ARE HERE</string>
-    <string name="travel">Travel</string>
-
-    <string name="desc">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat porttitor ante eu semper. Cras dui lorem, finibus quis odio in, sagittis venenatis sapien. Nam ornare mattis mi, a iaculis arcu ornare ac. Ut ac imperdiet dui. Nunc vel tempor elit. Donec sit amet erat orci. Curabitur metus mauris, mollis ut varius ac, scelerisque in risus. Suspendisse nec molestie dolor. Nunc et feugiat nibh. Vestibulum eget sem quam. Donec at vulputate neque, a commodo quam. Proin id venenatis eros. Nullam dapibus commodo metus sed fringilla. Phasellus quis placerat justo, id molestie leo. Nullam nunc nisl, porta ac ornare at, congue et erat. Cras vulputate a libero eget lobortis.
-
-        Duis vitae dignissim justo, ut gravida odio. Donec non egestas risus. Fusce eleifend felis urna, at tincidunt sem facilisis nec. Morbi a tortor in ligula iaculis auctor eget quis metus. Donec ac dui id nulla ultrices egestas sed id metus. Suspendisse potenti. Proin nec urna erat. Suspendisse nec congue erat. Curabitur vehicula rutrum libero, vitae efficitur augue suscipit auctor. Aenean id nibh ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam molestie dui quis ex tempor, vitae dictum massa sodales. Sed turpis lacus, sagittis dignissim facilisis in, congue sed quam. Maecenas luctus efficitur felis, quis hendrerit metus vestibulum sit amet. Aliquam dignissim dui quis elit facilisis, at eleifend lacus aliquet.
-
-        Morbi a lectus eu erat interdum placerat mattis sed lorem. Mauris ac massa vitae lorem varius congue at id turpis. Duis at velit pulvinar, ullamcorper ipsum ac, pellentesque arcu. Nullam viverra tortor tempus neque maximus, et aliquam velit auctor. Praesent luctus urna nulla, quis tincidunt nulla blandit non. Quisque a interdum nisl. Aliquam et consequat dolor, eu viverra lacus. Cras mattis a nibh non finibus. Proin et velit pulvinar, rutrum ante et, vehicula enim.
-    </string>
-    <string name="nota">Nota</string>
 
 </resources>

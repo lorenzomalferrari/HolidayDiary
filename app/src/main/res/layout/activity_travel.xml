@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             app:layout_scrollFlags="exitUntilCollapsed|scroll"
             app:contentScrim="?attr/colorPrimary"
-            app:title="@string/app_name"
+            app:title="Holiday Diary"
             app:expandedTitleMarginStart="48dp"
             app:expandedTitleMarginEnd="64dp"
             android:background="@drawable/bicifiori">

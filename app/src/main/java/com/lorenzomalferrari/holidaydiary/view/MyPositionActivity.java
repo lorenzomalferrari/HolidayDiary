@@ -112,7 +112,9 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
             
             myCurrent = mMap.addMarker(new MarkerOptions()
                     .position(new LatLng(latitude,longitude))
-                    .title(getString(R.string.text_myposition)));
+                    /*.title(getString(R.string.text_myposition)));*/
+            .title("TU SEI QUI"));
+
 
             //move camera to this position
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude,longitude),12.0f));

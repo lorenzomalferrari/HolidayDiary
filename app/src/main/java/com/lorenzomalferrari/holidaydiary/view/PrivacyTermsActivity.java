@@ -16,6 +16,6 @@ public class PrivacyTermsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy_terms);
         //Set title with @string
-        this.setTitle(R.string.privacytermsofuse);
+        this.setTitle("Privacytermsofuse");
     }
 }
