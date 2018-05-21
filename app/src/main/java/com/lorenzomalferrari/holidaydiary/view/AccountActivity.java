@@ -24,6 +24,7 @@ public class AccountActivity extends AppCompatActivity {
     ImageView imgUser;
 
     DatabaseHelper databaseHelper;
+    // User Session Manager Class
     UserSessionManager userSessionManager;
 
     @Override
@@ -36,6 +37,7 @@ public class AccountActivity extends AppCompatActivity {
 
         // Set title
         this.setTitle("Account");
+        // User Session Manager
         userSessionManager = new UserSessionManager(getApplicationContext());
         //Inizializzo gli attributi dei campi
         init();
