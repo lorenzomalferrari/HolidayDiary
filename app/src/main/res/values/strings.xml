@@ -5,10 +5,8 @@
     <string name="nav_header_subtitle">lorenzomalferrari.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <!-- Words for English -->
     <string name="travels">Travels</string>
-
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -19,13 +17,9 @@
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
-
--->
     <!-- Testo per la activity Registrazione -->
     <string name="title_activity_my_position">Map</string>
     <!-- Dati dell'autore -->
     <!-- Lorenzo Malferrari -->
     <!-- www.lorenzomalferrari.com -->
-
-
 </resources>
