@@ -62,7 +62,7 @@ public class RegistrationActivity extends AppCompatActivity {
         btnDelete= findViewById(R.id.button_delete);
 
         //Uso escusivo in sviluppo per fare pulidia degli utenti
-        id = findViewById(R.id.register_firstNameValue);
+        //id = findViewById(R.id.register_firstNameValue);
         //Controllo che i dati ottenuti siano corretti
 
         AddData();
@@ -153,10 +153,13 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                            //Creo utente
+
                             boolean isInserted = databaseHelper.insertDataUser(createArrayList());
                             if (isInserted) {
                                 Toast.makeText(RegistrationActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
                                 userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
+
                                 callMenu();
                             } else Toast.makeText(RegistrationActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
                     }
@@ -225,7 +228,8 @@ public class RegistrationActivity extends AppCompatActivity {
     /**
      * Creo l'oggetto User
      */
-    private void createUser() {
+    private User createUser() {
+        User user = null;
         // Creo un oggetto per creare le date tramite stringhe
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
         //Costruisco oggetto utente
@@ -234,6 +238,7 @@ public class RegistrationActivity extends AppCompatActivity {
         //Test
         //Toast.makeText(RegistrationActivity.this,birthdate,Toast.LENGTH_LONG).show();
 
+        return user;
     }
 
     /**
