@@ -242,6 +242,18 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "foreign key (id_place) references "+ TABLE_NAMES[4] +" (id));");
     }
 
+    private void insertUsers(SQLiteDatabase db){
+        db.execSQL("INSERT INTO 'Users' ('firstName' , 'lastName' , 'username' , 'password' , 'email' , 'city' , 'country' , 'gender' , 'age' , 'id_travel' , 'id_note' , 'id_picture' , 'id_place')" +
+                "VALUES ('Petronio' , 'Trevisani' , 'petronio_trevisani' , '123456' , 'petronio@trevisani.com' , 'Palermo' , 'Italia' , 'M' , '40' , '1' , '1' , '1' , '1');");
+        db.execSQL("INSERT INTO 'Users' ('firstName' , 'lastName' , 'username' , 'password' , 'email' , 'city' , 'country' , 'gender' , 'age' , 'id_travel' , 'id_note' , 'id_picture' , 'id_place')" +
+                "VALUES ('Mariano' , 'Marchesi' , 'petronio_trevisani' , '123456' , 'mariano@marchesi.com' , 'Udinese' , 'Italia' , 'M' , '42' , '2' , '2' , '2' , '2');");
+
+        db.execSQL("INSERT INTO 'Users' ('firstName' , 'lastName' , 'username' , 'password' , 'email' , 'city' , 'country' , 'gender' , 'age' , 'id_travel' , 'id_note' , 'id_picture' , 'id_place')" +
+                "VALUES ('Antonella' , 'Gallo' , 'antonella_gallo' , '123456' , 'antonella@gallo.com' , 'Verona' , 'Italia' , 'F' , '30' , '3' , '3' , '3' , '3');");
+        db.execSQL("INSERT INTO 'Users' ('firstName' , 'lastName' , 'username' , 'password' , 'email' , 'city' , 'country' , 'gender' , 'age' , 'id_travel' , 'id_note' , 'id_picture' , 'id_place')" +
+                "VALUES ('Chiara' , 'Britti' , 'chiara_britti' , '123456' , 'chiara@britti.com' , 'Roma' , 'Italia' , 'F' , '58' , '4' , '4' , '4' , '4');");
+    }
+
     /**
      * Costruzione della tabella Travels
      * @param db
@@ -267,6 +279,13 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "foreign key (id_place) references "+ TABLE_NAMES[4] +" (id));");
     }
 
+    private void insertTravels(SQLiteDatabase db){
+        db.execSQL("INSERT INTO 'Users' ('title' , 'description' , 'img_list' , 'city' , 'country' , 'id_user' , 'id_note' , 'id_picture' , 'id_place')" +
+                "VALUES ('Nota Ciao' , 'Ciao a tutti come va la vita?' , '1' , 'Venezia' , 'Italia' , '1' , '1' , '1' , '1');");
+        db.execSQL("INSERT INTO 'Users' ('title' , 'description' , 'img_list' , 'city' , 'country' , 'id_user' , 'id_note' , 'id_picture' , 'id_place')" +
+                "VALUES ('Nota 2 Bella' , 'La vita è bella' , '1' , 'Venezia' , 'Italia' , '2' , '2' , '2' , '2');");
+    }
+
     /**
      * Costruzione della tabella Notes
      * @param db
@@ -288,7 +307,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     * Costruzione della tabella Pitures
+     * Costruzione della tabella Pictures
      * @param db
      */
     private void createPicturesTable(SQLiteDatabase db){
@@ -382,6 +401,23 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     public Integer deleteData (String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABLE_NAMES[0], "ID = ?",new String[] {id});
+    }
+
+
+
+    private void addDataOnDatabase(SQLiteDatabase db){
+
+        //Aggiungo Users
+        insertUsers(db);
+
+        //Aggiungo Travels
+        insertTravels(db);
+        //Aggiungo Notes
+
+        //Aggiungo Pictures
+
+        //Aggiungo Places
+
     }
 
 }
