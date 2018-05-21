@@ -24,7 +24,6 @@ public class TravelsActivity extends AppCompatActivity {
     List<Travel> listTravel;
     DatabaseHelper databaseHelper;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +45,7 @@ public class TravelsActivity extends AppCompatActivity {
         RecyclerView myRecyclerView = findViewById(R.id.recyclerviewTravels_id);
         RecyclerViewAdapterTravels myRecyclerViewAdapter = new RecyclerViewAdapterTravels(this,listTravel);
         // Visualizzazione dei viaggi a 1 colonna
-        myRecyclerView.setLayoutManager(new GridLayoutManager(this,1));
+        myRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
         myRecyclerView.setAdapter(myRecyclerViewAdapter);
 
 
