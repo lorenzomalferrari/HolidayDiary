@@ -34,19 +34,17 @@ public class AccountActivity extends AppCompatActivity {
         //
         databaseHelper = new DatabaseHelper(this);
 
-
         // Set title
         this.setTitle("Account");
         userSessionManager = new UserSessionManager(getApplicationContext());
         //Inizializzo gli attributi dei campi
         init();
 
-        String email = userSessionManager.getKEY_EMAIL();
-        String password = userSessionManager.getKEY_PASSWORD();
-        Cursor res = databaseHelper.getDataUser("malfe.lore@gmail.com","123456");
+        String email = "malfe.lore@gmail.com";
+        String password = "123456";
+        Cursor res = databaseHelper.getDataUser(email,password);
         //
         setAccountData(res);
-
     }
 
     /**
@@ -69,7 +67,7 @@ public class AccountActivity extends AppCompatActivity {
      * Setto i campi con i dati presi dal database
      */
     private void setAccountData(Cursor res){
-        //Setto immagine nella AccountActivity
+        //Setto immagine nella AccountActivity, immagine del profilo (Dovrebbe essere presa da DB, cosa che attualmente non è implementata)
         imgUser.setImageResource(R.drawable.v_0578);
         //Setto i campi della AccountActivity con i dati dell'utente che è loggato
         while (res.moveToNext()){
