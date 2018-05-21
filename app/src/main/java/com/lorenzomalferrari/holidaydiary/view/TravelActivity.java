@@ -15,7 +15,7 @@ import com.lorenzomalferrari.holidaydiary.R;
  */
 public class TravelActivity extends AppCompatActivity {
 
-
+    //
     private TextView txttitle,txtdescription, txtcategory;
     private ImageView img;
     private CollapsingToolbarLayout collapsingToolbarLayout;
@@ -46,7 +46,6 @@ public class TravelActivity extends AppCompatActivity {
         txtdescription = findViewById(R.id.descriptiontitle);
         txtcategory = findViewById(R.id.categorytitle);
         img = findViewById(R.id.travelthumbnail);
-
         //Inizializzo la Toolbar
         collapsingToolbarLayout = findViewById(R.id.collappsingtoolbar);
     }
@@ -61,7 +60,7 @@ public class TravelActivity extends AppCompatActivity {
         // Settings values
         //txttitle.setText(title);
         txtdescription.setText(description);
-        //img.setImageResource(image);*/
+        //img.setImageResource(image);
         collapsingToolbarLayout.setBackgroundResource(image);
         collapsingToolbarLayout.setTitle(title);
 
