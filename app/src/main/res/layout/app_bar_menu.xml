@@ -38,7 +38,7 @@
             android:id="@+id/floatingActionButtonTravel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_label="Travel"
+            app:fab_label="@string/travels_title"
             app:fab_size="mini"
             android:src="@drawable/img_travels" />
 
@@ -46,7 +46,7 @@
             android:id="@+id/floatingActionButtonNote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_label="Note"
+            app:fab_label="@string/notes_title"
             app:fab_size="mini"
             android:src="@drawable/img_notes" />
 
@@ -54,7 +54,7 @@
             android:id="@+id/floatingActionButtonPicture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_label="Picture"
+            app:fab_label="@string/pictures_title"
             app:fab_size="mini"
             android:src="@drawable/img_pictures" />
 
@@ -62,14 +62,9 @@
             android:id="@+id/floatingActionButtonPlace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/img_position"
             app:fab_label="Place"
-            app:fab_size="mini"
-            android:src="@drawable/img_position" />
-
-
-
-
-
+            app:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>
 

@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Future Feature"
+        android:text="@string/future_feature"
         android:textSize="40sp"
         android:gravity="center"/>
 

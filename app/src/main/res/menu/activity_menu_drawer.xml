@@ -10,15 +10,15 @@
         <item
             android:id="@+id/nav_travels"
             android:icon="@drawable/img_travels"
-            android:title="Travels" />
+            android:title="@string/travels_title" />
         <item
             android:id="@+id/nav_notes"
             android:icon="@drawable/img_notes"
-            android:title="Notes" />
+            android:title="@string/notes_title" />
         <item
             android:id="@+id/nav_pictures"
             android:icon="@drawable/img_pictures"
-            android:title="Pictures" />
+            android:title="@string/pictures_title" />
         <item
             android:id="@+id/nav_places"
             android:icon="@drawable/img_position"
@@ -33,7 +33,7 @@
             <item
                 android:id="@+id/nav_account"
                 android:icon="@drawable/img_account"
-                android:title="Account" />
+                android:title="@string/account_title" />
             <item
                 android:id="@+id/nav_settings"
                 android:icon="@drawable/img_settings"
@@ -41,11 +41,11 @@
             <item
                 android:id="@+id/nav_privacytermsofuse"
                 android:icon="@drawable/img_privacy"
-                android:title="Privacytermsofuse" />
+                android:title="@string/privacyterms_title" />
             <item
                 android:id="@+id/nav_version"
                 android:icon="@drawable/img_version"
-                android:title="Version" />
+                android:title="Info app" />
         </menu>
     </item>
 </menu>
