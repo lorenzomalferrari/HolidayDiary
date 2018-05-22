@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Holiday Diary</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -22,4 +24,67 @@
     <!-- Dati dell'autore -->
     <!-- Lorenzo Malferrari -->
     <!-- www.lorenzomalferrari.com -->
+
+
+
+    <!-- Login -->
+    <string name="login_title">Login</string>
+    <!-- Registration -->
+    <string name="registration_title">Registration</string>
+    <!-- Activity nel menù -->
+    <string name="travels_title">Travels</string>
+    <string name="travel_title">Travel</string>
+    <string name="addTravel_title">Add Travel</string>
+    <string name="notes_title">Notes</string>
+    <string name="note_title">Note</string>
+    <string name="addNote_title">Add Note</string>
+    <string name="pictures_title">Pictures</string>
+    <string name="picture_title">Picture</string>
+    <string name="addPicture_title">Add Picture</string>
+
+    <string name="account_title">Account</string>
+
+
+
+
+
+
+
+    <string name="privacyterms_title">Privacy terms of use</string>
+    <string name="settings_title">Settings</string>
+
+
+
+
+
+
+
+    <!-- Campi da usare in RegistrationActivity e AccountActivity -->
+    <string name="firstname_text">FirstName</string>
+    <string name="lastname_text">LastName</string>
+    <string name="username_text">Username</string>
+    <string name="email_text">Email</string>
+    <string name="password_text">Password</string>
+    <string name="city_text">City</string>
+    <string name="country_text">Country</string>
+    <string name="gender_text">Gender</string>
+    <string name="birthdate_text">Birthdate</string>
+
+    <!-- Campi da usare in AddNoteActivity (+ city e country)-->
+    <string name="title_text">Title</string>
+    <string name="description_text">Description</string>
+    <string name="start_data_text">Start Data</string>
+    <string name="finish_data_text">Finish Data</string>
+
+    <!-- Campi AddPictureActivity -->
+    <string name="add_image_text">Add Image</string>
+    <string name="password_text">Password</string>
+    <string name="sign_in_or_register_text">SIGN IN OR REGISTER</string>
+    <string name="data_text">Data</string>
+    <string name="privacy_text">Privacy</string>
+    <string name="privacy_value">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla dolor at erat tempus faucibus. Sed massa odio, faucibus quis ipsum eu, luctus sodales ex. Integer venenatis quam orci, ultricies accumsan libero laoreet id. Nulla facilisi. Aliquam laoreet sapien ac eros iaculis, vel egestas lorem venenatis. Integer ornare fringilla cursus. Nullam finibus commodo odio, vel placerat ante luctus in. Nam ut nunc eu eros sollicitudin rutrum et a dolor. Sed velit sapien, vehicula a nisl a, molestie placerat sem.</string>
+    <string name="terms_of_use_text">Terms of use</string>
+    <string name="terms_of_use_value">Sed lacinia lacus at orci venenatis lacinia. Quisque et ex sed ante molestie molestie at sed risus. Vivamus mollis iaculis sem sit amet volutpat. Proin vulputate arcu massa, sit amet placerat arcu elementum quis. Ut aliquet lacus nisi, eget rutrum metus semper fringilla. Suspendisse eu porta libero, et tempor lacus. Duis interdum dignissim nisi a efficitur. In erat urna, fringilla vel mi pharetra, tincidunt commodo dui. Aenean laoreet lacus sed diam lobortis, euismod consectetur justo maximus. Nulla facilisi. Cras sed massa leo. Etiam consequat justo ut erat venenatis aliquet. Pellentesque luctus, neque et suscipit lobortis, sapien nulla vestibulum massa, a pharetra lorem turpis at dui. Aliquam malesuada, lacus sit amet efficitur faucibus, dui urna pretium massa, id lacinia risus ante at diam.</string>
+    <string name="confirm_password_text">Confirm Password</string>
+    <string name="gender_text">Gender</string>
 </resources>
