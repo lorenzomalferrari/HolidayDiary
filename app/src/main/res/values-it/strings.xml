@@ -28,7 +28,6 @@
     <string name="finish_data_text">Finish Data</string>
     <string name="save_text">Save</string>
     <string name="add_image_text">Add Image</string>
-    <string name="password_text">Password</string>
     <string name="sign_in_or_register_text">SIGN IN OR REGISTER</string>
     <string name="data_text">Data</string>
     <string name="privacy_text">Privacy</string>
@@ -36,5 +35,10 @@
     <string name="terms_of_use_text">Terms of use</string>
     <string name="terms_of_use_value">Sed lacinia lacus at orci venenatis lacinia. Quisque et ex sed ante molestie molestie at sed risus. Vivamus mollis iaculis sem sit amet volutpat. Proin vulputate arcu massa, sit amet placerat arcu elementum quis. Ut aliquet lacus nisi, eget rutrum metus semper fringilla. Suspendisse eu porta libero, et tempor lacus. Duis interdum dignissim nisi a efficitur. In erat urna, fringilla vel mi pharetra, tincidunt commodo dui. Aenean laoreet lacus sed diam lobortis, euismod consectetur justo maximus. Nulla facilisi. Cras sed massa leo. Etiam consequat justo ut erat venenatis aliquet. Pellentesque luctus, neque et suscipit lobortis, sapien nulla vestibulum massa, a pharetra lorem turpis at dui. Aliquam malesuada, lacus sit amet efficitur faucibus, dui urna pretium massa, id lacinia risus ante at diam.</string>
     <string name="confirm_password_text">Confirm Password</string>
-    <string name="gender_text">Gender</string>
+    <string name="website">lorenzomalferrari.com</string>
+    <string name="author">Lorenzo Malferrari</string>
+    <string name="copyright">All rights reserved</string>
+    <string name="number_version">Number_version</string>
+    <string name="close_popup">X</string>
+    <string name="email_author">Email Author</string>
 </resources>
