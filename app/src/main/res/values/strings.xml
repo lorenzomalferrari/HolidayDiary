@@ -44,19 +44,8 @@
 
     <string name="account_title">Account</string>
 
-
-
-
-
-
-
     <string name="privacyterms_title">Privacy terms of use</string>
     <string name="settings_title">Settings</string>
-
-
-
-
-
 
 
     <!-- Campi da usare in RegistrationActivity e AccountActivity -->
@@ -91,4 +80,7 @@
     <string name="number_version">Number_version</string>
     <string name="close_popup">X</string>
     <string name="email_author">Email Author</string>
+    <string name="logout">Logout</string>
+    <string name="user_text">User</string>
+    <string name="future_feature">Future Feature</string>
 </resources>
