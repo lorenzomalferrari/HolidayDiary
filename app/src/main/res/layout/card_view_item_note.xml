@@ -22,7 +22,7 @@
             android:layout_centerVertical="true"
             android:gravity="center_horizontal"
             android:padding="15dp"
-            android:text="Nota Title" />
+            android:text="@string/note_title" />
 
         <TextView
             android:id="@+id/note_data_id"
