@@ -11,7 +11,7 @@
         android:id="@+id/addImage_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Title"
+        android:hint="@string/title_text"
         android:inputType="text" />
 
     <!-- Descrizione che avrà l'immagine -->
@@ -22,7 +22,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="45dp"
-        android:hint="Description" />
+        android:hint="@string/description_text" />
 
     <!-- Immagine -->
     <ImageView
@@ -41,7 +41,7 @@
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:gravity="center"
-        android:text="Add Image" />
+        android:text="@string/add_image_text" />
 
     <!-- Salvataggoi dei dati -->
     <Button
@@ -50,5 +50,5 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Save" />
+        android:text="Add Picture" />
 </RelativeLayout>

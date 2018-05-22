@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:hint="Title"/>
+            android:hint="@string/title_text"/>
 
         <!-- Categoria del viaggio -->
         <EditText
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:layout_below="@+id/addTravel_category"
-            android:hint="Description"/>
+            android:hint="@string/description_text"/>
 
         <!-- Visualizzazione delle immagini -->
         <!--<ImageView
@@ -59,7 +59,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/addTravel_description"
-            android:text="Add" />
+            android:text="Add Travel" />
 
     </RelativeLayout>
 </ScrollView>

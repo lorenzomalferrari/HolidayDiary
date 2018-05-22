@@ -32,7 +32,7 @@ public class AddNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
         //Cambio il titolo della Activity
-        this.setTitle("Add Note");
+        this.setTitle(getString(R.string.addNote_title));
 
         databaseHelper = new DatabaseHelper(this);
 

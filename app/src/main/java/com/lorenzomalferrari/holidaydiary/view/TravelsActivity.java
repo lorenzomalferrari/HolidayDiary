@@ -28,7 +28,8 @@ public class TravelsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travels);
-
+        //Set title
+        this.setTitle(getString(R.string.travels_title));
         // Create list of Travel object
         listTravel = new ArrayList<>();
         // Setta la var dell'oggetto DatabaseHelper con il context della classe stessa

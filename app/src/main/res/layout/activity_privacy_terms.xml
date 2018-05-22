@@ -13,19 +13,14 @@
             android:padding="20dp"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:text="Privacy"/>
+            android:text="@string/privacy_text"/>
         <TextView
             android:id="@+id/privacyterms_privacyText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/privacyterms_privacyTitle"
             android:padding="20dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla dolor
-        at erat tempus faucibus. Sed massa odio, faucibus quis ipsum eu, luctus sodales ex. Integer
-        venenatis quam orci, ultricies accumsan libero laoreet id. Nulla facilisi. Aliquam laoreet
-        sapien ac eros iaculis, vel egestas lorem venenatis. Integer ornare fringilla cursus.
-        Nullam finibus commodo odio, vel placerat ante luctus in. Nam ut nunc eu eros sollicitudin
-        rutrum et a dolor. Sed velit sapien, vehicula a nisl a, molestie placerat sem." />
+            android:text="@string/privacy_value" />
         <TextView
             android:id="@+id/privacyterms_termsofuseTitle"
             android:layout_width="wrap_content"
@@ -35,23 +30,14 @@
             android:layout_below="@id/privacyterms_privacyText"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:text="Terms of use"/>
+            android:text="@string/terms_of_use_text"/>
         <TextView
             android:id="@+id/privacyterms_termsofuseText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
             android:layout_below="@id/privacyterms_termsofuseTitle"
-            android:text="Sed lacinia lacus at orci venenatis lacinia. Quisque et ex sed ante
-        molestie molestie at sed risus. Vivamus mollis iaculis sem sit amet volutpat.
-        Proin vulputate arcu massa, sit amet placerat arcu elementum quis. Ut aliquet lacus nisi,
-        eget rutrum metus semper fringilla. Suspendisse eu porta libero, et tempor lacus.
-        Duis interdum dignissim nisi a efficitur. In erat urna, fringilla vel mi pharetra,
-        tincidunt commodo dui. Aenean laoreet lacus sed diam lobortis, euismod consectetur justo
-        maximus. Nulla facilisi. Cras sed massa leo. Etiam consequat justo ut erat venenatis aliquet.
-        Pellentesque luctus, neque et suscipit lobortis, sapien nulla vestibulum massa, a pharetra
-        lorem turpis at dui. Aliquam malesuada, lacus sit amet efficitur faucibus, dui urna pretium
-        massa, id lacinia risus ante at diam."/>
+            android:text="@string/terms_of_use_value"/>
     </RelativeLayout>
 
 </ScrollView>

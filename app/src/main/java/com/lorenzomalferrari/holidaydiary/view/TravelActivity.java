@@ -24,7 +24,7 @@ public class TravelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travel);
-        setTitle("Travel");
+        setTitle(getString(R.string.travel_title));
         // Inizializzo i componenti
         init();
 

@@ -19,7 +19,7 @@ public class NoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
-        setTitle("Note");
+        setTitle(getString(R.string.note_title));
 
         // Inizializzazione dei componenti del layout
         init();

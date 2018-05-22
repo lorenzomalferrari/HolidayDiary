@@ -31,7 +31,7 @@ public class PicturesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pictures);
         //Set title with @string
-        this.setTitle("Pictures");
+        this.setTitle(getString(R.string.pictures_title));
 
         // Create list of Travel object
         listPicture = new ArrayList<Picture>();

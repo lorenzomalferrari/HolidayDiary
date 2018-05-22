@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:hint="Title" />
+            android:hint="@string/title_text" />
 
         <EditText
             android:id="@+id/addNote_description"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/addNote_title"
             android:layout_margin="15dp"
-            android:hint="Description"
+            android:hint="@string/description_text"
             android:inputType="textMultiLine" />
 
         <EditText
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/addNote_description"
             android:layout_margin="15dp"
-            android:hint="City" />
+            android:hint="@string/city_text" />
 
         <EditText
             android:id="@+id/addNote_country"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/addNote_city"
             android:layout_margin="15dp"
-            android:hint="Country" />
+            android:hint="@string/country_text" />
 
         <EditText
             android:id="@+id/addNote_start_data"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/addNote_country"
             android:layout_margin="15dp"
-            android:hint="Start Data"
+            android:hint="@string/start_data_text"
             android:inputType="datetime|date|time" />
 
         <EditText
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/addNote_start_data"
             android:layout_margin="15dp"
-            android:hint="Finish Data"
+            android:hint="@string/finish_data_text"
             android:inputType="datetime|date|time" />
 
         <!--<ImageView
@@ -81,7 +81,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/addNote_finish_data"
-            android:text="Save" />
+            android:text="Add Note" />
 
     </RelativeLayout>
 </ScrollView>
