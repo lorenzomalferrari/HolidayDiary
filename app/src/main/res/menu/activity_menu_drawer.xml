@@ -6,7 +6,7 @@
         <item
             android:id="@+id/nav_homepage"
             android:icon="@drawable/img_homepage"
-            android:title="Homepage" />
+            android:title="@string/home_page_title" />
         <item
             android:id="@+id/nav_travels"
             android:icon="@drawable/img_travels"
@@ -26,9 +26,9 @@
         <item
             android:id="@+id/nav_reservation"
             android:icon="@drawable/img_position"
-            android:title="@string/reservation" />
+            android:title="@string/reservation_title" />
     </group>
-    <item android:title="Other">
+    <item android:title="@string/other_title">
         <menu>
             <item
                 android:id="@+id/nav_account"
@@ -37,7 +37,7 @@
             <item
                 android:id="@+id/nav_settings"
                 android:icon="@drawable/img_settings"
-                android:title="Settings" />
+                android:title="@string/settings_title" />
             <item
                 android:id="@+id/nav_privacytermsofuse"
                 android:icon="@drawable/img_privacy"
@@ -45,7 +45,7 @@
             <item
                 android:id="@+id/nav_version"
                 android:icon="@drawable/img_version"
-                android:title="Info app" />
+                android:title="@string/info_app_title" />
         </menu>
     </item>
 </menu>

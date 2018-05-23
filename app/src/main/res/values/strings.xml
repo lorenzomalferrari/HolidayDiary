@@ -84,5 +84,8 @@
     <string name="user_text">User</string>
     <string name="future_feature">Future Feature</string>
     <string name="places_title">Places</string>
-    <string name="reservation">Reservations</string>
+    <string name="reservation_title">Reservations</string>
+    <string name="info_app_title">Info app</string>
+    <string name="other_title">Other</string>
+    <string name="home_page_title">Home page</string>
 </resources>

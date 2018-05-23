@@ -45,5 +45,8 @@
     <string name="user_text">Utente</string>
     <string name="future_feature">Funzionalità Futura</string>
     <string name="places_title">Luoghi</string>
-    <string name="reservation">Prenotazioni</string>
+    <string name="reservation_title">Prenotazioni</string>
+    <string name="info_app_title">Info app</string>
+    <string name="other_title">Altro</string>
+    <string name="home_page_title">Home page</string>
 </resources>
