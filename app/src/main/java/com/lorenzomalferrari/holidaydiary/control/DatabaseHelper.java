@@ -151,6 +151,8 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         contentValues.put("imgProfilo",user.getImgUser());//immagine del profilo
         contentValues.put("last_login","datetime (CURRENT_TIMESTAMP, 'localtime')");//data ultimo login
         contentValues.put("registration_date","datetime (CURRENT_TIMESTAMP, 'localtime')");//data registrazione
+        //contentValues.put("last_login",user.getLast_access().toString());//data ultimo login
+        //contentValues.put("registration_date",user.getRegistration_date().toString());//data registrazione
         long result = db.insert(TABLE_NAMES[0],null ,contentValues);
         return result != -1;
     }
@@ -340,7 +342,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "country text," +
                 "creation_data DATA," +
                 "id_user text not null," +
-                "foreign key (id_user) references "+ TABLE_NAMES[0] +" (id);");
+                "foreign key (id_user) references "+ TABLE_NAMES[0] +" (id));");
     }
 
     /**
