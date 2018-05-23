@@ -25,23 +25,21 @@ public class UserSessionManager {
     // Shared pref mode
     int PRIVATE_MODE = 0;
     // Sharedpref file name
-    private static final String PREFER_NAME = "User";
+    private static final String PREFER_NAME = "login_data";
     // All Shared Preferences Keys
     private static final String IS_USER_LOGIN = "IsUserLoggedIn";
     // Password (make variable public to access from outside)
-    private String KEY_PASSWORD = "password";
+    private static final String KEY_PASSWORD = "password";
     // Email address (make variable public to access from outside)
-    private String KEY_EMAIL = "email";
+    private static final String KEY_EMAIL = "email";
 
     // Constructor
     public UserSessionManager(Context context){
         this._context = context;
-        sharedPref = _context.getSharedPreferences(PREFER_NAME, PRIVATE_MODE);
         sharedPref = PreferenceManager.getDefaultSharedPreferences(_context);
+        sharedPref = _context.getSharedPreferences(PREFER_NAME, PRIVATE_MODE);
         editor = sharedPref.edit();
     }
-
-
 
     /**
      *
@@ -85,7 +83,7 @@ public class UserSessionManager {
      */
     public HashMap<String, String> getUserDetails(){
         //Use hashmap to store user credentials
-        HashMap<String, String> user = new HashMap<String, String>();
+        HashMap<String, String> user = new HashMap<>();
         // user email
         user.put(KEY_EMAIL, sharedPref.getString(KEY_EMAIL, null));
         // user password
@@ -93,10 +91,7 @@ public class UserSessionManager {
         // return user details
         return user;
 
-
-
         //Come recuperare
-
         //SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         //String userName = sharedPref.getString("userName", "Not Available");
     }
