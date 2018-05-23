@@ -25,7 +25,7 @@ public class UserSessionManager {
     // Shared pref mode
     int PRIVATE_MODE = 0;
     // Sharedpref file name
-    private static final String PREFER_NAME = "login_data";
+    private static final String PREFER_NAME = "dataLogin";
     // All Shared Preferences Keys
     private static final String IS_USER_LOGIN = "IsUserLoggedIn";
     // Password (make variable public to access from outside)
@@ -47,12 +47,12 @@ public class UserSessionManager {
      * @param password
      */
     public void createUserLoginSession(String email, String password){
-        // Storing login value as TRUE
-        editor.putBoolean(IS_USER_LOGIN, true);
         // Storing email in pref
         editor.putString(KEY_EMAIL, email);
         // Storing password in pref
         editor.putString(KEY_PASSWORD, password);
+        // Storing login value as TRUE
+        editor.putBoolean(IS_USER_LOGIN, true);
         // commit changes
         editor.commit();
     }
