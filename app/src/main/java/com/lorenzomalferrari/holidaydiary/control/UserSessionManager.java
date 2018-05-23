@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.preference.PreferenceManager;
 
 import com.lorenzomalferrari.holidaydiary.view.LoginActivity;
 
@@ -15,10 +16,10 @@ import java.util.HashMap;
  */
 public class UserSessionManager {
 
-    // Shared Preferences reference
-    SharedPreferences pref;
-    // Editor reference for Shared preferences
-    Editor editor;
+    // Create object of SharedPreferences
+    SharedPreferences sharedPref;
+    //Now get Editor
+    SharedPreferences.Editor editor;
     // Context
     Context _context;
     // Shared pref mode
@@ -35,11 +36,18 @@ public class UserSessionManager {
     // Constructor
     public UserSessionManager(Context context){
         this._context = context;
-        pref = _context.getSharedPreferences(PREFER_NAME, PRIVATE_MODE);
-        editor = pref.edit();
+        sharedPref = _context.getSharedPreferences(PREFER_NAME, PRIVATE_MODE);
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(_context);
+        editor = sharedPref.edit();
     }
 
-    //Create login session
+
+
+    /**
+     *
+     * @param email
+     * @param password
+     */
     public void createUserLoginSession(String email, String password){
         // Storing login value as TRUE
         editor.putBoolean(IS_USER_LOGIN, true);
@@ -72,8 +80,6 @@ public class UserSessionManager {
         return false;
     }
 
-
-
     /**
      * Get stored session data
      */
@@ -81,11 +87,18 @@ public class UserSessionManager {
         //Use hashmap to store user credentials
         HashMap<String, String> user = new HashMap<String, String>();
         // user email
-        user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
-        // user name
-        user.put(KEY_PASSWORD, pref.getString(KEY_PASSWORD, null));
-        // return user
+        user.put(KEY_EMAIL, sharedPref.getString(KEY_EMAIL, null));
+        // user password
+        user.put(KEY_PASSWORD, sharedPref.getString(KEY_PASSWORD, null));
+        // return user details
         return user;
+
+
+
+        //Come recuperare
+
+        //SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        //String userName = sharedPref.getString("userName", "Not Available");
     }
 
     /**
@@ -119,6 +132,6 @@ public class UserSessionManager {
 
     // Check for login
     public boolean isUserLoggedIn(){
-        return pref.getBoolean(IS_USER_LOGIN, false);
+        return sharedPref.getBoolean(IS_USER_LOGIN, false);
     }
 }
