@@ -149,8 +149,8 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         contentValues.put("birthdate",user.getBirthdate().toString());//data di nascita
         contentValues.put("age",user.getAge());//con birthdate calcolare l'età
         contentValues.put("imgProfilo",user.getImgUser());//immagine del profilo
-        contentValues.put("last_login",String.valueOf(new Date()));//data ultimo login
-        contentValues.put("registration_date",String.valueOf(new Date()));//data registrazione
+        contentValues.put("last_login","datetime (CURRENT_TIMESTAMP, 'localtime')");//data ultimo login
+        contentValues.put("registration_date","datetime (CURRENT_TIMESTAMP, 'localtime')");//data registrazione
         long result = db.insert(TABLE_NAMES[0],null ,contentValues);
         return result != -1;
     }
@@ -255,15 +255,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "age integer," +
                 "imgProfilo integer," +
                 "last_login DATETIME," +
-                "registration_date DATETIME," +
-                "id_travel integer," +
-                "id_note integer," +
-                "id_picture integer," +
-                "id_place integer," +
-                "foreign key (id_travel) references "+ TABLE_NAMES[1] +" (id)," +
-                "foreign key (id_note) references "+ TABLE_NAMES[2] +" (id)," +
-                "foreign key (id_picture) references "+ TABLE_NAMES[3] +" (id)," +
-                "foreign key (id_place) references "+ TABLE_NAMES[4] +" (id));");
+                "registration_date DATETIME;");
     }
 
 
@@ -283,20 +275,16 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "finish_travel Date," +
                 "registration_date Date," +
                 "id_user integer not null," +
-                "id_note integer," +
-                "id_picture integer," +
                 "id_place integer," +
                 "foreign key (id_user) references "+ TABLE_NAMES[0] +" (id)," +
-                "foreign key (id_note) references "+ TABLE_NAMES[2] +" (id)," +
-                "foreign key (id_picture) references "+ TABLE_NAMES[3] +" (id)," +
                 "foreign key (id_place) references "+ TABLE_NAMES[4] +" (id));");
     }
 
     private void insertTravels(SQLiteDatabase db){
-        db.execSQL("INSERT INTO 'Users' ('title' , 'description' , 'img_list' , 'city' , 'country' , 'id_user' , 'id_note' , 'id_picture' , 'id_place')" +
-                "VALUES ('Nota Ciao' , 'Ciao a tutti come va la vita?' , '1' , 'Venezia' , 'Italia' , '1' , '1' , '1' , '1');");
-        db.execSQL("INSERT INTO 'Users' ('title' , 'description' , 'img_list' , 'city' , 'country' , 'id_user' , 'id_note' , 'id_picture' , 'id_place')" +
-                "VALUES ('Nota 2 Bella' , 'La vita è bella' , '1' , 'Venezia' , 'Italia' , '2' , '2' , '2' , '2');");
+        db.execSQL("INSERT INTO 'Users' ('title' , 'description' , 'img_list' , 'city' , 'country' , 'id_user' , 'id_place')" +
+                "VALUES ('Nota Ciao' , 'Ciao a tutti come va la vita?' , '1' , 'Venezia' , 'Italia' , '1' , '1');");
+        db.execSQL("INSERT INTO 'Users' ('title' , 'description' , 'img_list' , 'city' , 'country' , 'id_user' , 'id_place')" +
+                "VALUES ('Nota 2 Bella' , 'La vita è bella' , '1' , 'Venezia' , 'Italia' , '2', '2');");
     }
 
     /**
@@ -328,14 +316,12 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "id integer PRIMARY KEY AUTOINCREMENT," +
                 "title text not null," +
                 "description text," +
-                "image BLOG not null," +
+                "image BLOB not null," +
                 "id_user text not null," +
                 "id_travel integer," +
                 "id_place integer," +
-                "id_note integer," +
                 "foreign key (id_user) references "+ TABLE_NAMES[0] +" (id)," +
                 "foreign key (id_travel) references "+ TABLE_NAMES[1] +" (id)," +
-                "foreign key (id_note) references "+ TABLE_NAMES[2] +" (id)," +
                 "foreign key (id_place) references "+ TABLE_NAMES[4] +" (id));");
     }
 
@@ -354,13 +340,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "country text," +
                 "creation_data DATA," +
                 "id_user text not null," +
-                "id_picture integer," +
-                "id_travel integer," +
-                "id_note integer," +
-                "foreign key (id_user) references "+ TABLE_NAMES[0] +" (id)," +
-                "foreign key (id_travel) references "+ TABLE_NAMES[1] +" (id)," +
-                "foreign key (id_note) references "+ TABLE_NAMES[2] +" (id)," +
-                "foreign key (id_picture) references "+ TABLE_NAMES[3] +" (id));");
+                "foreign key (id_user) references "+ TABLE_NAMES[0] +" (id);");
     }
 
     /**
