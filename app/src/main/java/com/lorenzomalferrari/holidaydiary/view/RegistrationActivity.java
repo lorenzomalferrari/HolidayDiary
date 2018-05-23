@@ -35,7 +35,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     //Oggetto User
     User user;
-    //Oggetto Validator
+    //Oggetto Validator per calcolare età
     Validator validator;
     // User Session Manager Class
     UserSessionManager userSessionManager;
