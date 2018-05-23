@@ -1,7 +1,9 @@
 package com.lorenzomalferrari.holidaydiary.view;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,8 +19,10 @@ import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
 import com.lorenzomalferrari.holidaydiary.model.User;
 import com.lorenzomalferrari.holidaydiary.model.Validator;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -30,17 +34,23 @@ public class RegistrationActivity extends AppCompatActivity {
     Button btnAddData,btnviewAll,btnDelete,btnviewUpdate;
     RadioButton male, female;
     EditText id,firstName,lastName,username,password,conf_password,email,city,country,birthdate;
-
     String genderSelected = "";
-
     //Oggetto User
     User user;
-    //Oggetto Validator per calcolare età
-    Validator validator;
+    //Oggetto Validator
+    Validator validator = new Validator();
     // User Session Manager Class
-    UserSessionManager userSessionManager;
+    //UserSessionManager userSessionManager;
     //
     DatabaseHelper databaseHelper;
+
+
+
+
+    // Create object of SharedPreferences.
+    //SharedPreferences sharedPref;
+    //Now get Editor
+    //SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +60,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         databaseHelper = new DatabaseHelper(this);
         // User Session Manager
-        userSessionManager = new UserSessionManager(getApplicationContext());
+        //userSessionManager = new UserSessionManager(getApplicationContext());
 
         //Ottengo i dati
         this.init();
@@ -67,8 +77,13 @@ public class RegistrationActivity extends AppCompatActivity {
         //id = findViewById(R.id.register_firstNameValue);
         //Controllo che i dati ottenuti siano corretti
 
+        //sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        //Now get Editor
+        //editor = sharedPref.edit();
+
+
         AddData();
-        //viewAllUsers();
+        viewAllUsers();
         //UpdateData();
         //DeleteData();
     }
@@ -92,7 +107,6 @@ public class RegistrationActivity extends AppCompatActivity {
         arrayList.add(birthdate.getText().toString().replace(" ",""));
         return arrayList;
     }
-
 
     /**
      * Metodo per ottenere il radioButton selezionato
@@ -152,17 +166,26 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                            //Creo utente
-                            getRadioButtonChecked();
-                            boolean isInserted = databaseHelper.insertDataUser(createArrayList());
-                            if (isInserted) {
-                                Toast.makeText(RegistrationActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
-                                //Salvo i dati che mi serviranno per eseguire il login in modo automatico
-                                //alle prossime aperture dell'app
-                                userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
-                                //Chiamo il menù dell'app
-                                callMenu();
-                            } else Toast.makeText(RegistrationActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
+
+                        //ottengo il radioButton cliccato da User
+                        getRadioButtonChecked();
+                        //Creo utente e lo carico sul database
+                        boolean isInserted = databaseHelper.insertDataUser(createUser());
+                        //Toast.makeText(RegistrationActivity.this, String.valueOf(user.getAge()), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(RegistrationActivity.this, String.valueOf(user.getImgUser()), Toast.LENGTH_LONG).show();
+                        if (isInserted) {
+                            Toast.makeText(RegistrationActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
+                            //userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
+
+                            //Put email
+                            //editor.putString("email",email.getText().toString());
+                            //Put password
+                            //editor.putString("password",password.getText().toString());
+                            //Commits your edits
+                            //editor.commit();
+
+                            callMenu();
+                        } else Toast.makeText(RegistrationActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
                     }
                 }
         );
@@ -189,12 +212,16 @@ public class RegistrationActivity extends AppCompatActivity {
                             buffer.append("Nome: "+ res.getString(1)+"\n");
                             buffer.append("Cognome: "+ res.getString(2)+"\n");
                             buffer.append("Username: "+ res.getString(3)+"\n");
-                            buffer.append("Password: "+ res.getString(4)+"\n");
-                            buffer.append("Email: "+ res.getString(5)+"\n");
+                            buffer.append("Email: "+ res.getString(4)+"\n");
+                            buffer.append("Password: "+ res.getString(5)+"\n");
                             buffer.append("City: "+ res.getString(6)+"\n");
                             buffer.append("Country: "+ res.getString(7)+"\n");
                             buffer.append("Gender: "+ res.getString(8)+"\n");
-                            buffer.append("Birthdate: "+ res.getString(10)+"\n\n");
+                            buffer.append("Birthdate: "+ res.getString(9)+"\n\n");
+                            buffer.append("Age: "+ res.getInt(10)+"\n\n");
+                            buffer.append("ImgProfilo: "+ res.getInt(11)+"\n\n");
+                            buffer.append("Last_access: "+ res.getString(12)+"\n\n");
+                            buffer.append("Registration_data: "+ res.getString(13)+"\n\n");
                         }
 
                         // Show all data
@@ -222,6 +249,7 @@ public class RegistrationActivity extends AppCompatActivity {
      */
     private void callMenu(){
         Intent intent = new Intent(this, MenuActivity.class);
+        //intent.putExtra("USER",this.user);
         this.startActivity(intent);
         finish();
     }
@@ -230,14 +258,29 @@ public class RegistrationActivity extends AppCompatActivity {
      * Creo l'oggetto User
      */
     private User createUser() {
-        User user = null;
-        // Creo un oggetto per creare le date tramite stringhe
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        //Costruisco oggetto utente
-        char gender = this.genderSelected.charAt(0);
-        String format_birthdate = this.birthdate.getText().toString().replace("/","-");
-        //Test
-        //Toast.makeText(RegistrationActivity.this,birthdate,Toast.LENGTH_LONG).show();
+        //convertire birthdate da String a Date
+        SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yy");
+        try {
+            Date date = DATE_FORMAT.parse(birthdate.getText().toString());
+            int img = 1;
+            this.user = new User(
+                    firstName.getText().toString(),
+                    lastName.getText().toString(),
+                    username.getText().toString(),
+                    email.getText().toString(),
+                    password.getText().toString(),
+                    city.getText().toString(),
+                    country.getText().toString(),
+                    genderSelected,
+                    date,
+                    validator.calcAge(date),
+                    img,
+                    new Date(),
+                    new Date()
+            );
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         return user;
     }
@@ -278,15 +321,15 @@ public class RegistrationActivity extends AppCompatActivity {
         boolean flag;
         // Controllo
         if (validator.isEmailValid(email.getText().toString()) &&
-            validator.isPasswordValid(password.getText().toString()) &&
-            equalsPassword()
-            )
+                validator.isPasswordValid(password.getText().toString()) &&
+                equalsPassword()
+                )
             flag = true;
-        // Alternativa
+            // Alternativa
         else
             flag = false;
         return
-            flag;
+                flag;
     }
 
     /**
