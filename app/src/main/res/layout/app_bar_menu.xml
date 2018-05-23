@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/img_position"
-            app:fab_label="Place"
+            app:fab_label="@string/places_title"
             app:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>
