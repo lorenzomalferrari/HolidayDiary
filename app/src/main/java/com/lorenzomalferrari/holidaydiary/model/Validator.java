@@ -112,9 +112,9 @@ public class Validator {
         else return true;
     }
 
-    public int calcAge(){
+    public int calcAge(Date data){
         Calendar c = Calendar.getInstance();
-        c.setTime(new Date());
+        c.setTime(data);
         Calendar oggi = Calendar.getInstance();
         // dataDiNascita.getYear(); METODO DEPRECATO!!
         return oggi.get(Calendar.YEAR) - c.get(Calendar.YEAR);
