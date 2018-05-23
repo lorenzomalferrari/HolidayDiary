@@ -83,4 +83,6 @@
     <string name="logout">Logout</string>
     <string name="user_text">User</string>
     <string name="future_feature">Future Feature</string>
+    <string name="places_title">Places</string>
+    <string name="reservation">Reservations</string>
 </resources>

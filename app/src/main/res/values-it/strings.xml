@@ -44,4 +44,6 @@
     <string name="logout">Esci</string>
     <string name="user_text">Utente</string>
     <string name="future_feature">Funzionalità Futura</string>
+    <string name="places_title">Luoghi</string>
+    <string name="reservation">Prenotazioni</string>
 </resources>
