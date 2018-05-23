@@ -9,8 +9,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.lorenzomalferrari.holidaydiary.model.Note;
 import com.lorenzomalferrari.holidaydiary.model.Picture;
 import com.lorenzomalferrari.holidaydiary.model.Travel;
+import com.lorenzomalferrari.holidaydiary.model.User;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -132,6 +134,27 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         return result != -1;
     }
 
+    public boolean insertDataUser(User user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        //contentValues.put("id",arrayList.get(0).toString());//nome
+        contentValues.put("firstName",user.getFirstName().toString());//nome
+        contentValues.put("lastName",user.getLastName().toString());//cognome
+        contentValues.put("username",user.getUsername().toString());//username
+        contentValues.put("email",user.getEmail().toString());//email
+        contentValues.put("password",user.getPassword().toString());//password
+        contentValues.put("city",user.getCity().toString());//città
+        contentValues.put("country",user.getCountry().toString());//pease
+        contentValues.put("gender",user.getGender().toString());//sesso
+        contentValues.put("birthdate",user.getBirthdate().toString());//data di nascita
+        contentValues.put("age",user.getAge());//con birthdate calcolare l'età
+        contentValues.put("imgProfilo",user.getImgUser());//immagine del profilo
+        contentValues.put("last_login",String.valueOf(new Date()));//data ultimo login
+        contentValues.put("registration_date",String.valueOf(new Date()));//data registrazione
+        long result = db.insert(TABLE_NAMES[0],null ,contentValues);
+        return result != -1;
+    }
+
     /**
      * Metodo che aggiunge i dati della Immagine all'interno del database
      * @param picture
@@ -219,19 +242,20 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     private void crateUsersTable(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[0] + " (" +
-                "id integer PRIMARY KEY," +
+                "id integer PRIMARY KEY AUTOINCREMENT," +
                 "firstName text," +
                 "lastName text," +
                 "username text," +
-                "password text not null," +
                 "email text not null," +
+                "password text not null," +
                 "city text," +
                 "country text," +
                 "gender text," +
-                "age text," +
                 "birthdate DATE," +
-                "registration_date DATETIME," +
+                "age integer," +
+                "imgProfilo integer," +
                 "last_login DATETIME," +
+                "registration_date DATETIME," +
                 "id_travel integer," +
                 "id_note integer," +
                 "id_picture integer," +
@@ -242,17 +266,6 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "foreign key (id_place) references "+ TABLE_NAMES[4] +" (id));");
     }
 
-    private void insertUsers(SQLiteDatabase db){
-        db.execSQL("INSERT INTO 'Users' ('firstName' , 'lastName' , 'username' , 'password' , 'email' , 'city' , 'country' , 'gender' , 'age' , 'id_travel' , 'id_note' , 'id_picture' , 'id_place')" +
-                "VALUES ('Petronio' , 'Trevisani' , 'petronio_trevisani' , '123456' , 'petronio@trevisani.com' , 'Palermo' , 'Italia' , 'M' , '40' , '1' , '1' , '1' , '1');");
-        db.execSQL("INSERT INTO 'Users' ('firstName' , 'lastName' , 'username' , 'password' , 'email' , 'city' , 'country' , 'gender' , 'age' , 'id_travel' , 'id_note' , 'id_picture' , 'id_place')" +
-                "VALUES ('Mariano' , 'Marchesi' , 'petronio_trevisani' , '123456' , 'mariano@marchesi.com' , 'Udinese' , 'Italia' , 'M' , '42' , '2' , '2' , '2' , '2');");
-
-        db.execSQL("INSERT INTO 'Users' ('firstName' , 'lastName' , 'username' , 'password' , 'email' , 'city' , 'country' , 'gender' , 'age' , 'id_travel' , 'id_note' , 'id_picture' , 'id_place')" +
-                "VALUES ('Antonella' , 'Gallo' , 'antonella_gallo' , '123456' , 'antonella@gallo.com' , 'Verona' , 'Italia' , 'F' , '30' , '3' , '3' , '3' , '3');");
-        db.execSQL("INSERT INTO 'Users' ('firstName' , 'lastName' , 'username' , 'password' , 'email' , 'city' , 'country' , 'gender' , 'age' , 'id_travel' , 'id_note' , 'id_picture' , 'id_place')" +
-                "VALUES ('Chiara' , 'Britti' , 'chiara_britti' , '123456' , 'chiara@britti.com' , 'Roma' , 'Italia' , 'F' , '58' , '4' , '4' , '4' , '4');");
-    }
 
     /**
      * Costruzione della tabella Travels
@@ -260,7 +273,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     private void createTravelsTable(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[1] + " (" +
-                "id integer PRIMARY KEY," +
+                "id integer PRIMARY KEY AUTOINCREMENT," +
                 "title text not null," +
                 "description text not null," +
                 "img_list integer," +
@@ -292,7 +305,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     private void createNotesTable(SQLiteDatabase db){
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[2] + " (" +
-                "id integer PRIMARY KEY," +
+                "id integer PRIMARY KEY AUTOINCREMENT," +
                 "title text not null," +
                 "description text not null," +
                 "creation_data DATA," +
@@ -312,7 +325,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     private void createPicturesTable(SQLiteDatabase db){
         db.execSQL("CREATE TABLE "+ TABLE_NAMES[3] + " (" +
-                "id integer PRIMARY KEY," +
+                "id integer PRIMARY KEY AUTOINCREMENT," +
                 "title text not null," +
                 "description text," +
                 "image BLOG not null," +
@@ -332,7 +345,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     private void createPlacesTable(SQLiteDatabase db){
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[4] + " (" +
-                "id integer PRIMARY KEY," +
+                "id integer PRIMARY KEY AUTOINCREMENT," +
                 "title text," +
                 "description text," +
                 "latitude integer not null," +
@@ -403,12 +416,10 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         return db.delete(TABLE_NAMES[0], "ID = ?",new String[] {id});
     }
 
-
-
     private void addDataOnDatabase(SQLiteDatabase db){
 
         //Aggiungo Users
-        insertUsers(db);
+        //insertUsers(db);
 
         //Aggiungo Travels
         insertTravels(db);
