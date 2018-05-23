@@ -40,7 +40,7 @@ public class RegistrationActivity extends AppCompatActivity {
     //Oggetto Validator
     Validator validator = new Validator();
     // User Session Manager Class
-    //UserSessionManager userSessionManager;
+    UserSessionManager userSessionManager;
     //
     DatabaseHelper databaseHelper;
 
@@ -60,7 +60,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         databaseHelper = new DatabaseHelper(this);
         // User Session Manager
-        //userSessionManager = new UserSessionManager(getApplicationContext());
+        userSessionManager = new UserSessionManager(getApplicationContext());
 
         //Ottengo i dati
         this.init();
@@ -175,7 +175,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         //Toast.makeText(RegistrationActivity.this, String.valueOf(user.getImgUser()), Toast.LENGTH_LONG).show();
                         if (isInserted) {
                             Toast.makeText(RegistrationActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
-                            //userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
+                            userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
 
                             //Put email
                             //editor.putString("email",email.getText().toString());

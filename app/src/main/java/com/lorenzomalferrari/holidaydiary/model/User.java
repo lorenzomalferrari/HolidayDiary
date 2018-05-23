@@ -9,41 +9,65 @@ import java.util.Date;
 public class User {
 
     // Attributi della tabella Users presente sul database HolidayDiary.db
-    private int id;
-    private String firstName, lastName, username, email, password, city, country;
-    private char gender;
-    private Date birthdate;
-    private int imgUser;
-    private Date last_access, registration_date;
-    private int id_travel, id_note, id_picture, id_place;
+    private int id, age, imgUser;
+    private String firstName, lastName, username, email, password, city, country, gender;
+    private Date birthdate, last_access, registration_date;
 
     /**
-     * Costruttore di default
-     * Costruisco un oggetto con dati prescelti
+     * Costruttore di default:
+     * Costruisce un oggetto User con valori predefiniti
      */
     public User() {
-        this.id = 1;
         this.firstName = "Lorenzo";
         this.lastName = "Malferrari";
-        this.username = "";
+        this.username = "malfe.lore@gmail.com";
         this.email = "malfe.lore@gmail.com";
         this.password = "123456";
         this.city = "Bologna";
-        this.country = "Italy";
-        this.gender = 'M';
+        this.country = "Italia";
+        this.gender = "Maschio";
         this.birthdate = new Date();
+        this.age = 21;
         this.imgUser = 1;
         this.last_access = new Date();
         this.registration_date = new Date();
-        this.id_travel = 1;
-        this.id_note = 1;
-        this.id_picture = 1;
-        this.id_place = 1;
     }
 
     /**
-     * Costruttore parametrico
-     * Inizializzo gli attributi della classe con i prametri d'ingreso
+     * Costruttore parametrico parziale:
+     * Costruzione dell'oggetto con tutti i suoi campi escluso l'id
+     * @param firstName
+     * @param lastName
+     * @param username
+     * @param email
+     * @param password
+     * @param city
+     * @param country
+     * @param gender
+     * @param imgUser
+     * @param birthdate
+     * @param last_access
+     * @param registration_date
+     */
+    public User(String firstName, String lastName, String username, String email, String password, String city, String country, String gender,Date birthdate, int age, int imgUser,  Date last_access, Date registration_date) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.city = city;
+        this.country = country;
+        this.gender = gender;
+        this.birthdate = birthdate;
+        this.age = age;
+        this.imgUser = imgUser;
+        this.last_access = last_access;
+        this.registration_date = registration_date;
+    }
+
+    /**
+     * Costrutore parametrico completo:
+     * Costruzione dell'oggetto User con tutti i suoi attributi
      * @param id
      * @param firstName
      * @param lastName
@@ -53,16 +77,12 @@ public class User {
      * @param city
      * @param country
      * @param gender
-     * @param birthdate
      * @param imgUser
+     * @param birthdate
      * @param last_access
      * @param registration_date
-     * @param id_travel
-     * @param id_note
-     * @param id_picture
-     * @param id_place
      */
-    public User(int id, String firstName, String lastName, String username, String email, String password, String city, String country, char gender, Date birthdate, int imgUser, Date last_access, Date registration_date, int id_travel, int id_note, int id_picture, int id_place) {
+    public User(int id,String firstName, String lastName, String username, String email, String password, String city, String country, String gender, Date birthdate, int age, int imgUser,  Date last_access, Date registration_date) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -73,13 +93,10 @@ public class User {
         this.country = country;
         this.gender = gender;
         this.birthdate = birthdate;
+        this.age = age;
         this.imgUser = imgUser;
         this.last_access = last_access;
         this.registration_date = registration_date;
-        this.id_travel = id_travel;
-        this.id_note = id_note;
-        this.id_picture = id_picture;
-        this.id_place = id_place;
     }
 
     public int getId() {
@@ -88,6 +105,14 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getImgUser() {
+        return imgUser;
+    }
+
+    public void setImgUser(int imgUser) {
+        this.imgUser = imgUser;
     }
 
     public String getFirstName() {
@@ -146,11 +171,11 @@ public class User {
         this.country = country;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -162,12 +187,12 @@ public class User {
         this.birthdate = birthdate;
     }
 
-    public int getImgUser() {
-        return imgUser;
+    public int getAge() {
+        return age;
     }
 
-    public void setImgUser(int imgUser) {
-        this.imgUser = imgUser;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public Date getLast_access() {
@@ -186,42 +211,15 @@ public class User {
         this.registration_date = registration_date;
     }
 
-    public int getId_travel() {
-        return id_travel;
-    }
-
-    public void setId_travel(int id_travel) {
-        this.id_travel = id_travel;
-    }
-
-    public int getId_note() {
-        return id_note;
-    }
-
-    public void setId_note(int id_note) {
-        this.id_note = id_note;
-    }
-
-    public int getId_picture() {
-        return id_picture;
-    }
-
-    public void setId_picture(int id_picture) {
-        this.id_picture = id_picture;
-    }
-
-    public int getId_place() {
-        return id_place;
-    }
-
-    public void setId_place(int id_place) {
-        this.id_place = id_place;
-    }
-
+    /**
+     * Rappresentazione testuale della classe User
+     * @return i dati dell'utente
+     */
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
+                ", imgUser=" + imgUser +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", username='" + username + '\'' +
@@ -229,15 +227,11 @@ public class User {
                 ", password='" + password + '\'' +
                 ", city='" + city + '\'' +
                 ", country='" + country + '\'' +
-                ", gender=" + gender +
+                ", gender='" + gender + '\'' +
                 ", birthdate=" + birthdate +
-                ", imgUser=" + imgUser +
+                ", age=" + age +
                 ", last_access=" + last_access +
                 ", registration_date=" + registration_date +
-                ", id_travel=" + id_travel +
-                ", id_note=" + id_note +
-                ", id_picture=" + id_picture +
-                ", id_place=" + id_place +
                 '}';
     }
 }
