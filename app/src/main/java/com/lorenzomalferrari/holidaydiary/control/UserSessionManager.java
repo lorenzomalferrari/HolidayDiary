@@ -43,13 +43,8 @@ public class UserSessionManager {
     public void createUserLoginSession(String email, String password){
         // Storing login value as TRUE
         editor.putBoolean(IS_USER_LOGIN, true);
-
-        //
-        KEY_EMAIL = email;
         // Storing email in pref
         editor.putString(KEY_EMAIL, email);
-
-        KEY_PASSWORD = password;
         // Storing password in pref
         editor.putString(KEY_PASSWORD, password);
 
