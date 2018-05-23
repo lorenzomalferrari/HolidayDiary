@@ -47,6 +47,8 @@ public class PicturesActivity extends AppCompatActivity {
 
         // Salvo tutte i Viaggi
         Cursor res = databaseHelper.getAll("Pictures");
+        Toast.makeText(getApplicationContext(),String.valueOf("Contiene "+res.getCount()),Toast.LENGTH_LONG).show();
+        //Pulisco lista
         listPicture.clear();
         // Add Travels
         while (res.moveToNext()) {

@@ -315,7 +315,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     private void createPicturesTable(SQLiteDatabase db){
         db.execSQL("CREATE TABLE "+ TABLE_NAMES[3] + " (" +
-                "id integer PRIMARY KEY AUTOINCREMENT," +
+                "id integer PRIMARY KEY," +
                 "title text not null," +
                 "description text," +
                 "image BLOB not null," +
