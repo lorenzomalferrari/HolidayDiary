@@ -69,7 +69,7 @@ public class AddPictureActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     databaseHelper.inserDataImage(
-                            new Picture(name.getText().toString().trim(),getImageViewByte(img),1)
+                            new Picture(name.getText().toString().trim()/*,getImageViewByte(img)*/,1)
                     );
                     Toast.makeText(getApplicationContext(),"Aggiunta immagine con successo",Toast.LENGTH_LONG).show();
                     //clearComponents();

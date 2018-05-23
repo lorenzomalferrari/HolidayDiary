@@ -12,6 +12,7 @@ import com.lorenzomalferrari.holidaydiary.control.PictureListAdapter;
 import com.lorenzomalferrari.holidaydiary.model.Picture;
 import com.lorenzomalferrari.holidaydiary.model.Travel;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,11 +52,13 @@ public class PicturesActivity extends AppCompatActivity {
         //Pulisco lista
         listPicture.clear();
         // Add Travels
+        int i = 1;
         while (res.moveToNext()) {
-
-            byte [] image = res.getBlob(3);
+            //Toast.makeText(getApplicationContext(),String.valueOf(String.valueOf(i)),Toast.LENGTH_LONG).show();
+            //i++;
+            //byte [] image = res.getBlob(3);
             //Aggiungo nella mia lista di Viaggi, un nuovo oggetto con i parametri presi dal tabella Travels presente nel database
-            listPicture.add(new Picture(res.getString(0), image ,1));
+            listPicture.add(new Picture(res.getString(0),1));
         }
 
         pictureListAdapter.notifyDataSetChanged();

@@ -31,10 +31,10 @@ public class Picture {
      * @param image
      * @param id_user
      */
-    public Picture(String title, byte[] image, int id_user) {
+    public Picture(String title, int id_user) {
         this.id_user = id_user;
         this.title = title;
-        this.image = image;
+        //this.image = image;
 
     }
 
