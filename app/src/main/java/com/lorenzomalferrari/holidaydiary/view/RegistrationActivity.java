@@ -157,8 +157,10 @@ public class RegistrationActivity extends AppCompatActivity {
                             boolean isInserted = databaseHelper.insertDataUser(createArrayList());
                             if (isInserted) {
                                 Toast.makeText(RegistrationActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
+                                //Salvo i dati che mi serviranno per eseguire il login in modo automatico
+                                //alle prossime aperture dell'app
                                 userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
-
+                                //Chiamo il menù dell'app
                                 callMenu();
                             } else Toast.makeText(RegistrationActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
                     }
