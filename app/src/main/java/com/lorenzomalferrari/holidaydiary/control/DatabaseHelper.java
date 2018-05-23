@@ -255,7 +255,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "age integer," +
                 "imgProfilo integer," +
                 "last_login DATETIME," +
-                "registration_date DATETIME;");
+                "registration_date DATETIME);");
     }
 
 
