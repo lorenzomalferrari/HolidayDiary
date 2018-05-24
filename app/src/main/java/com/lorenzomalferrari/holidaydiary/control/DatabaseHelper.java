@@ -318,7 +318,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "id integer PRIMARY KEY," +
                 "title text not null," +
                 "description text," +
-                "image BLOG not null," +
+                "image BLOB not null," +
                 "id_user text not null," +
                 "id_travel integer," +
                 "id_place integer," +
