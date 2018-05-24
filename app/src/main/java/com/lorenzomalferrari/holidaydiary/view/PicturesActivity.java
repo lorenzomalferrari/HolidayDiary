@@ -45,29 +45,14 @@ public class PicturesActivity extends AppCompatActivity {
         Cursor cursor = databaseHelper.getAll("Pictures");
         listPicture.clear();
         while (cursor.moveToNext()){
-            //Toast.makeText(getApplicationContext(),cursor.toString(),Toast.LENGTH_LONG).show();
-
             String title = cursor.getString(1);
             Toast.makeText(getApplicationContext(),title,Toast.LENGTH_LONG).show();
-            //String title = "Immagine 1";
             byte[] image = cursor.getBlob(3);
-            //byte[] image = new byte[0];
             int id_user = cursor.getInt(4);
             Toast.makeText(getApplicationContext(),String.valueOf(id_user),Toast.LENGTH_LONG).show();
-            //int id_user = 1;
-
+            //Aggiungo alla lista le immagini
             listPicture.add(new Picture(title,image,id_user));
         }
-
         pictureListAdapter.notifyDataSetChanged();
-    }
-
-
-    public void showMessage(String title,String Message){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);//funziona solo con Activity
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(Message);
-        builder.show();
     }
 }
