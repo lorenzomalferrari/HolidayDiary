@@ -53,19 +53,17 @@ public class PictureListAdapter extends BaseAdapter{
         if (row == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inflater.inflate(layout,null);
-
             holder.imageView = row.findViewById(R.id.imgPicture);
             row.setTag(holder);
         }
         else {
             holder = (ViewHolder) row.getTag();
         }
-        Picture picture = picturesList.get(position);
 
+        Picture picture = picturesList.get(position);
         byte[] pictureImage = picture.getImage();
         Bitmap bitmap = BitmapFactory.decodeByteArray(pictureImage,0,pictureImage.length);
         holder.imageView.setImageBitmap(bitmap);
-
         return row;
     }
 

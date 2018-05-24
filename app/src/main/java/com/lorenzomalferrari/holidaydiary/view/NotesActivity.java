@@ -11,9 +11,12 @@ import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.control.RecyclerViewAdapterNotes;
 import com.lorenzomalferrari.holidaydiary.model.Note;
 // Librerie Java
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  *
@@ -38,10 +41,15 @@ public class NotesActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(this);
         // Salvo tutte le Note
         Cursor res = databaseHelper.getAll("Notes");
+
+        Date data = new Date();
+        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy"); // creo l'oggetto
+        //String a = simpleDateFormat.format(data);
+        //DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.ITALY);
         // Add Notes
         while (res.moveToNext()) {
             //Aggiungo nella mia lista di Note, un nuovo oggetto con i parametri presi dal tabella Notes presente nel database
-            listNote.add(new Note(res.getString(1),new Date(),res.getString(2),res.getInt(4)));
+            listNote.add(new Note(res.getString(1),/*dateFormat.format(data)*/data,res.getString(2),res.getInt(4)));
         }
         // Set component for to see in Activity
         RecyclerView myRecyclerView = findViewById(R.id.recyclerviewNotes_id);
