@@ -177,6 +177,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                 callMenu();
                             }
                             else Toast.makeText(RegistrationActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
+
                         }
                         else {
                             //Mando messagio preciso, per far capire all'utente cosa è sbagliato

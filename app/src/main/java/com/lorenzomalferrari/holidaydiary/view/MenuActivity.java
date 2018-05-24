@@ -135,13 +135,11 @@ public class MenuActivity extends AppCompatActivity
      * @param itemId
      */
     private void displaySelectedScreen(int itemId) {
-        //creating fragment object
-        Fragment fragment = null;
-        Intent intent = null;
+        //creating intent object
+        Intent intent;
         //initializing the fragment object which is selected
         switch (itemId) {
             case R.id.nav_homepage:
-                //fragment = new HomePageFragment();
                 break;
             case R.id.nav_travels:
                 intent = new Intent(this, TravelsActivity.class);
@@ -164,10 +162,8 @@ public class MenuActivity extends AppCompatActivity
                 this.startActivity(intent);
                 break;
             case R.id.nav_settings:
-                fragment = new SettingsFragment();
                 break;
             case R.id.nav_privacytermsofuse:
-                //fragment = new PrivacyTermsFragment();
                 intent = new Intent(this, PrivacyTermsActivity.class);
                 this.startActivity(intent);
                 break;
@@ -178,11 +174,12 @@ public class MenuActivity extends AppCompatActivity
         }
 
         //replacing the fragment
-        if (fragment != null) {
+        /*if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment);
             ft.commit();
-        }
+        }*/
+        
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
     }
