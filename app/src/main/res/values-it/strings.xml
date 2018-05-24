@@ -49,4 +49,5 @@
     <string name="info_app_title">Info app</string>
     <string name="other_title">Altro</string>
     <string name="home_page_title">Home page</string>
+    <string name="dd_mm_yyyy">dd/mm/yyyy</string>
 </resources>
