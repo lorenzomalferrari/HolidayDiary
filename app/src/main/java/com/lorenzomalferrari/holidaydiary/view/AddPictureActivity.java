@@ -70,7 +70,7 @@ public class AddPictureActivity extends AppCompatActivity {
                     );
                     Toast.makeText(getApplicationContext(),"Aggiunta immagine con successo!",Toast.LENGTH_LONG).show();
                     clearComponents();
-                    //callPictures();
+                    callPictures();
                 }
                 catch (Exception e){
                     e.printStackTrace();

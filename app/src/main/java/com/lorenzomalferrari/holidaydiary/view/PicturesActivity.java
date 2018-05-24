@@ -56,7 +56,7 @@ public class PicturesActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),String.valueOf(id_user),Toast.LENGTH_LONG).show();
             //int id_user = 1;
 
-            //listPicture.add(new Picture(title,image,id_user));
+            listPicture.add(new Picture(title,image,id_user));
         }
 
         pictureListAdapter.notifyDataSetChanged();
