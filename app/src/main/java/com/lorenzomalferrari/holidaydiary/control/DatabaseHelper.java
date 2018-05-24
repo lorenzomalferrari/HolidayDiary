@@ -162,16 +162,16 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @param picture
      * @return
      */
-    /*public boolean inserDataImage(Picture picture){
-        //SQLiteDatabase db = this.getWritableDatabase();
-        //ContentValues contentValues = new ContentValues();
-        //contentValues.put("title",picture.getTitle());//data di nascita
+    public boolean inserDataImage(Picture picture){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("title",picture.getTitle());//data di nascita
         //contentValues.put("description",picture.getImage());//data di nascita
-        //contentValues.put("image",picture.getImage());//data di nascita
-        //contentValues.put("id_user",picture.getId_user());//data di nascita
-        //long result = db.insert(TABLE_NAMES[3],null ,contentValues);
-        //return result != -1;
-    }*/
+        contentValues.put("image",picture.getImage());//data di nascita
+        contentValues.put("id_user",picture.getId_user());//data di nascita
+        long result = db.insert(TABLE_NAMES[3],null ,contentValues);
+        return result != -1;
+    }
 
     /**
      * Metodo che aggiunge i dati della Nota all'interno del database
@@ -318,7 +318,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "id integer PRIMARY KEY," +
                 "title text not null," +
                 "description text," +
-                "image BLOB not null," +
+                "image BLOG not null," +
                 "id_user text not null," +
                 "id_travel integer," +
                 "id_place integer," +
