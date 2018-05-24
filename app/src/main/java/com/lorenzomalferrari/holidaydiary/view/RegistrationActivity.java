@@ -311,8 +311,13 @@ public class RegistrationActivity extends AppCompatActivity {
      * @return true - Tutto ok, false - Campi non rispettano parametri
      */
     private boolean checkData() {
-        boolean flag = true;
+        boolean flag;
         //Controllo che i obbligatori non siano vuoti
+        if (validator.isNameValid(firstName.getText().toString(),lastName.getText().toString()) &&
+                validator.isEmailValid(email.getText().toString()) &&
+                validator.isPasswordValid(password.getText().toString()) &&
+                validator.isFieldsEmpty(email.getText().toString(),password.getText().toString())) flag = true;
+        else flag = false;
         return flag;
     }
 
