@@ -44,9 +44,6 @@ public class RegistrationActivity extends AppCompatActivity {
     //
     DatabaseHelper databaseHelper;
 
-
-
-
     // Create object of SharedPreferences.
     //SharedPreferences sharedPref;
     //Now get Editor
@@ -83,7 +80,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
         AddData();
-        viewAllUsers();
+        //viewAllUsers();
         //UpdateData();
         //DeleteData();
     }
@@ -194,7 +191,7 @@ public class RegistrationActivity extends AppCompatActivity {
     /**
      * Visualizzo tutti i dati di tutti gli Utenti presenti nel database
      */
-    public void viewAllUsers() {
+    /*public void viewAllUsers() {
         btnviewAll.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -229,7 +226,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     }
                 }
         );
-    }
+    }*/
 
     /**
      * Mostro un messagio a seconda dei dati che ricevo
