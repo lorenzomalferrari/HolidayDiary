@@ -106,17 +106,6 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     /**
-     * Metodo per ottenere il radioButton selezionato
-     * @return
-     */
-    private void getRadioButtonChecked(){
-        if (male.isChecked() == true)
-            genderSelected = male.getText().toString();
-        else
-            genderSelected = female.getText().toString();
-    }
-
-    /**
      * Cancello l' Utente sapendo il suo id
      */
     public void DeleteData() {
@@ -166,23 +155,32 @@ public class RegistrationActivity extends AppCompatActivity {
 
                         //ottengo il radioButton cliccato da User
                         getRadioButtonChecked();
-                        //Creo utente e lo carico sul database
-                        boolean isInserted = databaseHelper.insertDataUser(createUser());
-                        //Toast.makeText(RegistrationActivity.this, String.valueOf(user.getAge()), Toast.LENGTH_LONG).show();
-                        //Toast.makeText(RegistrationActivity.this, String.valueOf(user.getImgUser()), Toast.LENGTH_LONG).show();
-                        if (isInserted) {
-                            Toast.makeText(RegistrationActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
-                            userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
+                        //controllo che tutti i campi rispecchino le richieste progettuali
+                        if (checkData()){ //campi tutti validi procedo
 
-                            //Put email
-                            //editor.putString("email",email.getText().toString());
-                            //Put password
-                            //editor.putString("password",password.getText().toString());
-                            //Commits your edits
-                            //editor.commit();
+                            //Creo utente e lo carico sul database
+                            boolean isInserted = databaseHelper.insertDataUser(createUser());
+                            //Toast.makeText(RegistrationActivity.this, String.valueOf(user.getAge()), Toast.LENGTH_LONG).show();
+                            //Toast.makeText(RegistrationActivity.this, String.valueOf(user.getImgUser()), Toast.LENGTH_LONG).show();
+                            if (isInserted) {
+                                Toast.makeText(RegistrationActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
+                                userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
 
-                            callMenu();
-                        } else Toast.makeText(RegistrationActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
+                                //Put email
+                                //editor.putString("email",email.getText().toString());
+                                //Put password
+                                //editor.putString("password",password.getText().toString());
+                                //Commits your edits
+                                //editor.commit();
+
+                                //Chiamo il menù dell'app (il vero contenuto dell'app)
+                                callMenu();
+                            }
+                            else Toast.makeText(RegistrationActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            //Mando messagio preciso, per far capire all'utente cosa è sbagliato
+                        }
                     }
                 }
         );
@@ -191,8 +189,8 @@ public class RegistrationActivity extends AppCompatActivity {
     /**
      * Visualizzo tutti i dati di tutti gli Utenti presenti nel database
      */
-    /*public void viewAllUsers() {
-        btnviewAll.setOnClickListener(
+    public void viewAllUsers() {
+        /*btnviewAll.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -225,8 +223,8 @@ public class RegistrationActivity extends AppCompatActivity {
                         showMessage("Data",buffer.toString());
                     }
                 }
-        );
-    }*/
+        );*/
+    }
 
     /**
      * Mostro un messagio a seconda dei dati che ricevo
@@ -278,7 +276,6 @@ public class RegistrationActivity extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
         return user;
     }
 
@@ -310,23 +307,13 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Controllo che i dati inseriti dall'utente sino corretti
+     * @return true - Tutto ok, false - Campi non rispettano parametri
      */
     private boolean checkData() {
-        Toast.makeText(RegistrationActivity.this, "Pw: "+password.getText().toString(), Toast.LENGTH_LONG).show();
-        Toast.makeText(RegistrationActivity.this, "Conf_Pw: "+conf_password.getText().toString(), Toast.LENGTH_LONG).show();
-        boolean flag;
-        // Controllo
-        if (validator.isEmailValid(email.getText().toString()) &&
-                validator.isPasswordValid(password.getText().toString()) &&
-                equalsPassword()
-                )
-            flag = true;
-            // Alternativa
-        else
-            flag = false;
-        return
-                flag;
+        boolean flag = true;
+        //Controllo che i obbligatori non siano vuoti
+        return flag;
     }
 
     /**
@@ -339,5 +326,16 @@ public class RegistrationActivity extends AppCompatActivity {
             return true;
         }
         else return false;
+    }
+
+    /**
+     * Metodo per ottenere il radioButton selezionato
+     * @return
+     */
+    private void getRadioButtonChecked(){
+        if (male.isChecked() == true)
+            genderSelected = male.getText().toString();
+        else
+            genderSelected = female.getText().toString();
     }
 }

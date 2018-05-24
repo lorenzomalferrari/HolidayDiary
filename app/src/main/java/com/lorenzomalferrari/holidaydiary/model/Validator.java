@@ -22,6 +22,16 @@ public class Validator {
         // Set attributes
     }
 
+    //Controllo che i campi obbligatori siano pieni
+    public boolean isFieldsEmpty(String email, String password){
+        if (email.trim().length() > 0 && password.trim().length() > 0)
+        {
+            return true;
+        }
+        else return false;
+    }
+
+    //Controllo nome e cognome
     /**
      * Metodo che controlla che il nome e cognome sia composto solamente da lettere
      * @param firstName
@@ -64,16 +74,9 @@ public class Validator {
         return flag;
     }
 
-    /**
-     * Controllo che il campo username non sia vuoto
-     * @param username
-     * @return true se non è vuoto || false se è campo è vuoto
-     */
-    public boolean isUsernameEmpty(String username){
-        if (username.trim().length() > 0) return true;
-        else return false;
-    }
+    //Controllo username
 
+    //Controllo email
     /**
      * Controllo che la password rispetti Patterns.EMAIL_ADDRESS
      * @return true = password ok || false = pawword !ok
@@ -84,6 +87,7 @@ public class Validator {
         return matcher.matches();
     }
 
+    //Controllo password
     /**
      * La password deve essere >= 6
      * @return
@@ -92,14 +96,43 @@ public class Validator {
         return password.length() >= 6;
     }
 
-    public boolean isFieldsEmpty(String email, String password){
-        if (email.trim().length() > 0 && password.trim().length() > 0)
-        {
-            return true;
+    //Controllo città
+
+    //Controllo paese
+
+    //Controllo gender
+
+    //Controllo compleanno
+
+    //Calcolo età della persona
+    public int calcAge(Date data){
+        int age = 0;
+        Calendar  myData= Calendar.getInstance();
+        myData.setTime(data);
+        Calendar today = Calendar.getInstance();
+        int year = today.get(Calendar.YEAR) - myData.get(Calendar.YEAR);
+        int month = today.get(Calendar.MONTH) - myData.get(Calendar.MONTH);
+        int day_of_month = today.get(Calendar.DAY_OF_MONTH) - myData.get(Calendar.DAY_OF_MONTH);
+        if (year > 0){
+            if (month > 0){
+                if (day_of_month > 0){
+                    age = year;
+                }
+                else {
+                    age = year-1;
+                }
+            }
+            else {
+                age = year-1;
+            }
         }
-        else return false;
+        else {
+            //Impossibile, la persona deve ancora nascere
+        }
+        return age;
     }
 
+    //Controllo che l'ètà non sia negativa
     /**
      * Metodo che mi controlla che l'età non sia negativa
      * @param age
@@ -112,12 +145,14 @@ public class Validator {
         else return true;
     }
 
-    public int calcAge(Date data){
-        Calendar c = Calendar.getInstance();
-        c.setTime(data);
-        Calendar oggi = Calendar.getInstance();
-        // dataDiNascita.getYear(); METODO DEPRECATO!!
-        return oggi.get(Calendar.YEAR) - c.get(Calendar.YEAR);
+    /**
+     * Controllo che il campo username non sia vuoto
+     * @param username
+     * @return true se non è vuoto || false se è campo è vuoto
+     */
+    public boolean isUsernameEmpty(String username){
+        if (username.trim().length() > 0) return true;
+        else return false;
     }
 
     public boolean isBirthdateValid() {
