@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Parole per la lingua italiana -->
     <string name="account_title">Profilo</string>
     <string name="addNote_title">Aggiungi Nota</string>
     <string name="addPicture_title">Aggiungi Immagine</string>
