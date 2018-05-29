@@ -61,18 +61,15 @@ public class MenuActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //check UserSessionManager
+        // Check UserSessionManager
         checkUserSession();
-        //inizializzazione dei componenti
+        // Inizializzazione dei componenti
         init();
-
-
         //Esecuzione dei bottoni
         actionTravel();
         actionNote();
         actionPicture();
         actionPlace();
-
     }
 
     /**
@@ -117,7 +114,6 @@ public class MenuActivity extends AppCompatActivity
             userSessionManager.logoutUser();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -258,6 +254,7 @@ public class MenuActivity extends AppCompatActivity
                 Intent intent = null;
                 intent = new Intent(MenuActivity.this, AddTravelActivity.class);
                 MenuActivity.this.startActivity(intent);
+                // Pulisco la visualizzazione dei bottoni
                 closeFloatingActionMenu();
             }
         });
@@ -273,6 +270,7 @@ public class MenuActivity extends AppCompatActivity
                 Intent intent = null;
                 intent = new Intent(MenuActivity.this, AddNoteActivity.class);
                 MenuActivity.this.startActivity(intent);
+                // Pulisco la visualizzazione dei bottoni
                 closeFloatingActionMenu();
             }
         });
@@ -288,6 +286,7 @@ public class MenuActivity extends AppCompatActivity
                 Intent intent = null;
                 intent = new Intent(MenuActivity.this, AddPictureActivity.class);
                 MenuActivity.this.startActivity(intent);
+                // Pulisco la visualizzazione dei bottoni
                 closeFloatingActionMenu();
             }
         });
@@ -300,6 +299,7 @@ public class MenuActivity extends AppCompatActivity
         place.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Pulisco la visualizzazione dei bottoni
                 closeFloatingActionMenu();
             }
         });
