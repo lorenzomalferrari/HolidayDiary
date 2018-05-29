@@ -131,11 +131,14 @@ public class MenuActivity extends AppCompatActivity
      * @param itemId
      */
     private void displaySelectedScreen(int itemId) {
+        //creating fragment object
+        Fragment fragment = null;
         //creating intent object
         Intent intent;
         //initializing the fragment object which is selected
         switch (itemId) {
             case R.id.nav_homepage:
+                fragment = new HomePageFragment();
                 break;
             case R.id.nav_travels:
                 intent = new Intent(this, TravelsActivity.class);
@@ -170,11 +173,11 @@ public class MenuActivity extends AppCompatActivity
         }
 
         //replacing the fragment
-        /*if (fragment != null) {
+        if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment);
             ft.commit();
-        }*/
+        }
         
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
