@@ -64,7 +64,8 @@
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.TravelsActivity"></meta-data>
         </activity>
-        <activity android:name=".view.NotesActivity" >
+        <activity android:name=".view.NotesActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.MenuActivity"></meta-data>
         </activity>
