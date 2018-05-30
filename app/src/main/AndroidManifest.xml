@@ -54,16 +54,48 @@
         <activity android:name=".view.RegistrationActivity" />
         <activity
             android:name=".view.TravelsActivity"
-            android:label="@string/travels" />
-        <activity android:name=".view.TravelActivity" />
-        <activity android:name=".view.NotesActivity" />
-        <activity android:name=".view.NoteActivity" />
-        <activity android:name=".view.AddPictureActivity" />
-        <activity android:name=".view.AddTravelActivity" />
-        <activity android:name=".view.AddNoteActivity" />
-        <activity android:name=".view.PicturesActivity" />
-        <activity android:name=".view.PrivacyTermsActivity" />
-        <activity android:name=".view.AccountActivity" />
+            android:label="@string/travels" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.MenuActivity"></meta-data>
+            <meta-data android:name="android.support"
+                android:value=".view.AddTravelActivity"></meta-data>
+        </activity>
+        <activity android:name=".view.TravelActivity" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.TravelsActivity"></meta-data>
+        </activity>
+        <activity android:name=".view.NotesActivity" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.MenuActivity"></meta-data>
+        </activity>
+        <activity android:name=".view.NoteActivity" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.NotesActivity"></meta-data>
+        </activity>
+        <activity android:name=".view.AddPictureActivity" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.MenuActivity"></meta-data>
+        </activity>
+        <activity android:name=".view.AddTravelActivity" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.MenuActivity"></meta-data>
+        </activity>
+        <activity android:name=".view.AddNoteActivity" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.MenuActivity"></meta-data>
+        </activity>
+        <activity android:name=".view.PicturesActivity" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.MenuActivity"></meta-data>
+        </activity>
+        <activity android:name=".view.PrivacyTermsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.MenuActivity"></meta-data>
+        </activity>
+        <activity android:name=".view.AccountActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.MenuActivity"></meta-data>
+        </activity>
     </application>
 
 </manifest>
