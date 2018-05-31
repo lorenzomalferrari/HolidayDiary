@@ -79,6 +79,5 @@ public class AccountActivity extends AppCompatActivity {
             gender.setText(res.getString(8));
             birthdate.setText(res.getString(10));
         }
-
     }
 }
