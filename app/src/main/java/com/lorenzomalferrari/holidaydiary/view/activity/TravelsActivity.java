@@ -12,7 +12,6 @@ import android.view.MenuItem;
 
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
-import com.lorenzomalferrari.holidaydiary.control.RecyclerViewAdapter;
 import com.lorenzomalferrari.holidaydiary.control.RecyclerViewAdapterTravels;
 import com.lorenzomalferrari.holidaydiary.model.Travel;
 

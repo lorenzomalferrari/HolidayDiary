@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
-import com.lorenzomalferrari.holidaydiary.model.User;
 import com.lorenzomalferrari.holidaydiary.model.Validator;
 
 /**
@@ -33,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     LinearLayout layoutTop, layoutDown;
     Animation uptodown, downtoup;
     Validator validator;
-    User user;
+    //User user;
 
     // User Session Manager Class
     UserSessionManager userSessionManager;
@@ -160,8 +159,8 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-    private void createUser(Cursor res){
+    /*private void createUser(Cursor res){
         user = new User();
-    }
+    }*/
 
 }

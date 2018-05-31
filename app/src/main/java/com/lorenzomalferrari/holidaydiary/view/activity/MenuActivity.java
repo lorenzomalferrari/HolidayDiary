@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -120,7 +121,7 @@ public class MenuActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         //calling the method displayselectedscreen and passing the id of selected menu
         displaySelectedScreen(item.getItemId());
         //make this method blank
@@ -237,14 +238,14 @@ public class MenuActivity extends AppCompatActivity
 
         // Cambio il testo nav_header_menu
         // Cambio nav_header_menu_imgUser
-        ImageView imgUser = findViewById(R.id.nav_header_menu_imgUser);
+        //ImageView imgUser = findViewById(R.id.nav_header_menu_imgUser);
         //imgUser.setImageResource(R.drawable.v_0579);
         // Cambio nav_header_menu_user
-        TextView name = findViewById(R.id.nav_header_menu_user);
+        //TextView name = findViewById(R.id.nav_header_menu_user);
         //name.setText(res.getString(1).toString()+" "+res.getString(2).toString());
         //name.setText(password);
         // Cambio nav_header_menu_email
-        TextView emailUser = findViewById(R.id.nav_header_menu_email);
+        //TextView emailUser = findViewById(R.id.nav_header_menu_email);
         //emailUser.setText(res.getString(5).toString());
         //emailUser.setText(email);
     }
@@ -257,8 +258,7 @@ public class MenuActivity extends AppCompatActivity
         travel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = null;
-                intent = new Intent(MenuActivity.this, AddTravelActivity.class);
+                Intent intent = new Intent(MenuActivity.this, AddTravelActivity.class);
                 MenuActivity.this.startActivity(intent);
                 // Pulisco la visualizzazione dei bottoni
                 closeFloatingActionMenu();
@@ -273,8 +273,7 @@ public class MenuActivity extends AppCompatActivity
         note.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = null;
-                intent = new Intent(MenuActivity.this, AddNoteActivity.class);
+                Intent intent = new Intent(MenuActivity.this, AddNoteActivity.class);
                 MenuActivity.this.startActivity(intent);
                 // Pulisco la visualizzazione dei bottoni
                 closeFloatingActionMenu();
@@ -289,8 +288,7 @@ public class MenuActivity extends AppCompatActivity
         picture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = null;
-                intent = new Intent(MenuActivity.this, AddPictureActivity.class);
+                Intent intent = new Intent(MenuActivity.this, AddPictureActivity.class);
                 MenuActivity.this.startActivity(intent);
                 // Pulisco la visualizzazione dei bottoni
                 closeFloatingActionMenu();

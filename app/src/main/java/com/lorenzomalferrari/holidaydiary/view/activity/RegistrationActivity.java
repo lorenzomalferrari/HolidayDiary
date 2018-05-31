@@ -311,17 +311,16 @@ public class RegistrationActivity extends AppCompatActivity {
     private boolean checkData() {
         boolean flag;
         //Controllo che i obbligatori non siano vuoti
-        if (validator.isNameValid(firstName.getText().toString(),lastName.getText().toString()) &&
+        flag = validator.isNameValid(firstName.getText().toString(), lastName.getText().toString()) &&
                 validator.isEmailValid(email.getText().toString()) &&
                 validator.isPasswordValid(password.getText().toString()) &&
-                validator.isFieldsEmpty(email.getText().toString(),password.getText().toString())) flag = true;
-        else flag = false;
+                validator.isFieldsEmpty(email.getText().toString(), password.getText().toString());
         return flag;
     }
 
     /**
      * Controllo che password sia uguale a conf_password
-     * @return
+     * @return true se le password corrispondono, false se non corrispondono
      */
     private boolean equalsPassword(){
         if (password.getText().toString().equals(conf_password.getText().toString())){
@@ -333,10 +332,10 @@ public class RegistrationActivity extends AppCompatActivity {
 
     /**
      * Metodo per ottenere il radioButton selezionato
-     * @return
+     * @return Maschio o Femmina a seconda di cosa è stato cliccato
      */
     private void getRadioButtonChecked(){
-        if (male.isChecked() == true)
+        if (male.isChecked())
             genderSelected = male.getText().toString();
         else
             genderSelected = female.getText().toString();

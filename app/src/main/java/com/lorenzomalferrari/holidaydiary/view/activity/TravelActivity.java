@@ -51,9 +51,9 @@ public class TravelActivity extends AppCompatActivity {
 
     /**
      * Setto i componenti con i parametri d'ingresso
-     * @param title
-     * @param description
-     * @param image
+     * @param title nome del viaggio
+     * @param description testo che descrive il viaggio
+     * @param image immagine rappresentativa del viaggio
      */
     private void setComponents(String title, String description, int image){
         // Settings values

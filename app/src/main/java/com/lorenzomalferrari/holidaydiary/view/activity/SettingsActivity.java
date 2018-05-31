@@ -1,6 +1,5 @@
 package com.lorenzomalferrari.holidaydiary.view.activity;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -33,7 +32,6 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //creating intent object
-        Intent intent;
         //initializing the fragment object which is selected
         switch (item.getItemId()) {
             case R.id.addItem:

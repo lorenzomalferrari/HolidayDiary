@@ -2,7 +2,6 @@ package com.lorenzomalferrari.holidaydiary.view.activity;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -42,7 +41,7 @@ public class PicturesActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(this);
         gridView = findViewById(R.id.gridViewPictures_id);
         // Create list of Travel object
-        listPicture = new ArrayList<Picture>();
+        listPicture = new ArrayList<>();
         //listPicture = new ArrayList<>();
         pictureListAdapter = new PictureListAdapter(this, R.layout.picture_items, listPicture);
         gridView.setAdapter(pictureListAdapter);

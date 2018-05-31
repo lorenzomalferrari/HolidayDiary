@@ -29,7 +29,6 @@ public class NoteActivity extends AppCompatActivity {
         String title = intent.getExtras().getString("Title");
         String data = intent.getExtras().getString("Data");
         String description = intent.getExtras().getString("Description");
-
         // Set values
         txttitle.setText(title);
         txtdata.setText(data);

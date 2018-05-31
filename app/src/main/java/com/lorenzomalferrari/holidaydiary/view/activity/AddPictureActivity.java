@@ -108,7 +108,8 @@ public class AddPictureActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE_GALLERY && resultCode == RESULT_OK && data != null){
             Uri uri = data.getData();
             try {
-                InputStream inputStream = getContentResolver().openInputStream(uri);
+                InputStream inputStream = null;
+                if (uri != null) inputStream = getContentResolver().openInputStream(uri);
                 //Setto immagine caricata
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                 img.setImageBitmap(bitmap);
@@ -134,8 +135,9 @@ public class AddPictureActivity extends AppCompatActivity {
         Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
-        byte[] byteArray = stream.toByteArray();
-        return byteArray;
+        return stream.toByteArray();
+        //byte[] byteArray = stream.toByteArray();
+        //return byteArray;
     }
 
     private void clearComponents() {
