@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 // Mie classi
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
@@ -56,7 +57,8 @@ public class NotesActivity extends AppCompatActivity {
         //DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.ITALY);
         // Add Notes
         while (res.moveToNext()) {
-            //String stringData = res.getString(3);
+            String stringData = res.getString(3);
+            Toast.makeText(NotesActivity.this,stringData,Toast.LENGTH_LONG).show();
 
             /*try {
 //                simpleDateFormat.format(data);

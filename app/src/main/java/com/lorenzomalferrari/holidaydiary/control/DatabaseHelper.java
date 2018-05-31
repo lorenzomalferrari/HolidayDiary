@@ -138,14 +138,14 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         //contentValues.put("id",arrayList.get(0).toString());//nome
-        contentValues.put("firstName",user.getFirstName().toString());//nome
-        contentValues.put("lastName",user.getLastName().toString());//cognome
-        contentValues.put("username",user.getUsername().toString());//username
-        contentValues.put("email",user.getEmail().toString());//email
-        contentValues.put("password",user.getPassword().toString());//password
-        contentValues.put("city",user.getCity().toString());//città
-        contentValues.put("country",user.getCountry().toString());//pease
-        contentValues.put("gender",user.getGender().toString());//sesso
+        contentValues.put("firstName", user.getFirstName());//nome
+        contentValues.put("lastName", user.getLastName());//cognome
+        contentValues.put("username", user.getUsername());//username
+        contentValues.put("email", user.getEmail());//email
+        contentValues.put("password", user.getPassword());//password
+        contentValues.put("city", user.getCity());//città
+        contentValues.put("country", user.getCountry());//pease
+        contentValues.put("gender", user.getGender());//sesso
         contentValues.put("birthdate",user.getBirthdate().toString());//data di nascita
         contentValues.put("age",user.getAge());//con birthdate calcolare l'età
         contentValues.put("imgProfilo",user.getImgUser());//immagine del profilo
@@ -283,9 +283,9 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     private void insertTravels(SQLiteDatabase db){
-        db.execSQL("INSERT INTO 'Users' ('title' , 'description' , 'img_list' , 'city' , 'country' , 'id_user' , 'id_place')" +
+        db.execSQL("INSERT INTO" + TABLE_NAMES[1] + " ('title' , 'description' , 'img_list' , 'city' , 'country' , 'id_user' , 'id_place')" +
                 "VALUES ('Nota Ciao' , 'Ciao a tutti come va la vita?' , '1' , 'Venezia' , 'Italia' , '1' , '1');");
-        db.execSQL("INSERT INTO 'Users' ('title' , 'description' , 'img_list' , 'city' , 'country' , 'id_user' , 'id_place')" +
+        db.execSQL("INSERT INTO" + TABLE_NAMES[1] + " ('title' , 'description' , 'img_list' , 'city' , 'country' , 'id_user' , 'id_place')" +
                 "VALUES ('Nota 2 Bella' , 'La vita è bella' , '1' , 'Venezia' , 'Italia' , '2', '2');");
     }
 
@@ -298,7 +298,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "id integer PRIMARY KEY AUTOINCREMENT," +
                 "title text not null," +
                 "description text not null," +
-                "creation_data DATA," +
+                "creation_data DATA DEFAULT (datetime('now','localtime'))," +
                 "id_user integer not null," +
                 "id_travel integer," +
                 "id_place integer," +
