@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
  */
 public class TravelsActivity extends AppCompatActivity {
