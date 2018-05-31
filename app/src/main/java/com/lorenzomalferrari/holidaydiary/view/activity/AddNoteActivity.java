@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
@@ -22,8 +21,7 @@ public class AddNoteActivity extends AppCompatActivity {
 
     //Attributi che rapresentano i campi nella Activity
     EditText title, description, city, country, startData, finishData;
-    ImageView image;
-    Button chooseImage, addNote;
+    Button addNote;
 
     DatabaseHelper databaseHelper;
 
@@ -66,8 +64,6 @@ public class AddNoteActivity extends AppCompatActivity {
         country = findViewById(R.id.addNote_country);
         startData = findViewById(R.id.addNote_start_data);
         finishData = findViewById(R.id.addNote_finish_data);
-        //image = findViewById(R.id.addNote_img);
-        //chooseImage = findViewById(R.id.addNote_choose_image);
         addNote = findViewById(R.id.addNote_save_note);
     }
 }
