@@ -20,7 +20,7 @@
 
         <!-- Activity iniziale -->
         <activity
-            android:name=".view.SplashActivity"
+            android:name=".view.activity.SplashActivity"
             android:theme="@style/AppThemeSplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,13 +30,12 @@
         </activity>
 
         <!-- Login se l'utente non è loggato -->
-        <activity android:name=".view.LoginActivity" />
+        <activity android:name=".view.activity.LoginActivity" />
         <!-- Contenuto dell'app -->
         <activity
-            android:name=".view.MenuActivity"
+            android:name=".view.activity.MenuActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-        />
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -47,44 +46,27 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key"
-        />
+            android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".view.MyPositionActivity"
+            android:name=".view.activity.MyPositionActivity"
             android:label="@string/title_activity_my_position" />
-        <activity android:name=".view.RegistrationActivity" />
+        <activity android:name=".view.activity.RegistrationActivity" />
         <activity
-            android:name=".view.TravelsActivity"
-            android:label="@string/travels" >
-        </activity>
-        <activity android:name=".view.TravelActivity" >
-
-        </activity>
-        <activity android:name=".view.NotesActivity">
-
-        </activity>
-        <activity android:name=".view.NoteActivity" >
-
-        </activity>
-        <activity android:name=".view.AddPictureActivity" >
-
-        </activity>
-        <activity android:name=".view.AddTravelActivity" >
-
-        </activity>
-        <activity android:name=".view.AddNoteActivity" >
-
-        </activity>
-        <activity android:name=".view.PicturesActivity" >
-
-        </activity>
-        <activity android:name=".view.PrivacyTermsActivity">
-
-        </activity>
-        <activity android:name=".view.AccountActivity">
-
-        </activity>
+            android:name=".view.activity.TravelsActivity"
+            android:label="@string/travels"></activity>
+        <activity android:name=".view.activity.TravelActivity"></activity>
+        <activity android:name=".view.activity.NotesActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".view.activity.NoteActivity"></activity>
+        <activity android:name=".view.activity.AddPictureActivity"></activity>
+        <activity android:name=".view.activity.AddTravelActivity"></activity>
+        <activity android:name=".view.activity.AddNoteActivity"></activity>
+        <activity android:name=".view.activity.PicturesActivity"></activity>
+        <activity android:name=".view.activity.PrivacyTermsActivity"></activity>
+        <activity android:name=".view.activity.AccountActivity"></activity>
+        <activity android:name=".view.activity.SettingsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>

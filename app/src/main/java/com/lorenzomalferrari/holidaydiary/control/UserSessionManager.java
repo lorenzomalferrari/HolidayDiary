@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.preference.PreferenceManager;
 
-import com.lorenzomalferrari.holidaydiary.view.LoginActivity;
+import com.lorenzomalferrari.holidaydiary.view.activity.LoginActivity;
 
 import java.util.HashMap;
 

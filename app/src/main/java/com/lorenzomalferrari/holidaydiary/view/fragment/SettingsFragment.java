@@ -1,4 +1,4 @@
-package com.lorenzomalferrari.holidaydiary.view;
+package com.lorenzomalferrari.holidaydiary.view.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -1,4 +1,4 @@
-package com.lorenzomalferrari.holidaydiary.view;
+package com.lorenzomalferrari.holidaydiary.view.activity;
 
 import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;

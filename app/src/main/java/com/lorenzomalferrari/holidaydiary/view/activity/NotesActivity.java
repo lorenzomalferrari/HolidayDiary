@@ -1,4 +1,4 @@
-package com.lorenzomalferrari.holidaydiary.view;
+package com.lorenzomalferrari.holidaydiary.view.activity;
 // Librerie Android
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;

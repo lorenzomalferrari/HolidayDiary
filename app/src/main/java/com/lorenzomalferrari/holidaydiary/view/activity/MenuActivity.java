@@ -1,4 +1,4 @@
-package com.lorenzomalferrari.holidaydiary.view;
+package com.lorenzomalferrari.holidaydiary.view.activity;
 //
 import android.app.Dialog;
 import android.content.Intent;
@@ -26,6 +26,7 @@ import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.Controller;
 import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
+import com.lorenzomalferrari.holidaydiary.view.fragment.HomePageFragment;
 
 
 public class MenuActivity extends AppCompatActivity
@@ -161,6 +162,8 @@ public class MenuActivity extends AppCompatActivity
                 this.startActivity(intent);
                 break;
             case R.id.nav_settings:
+                intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                this.startActivity(intent);
                 break;
             case R.id.nav_privacytermsofuse:
                 intent = new Intent(this, PrivacyTermsActivity.class);

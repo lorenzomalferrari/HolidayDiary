@@ -6,7 +6,7 @@
     android:id="@+id/pictures_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.PicturesActivity">
+    tools:context=".view.activity.PicturesActivity">
 
     <GridView
         android:id="@+id/gridViewPictures_id"

@@ -1,4 +1,4 @@
-package com.lorenzomalferrari.holidaydiary.view;
+package com.lorenzomalferrari.holidaydiary.view.activity;
 //Import java classes
 import android.content.Intent;
 import android.database.Cursor;

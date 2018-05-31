@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.lorenzomalferrari.holidaydiary.view.NoteActivity;
+import com.lorenzomalferrari.holidaydiary.view.activity.NoteActivity;
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.model.Note;
 

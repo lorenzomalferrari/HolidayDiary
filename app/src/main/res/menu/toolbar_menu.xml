@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/addItem"
+        android:title="Add"
+        android:orderInCategory="100"
+        android:icon="@drawable/img_add"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/order_by"
+        android:title="Order by"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_order_by"
+        app:showAsAction="always"
+        />
+</menu>
