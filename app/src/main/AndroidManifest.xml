@@ -35,7 +35,8 @@
         <activity
             android:name=".view.MenuActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+        />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -46,7 +47,8 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="@string/google_maps_key"
+        />
 
         <activity
             android:name=".view.MyPositionActivity"
@@ -55,47 +57,33 @@
         <activity
             android:name=".view.TravelsActivity"
             android:label="@string/travels" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.MenuActivity"></meta-data>
-            <meta-data android:name="android.support"
-                android:value=".view.AddTravelActivity"></meta-data>
         </activity>
         <activity android:name=".view.TravelActivity" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.TravelsActivity"></meta-data>
+
         </activity>
-        <activity android:name=".view.NotesActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.MenuActivity"></meta-data>
+        <activity android:name=".view.NotesActivity">
+
         </activity>
         <activity android:name=".view.NoteActivity" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.NotesActivity"></meta-data>
+
         </activity>
         <activity android:name=".view.AddPictureActivity" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.MenuActivity"></meta-data>
+
         </activity>
         <activity android:name=".view.AddTravelActivity" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.MenuActivity"></meta-data>
+
         </activity>
         <activity android:name=".view.AddNoteActivity" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.MenuActivity"></meta-data>
+
         </activity>
         <activity android:name=".view.PicturesActivity" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.MenuActivity"></meta-data>
+
         </activity>
         <activity android:name=".view.PrivacyTermsActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.MenuActivity"></meta-data>
+
         </activity>
         <activity android:name=".view.AccountActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.MenuActivity"></meta-data>
+
         </activity>
     </application>
 

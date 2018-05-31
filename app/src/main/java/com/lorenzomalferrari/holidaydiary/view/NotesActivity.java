@@ -34,8 +34,8 @@ public class NotesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
-        Toolbar toolbar = findViewById(R.id.app_bar);
-        setSupportActionBar(toolbar);
+  //      Toolbar toolbar = findViewById(R.id.app_bar);
+//        setSupportActionBar(toolbar);
         //Set title
         this.setTitle(getString(R.string.notes_title));
         // Create list of Travel object
