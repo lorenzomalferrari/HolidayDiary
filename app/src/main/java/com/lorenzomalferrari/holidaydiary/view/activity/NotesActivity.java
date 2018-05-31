@@ -15,6 +15,8 @@ import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.control.RecyclerViewAdapterNotes;
 import com.lorenzomalferrari.holidaydiary.model.Note;
 // Librerie Java
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -54,6 +56,15 @@ public class NotesActivity extends AppCompatActivity {
         //DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.ITALY);
         // Add Notes
         while (res.moveToNext()) {
+            //String stringData = res.getString(3);
+
+            /*try {
+//                simpleDateFormat.format(data);
+                data = simpleDateFormat.parse(stringData);
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }*/
             //Aggiungo nella mia lista di Note, un nuovo oggetto con i parametri presi dal tabella Notes presente nel database
             listNote.add(new Note(res.getString(1),/*dateFormat.format(data)*/data,res.getString(2),res.getInt(4)));
         }
