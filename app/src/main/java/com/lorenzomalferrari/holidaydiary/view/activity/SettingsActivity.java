@@ -16,14 +16,15 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        toolbar = findViewById(R.id.toolbar_menu);
-        setSupportActionBar(toolbar);
+        //toolbar = findViewById(R.id.toolbar_menu);
+        //setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.settings_title);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //toolbar.setLogo(R.drawable.ic_launcher_background);
         //toolbar.setNavigationIcon(R.);
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_menu,menu);
         return true;
@@ -42,5 +43,5 @@ public class SettingsActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }

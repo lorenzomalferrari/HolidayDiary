@@ -9,10 +9,10 @@
     android:orientation="vertical"
     tools:context=".view.activity.PicturesActivity">
 
-    <include
+    <!--><include
         layout="@layout/toolbar_menu"
         android:id="@+id/toolbar_menu_pictures">
-    </include>
+    </include>-->
 
     <GridView
         android:id="@+id/gridViewPictures_id"

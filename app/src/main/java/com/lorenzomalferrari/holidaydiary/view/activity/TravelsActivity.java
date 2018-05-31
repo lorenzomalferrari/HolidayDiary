@@ -31,7 +31,7 @@ public class TravelsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travels);
         toolbar = findViewById(R.id.toolbar_menu);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.travels_title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // Create list of Travel object

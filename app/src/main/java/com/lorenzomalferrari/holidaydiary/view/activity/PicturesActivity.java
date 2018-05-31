@@ -34,7 +34,7 @@ public class PicturesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pictures);
         toolbar = findViewById(R.id.toolbar_menu);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.pictures_title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // Setta la var dell'oggetto DatabaseHelper con il context della classe stessa

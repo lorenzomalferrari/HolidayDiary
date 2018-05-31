@@ -15,7 +15,7 @@ public class PrivacyTermsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy_terms);
-        //Set title with @string
-        this.setTitle(getString(R.string.privacyterms_title));
+        getSupportActionBar().setTitle(R.string.privacyterms_title);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

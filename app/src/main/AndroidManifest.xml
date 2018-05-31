@@ -18,24 +18,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- Activity iniziale -->
-        <activity
-            android:name=".view.activity.SplashActivity"
-            android:theme="@style/AppThemeSplash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <!-- Login se l'utente non è loggato -->
-        <activity android:name=".view.activity.LoginActivity" />
-        <!-- Contenuto dell'app -->
-        <activity
-            android:name=".view.activity.MenuActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -44,35 +26,65 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key" />
 
+        <!--
+            SplashActivity
+            Activity iniziale
+        -->
+        <activity
+            android:name=".view.activity.SplashActivity"
+            android:theme="@style/AppThemeSplash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Login se l'utente non è loggato -->
+        <activity android:name=".view.activity.LoginActivity" />
+        <!-- Menu dell'app -->
+        <activity android:name=".view.activity.MenuActivity" android:label="@string/app_name" android:theme="@style/AppTheme.NoActionBar" />
+        <!-- MyPosition Activity -->
         <activity
             android:name=".view.activity.MyPositionActivity"
-            android:label="@string/title_activity_my_position" />
+            android:label="@string/places_title"
+            android:parentActivityName=".view.activity.MenuActivity" >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".view.activity.MenuActivity" />
+        </activity>
+
+        <!-- Registration Activity -->
         <activity android:name=".view.activity.RegistrationActivity" />
-        <activity
-            android:name=".view.activity.TravelsActivity"
-
-            android:parentActivityName=".view.activity.MenuActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".view.activity.TravelActivity"></activity>
-        <activity android:name=".view.activity.NotesActivity"
-            android:parentActivityName=".view.activity.MenuActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".view.activity.NoteActivity"></activity>
-        <activity android:name=".view.activity.AddPictureActivity"></activity>
-        <activity android:name=".view.activity.AddTravelActivity"></activity>
-        <activity android:name=".view.activity.AddNoteActivity"></activity>
-        <activity android:name=".view.activity.PicturesActivity"
-            android:parentActivityName=".view.activity.MenuActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".view.activity.PrivacyTermsActivity"></activity>
-        <activity android:name=".view.activity.AccountActivity"></activity>
-        <activity android:name=".view.activity.SettingsActivity"
-            android:parentActivityName=".view.activity.MenuActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <!-- Travels Activity -->
+        <activity android:name=".view.activity.TravelsActivity" android:parentActivityName=".view.activity.MenuActivity"></activity>
+        <!-- Travel Activity -->
+        <activity android:name=".view.activity.TravelActivity" android:parentActivityName=".view.activity.TravelsActivity"></activity>
+        <!-- Notes Activity -->
+        <activity android:name=".view.activity.NotesActivity" android:parentActivityName=".view.activity.MenuActivity"></activity>
+        <!-- Pictures Activity -->
+        <activity android:name=".view.activity.PicturesActivity" android:parentActivityName=".view.activity.MenuActivity"></activity>
+        <!-- PrivacyTerms Activity -->
+        <activity android:name=".view.activity.PrivacyTermsActivity" android:parentActivityName=".view.activity.MenuActivity"></activity>
+        <!-- Account Activity -->
+        <activity android:name=".view.activity.AccountActivity" android:parentActivityName=".view.activity.MenuActivity"></activity>
+        <!-- Settings Activity -->
+        <activity android:name=".view.activity.SettingsActivity" android:parentActivityName=".view.activity.MenuActivity"></activity>
+        <!-- Note Activity -->
+        <activity android:name=".view.activity.NoteActivity" android:parentActivityName=".view.activity.NotesActivity"></activity>
+        <!--
+            Aggiungi Activity
+        -->
+        <!-- AddPicture Activity -->
+        <activity android:name=".view.activity.AddPictureActivity" android:parentActivityName=".view.activity.PicturesActivity"></activity>
+        <!-- AddTravel Activity -->
+        <activity android:name=".view.activity.AddTravelActivity" android:parentActivityName=".view.activity.TravelsActivity"></activity>
+        <!-- AddNote Activity -->
+        <activity android:name=".view.activity.AddNoteActivity" android:parentActivityName=".view.activity.NotesActivity"></activity>
     </application>
-
 </manifest>
+
+
+<!--
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            -->

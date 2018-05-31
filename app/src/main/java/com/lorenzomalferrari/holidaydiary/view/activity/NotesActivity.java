@@ -36,7 +36,7 @@ public class NotesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
         toolbar = findViewById(R.id.toolbar_menu);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.notes_title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //toolbar.setNavigationIcon(R.drawable.ic_action_back);
