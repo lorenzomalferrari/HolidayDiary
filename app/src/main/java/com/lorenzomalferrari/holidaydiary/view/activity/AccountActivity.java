@@ -30,7 +30,6 @@ public class AccountActivity extends AppCompatActivity {
 
         //
         databaseHelper = new DatabaseHelper(this);
-
         // Set title
         this.setTitle(getString(R.string.account_title));
         // User Session Manager
