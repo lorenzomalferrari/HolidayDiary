@@ -54,18 +54,24 @@
         <activity android:name=".view.activity.RegistrationActivity" />
         <activity
             android:name=".view.activity.TravelsActivity"
-            android:label="@string/travels"></activity>
+
+            android:parentActivityName=".view.activity.MenuActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity android:name=".view.activity.TravelActivity"></activity>
         <activity android:name=".view.activity.NotesActivity"
+            android:parentActivityName=".view.activity.MenuActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity android:name=".view.activity.NoteActivity"></activity>
         <activity android:name=".view.activity.AddPictureActivity"></activity>
         <activity android:name=".view.activity.AddTravelActivity"></activity>
         <activity android:name=".view.activity.AddNoteActivity"></activity>
-        <activity android:name=".view.activity.PicturesActivity"></activity>
+        <activity android:name=".view.activity.PicturesActivity"
+            android:parentActivityName=".view.activity.MenuActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity android:name=".view.activity.PrivacyTermsActivity"></activity>
         <activity android:name=".view.activity.AccountActivity"></activity>
         <activity android:name=".view.activity.SettingsActivity"
+            android:parentActivityName=".view.activity.MenuActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 

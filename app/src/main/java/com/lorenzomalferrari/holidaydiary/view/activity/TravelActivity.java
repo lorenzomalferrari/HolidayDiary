@@ -35,7 +35,6 @@ public class TravelActivity extends AppCompatActivity {
         int image = intent.getExtras().getInt("Thumbnail");
         // Setto i componenti
         setComponents(title,description,image);
-
     }
 
     /**
@@ -63,6 +62,5 @@ public class TravelActivity extends AppCompatActivity {
         //img.setImageResource(image);
         collapsingToolbarLayout.setBackgroundResource(image);
         collapsingToolbarLayout.setTitle(title);
-
     }
 }

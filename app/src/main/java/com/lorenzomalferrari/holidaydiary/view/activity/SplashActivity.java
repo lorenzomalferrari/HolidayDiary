@@ -12,19 +12,16 @@ import com.lorenzomalferrari.holidaydiary.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private TextView txt1, txt2, txt3;
-    private ImageView imgV;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Setto il contenuto della view
         setContentView(R.layout.activity_splash);
         // Inizializzazione degli attributi
-        txt1 = findViewById(R.id.txtWelcomeSplash1);
-        txt2 = findViewById(R.id.txtWelcomeSplash2);
-        txt3 = findViewById(R.id.txtWelcomeSplash3);
-        imgV = findViewById(R.id.imgLogoSplash);
+        TextView txt1 = findViewById(R.id.txtWelcomeSplash1);
+        TextView txt2 = findViewById(R.id.txtWelcomeSplash2);
+        TextView txt3 = findViewById(R.id.txtWelcomeSplash3);
+        ImageView imgV = findViewById(R.id.imgLogoSplash);
         // Inizializzo le animazioni
         Animation welInAnimation = AnimationUtils.loadAnimation(this, R.anim.welcom_in_trasition);
         Animation appNameAnimation = AnimationUtils.loadAnimation(this, R.anim.app_name_trasition);
@@ -35,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
         txt3.setAnimation(appNameAnimation);
         imgV.setAnimation(iconAnimation);
         // Inizializzazione della Intenet per richiamare la prossima Activity
-        final Intent i = new Intent(this, MenuActivity.class);
+        final Intent intent = new Intent(this, MenuActivity.class);
         // Setto i millis per la Splash Activity
         final int time = 2500;
         // Parte il timer per la visualizzazione completa dello Splash
@@ -47,7 +44,7 @@ public class SplashActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally {
-                    startActivity(i);
+                    startActivity(intent);
                     finish();
                 }
             }

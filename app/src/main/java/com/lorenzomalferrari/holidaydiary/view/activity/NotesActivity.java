@@ -1,11 +1,14 @@
 package com.lorenzomalferrari.holidaydiary.view.activity;
 // Librerie Android
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 // Mie classi
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
@@ -29,15 +32,18 @@ public class NotesActivity extends AppCompatActivity {
     List<Note> listNote;
     // Oggetto per collegarsi al database
     DatabaseHelper databaseHelper;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
-  //      Toolbar toolbar = findViewById(R.id.app_bar);
-//        setSupportActionBar(toolbar);
-        //Set title
-        this.setTitle(getString(R.string.notes_title));
+        toolbar = findViewById(R.id.toolbar_menu);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.notes_title);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //toolbar.setNavigationIcon(R.drawable.ic_action_back);
+
         // Create list of Travel object
         listNote = new ArrayList<>();
         // Setta la var dell'oggetto DatabaseHelper con il context della classe stessa
@@ -59,5 +65,29 @@ public class NotesActivity extends AppCompatActivity {
         RecyclerViewAdapterNotes myRecyclerViewAdapterNotes = new RecyclerViewAdapterNotes(this,listNote);
         myRecyclerView.setLayoutManager(new GridLayoutManager(this,1));
         myRecyclerView.setAdapter(myRecyclerViewAdapterNotes);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //creating intent object
+        Intent intent;
+        //initializing the fragment object which is selected
+        switch (item.getItemId()) {
+            case R.id.addItem:
+                intent = new Intent(this, AddNoteActivity.class);
+                this.startActivity(intent);
+                break;
+            case R.id.order_by:
+                //intent = new Intent(this, TravelsActivity.class);
+                //this.startActivity(intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -3,16 +3,12 @@ package com.lorenzomalferrari.holidaydiary.view.activity;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
-
-import java.util.Date;
 
 /**
  *
@@ -73,15 +69,15 @@ public class AccountActivity extends AppCompatActivity {
         imgUser.setImageResource(R.drawable.v_0578);
         //Setto i campi della AccountActivity con i dati dell'utente che è loggato
         while (res.moveToNext()){
-            firstName.setText(res.getString(1).toString());
-            lastName.setText(res.getString(2).toString());
-            username.setText(res.getString(3).toString());
-            email.setText(res.getString(4).toString());
-            password.setText(res.getString(5).toString());
-            city.setText(res.getString(6).toString());
-            country.setText(res.getString(7).toString());
-            gender.setText(res.getString(8).toString());
-            birthdate.setText(res.getString(10).toString());
+            firstName.setText(res.getString(1));
+            lastName.setText(res.getString(2));
+            username.setText(res.getString(3));
+            email.setText(res.getString(4));
+            password.setText(res.getString(5));
+            city.setText(res.getString(6));
+            country.setText(res.getString(7));
+            gender.setText(res.getString(8));
+            birthdate.setText(res.getString(10));
         }
 
     }

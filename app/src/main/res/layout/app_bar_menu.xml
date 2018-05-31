@@ -14,7 +14,6 @@
         android:background="?attr/colorPrimary"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-
      <include layout="@layout/content_menu" />
 
     <com.github.clans.fab.FloatingActionMenu
@@ -32,7 +31,6 @@
         app:menu_labels_textColor="@color/secondaryColor"
         app:menu_labels_colorNormal="@color/white"
         app:menu_labels_colorPressed="@color/primaryColor">
-
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonTravel"

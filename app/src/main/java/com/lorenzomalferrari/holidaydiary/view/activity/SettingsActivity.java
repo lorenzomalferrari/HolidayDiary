@@ -17,7 +17,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        toolbar = findViewById(R.id.toolbar_Settings);
+        toolbar = findViewById(R.id.toolbar_menu);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.settings_title);
         //toolbar.setLogo(R.drawable.ic_launcher_background);

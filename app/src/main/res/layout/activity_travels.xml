@@ -3,13 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.TravelsFragment"
-    android:padding="8dp">
+    android:orientation="vertical"
+    tools:context=".view.activity.TravelsActivity">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/toolbar_menu"
+        android:id="@+id/toolbar_menu_travels">
+    </include>
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerviewTravels_id"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:padding="8dp">
     </android.support.v7.widget.RecyclerView>
 </LinearLayout>

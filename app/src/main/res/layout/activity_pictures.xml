@@ -6,7 +6,13 @@
     android:id="@+id/pictures_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".view.activity.PicturesActivity">
+
+    <include
+        layout="@layout/toolbar_menu"
+        android:id="@+id/toolbar_menu_pictures">
+    </include>
 
     <GridView
         android:id="@+id/gridViewPictures_id"
