@@ -87,6 +87,6 @@
     <string name="info_app_title">Info app</string>
     <string name="other_title">Other</string>
     <string name="home_page_title">Home page</string>
-    <string name="dd_mm_yyyy">dd/mm/yyyy</string> 
+    <string name="dd_mm_yyyy">dd/mm/yyyy</string>
     <string name="desc_img_account">Img Account</string>
 </resources>

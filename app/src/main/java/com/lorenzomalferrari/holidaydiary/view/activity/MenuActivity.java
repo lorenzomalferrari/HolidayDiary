@@ -145,30 +145,37 @@ public class MenuActivity extends AppCompatActivity
             case R.id.nav_travels:
                 intent = new Intent(this, TravelsActivity.class);
                 this.startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.nav_notes:
                 intent = new Intent(this, NotesActivity.class);
                 this.startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.nav_pictures:
                 intent = new Intent(this, PicturesActivity.class);
                 this.startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.nav_places:
                 intent = new Intent(this, MyPositionActivity.class);
                 this.startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.nav_account:
                 intent = new Intent(getApplicationContext(), AccountActivity.class);
                 this.startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.nav_settings:
                 intent = new Intent(getApplicationContext(), SettingsActivity.class);
                 this.startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.nav_privacytermsofuse:
                 intent = new Intent(this, PrivacyTermsActivity.class);
                 this.startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.nav_version:
                 myDialog = new Dialog(this);
