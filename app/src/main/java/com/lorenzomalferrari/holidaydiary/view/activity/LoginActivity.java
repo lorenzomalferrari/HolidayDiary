@@ -91,7 +91,8 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        /*AsyncTask<String,String,String> asyncTask = new AsyncTask<String,String,String>(){
+                    /*
+                        AsyncTask<String,String,String> asyncTask = new AsyncTask<String,String,String>(){
 
                             @Override
                             protected String doInBackground(String... strings) {
@@ -112,7 +113,8 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         };
                         btnLogin.startAnimation();
-                        asyncTask.execute();*/
+                        asyncTask.execute();
+                    */
 
                         String emailLogin = email.getText().toString();
                         String passwordLogin = password.getText().toString();
