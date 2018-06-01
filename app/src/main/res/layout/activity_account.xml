@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content" >
 
         <!-- -->
         <ImageView
@@ -13,7 +13,8 @@
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:src="@mipmap/ic_launcher_round"
-            android:layout_margin="20sp"/>
+            android:layout_margin="20sp"
+            android:contentDescription="@string/desc_img_account" />
 
         <!-- FirstName -->
         <TextView
