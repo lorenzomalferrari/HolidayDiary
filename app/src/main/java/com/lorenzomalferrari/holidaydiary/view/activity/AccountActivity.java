@@ -38,7 +38,7 @@ public class AccountActivity extends AppCompatActivity {
         //Inizializzo gli attributi dei campi
         init();
 
-        String email = "malfe.lore@gmail.com";
+        String email = "lori.malfe@tiscali.it";
         String password = "123456";
         Cursor res = databaseHelper.getDataUser(email,password);
         //
