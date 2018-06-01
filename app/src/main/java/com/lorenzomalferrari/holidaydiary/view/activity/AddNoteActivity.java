@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.model.Note;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -40,7 +43,19 @@ public class AddNoteActivity extends AppCompatActivity {
         addNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Note note = new Note(title.getText().toString(),new Date(),description.getText().toString(),1);
+
+                Date today = new Date();
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                String strToday = formatter.format(today);
+                //Toast.makeText(AddNoteActivity.this,strToday,Toast.LENGTH_LONG).show();
+                try {
+                    today = formatter.parse(strToday);
+                    Toast.makeText(AddNoteActivity.this,today.toString(),Toast.LENGTH_LONG).show();
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                Note note = new Note(title.getText().toString(),today,description.getText().toString(),1);
                 databaseHelper.insertDataNote(note);
                 //Chiamo l'Activity che contiene la lista delle note
                 callNotes();

@@ -47,7 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         //Creazione del Database
         createStructureDatabase(db);
         //Aggiunta di dati nel databse
-        addDataDatabase(db);
+        //addDataDatabase(db);
     }
 
     /**

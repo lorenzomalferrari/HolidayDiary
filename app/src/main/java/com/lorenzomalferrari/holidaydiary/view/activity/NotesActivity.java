@@ -58,7 +58,7 @@ public class NotesActivity extends AppCompatActivity {
         // Add Notes
         while (res.moveToNext()) {
             String stringData = res.getString(3);
-            Toast.makeText(NotesActivity.this,stringData,Toast.LENGTH_LONG).show();
+            //Toast.makeText(NotesActivity.this,stringData,Toast.LENGTH_LONG).show();
 
             /*try {
 //                simpleDateFormat.format(data);
