@@ -13,11 +13,4 @@ import com.lorenzomalferrari.holidaydiary.model.Validator;
  */
 public class Controller {
 
-    User user;
-    Note note;
-    Picture picture;
-    Place place;
-    Travel travel;
-    Validator validator;
-
 }
