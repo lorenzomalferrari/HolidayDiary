@@ -126,16 +126,23 @@ public class Validator {
      */
     public int calcAge(Date data){
         int age = 0;
-        Calendar  myData= Calendar.getInstance();
+        Calendar  myData = Calendar.getInstance();
         myData.setTime(data);
+        //System.out.println("Mia data secondo Calendar " + (myData.get(Calendar.YEAR) + "/" + (myData.get(Calendar.MONTH)+1) + "/" +myData.get(Calendar.DAY_OF_MONTH)));
         Calendar today = Calendar.getInstance();
         int year = today.get(Calendar.YEAR) - myData.get(Calendar.YEAR);
-        int month = today.get(Calendar.MONTH) - myData.get(Calendar.MONTH);
+        int month = (today.get(Calendar.MONTH)+1) - (myData.get(Calendar.MONTH)+1);
         int day_of_month = today.get(Calendar.DAY_OF_MONTH) - myData.get(Calendar.DAY_OF_MONTH);
+        //System.out.println("Data di oggi " + (today.get(Calendar.YEAR) + "/" + (today.get(Calendar.MONTH)+1) + "/" +today.get(Calendar.DAY_OF_MONTH)));
+        //System.out.println("Year: " + year);
+        //System.out.println("Month: " + month);
+        //System.out.println("Day: " + day_of_month);
+
         if (year > 0){
             if (month > 0){
-                if (day_of_month > 0) age = year;
-                else age = year - 1;
+                //if (day_of_month > 0)
+                age = year;
+                //else age = year - 1;
             }
             else age = year - 1;
         }
