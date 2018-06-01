@@ -2,6 +2,10 @@ package com.lorenzomalferrari.holidaydiary.view.activity;
 //Import java classes
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +21,8 @@ import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.model.Validator;
 
+import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton;
+
 /**
  *
  * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
@@ -24,7 +30,7 @@ import com.lorenzomalferrari.holidaydiary.model.Validator;
 public class LoginActivity extends AppCompatActivity {
 
     //Bottone che clicco
-    Button btnLogin;
+    CircularProgressButton btnLogin;
     //Campi che prende
     EditText email,password;
 
@@ -85,10 +91,33 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
+                        /*AsyncTask<String,String,String> asyncTask = new AsyncTask<String,String,String>(){
+
+                            @Override
+                            protected String doInBackground(String... strings) {
+                                try {
+                                    Thread.sleep(3000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                                return "done";
+                            }
+
+                            @Override
+                            protected void onPostExecute(String s) {
+                                if (s.equals("done")){
+                                    btnLogin.doneLoadingAnimation(Color.parseColor("#333639"),
+                                            BitmapFactory.decodeResource(getResources(),R.drawable.ic_done_login));
+                                }
+                            }
+                        };
+                        btnLogin.startAnimation();
+                        asyncTask.execute();*/
+
                         String emailLogin = email.getText().toString();
                         String passwordLogin = password.getText().toString();
                         // Start checks
-                        if (validator.isFieldsEmpty(emailLogin,passwordLogin)){
+                        if (validator.isFieldsEmpty(emailLogin,passwordLogin)) {
                             if (validator.isEmailValid(email.getText().toString())){
                                 if (validator.isPasswordValid(password.getText().toString())){
                                     Cursor res = databaseHelper.getDataUser(email.getText().toString(),password.getText().toString());
