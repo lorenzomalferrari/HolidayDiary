@@ -57,30 +57,52 @@
         <!-- Registration Activity -->
         <activity android:name=".view.activity.RegistrationActivity" />
         <!-- Travels Activity -->
-        <activity android:name=".view.activity.TravelsActivity" android:parentActivityName=".view.activity.MenuActivity"></activity>
+        <activity
+            android:name=".view.activity.TravelsActivity"
+            android:parentActivityName=".view.activity.MenuActivity" />
         <!-- Travel Activity -->
-        <activity android:name=".view.activity.TravelActivity" android:parentActivityName=".view.activity.TravelsActivity"></activity>
+        <activity
+            android:name=".view.activity.TravelActivity"
+            android:parentActivityName=".view.activity.TravelsActivity" />
         <!-- Notes Activity -->
-        <activity android:name=".view.activity.NotesActivity" android:parentActivityName=".view.activity.MenuActivity"></activity>
+        <activity
+            android:name=".view.activity.NotesActivity"
+            android:parentActivityName=".view.activity.MenuActivity" />
         <!-- Pictures Activity -->
-        <activity android:name=".view.activity.PicturesActivity" android:parentActivityName=".view.activity.MenuActivity"></activity>
+        <activity
+            android:name=".view.activity.PicturesActivity"
+            android:parentActivityName=".view.activity.MenuActivity" />
         <!-- PrivacyTerms Activity -->
-        <activity android:name=".view.activity.PrivacyTermsActivity" android:parentActivityName=".view.activity.MenuActivity"></activity>
+        <activity
+            android:name=".view.activity.PrivacyTermsActivity"
+            android:parentActivityName=".view.activity.MenuActivity" />
         <!-- Account Activity -->
-        <activity android:name=".view.activity.AccountActivity" android:parentActivityName=".view.activity.MenuActivity"></activity>
+        <activity
+            android:name=".view.activity.AccountActivity"
+            android:parentActivityName=".view.activity.MenuActivity" />
         <!-- Settings Activity -->
-        <activity android:name=".view.activity.SettingsActivity" android:parentActivityName=".view.activity.MenuActivity"></activity>
+        <activity
+            android:name=".view.activity.SettingsActivity"
+            android:parentActivityName=".view.activity.MenuActivity" />
         <!-- Note Activity -->
-        <activity android:name=".view.activity.NoteActivity" android:parentActivityName=".view.activity.NotesActivity"></activity>
+        <activity
+            android:name=".view.activity.NoteActivity"
+            android:parentActivityName=".view.activity.NotesActivity" />
         <!--
             Aggiungi Activity
         -->
         <!-- AddPicture Activity -->
-        <activity android:name=".view.activity.AddPictureActivity" android:parentActivityName=".view.activity.PicturesActivity"></activity>
+        <activity
+            android:name=".view.activity.AddPictureActivity"
+            android:parentActivityName=".view.activity.PicturesActivity" />
         <!-- AddTravel Activity -->
-        <activity android:name=".view.activity.AddTravelActivity" android:parentActivityName=".view.activity.TravelsActivity"></activity>
+        <activity
+            android:name=".view.activity.AddTravelActivity"
+            android:parentActivityName=".view.activity.TravelsActivity" />
         <!-- AddNote Activity -->
-        <activity android:name=".view.activity.AddNoteActivity" android:parentActivityName=".view.activity.NotesActivity"></activity>
+        <activity
+            android:name=".view.activity.AddNoteActivity"
+            android:parentActivityName=".view.activity.NotesActivity" />
     </application>
 </manifest>
 
