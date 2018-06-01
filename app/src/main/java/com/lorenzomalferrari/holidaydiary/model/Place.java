@@ -3,7 +3,6 @@ package com.lorenzomalferrari.holidaydiary.model;
 import java.util.Date;
 
 /**
- *
  * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
  */
 public class Place {
