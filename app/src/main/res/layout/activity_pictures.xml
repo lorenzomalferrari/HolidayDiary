@@ -14,15 +14,10 @@
         android:id="@+id/toolbar_menu_pictures">
     </include>-->
 
-    <GridView
-        android:id="@+id/gridViewPictures_id"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/masonry_grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:columnWidth="120dp"
-        android:gravity="center"
-        android:numColumns="auto_fit">
-    </GridView>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </RelativeLayout>
