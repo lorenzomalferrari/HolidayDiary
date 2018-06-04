@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Holiday Diary</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -21,11 +20,10 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
     <!-- Testo per la activity Registrazione -->
     <string name="title_activity_my_position">Map</string>
-    <!-- Dati dell'autore -->
     <!-- Lorenzo Malferrari -->
+    <string name="author_name">Lorenzo Malferrari</string>
     <!-- www.lorenzomalferrari.com -->
-
-
+    <string name="author_website">www.lorenzomalferrari.com</string>
     <!-- Login -->
     <string name="login_title">Login</string>
     <!-- Registration -->
@@ -40,13 +38,9 @@
     <string name="pictures_title">Pictures</string>
     <string name="picture_title">Picture</string>
     <string name="addPicture_title">Add Picture</string>
-
     <string name="account_title">Account</string>
-
     <string name="privacyterms_title">Privacy terms of use</string>
     <string name="settings_title">Settings</string>
-
-
     <!-- Campi da usare in RegistrationActivity e AccountActivity -->
     <string name="firstname_text">FirstName</string>
     <string name="lastname_text">LastName</string>
@@ -57,13 +51,11 @@
     <string name="country_text">Country</string>
     <string name="gender_text">Gender</string>
     <string name="birthdate_text">Birthdate</string>
-
     <!-- Campi da usare in AddNoteActivity (+ city e country)-->
     <string name="title_text">Title</string>
     <string name="description_text">Description</string>
     <string name="start_data_text">Start Data</string>
     <string name="finish_data_text">Finish Data</string>
-
     <!-- Campi AddPictureActivity -->
     <string name="add_image_text">Add Image</string>
     <string name="sign_in_or_register_text">SIGN IN OR REGISTER</string>
