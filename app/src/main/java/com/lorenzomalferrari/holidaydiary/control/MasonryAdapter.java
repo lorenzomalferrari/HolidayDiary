@@ -9,19 +9,37 @@ import android.widget.ImageView;
 
 import com.lorenzomalferrari.holidaydiary.R;
 
-/**
- * Created by Suleiman on 26-07-2015.
- */
 public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryView> {
 
     private Context context;
 
-    int[] imgList = {R.drawable.two, R.drawable.one, R.drawable.three, R.drawable.four,
-            R.drawable.five, R.drawable.six, R.drawable.seven, R.drawable.eight,
-            R.drawable.nine, R.drawable.ten};
+    int[] imgList = {
+            R.drawable.two,
+            R.drawable.one,
+            R.drawable.three,
+            R.drawable.four,
+            R.drawable.five,
+            R.drawable.six,
+            R.drawable.seven,
+            R.drawable.eight,
+            R.drawable.nine,
+            R.drawable.ten,
+            R.drawable.two,
+            R.drawable.one,
+            R.drawable.three,
+            R.drawable.four,
+            R.drawable.five,
+            R.drawable.six,
+            R.drawable.seven,
+            R.drawable.eight,
+            R.drawable.nine,
+            R.drawable.ten,
+            R.drawable.travel_1,
+            R.drawable.bicifiori
+    };
 
     String[] nameList = {"One", "Two", "Three", "Four", "Five", "Six",
-            "Seven", "Eight", "Nine", "Ten"};
+            "Seven", "Eight", "Nine", "Ten","bb_0010","dsc_0001","dsc_0025"};
 
     public MasonryAdapter(Context context) {
         this.context = context;
@@ -39,9 +57,13 @@ public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryV
         holder.imageView.setImageResource(imgList[position]);
     }
 
+    /**
+     * Lunghezza basata sulle immagini poichè l'immagine può non avere una descrizione
+     * @return
+     */
     @Override
     public int getItemCount() {
-        return nameList.length;
+        return imgList.length;
     }
 
     class MasonryView extends RecyclerView.ViewHolder {
@@ -49,7 +71,7 @@ public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryV
 
         public MasonryView(View itemView) {
             super(itemView);
-            imageView = (ImageView) itemView.findViewById(R.id.picture_img_id);
+            imageView = itemView.findViewById(R.id.picture_img_id);
         }
     }
 }
