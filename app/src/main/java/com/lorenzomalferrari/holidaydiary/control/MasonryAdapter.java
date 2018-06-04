@@ -8,39 +8,47 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.lorenzomalferrari.holidaydiary.R;
-
+/**
+ *
+ * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
+ */
 public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryView> {
 
     private Context context;
 
     int[] imgList = {
-            R.drawable.two,
-            R.drawable.one,
-            R.drawable.three,
-            R.drawable.four,
-            R.drawable.five,
-            R.drawable.six,
-            R.drawable.seven,
-            R.drawable.eight,
-            R.drawable.nine,
-            R.drawable.ten,
-            R.drawable.two,
-            R.drawable.one,
-            R.drawable.three,
-            R.drawable.four,
-            R.drawable.five,
-            R.drawable.six,
-            R.drawable.seven,
-            R.drawable.eight,
-            R.drawable.nine,
-            R.drawable.ten,
-            R.drawable.travel_1,
-            R.drawable.bicifiori
+        R.drawable.two,
+        R.drawable.one,
+        R.drawable.three,
+        R.drawable.four,
+        R.drawable.five,
+        R.drawable.six,
+        R.drawable.seven,
+        R.drawable.eight,
+        R.drawable.nine,
+        R.drawable.ten,
+        R.drawable.two,
+        R.drawable.one,
+        R.drawable.three,
+        R.drawable.four,
+        R.drawable.five,
+        R.drawable.six,
+        R.drawable.seven,
+        R.drawable.eight,
+        R.drawable.nine,
+        R.drawable.ten,
+        R.drawable.travel_1,
+        R.drawable.bicifiori
     };
 
     String[] nameList = {"One", "Two", "Three", "Four", "Five", "Six",
             "Seven", "Eight", "Nine", "Ten","bb_0010","dsc_0001","dsc_0025"};
 
+    /**
+     * Costruttore
+     * Inizializzazione del contesto
+     * @param context
+     */
     public MasonryAdapter(Context context) {
         this.context = context;
     }
