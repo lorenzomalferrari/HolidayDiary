@@ -135,9 +135,11 @@ public class AddPictureActivity extends AppCompatActivity {
         Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
-        return stream.toByteArray();
-        //byte[] byteArray = stream.toByteArray();
-        //return byteArray;
+        byte[] byteArray = stream.toByteArray();
+        int length = byteArray.length;
+        Toast.makeText(AddPictureActivity.this,String.valueOf(length),Toast.LENGTH_LONG).show();
+        //return stream.toByteArray();
+        return byteArray;
     }
 
     private void clearComponents() {
