@@ -65,9 +65,8 @@ public class PicturesActivity extends AppCompatActivity {
         }
         pictureListAdapter.notifyDataSetChanged();*/
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.masonry_grid);
+        mRecyclerView = findViewById(R.id.masonry_grid);
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-
         MasonryAdapter adapter = new MasonryAdapter(this);
         mRecyclerView.setAdapter(adapter);
         SpacesItemDecoration decoration = new SpacesItemDecoration(16);
