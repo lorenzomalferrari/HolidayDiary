@@ -14,6 +14,9 @@ import com.lorenzomalferrari.holidaydiary.view.activity.NoteActivity;
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.model.Note;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -52,9 +55,15 @@ public class RecyclerViewAdapterNotes extends RecyclerView.Adapter<RecyclerViewA
             public void onClick(View v) {
                 Intent intent = new Intent(context,NoteActivity.class);
 
+                // formatoo la data per visualizzarla dd/mm/yyyy hh:mm:ss
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                //Ottengo la data dal db
+                Date date = myData.get(position).getCreation_data();
+                //
+                String strDate = simpleDateFormat.format(date);
                 // Passing data to the note activity
                 intent.putExtra("Title",myData.get(position).getTitle());
-                intent.putExtra("Data",myData.get(position).getCreation_data().toString());
+                intent.putExtra("Data",strDate);
                 intent.putExtra("Description",myData.get(position).getDescription());
                 // start activity
                 context.startActivity(intent);

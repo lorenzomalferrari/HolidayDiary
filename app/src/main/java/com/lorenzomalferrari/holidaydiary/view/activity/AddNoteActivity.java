@@ -11,8 +11,6 @@ import android.widget.Toast;
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.model.Note;
-import com.r0adkll.slidr.Slidr;
-import com.r0adkll.slidr.model.SlidrInterface;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -29,7 +27,6 @@ public class AddNoteActivity extends AppCompatActivity {
     Button addNote;
 
     DatabaseHelper databaseHelper;
-    private SlidrInterface slidrInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +34,6 @@ public class AddNoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_note);
         //Cambio il titolo della Activity
         this.setTitle(getString(R.string.addNote_title));
-        slidrInterface = Slidr.attach(this);
 
         databaseHelper = new DatabaseHelper(this);
 
@@ -84,13 +80,5 @@ public class AddNoteActivity extends AppCompatActivity {
         startData = findViewById(R.id.addNote_start_data);
         finishData = findViewById(R.id.addNote_finish_data);
         addNote = findViewById(R.id.addNote_save_note);
-    }
-
-    public void lockSlide(View view){
-        slidrInterface.lock();
-    }
-
-    public void unlockSlide(View view){
-        slidrInterface.unlock();
     }
 }
