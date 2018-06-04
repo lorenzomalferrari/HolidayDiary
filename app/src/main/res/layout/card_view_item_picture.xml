@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardviewPicture_id"
     android:layout_width="match_parent"
-    android:clickable="true"
     android:layout_height="wrap_content"
-    android:background="@android:color/white"
     android:layout_margin="5dp"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="4dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/cardview_default_radius">
 
     <ImageView
         android:id="@+id/picture_img_id"
