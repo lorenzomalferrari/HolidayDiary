@@ -7,14 +7,18 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.transition.Slide;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 // Mie classi
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.control.RecyclerViewAdapterNotes;
 import com.lorenzomalferrari.holidaydiary.model.Note;
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
 // Librerie Java
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,6 +37,7 @@ public class NotesActivity extends AppCompatActivity {
     // Oggetto per collegarsi al database
     DatabaseHelper databaseHelper;
     Toolbar toolbar;
+    //private SlidrInterface slidrInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,8 @@ public class NotesActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(R.string.notes_title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //toolbar.setNavigationIcon(R.drawable.ic_action_back);
+
+        //slidrInterface = Slidr.attach(this);
 
         // Create list of Travel object
         listNote = new ArrayList<>();
@@ -99,5 +106,13 @@ public class NotesActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void lockSlide(View view){
+        //slidrInterface.lock();
+    }
+
+    public void unlockSlide(View view){
+        //slidrInterface.unlock();
     }
 }
