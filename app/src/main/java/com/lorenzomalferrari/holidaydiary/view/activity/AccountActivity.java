@@ -66,7 +66,7 @@ public class AccountActivity extends AppCompatActivity {
      */
     private void setAccountData(Cursor res){
         //Setto immagine nella AccountActivity, immagine del profilo (Dovrebbe essere presa da DB, cosa che attualmente non è implementata)
-        imgUser.setImageResource(R.drawable.v_0578);
+        //imgUser.setImageResource(R.drawable.v_0578);
         //Setto i campi della AccountActivity con i dati dell'utente che è loggato
         while (res.moveToNext()){
             firstName.setText(res.getString(1));
