@@ -181,5 +181,14 @@
             android:layout_below="@+id/account_gender_value"
             android:text="@string/birthdate_text" />
 
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/account_birthdate_value"
+            android:padding="20dp"
+            android:text="@string/logout"/>
+
     </RelativeLayout>
 </ScrollView>
