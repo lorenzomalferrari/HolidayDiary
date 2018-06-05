@@ -17,7 +17,7 @@
     <color name="bluelight">#49acd5</color>
     <color name="green">#45bc62</color>
     <color name="white">#ffffff</color>
-    <color name="orange">#eaad43</color>
+
 
     <color name="trasparent">@android:color/transparent</color>
 
@@ -30,5 +30,13 @@
     <!-- Login Activity -->
     <!-- Sfondo della pagina, stile del bottone, colore del testo del bottone, colore di testo Email e Password -->
 
+
+
+    <!-- Nuova Palette -->
+    <color name="my_grey">#CAD2C5</color>
+    <color name="my_orange">#ef6c00</color>
+    <color name="my_white">#ffffff</color>
+    <color name="my_red">#9f0000</color>
+    <color name="my_black">#231F20</color>
 
 </resources>
