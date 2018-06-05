@@ -34,6 +34,14 @@ public class PicturesActivity extends AppCompatActivity {
     Toolbar toolbar;
     RecyclerView mRecyclerView;
 
+    // SpanCount between 1 and 3
+    /**
+     * Default number of columns is 2
+     */
+    private final int NUMBER_COLUMNS = 2;
+    // Possible numbers are 1, 2, 3
+    private final int MIN_LENGHT = 1, MAX_LENGHT = 3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +74,8 @@ public class PicturesActivity extends AppCompatActivity {
         pictureListAdapter.notifyDataSetChanged();*/
 
         mRecyclerView = findViewById(R.id.masonry_grid);
-        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        //SpanCount between 1 and 3
+        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(NUMBER_COLUMNS, StaggeredGridLayoutManager.VERTICAL));
         MasonryAdapter adapter = new MasonryAdapter(this);
         mRecyclerView.setAdapter(adapter);
         SpacesItemDecoration decoration = new SpacesItemDecoration(16);
