@@ -17,8 +17,8 @@ public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryV
     private Context context;
 
     int[] imgList = {
-        R.drawable.two,
         R.drawable.one,
+        R.drawable.two,
         R.drawable.three,
         R.drawable.four,
         R.drawable.five,
@@ -27,8 +27,9 @@ public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryV
         R.drawable.eight,
         R.drawable.nine,
         R.drawable.ten,
-        R.drawable.two,
+
         R.drawable.one,
+        R.drawable.two,
         R.drawable.three,
         R.drawable.four,
         R.drawable.five,
@@ -37,6 +38,7 @@ public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryV
         R.drawable.eight,
         R.drawable.nine,
         R.drawable.ten,
+
         R.drawable.travel_1,
         R.drawable.bicifiori
     };

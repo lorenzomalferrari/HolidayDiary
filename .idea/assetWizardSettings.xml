@@ -33,7 +33,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_done_login" />
+                                      <entry key="assetType" value="IMAGE" />
+                                      <entry key="imageAsset" value="$USER_HOME$/Downloads/icomoon_84_icons/PNG/sort-amount-desc.png" />
+                                      <entry key="outputName" value="ic_order_by" />
                                     </map>
                                   </option>
                                 </PersistentState>
