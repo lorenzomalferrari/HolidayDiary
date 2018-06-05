@@ -26,35 +26,39 @@
         android:layout_margin="16dp"
         app:menu_backgroundColor="@android:color/transparent"
         app:menu_fab_label=""
-        app:menu_openDirection="up"
-        app:menu_showShadow="true"
-        app:menu_labels_textColor="@color/black"
         app:menu_labels_colorNormal="@color/white"
-        app:menu_labels_colorPressed="@color/primaryColor">
+        app:menu_labels_colorPressed="@color/primaryColor"
+        app:menu_labels_textColor="@color/black"
+        app:menu_openDirection="up"
+        app:menu_colorNormal="@color/secondaryDarkColor"
+        app:menu_showShadow="true">
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonTravel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/ic_suitcase_white"
             app:fab_label="@string/travels_title"
-            app:fab_size="mini"
-            android:src="@drawable/ic_suitcase_white" />
+            app:fab_colorNormal="@color/secondaryDarkColor"
+            app:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonNote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/ic_note_white"
             app:fab_label="@string/notes_title"
-            app:fab_size="mini"
-            android:src="@drawable/ic_note_white" />
+            app:fab_colorNormal="@color/secondaryDarkColor"
+            app:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonPicture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/ic_images_white"
             app:fab_label="@string/pictures_title"
-            app:fab_size="mini"
-            android:src="@drawable/ic_images_white" />
+            app:fab_colorNormal="@color/secondaryDarkColor"
+            app:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonPlace"
@@ -62,6 +66,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_location_white"
             app:fab_label="@string/places_title"
+            app:fab_colorNormal="@color/secondaryDarkColor"
             app:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>
