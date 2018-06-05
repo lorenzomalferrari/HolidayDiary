@@ -9,6 +9,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--<uses-permission android:name="android.permission.CAMERA" />-->
 
     <application
         android:allowBackup="true"
@@ -51,10 +52,7 @@
         <activity
             android:name=".view.activity.MyPositionActivity"
             android:label="@string/places_title"
-            android:parentActivityName=".view.activity.MenuActivity" >
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".view.activity.MenuActivity" />
-        </activity>
+            android:parentActivityName=".view.activity.MenuActivity" />
 
         <!-- Registration Activity -->
         <activity android:name=".view.activity.RegistrationActivity"
