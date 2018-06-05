@@ -3,6 +3,8 @@ package com.lorenzomalferrari.holidaydiary.view.activity;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +20,7 @@ public class AccountActivity extends AppCompatActivity {
 
     TextView firstName, lastName, username, email, password, city, country, gender, birthdate;
     ImageView imgUser;
+    Button btnLogout;
 
     DatabaseHelper databaseHelper;
     // User Session Manager Class
@@ -43,6 +46,9 @@ public class AccountActivity extends AppCompatActivity {
         Cursor res = databaseHelper.getDataUser(email,password);
         //
         setAccountData(res);
+
+        //
+        logout();
     }
 
     /**
@@ -59,6 +65,7 @@ public class AccountActivity extends AppCompatActivity {
         country = findViewById(R.id.account_country_value);
         gender = findViewById(R.id.account_gender_value);
         birthdate = findViewById(R.id.account_birthdate_value);
+        btnLogout = findViewById(R.id.btnLogout);
     }
 
     /**
@@ -79,5 +86,19 @@ public class AccountActivity extends AppCompatActivity {
             gender.setText(res.getString(8));
             birthdate.setText(res.getString(10));
         }
+    }
+
+    /**
+     *
+     */
+    private void logout(){
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Eseguo il logout
+                userSessionManager.logoutUser();
+                finish();
+            }
+        });
     }
 }
