@@ -24,7 +24,7 @@
         <TextView
             android:id="@+id/travel_title_id"
             android:textColor="#2d2d2d"
-            android:textSize="13sp"
+            android:textSize="20sp"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
