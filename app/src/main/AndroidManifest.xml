@@ -44,7 +44,9 @@
         <!-- Login se l'utente non è loggato -->
         <activity android:name=".view.activity.LoginActivity" />
         <!-- Menu dell'app -->
-        <activity android:name=".view.activity.MenuActivity" android:label="@string/app_name" android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.activity.MenuActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
         <!-- MyPosition Activity -->
         <activity
             android:name=".view.activity.MyPositionActivity"
@@ -55,7 +57,8 @@
         </activity>
 
         <!-- Registration Activity -->
-        <activity android:name=".view.activity.RegistrationActivity" />
+        <activity android:name=".view.activity.RegistrationActivity"
+            android:parentActivityName=".view.activity.LoginActivity" />
         <!-- Travels Activity -->
         <activity
             android:name=".view.activity.TravelsActivity"
