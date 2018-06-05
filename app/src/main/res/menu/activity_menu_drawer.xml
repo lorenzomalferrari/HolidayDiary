@@ -5,46 +5,46 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_homepage"
-            android:icon="@drawable/img_homepage"
+            android:icon="@drawable/ic_home"
             android:title="@string/home_page_title" />
         <item
             android:id="@+id/nav_travels"
-            android:icon="@drawable/img_travels"
+            android:icon="@drawable/ic_suitcase"
             android:title="@string/travels_title" />
         <item
             android:id="@+id/nav_notes"
-            android:icon="@drawable/img_notes"
+            android:icon="@drawable/ic_note"
             android:title="@string/notes_title" />
         <item
             android:id="@+id/nav_pictures"
-            android:icon="@drawable/img_pictures"
+            android:icon="@drawable/ic_images"
             android:title="@string/pictures_title" />
         <item
             android:id="@+id/nav_places"
-            android:icon="@drawable/img_position"
+            android:icon="@drawable/ic_location"
             android:title="@string/places_title" />
         <item
             android:id="@+id/nav_reservation"
-            android:icon="@drawable/img_position"
+            android:icon="@drawable/ic_key"
             android:title="@string/reservation_title" />
     </group>
     <item android:title="@string/other_title">
         <menu>
             <item
                 android:id="@+id/nav_account"
-                android:icon="@drawable/img_account"
+                android:icon="@drawable/ic_account"
                 android:title="@string/account_title" />
             <item
                 android:id="@+id/nav_settings"
-                android:icon="@drawable/img_settings"
+                android:icon="@drawable/ic_cogs"
                 android:title="@string/settings_title" />
             <item
                 android:id="@+id/nav_privacytermsofuse"
-                android:icon="@drawable/img_privacy"
+                android:icon="@drawable/ic_lock"
                 android:title="@string/privacyterms_title" />
             <item
                 android:id="@+id/nav_version"
-                android:icon="@drawable/img_version"
+                android:icon="@drawable/ic_info"
                 android:title="@string/info_app_title" />
         </menu>
     </item>
