@@ -3,7 +3,9 @@
     <!-- -->
     <color name="primaryColor">#ef6c00</color>
     <color name="primaryLightColor">#ff9d3f</color>
-    <color name="primaryDarkColor">#b53d00</color>
+
+    <color name="primaryDarkColor">#000000</color>
+
     <color name="secondaryColor">#d84315</color>
     <color name="secondaryLightColor">#ff7543</color>
     <color name="secondaryDarkColor">#9f0000</color>
