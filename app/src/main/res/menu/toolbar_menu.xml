@@ -6,7 +6,7 @@
         android:id="@+id/addItem"
         android:title="Add"
         android:orderInCategory="100"
-        android:icon="@drawable/img_add"
+        android:icon="@drawable/ic_plus"
         app:showAsAction="always"
         />
 
