@@ -69,6 +69,7 @@
                 android:layout_gravity="center"
                 android:text="@string/sign_in_or_register_text"
                 android:layout_margin="10dp"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
 
         </LinearLayout>
