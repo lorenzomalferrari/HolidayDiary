@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,6 +41,7 @@ public class RegistrationActivity extends AppCompatActivity {
     UserSessionManager userSessionManager;
     //
     DatabaseHelper databaseHelper;
+    Toolbar toolbar;
 
     // Create object of SharedPreferences.
     //SharedPreferences sharedPref;
@@ -50,7 +52,10 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        this.setTitle(getString(R.string.registration_title));
+        toolbar = findViewById(R.id.toolbar_menu);
+        //setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.registration_title);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         databaseHelper = new DatabaseHelper(this);
         // User Session Manager
