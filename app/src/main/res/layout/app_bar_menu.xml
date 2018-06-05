@@ -28,7 +28,7 @@
         app:menu_fab_label=""
         app:menu_openDirection="up"
         app:menu_showShadow="true"
-        app:menu_labels_textColor="@color/secondaryColor"
+        app:menu_labels_textColor="@color/black"
         app:menu_labels_colorNormal="@color/white"
         app:menu_labels_colorPressed="@color/primaryColor">
 
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             app:fab_label="@string/travels_title"
             app:fab_size="mini"
-            android:src="@drawable/img_travels" />
+            android:src="@drawable/ic_suitcase_white" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonNote"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             app:fab_label="@string/notes_title"
             app:fab_size="mini"
-            android:src="@drawable/img_notes" />
+            android:src="@drawable/ic_note_white" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonPicture"
@@ -54,13 +54,13 @@
             android:layout_height="wrap_content"
             app:fab_label="@string/pictures_title"
             app:fab_size="mini"
-            android:src="@drawable/img_pictures" />
+            android:src="@drawable/ic_images_white" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonPlace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/img_position"
+            android:src="@drawable/ic_location_white"
             app:fab_label="@string/places_title"
             app:fab_size="mini" />
 
