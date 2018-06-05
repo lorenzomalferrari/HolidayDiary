@@ -19,7 +19,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#B3B3B3"
+        android:background="@color/my_grey"
         android:padding="8dp">
     </android.support.v7.widget.RecyclerView>
 </LinearLayout>
