@@ -7,6 +7,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -28,7 +30,7 @@ import com.lorenzomalferrari.holidaydiary.R;
  *
  * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
  */
-public class MyPositionActivity extends FragmentActivity implements OnMapReadyCallback,
+public class MyPositionActivity extends AppCompatActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener{
@@ -50,11 +52,16 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
     private static int DISPLACEMENT = 10;
 
     Marker myCurrent;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_position);
+        toolbar = findViewById(R.id.toolbar_menu);
+        //setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.title_activity_my_position);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
