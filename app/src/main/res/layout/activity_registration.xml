@@ -6,148 +6,93 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <!-- FirstName -->
-        <TextView
-            android:id="@+id/register_firstNameText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:text="@string/firstname_text"/>
-
         <EditText
             android:id="@+id/register_firstNameValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
+
             android:ems="10"
             android:hint="@string/firstname_text"
             android:inputType="text" />
-        <!-- LastName -->
-        <TextView
-            android:id="@+id/register_lastNameText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:layout_below="@+id/register_firstNameText"
-            android:text="@string/lastname_text"/>
 
+        <!-- LastName -->
         <EditText
             android:id="@+id/register_lastNameValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/register_firstNameText"
+
+            android:layout_below="@+id/register_firstNameValue"
             android:ems="10"
             android:hint="@string/lastname_text"
             android:inputType="text"
             android:paddingTop="10dp" />
-        <!-- Username -->
-        <TextView
-            android:id="@+id/register_usarnameText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:layout_below="@+id/register_lastNameText"
-            android:text="@string/username_text"/>
 
+        <!-- Username -->
         <EditText
             android:id="@+id/register_usarnameValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/register_lastNameText"
+
+            android:layout_below="@+id/register_lastNameValue"
             android:ems="10"
             android:hint="@string/username_text"
             android:inputType="text"
             android:paddingTop="10dp" />
-        <!-- Email -->
-        <TextView
-            android:id="@+id/register_emailText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:layout_below="@+id/register_usarnameText"
-            android:text="@string/email_text"/>
 
+
+        <!-- Email -->
         <EditText
             android:id="@+id/register_emailValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/register_usarnameText"
+
+            android:layout_below="@+id/register_usarnameValue"
             android:ems="10"
             android:hint="@string/email_text"
             android:inputType="textEmailAddress"
             android:paddingTop="10dp" />
-        <!-- Password -->
-        <TextView
-            android:id="@+id/register_passwordText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/register_emailText"
-            android:padding="15dp"
-            android:text="@string/password_text"/>
 
+        <!-- Password -->
         <EditText
             android:id="@+id/register_passwordValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/register_emailText"
+
+            android:layout_below="@+id/register_emailValue"
             android:ems="10"
             android:hint="@string/password_text"
             android:inputType="textPassword" />
-        <TextView
-            android:id="@+id/register_passwordTextValidate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/register_passwordText"
-            android:padding="15dp"
-            android:text="@string/confirm_password_text"
-            />
+
 
         <EditText
             android:id="@+id/register_passwordValueValidate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/register_passwordText"
+
+            android:layout_below="@+id/register_passwordValue"
             android:ems="10"
             android:hint="@string/confirm_password_text"
             android:inputType="textPassword" />
         <!-- City -->
-        <TextView
-            android:id="@+id/register_cityText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/register_passwordTextValidate"
-            android:padding="15dp"
-            android:text="@string/city_text"/>
+
 
         <EditText
             android:id="@+id/register_cityValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/register_passwordTextValidate"
+
+            android:layout_below="@+id/register_passwordValueValidate"
             android:ems="10"
             android:hint="@string/city_text"
             android:inputType="text" />
         <!-- Country -->
-        <TextView
-            android:id="@+id/register_countryText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/register_cityText"
-            android:padding="15dp"
-            android:text="@string/country_text"/>
-
+        
         <EditText
             android:id="@+id/register_countryValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/register_cityText"
+
+            android:layout_below="@+id/register_cityValue"
             android:ems="10"
             android:hint="@string/country_text"
             android:inputType="text" />
@@ -156,7 +101,7 @@
             android:id="@+id/register_genderText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/register_countryText"
+            android:layout_below="@+id/register_countryValue"
             android:padding="15dp"
             android:text="@string/gender_text"/>
 
@@ -164,8 +109,8 @@
             android:id="@+id/radioGroup"
             android:layout_width="215dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/register_countryText"
+            android:layout_below="@+id/register_countryValue"
+            android:layout_toEndOf="@+id/register_genderText"
             android:orientation="horizontal"
             android:padding="10dp">
 
@@ -185,19 +130,13 @@
                 android:text="Femmina" />
         </RadioGroup>
         <!-- Birthdate -->
-        <TextView
-            android:id="@+id/register_birthdateText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/register_genderText"
-            android:padding="15dp"
-            android:text="@string/birthdate_text"/>
+
 
         <EditText
             android:id="@+id/register_birthdateValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+
             android:layout_below="@+id/radioGroup"
             android:ems="10"
             android:hint="@string/dd_mm_yyyy"
@@ -208,7 +147,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/register_birthdateText"
+            android:layout_below="@+id/register_birthdateValue"
             android:layout_marginTop="10dp"
             android:padding="20dp"
             android:text="Salva"/>
