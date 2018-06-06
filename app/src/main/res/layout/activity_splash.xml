@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.activity.SplashActivity"
-    android:background="@color/colorPrimaryDarkVersion">
+    android:background="@color/my_black">
 
     <LinearLayout
         android:gravity="center"
@@ -30,7 +30,7 @@
             android:layout_marginTop="15dp"
             android:textSize="25sp"
             android:textStyle="bold"
-            android:textColor="@color/primaryColor"/>
+            android:textColor="@color/my_orange"/>
 
         <TextView
             android:id="@+id/txtWelcomeSplash2"
@@ -41,7 +41,7 @@
             android:layout_marginTop="15dp"
             android:textSize="23sp"
             android:textStyle="bold"
-            android:textColor="@color/primaryColor"/>
+            android:textColor="@color/my_orange"/>
 
         <TextView
             android:id="@+id/txtWelcomeSplash3"
@@ -52,7 +52,7 @@
             android:layout_marginTop="15dp"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/primaryColor"/>
+            android:textColor="@color/my_orange"/>
     </LinearLayout>
 
 </RelativeLayout>

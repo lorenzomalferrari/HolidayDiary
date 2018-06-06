@@ -26,12 +26,12 @@
         android:layout_margin="16dp"
         app:menu_backgroundColor="@android:color/transparent"
         app:menu_fab_label=""
-        app:menu_labels_colorNormal="@color/white"
-        app:menu_labels_colorPressed="@color/primaryColor"
+        app:menu_labels_colorNormal="@color/my_white"
+        app:menu_labels_colorPressed="@color/my_orange"
         app:menu_labels_textColor="@color/black"
         app:menu_openDirection="up"
         app:menu_colorNormal="@color/secondaryDarkColor"
-        app:menu_shadowColor="@color/white"
+        app:menu_shadowColor="@color/my_white"
         app:menu_showShadow="true">
 
         <!-- Travel -->

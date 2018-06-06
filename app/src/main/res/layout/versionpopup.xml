@@ -12,7 +12,7 @@
         android:id="@+id/txtClose"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:textColor="@color/white"
+        android:textColor="@color/my_white"
         android:text="@string/close_popup"
         android:textStyle="bold"
         android:layout_gravity="end"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textStyle="bold"
-            android:textColor="@color/bluelight"
+            android:textColor="@color/my_orange"
             android:textSize="30sp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"/>
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:text="@string/number_version"
             android:textStyle="bold"
-            android:textColor="@color/colorPrimaryVersion"
+            android:textColor="@color/my_orange_dark"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"/>
 
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:text="@string/copyright"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="@color/my_white"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"/>
 
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:text="@string/author"
             android:textStyle="bold"
-            android:textColor="@color/bluelight"
+            android:textColor="@color/my_orange"
             android:textSize="20sp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"/>
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:text="@string/website"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="@color/my_white"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"/>
     </LinearLayout>

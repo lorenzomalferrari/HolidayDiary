@@ -3,9 +3,9 @@
     <!-- Splash Theme -->
     <style name="AppThemeSplash" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/primaryColor</item>
-        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
-        <item name="colorAccent">@color/secondaryLightColor</item>
+        <item name="colorPrimary">@color/my_orange</item>
+        <item name="colorPrimaryDark">@color/my_black</item>
+        <item name="colorAccent">@color/my_orange_dark</item>
 
         <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
         <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
@@ -16,9 +16,9 @@
     <!-- Menu Theme -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/primaryColor</item>
-        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
-        <item name="colorAccent">@color/secondaryLightColor</item>
+        <item name="colorPrimary">@color/my_orange</item>
+        <item name="colorPrimaryDark">@color/my_black</item>
+        <item name="colorAccent">@color/my_orange_dark</item>
 
         <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
         <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
@@ -44,9 +44,9 @@
 
     <style name="CustomToolbarStyle" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/primaryColor</item>
-        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
-        <item name="colorAccent">@color/secondaryLightColor</item>
+        <item name="colorPrimary">@color/my_orange</item>
+        <item name="colorPrimaryDark">@color/my_black</item>
+        <item name="colorAccent">@color/my_orange_dark</item>
 
         <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
         <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
