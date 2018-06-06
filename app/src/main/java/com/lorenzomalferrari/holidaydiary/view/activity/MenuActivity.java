@@ -124,6 +124,10 @@ public class MenuActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         //calling the method displayselectedscreen and passing the id of selected menu
         displaySelectedScreen(item.getItemId());
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+
         //make this method blank
         return true;
     }
@@ -162,6 +166,10 @@ public class MenuActivity extends AppCompatActivity
                 this.startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
+            case R.id.nav_reservation:
+                intent = new Intent(this, Menu2Activity.class);
+                this.startActivity(intent);
+                break;
             case R.id.nav_account:
                 intent = new Intent(getApplicationContext(), AccountActivity.class);
                 this.startActivity(intent);
@@ -184,20 +192,17 @@ public class MenuActivity extends AppCompatActivity
         }
 
         //replacing the fragment
-        if (fragment != null) {
+        /*if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment);
             ft.commit();
-        }
-        
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        }*/
     }
 
     /**
      * Mostra il popup con i dati della versione
      */
-    public void ShowPopup(){
+    private void ShowPopup(){
         TextView txtClose;
         myDialog.setContentView(R.layout.versionpopup);
         txtClose = myDialog.findViewById(R.id.txtClose);
@@ -256,7 +261,6 @@ public class MenuActivity extends AppCompatActivity
         //emailUser.setText(res.getString(5).toString());
         //emailUser.setText(email);
     }
-
 
     /**
      * Chiamo l'attività per visualizzare la lista dei viaggi
