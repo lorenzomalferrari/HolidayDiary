@@ -31,6 +31,7 @@
         app:menu_labels_textColor="@color/black"
         app:menu_openDirection="up"
         app:menu_colorNormal="@color/secondaryDarkColor"
+        app:menu_shadowColor="@color/white"
         app:menu_showShadow="true">
 
         <!-- Travel -->
@@ -41,6 +42,8 @@
             android:src="@drawable/ic_suitcase_white"
             app:fab_label="@string/travels_title"
             app:fab_colorNormal="@color/secondaryDarkColor"
+            app:fab_showShadow="true"
+            app:fab_progress_showBackground="true"
             app:fab_size="mini" />
 
         <!-- Note -->
@@ -51,6 +54,8 @@
             android:src="@drawable/ic_note_white"
             app:fab_label="@string/notes_title"
             app:fab_colorNormal="@color/secondaryDarkColor"
+            app:fab_showShadow="true"
+            app:fab_progress_showBackground="true"
             app:fab_size="mini" />
 
         <!-- Picture -->
@@ -61,6 +66,8 @@
             android:src="@drawable/ic_images_white"
             app:fab_label="@string/pictures_title"
             app:fab_colorNormal="@color/secondaryDarkColor"
+            app:fab_showShadow="true"
+            app:fab_progress_showBackground="true"
             app:fab_size="mini" />
 
         <!-- Place -->
@@ -71,6 +78,8 @@
             android:src="@drawable/ic_location_white"
             app:fab_label="@string/places_title"
             app:fab_colorNormal="@color/secondaryDarkColor"
+            app:fab_showShadow="true"
+            app:fab_progress_showBackground="false"
             app:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>

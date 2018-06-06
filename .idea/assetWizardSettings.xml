@@ -34,8 +34,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="$USER_HOME$/Downloads/icomoon_84_icons/PNG/sort-amount-desc.png" />
-                                      <entry key="outputName" value="ic_order_by" />
+                                      <entry key="imageAsset" value="$USER_HOME$/Downloads/icomoon_84_icons/PNG/images.png" />
+                                      <entry key="outputName" value="ic_images" />
+                                      <entry key="theme" value="CUSTOM" />
+                                      <entry key="themeColor" value="ffffff" />
                                     </map>
                                   </option>
                                 </PersistentState>
