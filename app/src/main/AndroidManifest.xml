@@ -9,8 +9,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!--<uses-permission android:name="android.permission.CAMERA" />-->
-
+    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,7 +26,9 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
 
         <!--
             SplashActivity
@@ -38,6 +39,7 @@
             android:theme="@style/AppThemeSplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -45,7 +47,8 @@
         <!-- Login se l'utente non è loggato -->
         <activity android:name=".view.activity.LoginActivity" />
         <!-- Menu dell'app -->
-        <activity android:name=".view.activity.MenuActivity"
+        <activity
+            android:name=".view.activity.MenuActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <!-- MyPosition Activity -->
@@ -55,7 +58,8 @@
             android:parentActivityName=".view.activity.MenuActivity" />
 
         <!-- Registration Activity -->
-        <activity android:name=".view.activity.RegistrationActivity"
+        <activity
+            android:name=".view.activity.RegistrationActivity"
             android:parentActivityName=".view.activity.LoginActivity" />
         <!-- Travels Activity -->
         <activity
@@ -89,9 +93,7 @@
         <activity
             android:name=".view.activity.NoteActivity"
             android:parentActivityName=".view.activity.NotesActivity" />
-        <!--
-            Aggiungi Activity
-        -->
+        <!--             Aggiungi Activity -->
         <!-- AddPicture Activity -->
         <activity
             android:name=".view.activity.AddPictureActivity"
@@ -103,12 +105,12 @@
         <!-- AddNote Activity -->
         <activity
             android:name=".view.activity.AddNoteActivity"
-            android:parentActivityName=".view.activity.NotesActivity" ></activity>
+            android:parentActivityName=".view.activity.NotesActivity" />
 
+        <activity
+            android:name=".view.activity.Menu2Activity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
-</manifest>
 
-
-<!--
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            -->
+</manifest><!--             android:theme="@style/Theme.AppCompat.Light.NoActionBar" -->
