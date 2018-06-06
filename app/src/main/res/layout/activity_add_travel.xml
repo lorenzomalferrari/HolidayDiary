@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,30 +10,46 @@
     android:layout_height="match_parent">
 
         <!-- Titolo del viaggio -->
-        <EditText
-            android:id="@+id/addTravel_title"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:hint="@string/title_text"/>
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/addTravel_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/title_text"/>
+        </android.support.design.widget.TextInputLayout>
 
         <!-- Categoria del viaggio -->
-        <EditText
-            android:id="@+id/addTravel_category"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:layout_below="@+id/addTravel_title"
-            android:hint="Category"/>
+            android:layout_below="@+id/title">
+            <EditText
+                android:id="@+id/addTravel_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+
+                android:hint="Category"/>
+        </android.support.design.widget.TextInputLayout>
 
         <!-- Descrizione del viaggio -->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/category">
         <EditText
             android:id="@+id/addTravel_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:layout_below="@+id/addTravel_category"
             android:hint="@string/description_text"/>
+    </android.support.design.widget.TextInputLayout>
 
         <!-- Visualizzazione delle immagini -->
         <!--<ImageView
@@ -58,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/addTravel_description"
+            android:layout_below="@+id/description"
             android:text="Add Travel" />
 
     </RelativeLayout>

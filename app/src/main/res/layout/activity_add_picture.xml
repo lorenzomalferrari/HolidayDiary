@@ -1,56 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_material_light"
-    android:padding="15dp"
     tools:context=".view.activity.AddPictureActivity">
 
-    <!-- Nome che avrà l'immgine -->
-    <EditText
-        android:id="@+id/addImage_title"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/title_text"
-        android:inputType="text" />
+        android:layout_height="wrap_content">
 
-    <!-- Descrizione che avrà l'immagine -->
-    <EditText
-        android:id="@+id/addImage_description"
-        android:layout_width="match_parent"
-        android:layout_height="178dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="45dp"
-        android:hint="@string/description_text" />
+        <!-- Nome che avrà l'immgine -->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
-    <!-- Immagine -->
-    <ImageView
-        android:id="@+id/addImage_img"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/addImage_choose_image"
-        android:src="@mipmap/ic_launcher" />
+            <EditText
+                android:id="@+id/addImage_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/title_text"
+                android:inputType="text" />
+        </android.support.design.widget.TextInputLayout>
 
-    <!-- Scelgo la immagine-->
-    <Button
-        android:id="@+id/addImage_choose_image"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:gravity="center"
-        android:text="Choose Image" />
+        <!-- Descrizione che avrà l'immagine -->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginTop="10dp">
 
-    <!-- Salvataggoi dei dati -->
-    <Button
-        android:id="@+id/addImage_save_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Add Picture" />
-</RelativeLayout>
+            <EditText
+                android:id="@+id/addImage_description"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="45dp"
+                android:hint="@string/description_text"
+                android:inputType="text|textMultiLine" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Immagine -->
+        <ImageView
+            android:id="@+id/addImage_img"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/description"
+            android:layout_toLeftOf="@+id/addImage_choose_image"
+            android:layout_alignParentLeft="true"
+            android:src="@mipmap/ic_launcher" />
+
+        <!-- Scelgo la immagine -->
+        <Button
+            android:id="@+id/addImage_choose_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/description"
+            android:gravity="center"
+            android:text="Choose Image" />
+
+        <!-- Salvataggoi dei dati -->
+        <Button
+            android:id="@+id/addImage_save_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/addImage_img"
+            android:layout_marginTop="1dp"
+            android:text="Add Picture" />
+
+    </RelativeLayout>
+</ScrollView>
