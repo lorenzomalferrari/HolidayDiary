@@ -33,6 +33,7 @@
         app:menu_colorNormal="@color/secondaryDarkColor"
         app:menu_showShadow="true">
 
+        <!-- Travel -->
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonTravel"
             android:layout_width="wrap_content"
@@ -42,6 +43,7 @@
             app:fab_colorNormal="@color/secondaryDarkColor"
             app:fab_size="mini" />
 
+        <!-- Note -->
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonNote"
             android:layout_width="wrap_content"
@@ -51,6 +53,7 @@
             app:fab_colorNormal="@color/secondaryDarkColor"
             app:fab_size="mini" />
 
+        <!-- Picture -->
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonPicture"
             android:layout_width="wrap_content"
@@ -60,6 +63,7 @@
             app:fab_colorNormal="@color/secondaryDarkColor"
             app:fab_size="mini" />
 
+        <!-- Place -->
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonPlace"
             android:layout_width="wrap_content"
