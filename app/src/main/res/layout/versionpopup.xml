@@ -78,9 +78,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/website"
+            android:text="@string/author_website"
+            android:linksClickable="true"
+            android:autoLink="web"
+            android:textColorLink="@color/my_white"
             android:textStyle="bold"
-            android:textColor="@color/my_white"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"/>
     </LinearLayout>
