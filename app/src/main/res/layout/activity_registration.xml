@@ -9,7 +9,8 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/firstNameValue"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp">
             <EditText
                 android:id="@+id/register_firstNameValue"
                 android:layout_width="wrap_content"
@@ -24,6 +25,7 @@
             android:id="@+id/lastNameValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:layout_below="@+id/firstNameValue">
             <EditText
                 android:id="@+id/register_lastNameValue"
@@ -39,6 +41,7 @@
             android:id="@+id/usarnameValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:layout_below="@+id/lastNameValue">
             <EditText
                 android:id="@+id/register_usarnameValue"
@@ -54,6 +57,7 @@
             android:id="@+id/emailValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:layout_below="@+id/usarnameValue">
         <EditText
             android:id="@+id/register_emailValue"
@@ -69,6 +73,7 @@
             android:id="@+id/passwordValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:layout_below="@+id/emailValue">
             <EditText
                 android:id="@+id/register_passwordValue"
@@ -83,6 +88,7 @@
             android:id="@+id/passwordValueValidate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:layout_below="@+id/passwordValue">
             <EditText
                 android:id="@+id/register_passwordValueValidate"
@@ -98,6 +104,7 @@
             android:id="@+id/cityValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:layout_below="@+id/passwordValueValidate">
             <EditText
                 android:id="@+id/register_cityValue"
@@ -113,6 +120,7 @@
             android:id="@+id/countryValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:layout_below="@+id/cityValue" >
             <EditText
                 android:id="@+id/register_countryValue"
@@ -129,8 +137,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/countryValue"
-            android:padding="15dp"
-            android:text="@string/gender_text"/>
+            android:layout_marginLeft="15dp"
+            android:padding="17dp"
+            android:text="@string/gender_text" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -162,6 +171,7 @@
             android:id="@+id/birthdateValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:layout_below="@+id/radioGroup" >
             <EditText
                 android:id="@+id/register_birthdateValue"

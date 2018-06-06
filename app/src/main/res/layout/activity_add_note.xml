@@ -10,56 +10,90 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/addNote_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/title_text" />
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/addNote_title"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:hint="@string/title_text" />
+            android:layout_below="@+id/title" >
+            <EditText
+                android:id="@+id/addNote_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addNote_title"
+                android:layout_margin="15dp"
+                android:hint="@string/description_text"
+                android:inputType="textMultiLine" />
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/addNote_description"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/addNote_title"
-            android:layout_margin="15dp"
-            android:hint="@string/description_text"
-            android:inputType="textMultiLine" />
+            android:layout_below="@+id/description" >
+            <EditText
+                android:id="@+id/addNote_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addNote_description"
+                android:layout_margin="15dp"
+                android:hint="@string/city_text" />
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/addNote_city"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/country"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/addNote_description"
-            android:layout_margin="15dp"
-            android:hint="@string/city_text" />
+            android:layout_below="@+id/city" >
+            <EditText
+                android:id="@+id/addNote_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addNote_city"
+                android:layout_margin="15dp"
+                android:hint="@string/country_text" />
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/addNote_country"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/start_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/addNote_city"
-            android:layout_margin="15dp"
-            android:hint="@string/country_text" />
+            android:layout_below="@+id/country" >
+            <EditText
+                android:id="@+id/addNote_start_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addNote_country"
+                android:layout_margin="15dp"
+                android:hint="@string/start_data_text"
+                android:inputType="datetime|date|time" />
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/addNote_start_data"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/finish_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/addNote_country"
-            android:layout_margin="15dp"
-            android:hint="@string/start_data_text"
-            android:inputType="datetime|date|time" />
-
-        <EditText
-            android:id="@+id/addNote_finish_data"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/addNote_start_data"
-            android:layout_margin="15dp"
-            android:hint="@string/finish_data_text"
-            android:inputType="datetime|date|time" />
+            android:layout_below="@+id/start_data" >
+            <EditText
+                android:id="@+id/addNote_finish_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addNote_start_data"
+                android:layout_margin="15dp"
+                android:hint="@string/finish_data_text"
+                android:inputType="datetime|date|time" />
+        </android.support.design.widget.TextInputLayout>
 
         <!--<ImageView
             android:id="@+id/addNote_img"
@@ -81,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/addNote_finish_data"
+            android:layout_below="@+id/finish_data"
             android:text="Add Note" />
 
     </RelativeLayout>
