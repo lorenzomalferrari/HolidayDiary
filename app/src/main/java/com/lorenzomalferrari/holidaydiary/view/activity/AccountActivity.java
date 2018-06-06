@@ -34,19 +34,16 @@ public class AccountActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //
         databaseHelper = new DatabaseHelper(this);
-        // Set title
-        this.setTitle(getString(R.string.account_title));
         // User Session Manager
         userSessionManager = new UserSessionManager(getApplicationContext());
         //Inizializzo gli attributi dei campi
         init();
 
-        String email = "lori.malfe@tiscali.it";
+        String email = "malfe.lore@gmail.com";
         String password = "123456";
         Cursor res = databaseHelper.getDataUser(email,password);
-        //
+        // Visualizzo gli attributi nei rispettivi campi
         setAccountData(res);
-
         //
         logout();
     }
@@ -89,7 +86,7 @@ public class AccountActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Eseguo il logout del profilo
      */
     private void logout(){
         btnLogout.setOnClickListener(new View.OnClickListener() {
