@@ -18,8 +18,13 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:background="#2d2d2d"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        />
 
+    <!--
+    android:onClick="click"
+        android:transitionName="transitionPictures"
+        -->
     <!--<TextView
         android:id="@+id/travel_title_id"
         android:textColor="#2d2d2d"

@@ -9,8 +9,8 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
 
+    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -94,7 +94,7 @@
         <activity
             android:name=".view.activity.NoteActivity"
             android:parentActivityName=".view.activity.NotesActivity" />
-        <!--             Aggiungi Activity -->
+        <!-- Aggiungi Activity -->
         <!-- AddPicture Activity -->
         <activity
             android:name=".view.activity.AddPictureActivity"
@@ -107,11 +107,11 @@
         <activity
             android:name=".view.activity.AddNoteActivity"
             android:parentActivityName=".view.activity.NotesActivity" />
-
         <activity
             android:name=".view.activity.Menu2Activity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.activity.PictureActivity"></activity>
     </application>
 
 </manifest>
