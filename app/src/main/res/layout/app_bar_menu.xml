@@ -28,7 +28,7 @@
         app:menu_labels_colorPressed="@color/my_orange"
         app:menu_labels_textColor="@color/black"
         app:menu_openDirection="up"
-        app:menu_colorNormal="@color/secondaryDarkColor"
+        app:menu_colorNormal="@color/my_red"
         app:menu_showShadow="true">
 
         <!-- Travel -->
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_suitcase_white"
             app:fab_label="@string/travels_title"
-            app:fab_colorNormal="@color/secondaryDarkColor"
+            app:fab_colorNormal="@color/my_red"
             app:fab_showShadow="true"
             app:fab_progress_showBackground="true"
             app:fab_size="mini" />
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_note_white"
             app:fab_label="@string/notes_title"
-            app:fab_colorNormal="@color/secondaryDarkColor"
+            app:fab_colorNormal="@color/my_red"
             app:fab_showShadow="true"
             app:fab_progress_showBackground="true"
             app:fab_size="mini" />
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_images_white"
             app:fab_label="@string/pictures_title"
-            app:fab_colorNormal="@color/secondaryDarkColor"
+            app:fab_colorNormal="@color/my_red"
             app:fab_showShadow="true"
             app:fab_progress_showBackground="true"
             app:fab_size="mini" />
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_location_white"
             app:fab_label="@string/places_title"
-            app:fab_colorNormal="@color/secondaryDarkColor"
+            app:fab_colorNormal="@color/my_red"
             app:fab_showShadow="true"
             app:fab_progress_showBackground="false"
             app:fab_size="mini" />
