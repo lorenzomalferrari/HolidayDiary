@@ -82,9 +82,6 @@
     <string name="dd_mm_yyyy">dd/mm/yyyy</string>
     <string name="desc_img_account">Img Account</string>
 
-
-
-
     <string-array name="category_list">
         <item>Scegli</item>
         <item>Montagna"</item>

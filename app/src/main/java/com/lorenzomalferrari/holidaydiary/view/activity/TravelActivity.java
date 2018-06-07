@@ -31,10 +31,11 @@ public class TravelActivity extends AppCompatActivity {
         // Recieve data
         Intent intent = getIntent();
         String title = intent.getExtras().getString("TravelTitle");
+        String category = intent.getExtras().getString("Category");
         String description = intent.getExtras().getString("Description");
         int image = intent.getExtras().getInt("Thumbnail");
         // Setto i componenti
-        setComponents(title,description,image);
+        setComponents(title,category,description,image);
     }
 
     /**
@@ -55,10 +56,11 @@ public class TravelActivity extends AppCompatActivity {
      * @param description testo che descrive il viaggio
      * @param image immagine rappresentativa del viaggio
      */
-    private void setComponents(String title, String description, int image){
+    private void setComponents(String title,String category, String description, int image){
         // Settings values
         //txttitle.setText(title);
         txtdescription.setText(description);
+        txtcategory.setText(category);
         //img.setImageResource(image);
         collapsingToolbarLayout.setBackgroundResource(image);
         collapsingToolbarLayout.setTitle(title);

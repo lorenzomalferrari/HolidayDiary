@@ -43,7 +43,7 @@ public class TravelsActivity extends AppCompatActivity {
         // Add Travels
         while (res.moveToNext()) {
             //Aggiungo nella mia lista di Viaggi, un nuovo oggetto con i parametri presi dal tabella Travels presente nel database
-            listTravel.add(new Travel(res.getString(1),res.getString(8),res.getString(2),R.drawable.travel_1));
+            listTravel.add(new Travel(res.getString(1),res.getString(2),res.getString(3),R.drawable.travel_1));
         }
 
         // Set component for to see in Activity

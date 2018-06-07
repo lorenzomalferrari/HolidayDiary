@@ -58,6 +58,7 @@ public class RecyclerViewAdapterTravels extends RecyclerView.Adapter<RecyclerVie
                 // passing data to the TravelAcitivity
                 Intent intent = new Intent(myContext, TravelActivity.class);
                 intent.putExtra("TravelTitle",myData.get(position).getTitle());
+                intent.putExtra("Category",myData.get(position).getCategory());
                 intent.putExtra("Description",myData.get(position).getDescription());
                 intent.putExtra("Thumbnail",myData.get(position).getThumbnail());
 

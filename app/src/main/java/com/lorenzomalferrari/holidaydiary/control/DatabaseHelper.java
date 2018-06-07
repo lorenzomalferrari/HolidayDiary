@@ -201,7 +201,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("title",travel.getTitle());//Inserisco il titolo
-        //contentValues.put("",travel.getCategory());//Inserisco il titolo
+        contentValues.put("category",travel.getCategory());//Inserisco il titolo
         contentValues.put("description",travel.getDescription());//Inserisco il titolo
         contentValues.put("id_user",travel.getId_user());//Inserisco il titolo
         long result = db.insert(TABLE_NAMES[1],null ,contentValues);
@@ -269,6 +269,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[1] + " (" +
                 "id integer PRIMARY KEY AUTOINCREMENT," +
                 "title text not null," +
+                "category text," +
                 "description text not null," +
                 "img_list integer," +
                 "city text," +

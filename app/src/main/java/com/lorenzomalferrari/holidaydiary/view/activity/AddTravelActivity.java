@@ -57,7 +57,7 @@ public class AddTravelActivity extends AppCompatActivity {
         addTravel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Travel travel = new Travel(txttitle.getText().toString(),category,txtdescription.getText().toString(),1);
+                Travel travel = new Travel(1,txttitle.getText().toString(),category,txtdescription.getText().toString());
                 databaseHelper.insertDataTravel(travel);
                 //Chiamo l'Activity che contiene la lista delle note
                 callTravels();

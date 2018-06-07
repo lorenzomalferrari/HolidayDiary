@@ -38,6 +38,13 @@ public class Travel {
         this.id_user = id_user;
     }
 
+    public Travel(int id_user, String title, String category, String description) {
+        this.title = title;
+        this.category = category;
+        this.description = description;
+        this.id_user = id_user;
+    }
+
     public String getTitle() {
         return title;
     }
