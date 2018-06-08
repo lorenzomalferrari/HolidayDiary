@@ -1,18 +1,18 @@
 package com.lorenzomalferrari.holidaydiary.control;
 
+// Android library
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
+// My library
 import com.lorenzomalferrari.holidaydiary.model.Note;
 import com.lorenzomalferrari.holidaydiary.model.Picture;
 import com.lorenzomalferrari.holidaydiary.model.Travel;
 import com.lorenzomalferrari.holidaydiary.model.User;
-
+// Java library
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -31,7 +31,8 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     private final String[] TABLE_NAMES = new String[] {"Users","Travels","Notes","Pictures","Places"};
 
     /**
-     * Costruttore
+     * Costruttore parametrico
+     * Inizializza l'oggetto con il contesto della Activity dove viene creato  e si collega al database voluto
      * @param context
      */
     public DatabaseHelper(Context context) {
@@ -39,21 +40,21 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     * Creazione della tabella nel database
-     * @param db
+     * Creazione del database con le tabelle
+     * @param db viene passato l'oggetto del database
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
         //Creazione del Database
         createStructureDatabase(db);
-        //Aggiunta di dati nel databse
+        //Aggiunta di dati nel databse (Uso per test iniziali)
         //addDataDatabase(db);
     }
 
     /**
      * Aggiunta di dati nelle tabelle
-     * (Così alla chiamata delle Activity saranno visualizzati i dati presenti nel db)
-     * @param db
+     * Aggiunta di dati del db per testare il corretto funzionamento della connessione al db
+     * @param db viene passato l'oggetto del database
      */
     private void addDataDatabase(SQLiteDatabase db) {
 
@@ -97,7 +98,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     * Metodo che mi aggiorna il database
+     * Metodo che aggiorna il database
      * @param db
      * @param oldVersion
      * @param newVersion
@@ -109,10 +110,10 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     * Inserisco i dati dell' utente nel database
+     * Inserisce i dati dell' utente nel database
      * (Ulteriormente da migliorare)
      * @param arrayList
-     * @return
+     * @return true se l'inserimento è andato a buon fine, false se non è andato a buon fine
      */
     public boolean insertDataUser(ArrayList arrayList) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -134,6 +135,11 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         return result != -1;
     }
 
+    /**
+     * Inserisce i dati dell'utente del db
+     * @param user
+     * @return true se l'inserimento è andato a buon fine, false se non è andato a buon fine
+     */
     public boolean insertDataUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -158,9 +164,9 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     * Metodo che aggiunge i dati della Immagine all'interno del database
+     * Inserisce l'immagine all'interno del db
      * @param picture
-     * @return
+     * @return true se l'inserimento è andato a buon fine, false se non è andato a buon fine
      */
     public boolean inserDataImage(Picture picture){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -174,9 +180,9 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     * Metodo che aggiunge i dati della Nota all'interno del database
+     * Inserisce la nota all'interno del db
      * @param note
-     * @return
+     * @return true se l'inserimento è andato a buon fine, false se non è andato a buon fine
      */
     public boolean insertDataNote(Note note){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -193,9 +199,9 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     * Metodo che aggiunge i dati del Travel all'interno del database
+     * Inserisce il viaggio all'interno del db
      * @param travel
-     * @return
+     * @return true se l'inserimento è andato a buon fine, false se non è andato a buon fine
      */
     public boolean insertDataTravel(Travel travel){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -220,10 +226,9 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         return res;
     }
 
-
     /**
-     * Costruzione del database HolidayDiary
-     * @param db
+     * Costruisce il database HolidayDiary
+     * @param db viene passato l'oggetto del database
      */
     private void createStructureDatabase(SQLiteDatabase db){
         //Creazione della tabella User
@@ -240,7 +245,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
 
     /**
      * Costruzione della tabella Users
-     * @param db
+     * @param db viene passato l'oggetto del database
      */
     private void crateUsersTable(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[0] + " (" +
@@ -263,7 +268,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
 
     /**
      * Costruzione della tabella Travels
-     * @param db
+     * @param db viene passato l'oggetto del database
      */
     private void createTravelsTable(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[1] + " (" +
@@ -283,6 +288,10 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "foreign key (id_place) references "+ TABLE_NAMES[4] +" (id));");
     }
 
+    /**
+     * Iscerisce all'interno del db Travels viaggi pre-costruiti
+     * @param db viene passato l'oggetto del database
+     */
     private void insertTravels(SQLiteDatabase db){
         db.execSQL("INSERT INTO" + TABLE_NAMES[1] + " ('title' , 'description' , 'img_list' , 'city' , 'country' , 'id_user' , 'id_place')" +
                 "VALUES ('Nota Ciao' , 'Ciao a tutti come va la vita?' , '1' , 'Venezia' , 'Italia' , '1' , '1');");
@@ -292,7 +301,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
 
     /**
      * Costruzione della tabella Notes
-     * @param db
+     * @param db viene passato l'oggetto del database
      */
     private void createNotesTable(SQLiteDatabase db){
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[2] + " (" +
@@ -312,7 +321,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
 
     /**
      * Costruzione della tabella Pictures
-     * @param db
+     * @param db viene passato l'oggetto del database
      */
     private void createPicturesTable(SQLiteDatabase db){
         db.execSQL("CREATE TABLE "+ TABLE_NAMES[3] + " (" +
@@ -330,7 +339,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
 
     /**
      * Costruzione della tabella Places
-     * @param db
+     * @param db viene passato l'oggetto del database
      */
     private void createPlacesTable(SQLiteDatabase db){
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[4] + " (" +
@@ -348,8 +357,8 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
 
     /**
      * Ottengo tutti i dati di un utente preciso con i seguenti parametri
-     * @param email
-     * @param password
+     * @param email email di user
+     * @param password password di user
      * @return
      */
     public Cursor getDataUser(String email,String password) {
@@ -360,15 +369,12 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
 
     /**
      * Ottengo tutti i dati di una nota precisa con i seguenti parametri
-     * @param email
-     * @param password
-     * @return
      */
-    public Cursor getDataNote(String email,String password) {
+    /*public Cursor getDataNote(String email,String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAMES[0] + " WHERE email = '"+email+"' AND password = '"+password+"'",null);
         return res;
-    }
+    }*/
 
     /**
      * Non ancora implementato del tutto
@@ -390,20 +396,36 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     * Elimino utente dalla tabella
-     * @param id
-     * @return
+     * Elimina riga da Tabella
+     * @param table nome della tabella
+     * @param id id del campo che si vuole eliminare
+     * @return 1 se riga eliminata, 0 se non viene eliminata nessuna riga
      */
-    public Integer deleteData (String id) {
+    public Integer deleteData (String table, String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABLE_NAMES[0], "ID = ?",new String[] {id});
+        return db.delete(table, "ID = ?",new String[] {id});
     }
 
-    private void addDataOnDatabase(SQLiteDatabase db){
+    /**
+     * Elimina tutto il db
+     * @param db viene passato l'oggetto del database
+     * @return
+     */
+    // Da implementare
+    public boolean deleteDatabase(String db){
+        boolean flag = true;
+        SQLiteDatabase database = this.getWritableDatabase();
+        //database.
+        return flag;
+    }
 
+    /**
+     * Aggiunge dati nel database
+     * @param db viene passato l'oggetto del database
+     */
+    private void addDataOnDatabase(SQLiteDatabase db){
         //Aggiungo Users
         //insertUsers(db);
-
         //Aggiungo Travels
         insertTravels(db);
         //Aggiungo Notes

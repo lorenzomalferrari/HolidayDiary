@@ -35,11 +35,21 @@ public class PictureListAdapter extends BaseAdapter{
         return picturesList.size();
     }
 
+    /**
+     * Restituisce l'oggeto alla posizione richiesta
+     * @param position
+     * @return
+     */
     @Override
     public Object getItem(int position) {
         return picturesList.get(position);
     }
 
+    /**
+     * Restituisce la posizione
+     * @param position
+     * @return
+     */
     @Override
     public long getItemId(int position) {
         return position;

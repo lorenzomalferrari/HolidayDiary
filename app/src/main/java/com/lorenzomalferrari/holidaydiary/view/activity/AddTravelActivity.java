@@ -45,7 +45,7 @@ public class AddTravelActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 category = parent.getItemAtPosition(position).toString();
-                Toast.makeText(AddTravelActivity.this,category,Toast.LENGTH_LONG).show();
+                //Toast.makeText(AddTravelActivity.this,category,Toast.LENGTH_LONG).show();
             }
 
             @Override

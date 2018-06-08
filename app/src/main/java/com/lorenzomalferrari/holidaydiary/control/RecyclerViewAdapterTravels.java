@@ -1,5 +1,5 @@
 package com.lorenzomalferrari.holidaydiary.control;
-
+// Android library
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -10,11 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+// My library
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.view.activity.TravelActivity;
 import com.lorenzomalferrari.holidaydiary.model.Travel;
-
+// Java library
 import java.util.List;
 
 /**

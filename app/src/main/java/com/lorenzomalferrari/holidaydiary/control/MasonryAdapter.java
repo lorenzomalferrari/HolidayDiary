@@ -16,6 +16,7 @@ public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryV
 
     private Context context;
 
+    //lista delle immagini
     int[] imgList = {
         R.drawable.one,
         R.drawable.two,
@@ -27,7 +28,6 @@ public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryV
         R.drawable.eight,
         R.drawable.nine,
         R.drawable.ten,
-
         R.drawable.one,
         R.drawable.two,
         R.drawable.three,
@@ -38,11 +38,11 @@ public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryV
         R.drawable.eight,
         R.drawable.nine,
         R.drawable.ten,
-
         R.drawable.travel_1,
         R.drawable.bicifiori
     };
 
+    //Descrizione delle img
     String[] nameList = {"One", "Two", "Three", "Four", "Five", "Six",
             "Seven", "Eight", "Nine", "Ten","bb_0010","dsc_0001","dsc_0025"};
 
@@ -69,18 +69,23 @@ public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryV
 
     /**
      * Lunghezza basata sulle immagini poichè l'immagine può non avere una descrizione
-     * @return
+     * @return int che rappresenta il numero di immagini nella lista
      */
     @Override
     public int getItemCount() {
         return imgList.length;
     }
 
+    /**
+     * Classe che rappresenta gli elementi che andranno visualizzati nella galleria di immagini
+     */
     class MasonryView extends RecyclerView.ViewHolder {
+        //
         ImageView imageView;
 
         public MasonryView(View itemView) {
             super(itemView);
+            //inizializzazione dell'attributo
             imageView = itemView.findViewById(R.id.picture_img_id);
         }
     }

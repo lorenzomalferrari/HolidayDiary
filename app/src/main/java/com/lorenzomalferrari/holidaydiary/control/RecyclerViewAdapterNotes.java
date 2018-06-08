@@ -1,5 +1,5 @@
 package com.lorenzomalferrari.holidaydiary.control;
-
+// Android library
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -9,11 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
+// My library
 import com.lorenzomalferrari.holidaydiary.view.activity.NoteActivity;
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.model.Note;
-
+// Java library
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
