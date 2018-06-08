@@ -6,8 +6,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,7 +15,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.TextView;
 //
 import com.github.clans.fab.FloatingActionMenu;
@@ -27,7 +24,6 @@ import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.Controller;
 import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
-import com.lorenzomalferrari.holidaydiary.view.fragment.HomePageFragment;
 
 
 public class MenuActivity extends AppCompatActivity
@@ -138,13 +134,13 @@ public class MenuActivity extends AppCompatActivity
      */
     private void displaySelectedScreen(int itemId) {
         //creating fragment object
-        Fragment fragment = null;
+        //Fragment fragment = null;
         //creating intent object
         Intent intent;
         //initializing the fragment object which is selected
         switch (itemId) {
             case R.id.nav_homepage:
-                fragment = new HomePageFragment();
+                //fragment = new HomePageFragment();
                 break;
             case R.id.nav_travels:
                 intent = new Intent(this, TravelsActivity.class);
@@ -167,8 +163,8 @@ public class MenuActivity extends AppCompatActivity
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.nav_reservation:
-                intent = new Intent(this, Menu2Activity.class);
-                this.startActivity(intent);
+                //intent = new Intent(this, Menu2Activity.class);
+                //this.startActivity(intent);
                 break;
             case R.id.nav_account:
                 intent = new Intent(getApplicationContext(), AccountActivity.class);
