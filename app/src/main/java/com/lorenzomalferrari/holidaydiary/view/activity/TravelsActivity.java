@@ -2,6 +2,7 @@ package com.lorenzomalferrari.holidaydiary.view.activity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -9,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
@@ -26,6 +28,8 @@ public class TravelsActivity extends AppCompatActivity {
     List<Travel> listTravel;
     DatabaseHelper databaseHelper;
     Toolbar toolbar;
+    FloatingActionButton floatingActionButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,16 @@ public class TravelsActivity extends AppCompatActivity {
         //setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.travels_title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        floatingActionButton = findViewById(R.id.addTravel);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TravelsActivity.this,AddTravelActivity.class));
+            }
+        });
+
+
         // Create list of Travel object
         listTravel = new ArrayList<>();
         // Setta la var dell'oggetto DatabaseHelper con il context della classe stessa

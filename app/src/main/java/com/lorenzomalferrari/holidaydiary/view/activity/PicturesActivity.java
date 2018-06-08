@@ -2,6 +2,7 @@ package com.lorenzomalferrari.holidaydiary.view.activity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +37,8 @@ public class PicturesActivity extends AppCompatActivity {
     DatabaseHelper databaseHelper;
     Toolbar toolbar;
     RecyclerView mRecyclerView;
+    FloatingActionButton floatingActionButton;
+
 
     // SpanCount between 1 and 3
     /**
@@ -53,6 +56,15 @@ public class PicturesActivity extends AppCompatActivity {
         //setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.pictures_title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        floatingActionButton = findViewById(R.id.addTravel);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PicturesActivity.this,AddPictureActivity.class));
+            }
+        });
+
         // Setta la var dell'oggetto DatabaseHelper con il context della classe stessa
         databaseHelper = new DatabaseHelper(this);
         //gridView = findViewById(R.id.gridViewPictures_id);

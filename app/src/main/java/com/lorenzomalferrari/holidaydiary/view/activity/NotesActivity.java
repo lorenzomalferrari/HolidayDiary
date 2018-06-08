@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -35,6 +36,8 @@ public class NotesActivity extends AppCompatActivity {
     DatabaseHelper databaseHelper;
     Toolbar toolbar;
     //private SlidrInterface slidrInterface;
+    FloatingActionButton floatingActionButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,13 @@ public class NotesActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(R.string.notes_title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //toolbar.setNavigationIcon(R.drawable.ic_action_back);
+        floatingActionButton = findViewById(R.id.addTravel);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NotesActivity.this,AddNoteActivity.class));
+            }
+        });
 
         //slidrInterface = Slidr.attach(this);
 
