@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:padding="15dp"
     tools:context=".view.activity.TakePictureActivity">
+    
+    
+    <ImageView
+        android:id="@+id/img_takePicture"
+        android:layout_weight="9"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/btnTakePicture"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/my_white"
+        android:textStyle="bold"
+        android:text="Open Camera"
+        />
+
+</LinearLayout>
