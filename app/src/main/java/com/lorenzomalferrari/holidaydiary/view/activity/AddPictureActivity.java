@@ -33,7 +33,7 @@ public class AddPictureActivity extends AppCompatActivity {
 
     EditText title, description;
     ImageView img;
-    Button chooseImg, saveImg;
+    Button chooseImg, saveImg/*, takeImg*/;
     DatabaseHelper databaseHelper;
 
     final int REQUEST_CODE_GALLERY = 999;
@@ -78,6 +78,18 @@ public class AddPictureActivity extends AppCompatActivity {
             }
         });
 
+        /*takeImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callTakePicture();
+            }
+        });*/
+
+    }
+
+    private void callTakePicture() {
+        Intent intent = new Intent(this,TakePictureActivity.class);
+        this.startActivity(intent);
     }
 
     private void callPictures() {
@@ -129,6 +141,7 @@ public class AddPictureActivity extends AppCompatActivity {
         img = findViewById(R.id.addImage_img);
         chooseImg = findViewById(R.id.addImage_choose_image);
         saveImg = findViewById(R.id.addImage_save_img);
+        //takeImg = findViewById(R.id.addImage_take_picture);
     }
 
     private byte[] getImageViewByte(ImageView imageView){
