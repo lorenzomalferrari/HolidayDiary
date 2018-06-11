@@ -28,6 +28,10 @@ public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryV
         R.drawable.eight,
         R.drawable.nine,
         R.drawable.ten,
+
+        R.drawable.travel_1,
+        R.drawable.bicifiori,
+
         R.drawable.one,
         R.drawable.two,
         R.drawable.three,
@@ -38,6 +42,7 @@ public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryV
         R.drawable.eight,
         R.drawable.nine,
         R.drawable.ten,
+
         R.drawable.travel_1,
         R.drawable.bicifiori
     };
