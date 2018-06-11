@@ -26,15 +26,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.design.widget.FloatingActionButton
+        <com.github.clans.fab.FloatingActionButton
             android:id="@+id/addTravel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
+            android:src="@drawable/fab_add"
             android:layout_margin="20dp"
-            android:backgroundTint="@color/my_red"
-            app:fab_size="normal"
-            android:src="@drawable/fab_add"/>
+            android:layout_gravity="bottom|end"
+            app:fab_label="@string/travels_title"
+            app:fab_colorNormal="@color/my_red"
+            app:fab_showShadow="true"
+            app:fab_progress_showBackground="true"
+            app:fab_size="normal" />
 
 
 

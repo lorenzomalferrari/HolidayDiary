@@ -2,7 +2,6 @@ package com.lorenzomalferrari.holidaydiary.view.activity;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -12,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.github.clans.fab.FloatingActionButton;
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.control.RecyclerViewAdapterTravels;
@@ -47,7 +47,6 @@ public class TravelsActivity extends AppCompatActivity {
             }
         });
 
-
         // Create list of Travel object
         listTravel = new ArrayList<>();
         // Setta la var dell'oggetto DatabaseHelper con il context della classe stessa
@@ -80,10 +79,10 @@ public class TravelsActivity extends AppCompatActivity {
         Intent intent;
         //initializing the fragment object which is selected
         switch (item.getItemId()) {
-            case R.id.addItem:
+            /*case R.id.addItem:
                 intent = new Intent(this, AddTravelActivity.class);
                 this.startActivity(intent);
-                break;
+                break;*/
             case R.id.order_by:
                 //intent = new Intent(this, TravelsActivity.class);
                 //this.startActivity(intent);
