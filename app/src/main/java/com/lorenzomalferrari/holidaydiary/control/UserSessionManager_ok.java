@@ -60,19 +60,14 @@ public class UserSessionManager_ok {
     public boolean checkLogin(){
         // Check login status
         if(!this.isUserLoggedIn()){
-
             // user is not logged in redirect him to Login Activity
             Intent i = new Intent(_context, LoginActivity.class);
-
             // Closing all the Activities from stack
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
             // Add new Flag to start new Activity
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
             // Staring Login Activity
             _context.startActivity(i);
-
             return true;
         }
         return false;
@@ -84,16 +79,12 @@ public class UserSessionManager_ok {
      * Get stored session data
      * */
     public HashMap<String, String> getUserDetails(){
-
         //Use hashmap to store user credentials
         HashMap<String, String> user = new HashMap<String, String>();
-
         // user email
         user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
-
         // user name
         user.put(KEY_PASSWORD, pref.getString(KEY_PASSWORD, null));
-
         // return user
         return user;
     }
@@ -102,20 +93,15 @@ public class UserSessionManager_ok {
      * Clear session details
      * */
     public void logoutUser(){
-
         // Clearing all user data from Shared Preferences
         editor.clear();
         editor.commit();
-
         // After logout redirect user to Login Activity
         Intent intent = new Intent(_context, LoginActivity.class);
-
         // Closing all the Activities
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
         // Add new Flag to start new Activity
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
         // Staring Login Activity
         _context.startActivity(intent);
     }

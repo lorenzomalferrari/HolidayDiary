@@ -90,7 +90,6 @@ public class UserSessionManager {
         user.put(KEY_PASSWORD, sharedPref.getString(KEY_PASSWORD, null));
         // return user details
         return user;
-
         //Come recuperare
         //SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         //String userName = sharedPref.getString("userName", "Not Available");
