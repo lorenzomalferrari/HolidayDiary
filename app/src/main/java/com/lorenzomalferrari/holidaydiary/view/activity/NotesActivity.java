@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -14,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 // Mie classi
+import com.github.clans.fab.FloatingActionButton;
 import com.jude.swipbackhelper.SwipeBackHelper;
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
@@ -104,10 +104,10 @@ public class NotesActivity extends AppCompatActivity {
         Intent intent;
         //initializing the fragment object which is selected
         switch (item.getItemId()) {
-            case R.id.addItem:
+            /*case R.id.addItem:
                 intent = new Intent(this, AddNoteActivity.class);
                 this.startActivity(intent);
-                break;
+                break;*/
             case R.id.order_by:
                 //intent = new Intent(this, TravelsActivity.class);
                 //this.startActivity(intent);
