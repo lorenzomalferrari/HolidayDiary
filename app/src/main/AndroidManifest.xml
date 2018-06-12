@@ -107,11 +107,10 @@
         <activity
             android:name=".view.activity.AddNoteActivity"
             android:parentActivityName=".view.activity.NotesActivity" />
-        <activity
-            android:name=".view.activity.Menu2Activity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".view.activity.PictureActivity" />
+
+
         <activity android:name=".view.activity.TakePictureActivity"></activity>
     </application>
 
