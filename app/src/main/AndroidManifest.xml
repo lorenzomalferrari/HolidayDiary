@@ -107,11 +107,9 @@
         <activity
             android:name=".view.activity.AddNoteActivity"
             android:parentActivityName=".view.activity.NotesActivity" />
-
         <activity android:name=".view.activity.PictureActivity" />
-
-
-        <activity android:name=".view.activity.TakePictureActivity"></activity>
+        <activity android:name=".view.activity.TakePictureActivity" />
+        <activity android:name=".view.activity.FullPictureActivity"></activity>
     </application>
 
 </manifest>
