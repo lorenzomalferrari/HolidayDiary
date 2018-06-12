@@ -1,4 +1,4 @@
-package com.lorenzomalferrari.holidaydiary.model;
+package com.lorenzomalferrari.holidaydiary.control;
 
 import android.util.Patterns;
 import android.widget.EditText;
