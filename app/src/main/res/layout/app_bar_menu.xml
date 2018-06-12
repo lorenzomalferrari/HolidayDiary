@@ -2,83 +2,103 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.activity.MenuActivity">
-
+    <!-- Toolbar -->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="?android:attr/colorPrimary"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
-
+    <!-- Menu con i bottoni cliccabili -->
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/floatingActionMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="16dp"
-        app:menu_backgroundColor="@android:color/transparent"
-        app:menu_fab_label=""
-        app:menu_labels_colorNormal="@color/my_white"
-        app:menu_labels_colorPressed="@color/my_orange"
-        app:menu_labels_textColor="@color/black"
-        app:menu_openDirection="up"
-        app:menu_colorNormal="@color/my_red"
-        app:menu_showShadow="true">
-
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        fab:menu_fab_size="normal"
+        fab:menu_showShadow="true"
+        fab:menu_colorNormal="@color/my_red"
+        fab:menu_colorPressed="@color/my_red"
+        fab:menu_icon="@drawable/fab_add"
+        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+        fab:menu_labels_paddingTop="4dp"
+        fab:menu_labels_paddingRight="8dp"
+        fab:menu_labels_paddingBottom="4dp"
+        fab:menu_labels_paddingLeft="8dp"
+        fab:menu_labels_padding="8dp"
+        fab:menu_labels_textColor="@color/black"
+        fab:menu_labels_colorNormal="@color/my_white"
+        fab:menu_labels_colorPressed="@color/my_white"
+        fab:menu_openDirection="up" >
         <!-- Travel -->
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonTravel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_suitcase_white"
-            app:fab_label="@string/travels_title"
             app:fab_colorNormal="@color/my_red"
+            app:fab_colorPressed="@color/my_red"
+            app:fab_colorRipple="@color/my_white"
             app:fab_showShadow="true"
-            app:fab_progress_showBackground="true"
-            app:fab_size="mini" />
-
+            app:fab_size="mini"
+            app:fab_showAnimation="@anim/fab_scale_up"
+            app:fab_hideAnimation="@anim/fab_scale_down"
+            app:fab_label="@string/travel_title"
+            app:fab_progress_showBackground="false" />
         <!-- Note -->
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonNote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_note_white"
-            app:fab_label="@string/notes_title"
             app:fab_colorNormal="@color/my_red"
+            app:fab_colorPressed="@color/my_red"
+            app:fab_colorRipple="@color/my_white"
             app:fab_showShadow="true"
-            app:fab_progress_showBackground="true"
-            app:fab_size="mini" />
-
+            app:fab_size="mini"
+            app:fab_showAnimation="@anim/fab_scale_up"
+            app:fab_hideAnimation="@anim/fab_scale_down"
+            app:fab_label="@string/note_title"
+            app:fab_progress_showBackground="false" />
         <!-- Picture -->
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonPicture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_images_white"
-            app:fab_label="@string/pictures_title"
             app:fab_colorNormal="@color/my_red"
+            app:fab_colorPressed="@color/my_red"
+            app:fab_colorRipple="@color/my_white"
             app:fab_showShadow="true"
-            app:fab_progress_showBackground="true"
-            app:fab_size="mini" />
-
+            app:fab_size="mini"
+            app:fab_showAnimation="@anim/fab_scale_up"
+            app:fab_hideAnimation="@anim/fab_scale_down"
+            app:fab_label="@string/picture_title"
+            app:fab_progress_showBackground="false" />
         <!-- Place -->
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonPlace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_location_white"
-            app:fab_label="@string/places_title"
             app:fab_colorNormal="@color/my_red"
+            app:fab_colorPressed="@color/my_red"
+            app:fab_colorRipple="@color/my_white"
             app:fab_showShadow="true"
-            app:fab_progress_showBackground="false"
-            app:fab_size="mini" />
-
+            app:fab_size="mini"
+            app:fab_showAnimation="@anim/fab_scale_up"
+            app:fab_hideAnimation="@anim/fab_scale_down"
+            app:fab_label="@string/place_title"
+            app:fab_progress_showBackground="false" />
     </com.github.clans.fab.FloatingActionMenu>
-
 </RelativeLayout>
