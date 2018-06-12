@@ -52,4 +52,5 @@
     <string name="home_page_title">Home page</string>
     <string name="dd_mm_yyyy">dd/mm/yyyy</string>
     <string name="desc_img_account">Img Account</string>
+    <string name="place_title">Luogo</string>
 </resources>
