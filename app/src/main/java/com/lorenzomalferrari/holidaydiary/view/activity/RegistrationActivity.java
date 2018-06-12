@@ -15,7 +15,7 @@ import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
 import com.lorenzomalferrari.holidaydiary.model.User;
-import com.lorenzomalferrari.holidaydiary.model.Validator;
+import com.lorenzomalferrari.holidaydiary.control.Validator;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

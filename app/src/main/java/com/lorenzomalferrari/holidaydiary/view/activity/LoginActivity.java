@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.lorenzomalferrari.holidaydiary.R;
 import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
 import com.lorenzomalferrari.holidaydiary.control.DatabaseHelper;
-import com.lorenzomalferrari.holidaydiary.model.Validator;
+import com.lorenzomalferrari.holidaydiary.control.Validator;
 
 import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton;
 
