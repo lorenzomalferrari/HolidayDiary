@@ -2,6 +2,7 @@ package com.lorenzomalferrari.holidaydiary.view.activity;
 // Android library
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -38,8 +39,10 @@ public class MenuActivity extends AppCompatActivity
     Dialog myDialog;
     UserSessionManager userSessionManager;
     DatabaseHelper databaseHelper;
+    Cursor res;
     Intent intentMenu;
     //
+    TextView user,email_author;
     FloatingActionMenu floatingActionMenu;
     FloatingActionButton travel,note,picture,place;
 
@@ -54,10 +57,13 @@ public class MenuActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         // Session class instance
         userSessionManager = new UserSessionManager(getApplicationContext());
+        //
+        databaseHelper = new DatabaseHelper(this);
         intentMenu = getIntent();
         intentMenu.putExtra("email",userSessionManager.getUserDetails().get("email"));
         intentMenu.putExtra("password",userSessionManager.getUserDetails().get("password"));
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -65,6 +71,7 @@ public class MenuActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
 
         // Check UserSessionManager
         checkUserSession();
@@ -103,7 +110,14 @@ public class MenuActivity extends AppCompatActivity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
         //set data in nav_header_menu
-        setDataUser();
+        //setDataUser();
+        res = databaseHelper.getDataUser(intentMenu.getStringExtra("email"),intentMenu.getStringExtra("password"));
+        user = findViewById(R.id.nav_header_menu_user);
+        email_author = findViewById(R.id.nav_header_menu_email);
+        while (res.moveToNext()){
+            user.setText(res.getString(1) + " "+ res.getString(2));
+            email_author.setText(res.getString(4));
+        }
         return true;
     }
 
