@@ -1,13 +1,13 @@
 package com.lorenzomalferrari.holidaydiary.control;
-
+// Android library
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.preference.PreferenceManager;
-
+// My library
 import com.lorenzomalferrari.holidaydiary.view.activity.LoginActivity;
-
+// Java library
 import java.util.HashMap;
 
 /**
