@@ -6,8 +6,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
-
-        <!-- -->
+        <!-- Account Img -->
         <ImageView
             android:id="@+id/account_image"
             android:layout_width="150dp"
@@ -16,211 +15,208 @@
             android:src="@mipmap/ic_launcher_round"
             android:layout_margin="20sp"
             android:contentDescription="@string/desc_img_account" />
-
         <!-- FirstName -->
         <TextView
             android:id="@+id/account_firstName_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/account_image"
-            android:padding="10dp"
-            android:text="@string/firstname_text"
-            android:textSize="16dp" />
-
+            android:textColor="@color/my_orange"
+            android:textSize="18dp"
+            android:layout_marginLeft="15dp"
+            android:text="@string/firstname_text" />
         <TextView
             android:id="@+id/account_firstName_value"
-            android:layout_width="171dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:padding="10dp"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_image"
+            android:layout_below="@+id/account_firstName_text"
+            android:layout_marginLeft="30dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:text="@string/firstname_text" />
-
         <!-- LastName -->
         <TextView
             android:id="@+id/account_lastName_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_firstName_text"
-            android:text="@string/lastname_text"/>
-
+            android:layout_below="@+id/account_firstName_value"
+            android:layout_marginLeft="15dp"
+            android:textSize="18dp"
+            android:textColor="@color/my_orange"
+            android:text="@string/lastname_text" />
         <TextView
             android:id="@+id/account_lastName_value"
-            android:layout_width="171dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:padding="10dp"
-            android:layout_below="@+id/account_firstName_value"
+            android:layout_below="@+id/account_lastName_text"
+            android:layout_marginLeft="30dp"
+            android:textSize="20dp"
             android:textStyle="bold"
-            android:textSize="16dp"
             android:text="@string/lastname_text" />
-
         <!-- Username -->
         <TextView
             android:id="@+id/account_username_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_lastName_text"
-            android:text="@string/username_text"/>
-
+            android:layout_below="@+id/account_lastName_value"
+            android:layout_marginLeft="15dp"
+            android:textSize="18dp"
+            android:textColor="@color/my_orange"
+            android:text="@string/username_text" />
         <TextView
             android:id="@+id/account_username_value"
-            android:layout_width="171dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:padding="10dp"
             android:textStyle="bold"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_lastName_value"
+            android:layout_below="@+id/account_username_text"
+            android:layout_marginLeft="30dp"
+            android:textSize="20dp"
             android:text="@string/username_text" />
-
         <!-- Email -->
         <TextView
             android:id="@+id/account_email_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_username_text"
-            android:text="@string/email_text"/>
-
+            android:layout_below="@+id/account_username_value"
+            android:layout_marginLeft="15dp"
+            android:textSize="18dp"
+            android:textColor="@color/my_orange"
+            android:text="@string/email_text" />
         <TextView
             android:id="@+id/account_email_value"
-            android:layout_width="171dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:padding="10dp"
             android:textStyle="bold"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_username_value"
+            android:layout_below="@+id/account_email_text"
+            android:layout_marginLeft="30dp"
+            android:textSize="20dp"
             android:text="@string/email_text" />
-
         <!-- Password -->
         <TextView
             android:id="@+id/account_password_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_email_text"
-            android:text="@string/password_text"/>
-
+            android:layout_below="@+id/account_email_value"
+            android:layout_marginLeft="15dp"
+            android:textSize="18dp"
+            android:textColor="@color/my_orange"
+            android:text="@string/password_text" />
         <TextView
             android:id="@+id/account_password_value"
-            android:layout_width="171dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:padding="10dp"
             android:textStyle="bold"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_email_value"
+            android:layout_below="@+id/account_password_text"
+            android:layout_marginLeft="30dp"
+            android:textSize="20dp"
             android:text="@string/password_text" />
-
         <!-- City -->
         <TextView
             android:id="@+id/account_city_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_password_text"
-            android:text="@string/city_text"/>
-
+            android:layout_below="@+id/account_password_value"
+            android:layout_marginLeft="15dp"
+            android:textSize="18dp"
+            android:textColor="@color/my_orange"
+            android:text="@string/city_text" />
         <TextView
             android:id="@+id/account_city_value"
-            android:layout_width="171dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:padding="10dp"
             android:textStyle="bold"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_password_value"
+            android:layout_below="@+id/account_city_text"
+            android:layout_marginLeft="30dp"
+            android:textSize="20dp"
             android:text="@string/city_text" />
-
         <!-- Country -->
         <TextView
             android:id="@+id/account_country_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_city_text"
-            android:text="@string/country_text"/>
-
+            android:layout_below="@+id/account_city_value"
+            android:layout_marginLeft="15dp"
+            android:textSize="18dp"
+            android:textColor="@color/my_orange"
+            android:text="@string/country_text" />
         <TextView
             android:id="@+id/account_country_value"
-            android:layout_width="171dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:padding="10dp"
             android:textStyle="bold"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_city_value"
+            android:layout_below="@+id/account_country_text"
+            android:layout_marginLeft="30dp"
+            android:textSize="20dp"
             android:text="@string/country_text" />
-
         <!-- Gender -->
         <TextView
             android:id="@+id/account_gender_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_country_text"
-            android:text="@string/gender_text"/>
-
+            android:layout_below="@+id/account_country_value"
+            android:layout_marginLeft="15dp"
+            android:textSize="18dp"
+            android:textColor="@color/my_orange"
+            android:text="@string/gender_text" />
         <TextView
             android:id="@+id/account_gender_value"
-            android:layout_width="171dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:padding="10dp"
             android:textStyle="bold"
-            android:textSize="16dp"
-            android:layout_below="@+id/account_country_value"
+            android:layout_below="@+id/account_gender_text"
+            android:layout_marginLeft="30dp"
+            android:textSize="20dp"
             android:text="@string/gender_text" />
-
         <!-- Birthdate -->
         <TextView
             android:id="@+id/account_birthdate_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/account_gender_text"
-            android:padding="10dp"
-            android:textSize="16dp"
-            android:layout_marginBottom="15dp"
+            android:layout_below="@+id/account_gender_value"
+            android:layout_marginLeft="15dp"
+            android:textSize="18dp"
+            android:textColor="@color/my_orange"
             android:text="@string/birthdate_text" />
-
         <TextView
             android:id="@+id/account_birthdate_value"
-            android:layout_width="171dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:padding="10dp"
             android:textStyle="bold"
-            android:textSize="16dp"
-            android:layout_marginBottom="15dp"
-            android:layout_below="@+id/account_gender_value"
+            android:layout_below="@+id/account_birthdate_text"
+            android:layout_marginLeft="30dp"
+            android:textSize="20dp"
             android:text="@string/birthdate_text" />
-
+        <!-- Age -->
+        <TextView
+            android:id="@+id/account_age_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/account_birthdate_value"
+            android:layout_marginLeft="15dp"
+            android:textSize="18dp"
+            android:textColor="@color/my_orange"
+            android:text="Età" />
+        <TextView
+            android:id="@+id/account_age_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_below="@+id/account_age_text"
+            android:layout_marginLeft="30dp"
+            android:textSize="20dp"
+            android:text="@string/birthdate_text" />
         <!-- Buttone Logout -->
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/account_birthdate_value"
+            android:layout_below="@+id/account_age_value"
             android:background="@drawable/buttonstyle"
             android:textColor="@color/my_white"
             android:textStyle="bold"
             android:layout_margin="10dp"
             android:padding="20dp"
             android:text="@string/logout"/>
-
     </RelativeLayout>
 </ScrollView>

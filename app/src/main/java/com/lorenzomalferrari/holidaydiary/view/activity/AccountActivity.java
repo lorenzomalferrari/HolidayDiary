@@ -18,7 +18,7 @@ import com.lorenzomalferrari.holidaydiary.control.UserSessionManager;
  */
 public class AccountActivity extends AppCompatActivity {
 
-    TextView firstName, lastName, username, email, password, city, country, gender, birthdate;
+    TextView firstName, lastName, username, email, password, city, country, gender,birthdate, age;
     ImageView imgUser;
     Button btnLogout;
 
@@ -62,6 +62,7 @@ public class AccountActivity extends AppCompatActivity {
         country = findViewById(R.id.account_country_value);
         gender = findViewById(R.id.account_gender_value);
         birthdate = findViewById(R.id.account_birthdate_value);
+        age = findViewById(R.id.account_age_value);
         btnLogout = findViewById(R.id.btnLogout);
     }
 
@@ -81,7 +82,8 @@ public class AccountActivity extends AppCompatActivity {
             city.setText(res.getString(6));
             country.setText(res.getString(7));
             gender.setText(res.getString(8));
-            birthdate.setText(res.getString(10));
+            birthdate.setText(res.getString(9));
+            age.setText(res.getString(10));
         }
     }
 
