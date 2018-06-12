@@ -1,5 +1,6 @@
 package com.lorenzomalferrari.holidaydiary.view.activity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class AccountActivity extends AppCompatActivity {
     DatabaseHelper databaseHelper;
     // User Session Manager Class
     UserSessionManager userSessionManager;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +38,12 @@ public class AccountActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(this);
         // User Session Manager
         userSessionManager = new UserSessionManager(getApplicationContext());
+        intent = getIntent();
         //Inizializzo gli attributi dei campi
         init();
 
-        String email = "malfe.lore@gmail.com";
-        String password = "123456";
+        String email = intent.getStringExtra("email");
+        String password = intent.getStringExtra("password");
         Cursor res = databaseHelper.getDataUser(email,password);
         // Visualizzo gli attributi nei rispettivi campi
         setAccountData(res);

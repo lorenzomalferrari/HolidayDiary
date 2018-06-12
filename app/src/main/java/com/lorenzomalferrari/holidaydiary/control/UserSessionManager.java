@@ -112,18 +112,6 @@ public class UserSessionManager {
         _context.startActivity(intent);
     }
 
-    public String getKEY_PASSWORD() {
-        return KEY_PASSWORD;
-    }
-
-    public String getKEY_EMAIL() {
-        return KEY_EMAIL;
-    }
-
-    public Editor getEditor() {
-        return editor;
-    }
-
     // Check for login
     public boolean isUserLoggedIn(){
         return sharedPref.getBoolean(IS_USER_LOGIN, false);

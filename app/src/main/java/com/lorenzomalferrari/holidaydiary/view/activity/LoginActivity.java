@@ -115,20 +115,20 @@ public class LoginActivity extends AppCompatActivity {
                         String passwordLogin = password.getText().toString();
                         // Start checks
                         if (validator.isFieldsEmpty(emailLogin,passwordLogin)) {
-                            if (validator.isEmailValid(email.getText().toString())){
-                                if (validator.isPasswordValid(password.getText().toString())){
-                                    Cursor res = databaseHelper.getDataUser(email.getText().toString(),password.getText().toString());
+                            if (validator.isEmailValid(emailLogin)){
+                                if (validator.isPasswordValid(passwordLogin)){
+                                    Cursor res = databaseHelper.getDataUser(emailLogin,passwordLogin);
                                     if(res.getCount() == 0) {// se utente non esiste lo mando alla registrazione
                                         // Viasualizzo la pagina di registrazione
                                         callRegister();
                                     }
                                     else {// se utente esiste esegu il login
                                         // Creating user login session
-                                        userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
+                                        userSessionManager.createUserLoginSession(emailLogin, passwordLogin);
                                         // Creo l'oggetto User con i dati presi dal database
                                         //createUser(res);
                                         // Visualizzo l'app
-                                        callMenu();
+                                        callMenu(emailLogin,passwordLogin);
                                     }
                                 }
                                 else {
@@ -167,8 +167,10 @@ public class LoginActivity extends AppCompatActivity {
     /**
      * Chiama la MenuActivity (Navigation Drawer Activity)
      */
-    private void callMenu(){
+    private void callMenu(String email, String password){
         Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+        intent.putExtra("email",email);
+        intent.putExtra("password",password);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         // Add new Flag to start new Activity
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

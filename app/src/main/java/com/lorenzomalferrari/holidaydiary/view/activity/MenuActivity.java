@@ -38,7 +38,7 @@ public class MenuActivity extends AppCompatActivity
     Dialog myDialog;
     UserSessionManager userSessionManager;
     DatabaseHelper databaseHelper;
-
+    Intent intentMenu;
     //
     FloatingActionMenu floatingActionMenu;
     FloatingActionButton travel,note,picture,place;
@@ -52,7 +52,11 @@ public class MenuActivity extends AppCompatActivity
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        // Session class instance
+        userSessionManager = new UserSessionManager(getApplicationContext());
+        intentMenu = getIntent();
+        intentMenu.putExtra("email",userSessionManager.getUserDetails().get("email"));
+        intentMenu.putExtra("password",userSessionManager.getUserDetails().get("password"));
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -123,10 +127,8 @@ public class MenuActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         //calling the method displayselectedscreen and passing the id of selected menu
         displaySelectedScreen(item.getItemId());
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-
         //make this method blank
         return true;
     }
@@ -139,7 +141,7 @@ public class MenuActivity extends AppCompatActivity
         //creating fragment object
         Fragment fragment = null;
         //creating intent object
-        Intent intent;
+        Intent intent = null;
         //initializing the fragment object which is selected
         switch (itemId) {
             case R.id.nav_homepage:
@@ -169,6 +171,8 @@ public class MenuActivity extends AppCompatActivity
                 break;
             case R.id.nav_account:
                 intent = new Intent(getApplicationContext(), AccountActivity.class);
+                intent.putExtra("email",intentMenu.getStringExtra("email"));
+                intent.putExtra("password",intentMenu.getStringExtra("password"));
                 this.startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
@@ -217,8 +221,6 @@ public class MenuActivity extends AppCompatActivity
      * Controllo i dati della sessione utente
      */
     private void checkUserSession(){
-        // Session class instance
-        userSessionManager = new UserSessionManager(getApplicationContext());
         // Check user login
         // If User is not logged in , This will redirect user to LoginActivity.
         if(userSessionManager.checkLogin()) finish();

@@ -176,7 +176,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                 //editor.commit();
 
                                 //Chiamo il menù dell'app (il vero contenuto dell'app)
-                                callMenu();
+                                callMenu(email.getText().toString(), password.getText().toString());
                             }
                             else Toast.makeText(RegistrationActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
 
@@ -245,9 +245,10 @@ public class RegistrationActivity extends AppCompatActivity {
     /**
      * Chiamata alla MenuActivity (Navigation Drawer Activity)
      */
-    private void callMenu(){
-        Intent intent = new Intent(this, MenuActivity.class);
-        //intent.putExtra("USER",this.user);
+    private void callMenu(String email, String password){
+        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+        intent.putExtra("email",email);
+        intent.putExtra("password",password);
         this.startActivity(intent);
         finish();
     }
