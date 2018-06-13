@@ -32,6 +32,6 @@ public class HomePageFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle("Ciaone");
+        getActivity().setTitle(R.string.home_page_title);
     }
 }
