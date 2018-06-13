@@ -87,26 +87,6 @@ public class RegistrationActivity extends AppCompatActivity {
         //DeleteData();
     }
 
-
-
-    /**
-     * Metodo che mi consente di raggruppare tutti i valori presi dalla registrazione
-     * @return un oggetto di classe ArrayList
-     */
-    private ArrayList createArrayList(){
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(firstName.getText().toString().replace(" ",""));
-        arrayList.add(lastName.getText().toString().replace(" ",""));
-        arrayList.add(username.getText().toString().replace(" ",""));
-        arrayList.add(password.getText().toString().replace(" ",""));
-        arrayList.add(email.getText().toString().replace(" ",""));
-        arrayList.add(city.getText().toString().replace(" ",""));
-        arrayList.add(country.getText().toString().replace(" ",""));
-        arrayList.add(genderSelected);
-        arrayList.add(birthdate.getText().toString().replace(" ",""));
-        return arrayList;
-    }
-
     /**
      * Cancello l' Utente sapendo il suo id
      */
@@ -154,32 +134,35 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        /*
+                            1 Controllo la validità dei campi;
+                                - Nome e Cognome solo testo;
+                                - Username come ti pare;
+                                - Email deve rispettare la sintassi email;
+                                - Password = Conf Password;
+                                - City e Country attualmente niente;
+                                - Gender valore cliccato;
+                                - Compleanno usare widget appropriato, attualmente testo custom
+                            2 Controllo che l'email non sia già presente del db;
+                                - Verificare che non esistano diversi profili con la stessa email
+                            3 Eseguo inserimento dei dati Utente nel db
+                            4 Creo l'oggetto UserSessionManager per tenermi i dati di login
+                            5 Chiamo il menu, passandogli anche i dati di log
+                        */
+                        
                         //ottengo il radioButton cliccato da User
                         getRadioButtonChecked();
                         //controllo che tutti i campi rispecchino le richieste progettuali
                         if (checkData()){ //campi tutti validi procedo
-
                             //Creo utente e lo carico sul database
                             boolean isInserted = databaseHelper.insertDataUser(createUser());
-                            //Toast.makeText(RegistrationActivity.this, String.valueOf(user.getAge()), Toast.LENGTH_LONG).show();
-                            //Toast.makeText(RegistrationActivity.this, String.valueOf(user.getImgUser()), Toast.LENGTH_LONG).show();
                             if (isInserted) {
                                 Toast.makeText(RegistrationActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
                                 userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
-
-                                //Put email
-                                //editor.putString("email",email.getText().toString());
-                                //Put password
-                                //editor.putString("password",password.getText().toString());
-                                //Commits your edits
-                                //editor.commit();
-
                                 //Chiamo il menù dell'app (il vero contenuto dell'app)
                                 callMenu(email.getText().toString(), password.getText().toString());
                             }
                             else Toast.makeText(RegistrationActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
-
                         }
                         else {
                             //Mando messagio preciso, per far capire all'utente cosa è sbagliato
