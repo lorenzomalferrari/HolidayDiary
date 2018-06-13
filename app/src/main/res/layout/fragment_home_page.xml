@@ -11,10 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
         android:text="@string/travels_title"
         android:textSize="40sp"
-        android:textColor="@color/my_black"
-        android:gravity="center"/>
+        android:textColor="@color/my_black"/>
 
     <include
         android:id="@+id/homepage_cardview_travel"
@@ -30,11 +30,11 @@
         android:id="@+id/homepage_notes_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_below="@+id/homepage_cardview_travel"
         android:text="@string/notes_title"
         android:textSize="40sp"
-        android:textColor="@color/my_black"
-        android:gravity="center"/>
+        android:textColor="@color/my_black"/>
 
     <include
         android:id="@+id/homepage_cardview_notes"
@@ -62,17 +62,39 @@
         android:id="@+id/homepage_pictures_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_below="@+id/homepage_cardview_notes2"
-        android:text="@string/notes_title"
+        android:text="@string/pictures_title"
         android:textSize="40sp"
-        android:textColor="@color/my_black"
-        android:gravity="center"/>
+        android:textColor="@color/my_black"/>
 
     <ImageView
+        android:id="@+id/homepage_img_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/homepage_pictures_title"
-        
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_plus"/>
+
+    <!-- Places -->
+    <TextView
+        android:id="@+id/homepage_places_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/homepage_img_add"
+        android:text="@string/places_title"
+        android:textSize="40sp"
+        android:textColor="@color/my_black" />
+
+    <ImageView
+        android:id="@+id/homepage_img_add2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/homepage_places_title"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/ic_plus"/>
 
 
