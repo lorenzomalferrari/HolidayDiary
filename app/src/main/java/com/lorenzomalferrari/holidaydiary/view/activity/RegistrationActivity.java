@@ -149,14 +149,14 @@ public class RegistrationActivity extends AppCompatActivity {
                             4 Creo l'oggetto UserSessionManager per tenermi i dati di login
                             5 Chiamo il menu, passandogli anche i dati di log
                         */
-                        
+
                         //ottengo il radioButton cliccato da User
                         getRadioButtonChecked();
                         //controllo che tutti i campi rispecchino le richieste progettuali
                         if (checkData()){ //campi tutti validi procedo
                             //Creo utente e lo carico sul database
-                            boolean isInserted = databaseHelper.insertDataUser(createUser());
-                            if (isInserted) {
+                            boolean isUserInserted = databaseHelper.insertDataUser(createUser());
+                            if (isUserInserted) {
                                 Toast.makeText(RegistrationActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
                                 userSessionManager.createUserLoginSession(email.getText().toString(), password.getText().toString());
                                 //Chiamo il menù dell'app (il vero contenuto dell'app)
@@ -227,6 +227,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
     /**
      * Chiamata alla MenuActivity (Navigation Drawer Activity)
+     * @param email email che l'utente ha inserito al momemnto della registrazione
+     * @param password password che l'utente ha inserito al momemnto della registrazione
      */
     private void callMenu(String email, String password){
         Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
