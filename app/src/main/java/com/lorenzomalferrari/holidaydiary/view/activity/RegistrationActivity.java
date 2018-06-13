@@ -56,21 +56,13 @@ public class RegistrationActivity extends AppCompatActivity {
         //setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.registration_title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        // DatabaseHelper Object
         databaseHelper = new DatabaseHelper(this);
-        // User Session Manager
+        // User Session Manager Object
         userSessionManager = new UserSessionManager(getApplicationContext());
 
-        //Ottengo i dati
+        // Inizializzo i componenti
         this.init();
-
-        //Creo oggetto user
-        //createUser();
-
-        btnAddData = findViewById(R.id.btnSave);
-        btnviewAll = findViewById(R.id.button_viewAll);
-        btnviewUpdate= findViewById(R.id.button_update);
-        btnDelete= findViewById(R.id.button_delete);
 
         //Uso escusivo in sviluppo per fare pulidia degli utenti
         //id = findViewById(R.id.register_firstNameValue);
@@ -79,7 +71,6 @@ public class RegistrationActivity extends AppCompatActivity {
         //sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         //Now get Editor
         //editor = sharedPref.edit();
-
 
         AddData();
         //viewAllUsers();
@@ -293,6 +284,15 @@ public class RegistrationActivity extends AppCompatActivity {
         female = findViewById(R.id.radioButtonFemale);
         // Birthdate
         birthdate =  findViewById(R.id.register_birthdateValue);
+        // Add User
+        btnAddData = findViewById(R.id.btnSave);
+        // View All Users
+        btnviewAll = findViewById(R.id.button_viewAll);
+        // Update User
+        btnviewUpdate= findViewById(R.id.button_update);
+        // Delete User
+        btnDelete= findViewById(R.id.button_delete);
+
     }
 
     /**
