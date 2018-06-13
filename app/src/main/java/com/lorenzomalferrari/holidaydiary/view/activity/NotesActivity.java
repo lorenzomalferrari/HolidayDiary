@@ -37,6 +37,7 @@ public class NotesActivity extends AppCompatActivity {
     Toolbar toolbar;
     //private SlidrInterface slidrInterface;
     FloatingActionButton floatingActionButton;
+    Intent intent;
 
 
     @Override
@@ -48,6 +49,10 @@ public class NotesActivity extends AppCompatActivity {
         //setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.notes_title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        intent = getIntent();
+        int id_user = intent.getIntExtra("id_user",0);
+
         //toolbar.setNavigationIcon(R.drawable.ic_action_back);
         floatingActionButton = findViewById(R.id.addTravel);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +69,7 @@ public class NotesActivity extends AppCompatActivity {
         // Setta la var dell'oggetto DatabaseHelper con il context della classe stessa
         databaseHelper = new DatabaseHelper(this);
         // Salvo tutte le Note
-        Cursor res = databaseHelper.getAll("Notes");
+        Cursor res = databaseHelper.getAll("Notes",id_user);
 
         Date data = new Date();
         //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy"); // creo l'oggetto

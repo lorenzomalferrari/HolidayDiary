@@ -220,9 +220,9 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @param table
      * @return tutti i dati
      */
-    public Cursor getAll(String table) {
+    public Cursor getAll(String table,int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM "+ table ,null);
+        Cursor res = db.rawQuery("SELECT * FROM "+ table,null);
         return res;
     }
 

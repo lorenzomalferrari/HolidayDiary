@@ -62,6 +62,8 @@ public class MenuActivity extends AppCompatActivity
         intentMenu = getIntent();
         intentMenu.putExtra("email",userSessionManager.getUserDetails().get("email"));
         intentMenu.putExtra("password",userSessionManager.getUserDetails().get("password"));
+        res = databaseHelper.getDataUser(intentMenu.getStringExtra("email"),intentMenu.getStringExtra("password"));
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -111,7 +113,6 @@ public class MenuActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.menu, menu);
         //set data in nav_header_menu
         //setDataUser();
-        res = databaseHelper.getDataUser(intentMenu.getStringExtra("email"),intentMenu.getStringExtra("password"));
         user = findViewById(R.id.nav_header_menu_user);
         email_author = findViewById(R.id.nav_header_menu_email);
         while (res.moveToNext()){
@@ -156,6 +157,11 @@ public class MenuActivity extends AppCompatActivity
         Fragment fragment = null;
         //creating intent object
         Intent intent = null;
+        int id = 0;
+        while (res.moveToNext()){
+            id = res.getInt(0);
+        }
+
         //initializing the fragment object which is selected
         switch (itemId) {
             case R.id.nav_homepage:
@@ -163,21 +169,25 @@ public class MenuActivity extends AppCompatActivity
                 break;
             case R.id.nav_travels:
                 intent = new Intent(this, TravelsActivity.class);
+                intent.putExtra("id_user",id);
                 this.startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.nav_notes:
                 intent = new Intent(this, NotesActivity.class);
+                intent.putExtra("id_user",id);
                 this.startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.nav_pictures:
                 intent = new Intent(this, PicturesActivity.class);
+                intent.putExtra("id_user",id);
                 this.startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.nav_places:
                 intent = new Intent(this, MyPositionActivity.class);
+                intent.putExtra("id_user",id);
                 this.startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
@@ -192,6 +202,7 @@ public class MenuActivity extends AppCompatActivity
                 break;
             case R.id.nav_settings:
                 intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                intent.putExtra("id_user",id);
                 this.startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
