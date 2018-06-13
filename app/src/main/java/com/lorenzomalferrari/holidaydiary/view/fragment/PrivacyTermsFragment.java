@@ -17,8 +17,7 @@ public class PrivacyTermsFragment extends Fragment {
     public PrivacyTermsFragment() {
         // Required empty public constructor
     }
-
-
+    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
