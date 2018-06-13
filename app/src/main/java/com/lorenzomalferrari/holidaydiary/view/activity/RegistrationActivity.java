@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- *
  * @author Lorenzo Malferrari - Website: www.lorenzomalferrari.com
  */
 public class RegistrationActivity extends AppCompatActivity {
@@ -33,14 +32,15 @@ public class RegistrationActivity extends AppCompatActivity {
     RadioButton male, female;
     EditText id,firstName,lastName,username,password,conf_password,email,city,country,birthdate;
     String genderSelected = "";
-    //Oggetto User
+    // User Object
     User user;
-    //Oggetto Validator
+    // Validator Object
     Validator validator = new Validator();
-    // User Session Manager Class
+    // User Session Manager Object
     UserSessionManager userSessionManager;
-    //
+    // DatabaseHelper Object
     DatabaseHelper databaseHelper;
+    // Toolbar Object
     Toolbar toolbar;
 
     // Create object of SharedPreferences.
@@ -60,17 +60,11 @@ public class RegistrationActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(this);
         // User Session Manager Object
         userSessionManager = new UserSessionManager(getApplicationContext());
-
         // Inizializzo i componenti
         this.init();
 
         //Uso escusivo in sviluppo per fare pulidia degli utenti
         //id = findViewById(R.id.register_firstNameValue);
-        //Controllo che i dati ottenuti siano corretti
-
-        //sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        //Now get Editor
-        //editor = sharedPref.edit();
 
         AddData();
         //viewAllUsers();
