@@ -165,7 +165,7 @@ public class MenuActivity extends AppCompatActivity
         //initializing the fragment object which is selected
         switch (itemId) {
             case R.id.nav_homepage:
-                //fragment = new HomePageFragment();
+                fragment = new HomePageFragment();
                 break;
             case R.id.nav_travels:
                 intent = new Intent(this, TravelsActivity.class);
