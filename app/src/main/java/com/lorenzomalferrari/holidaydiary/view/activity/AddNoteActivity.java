@@ -41,7 +41,7 @@ public class AddNoteActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(this);
         intent = getIntent();
         //id_user = Integer.parseInt(intent.getStringExtra("id_user"));
-        Toast.makeText(AddNoteActivity.this,"ID USER:" + id_user,Toast.LENGTH_LONG).show();
+        //Toast.makeText(AddNoteActivity.this,"ID USER:" + id_user,Toast.LENGTH_LONG).show();
         //Inizializzazione degli attributi
         init();
 

@@ -150,7 +150,7 @@ public class AddPictureActivity extends AppCompatActivity {
         bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
         byte[] byteArray = stream.toByteArray();
         int length = byteArray.length;
-        Toast.makeText(AddPictureActivity.this,String.valueOf(length),Toast.LENGTH_LONG).show();
+        //Toast.makeText(AddPictureActivity.this,String.valueOf(length),Toast.LENGTH_LONG).show();
         //return stream.toByteArray();
         return byteArray;
     }
