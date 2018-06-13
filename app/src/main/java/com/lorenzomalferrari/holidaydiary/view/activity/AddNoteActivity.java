@@ -27,6 +27,9 @@ public class AddNoteActivity extends AppCompatActivity {
     Button addNote;
 
     DatabaseHelper databaseHelper;
+    Intent intent;
+
+    int id_user = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,9 @@ public class AddNoteActivity extends AppCompatActivity {
         this.setTitle(getString(R.string.addNote_title));
 
         databaseHelper = new DatabaseHelper(this);
-
+        intent = getIntent();
+        //id_user = Integer.parseInt(intent.getStringExtra("id_user"));
+        Toast.makeText(AddNoteActivity.this,"ID USER:" + id_user,Toast.LENGTH_LONG).show();
         //Inizializzazione degli attributi
         init();
 

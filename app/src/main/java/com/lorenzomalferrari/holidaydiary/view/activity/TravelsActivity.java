@@ -52,7 +52,7 @@ public class TravelsActivity extends AppCompatActivity {
         // Setta la var dell'oggetto DatabaseHelper con il context della classe stessa
         databaseHelper = new DatabaseHelper(this);
         // Salvo tutte i Viaggi
-        Cursor res = databaseHelper.getAll("Travels");
+        Cursor res = databaseHelper.getAll("Travels",1);
         // Add Travels
         while (res.moveToNext()) {
             //Aggiungo nella mia lista di Viaggi, un nuovo oggetto con i parametri presi dal tabella Travels presente nel database
