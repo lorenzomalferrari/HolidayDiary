@@ -256,11 +256,11 @@ public class RegistrationActivity extends AppCompatActivity {
                     city.getText().toString(),
                     country.getText().toString(),
                     genderSelected,
-                    date,
-                    validator.calcAge(date),
-                    img,
-                    new Date(),
-                    new Date()
+                    date, // birthdate
+                    validator.calcAge(date), // age
+                    img, // picture id
+                    new Date(), // last_access
+                    new Date() // registration_date
             );
         } catch (ParseException e) {
             e.printStackTrace();
@@ -326,9 +326,7 @@ public class RegistrationActivity extends AppCompatActivity {
      * @return Maschio o Femmina a seconda di cosa è stato cliccato
      */
     private void getRadioButtonChecked(){
-        if (male.isChecked())
-            genderSelected = male.getText().toString();
-        else
-            genderSelected = female.getText().toString();
+        if (male.isChecked()) genderSelected = male.getText().toString();
+        else genderSelected = female.getText().toString();
     }
 }
