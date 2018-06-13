@@ -5,10 +5,75 @@
     android:layout_height="match_parent"
     tools:context=".view.fragment.HomePageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Travels -->
     <TextView
+        android:id="@+id/homepage_travels_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/travels_title"
+        android:textSize="40sp"
+        android:textColor="@color/my_black"
+        android:gravity="center"/>
+
+    <include
+        android:id="@+id/homepage_cardview_travel"
+        layout="@layout/card_view_item_travel"
+        android:layout_below="@+id/homepage_travels_title"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    />
+
+    <!-- Notes -->
+    <TextView
+        android:id="@+id/homepage_notes_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/homepage_cardview_travel"
+        android:text="@string/notes_title"
+        android:textSize="40sp"
+        android:textColor="@color/my_black"
+        android:gravity="center"/>
+
+    <include
+        android:id="@+id/homepage_cardview_notes"
+        layout="@layout/card_view_item_note"
+        android:layout_below="@+id/homepage_notes_title"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+    />
+
+    <include
+        android:id="@+id/homepage_cardview_notes2"
+        layout="@layout/card_view_item_note"
+        android:layout_below="@+id/homepage_cardview_notes"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+
+    <!-- Notes -->
+    <TextView
+        android:id="@+id/homepage_pictures_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/homepage_cardview_notes2"
+        android:text="@string/notes_title"
+        android:textSize="40sp"
+        android:textColor="@color/my_black"
+        android:gravity="center"/>
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Visualizzazione del contenuto della Home" />
+        android:layout_below="@+id/homepage_pictures_title"
+        
+        android:src="@drawable/ic_plus"/>
+
 
 </RelativeLayout>
