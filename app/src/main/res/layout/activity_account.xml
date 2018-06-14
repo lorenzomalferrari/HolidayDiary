@@ -30,7 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/account_firstName_text"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
             android:textSize="20dp"
             android:textStyle="bold"
             android:text="@string/firstname_text" />
@@ -49,7 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/account_lastName_text"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
             android:textSize="20dp"
             android:textStyle="bold"
             android:text="@string/lastname_text" />
@@ -69,7 +71,8 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_below="@+id/account_username_text"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
             android:textSize="20dp"
             android:text="@string/username_text" />
         <!-- Email -->
@@ -88,7 +91,8 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_below="@+id/account_email_text"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
             android:textSize="20dp"
             android:text="@string/email_text" />
         <!-- Password -->
@@ -107,7 +111,8 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_below="@+id/account_password_text"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
             android:textSize="20dp"
             android:text="@string/password_text" />
         <!-- City -->
@@ -126,7 +131,8 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_below="@+id/account_city_text"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
             android:textSize="20dp"
             android:text="@string/city_text" />
         <!-- Country -->
@@ -145,7 +151,8 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_below="@+id/account_country_text"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
             android:textSize="20dp"
             android:text="@string/country_text" />
         <!-- Gender -->
@@ -164,7 +171,8 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_below="@+id/account_gender_text"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
             android:textSize="20dp"
             android:text="@string/gender_text" />
         <!-- Birthdate -->
@@ -183,7 +191,8 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_below="@+id/account_birthdate_text"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
             android:textSize="20dp"
             android:text="@string/birthdate_text" />
         <!-- Age -->
@@ -202,7 +211,8 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_below="@+id/account_age_text"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
             android:textSize="20dp"
             android:text="@string/birthdate_text" />
         <!-- Buttone Logout -->
