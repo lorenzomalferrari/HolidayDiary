@@ -186,8 +186,4 @@ public class LoginActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
-    /*private void createUser(Cursor res){
-        user = new User();
-    }*/
-
 }
