@@ -10,17 +10,18 @@
         android:id="@+id/homepage_travels_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:layout_marginLeft="10dp"
         android:text="@string/travels_title"
-        android:textSize="40sp"
+        android:textSize="20sp"
         android:textColor="@color/my_black"/>
 
     <include
         android:id="@+id/homepage_cardview_travel"
         layout="@layout/card_view_item_travel"
         android:layout_below="@+id/homepage_travels_title"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
     />
@@ -31,9 +32,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/homepage_cardview_travel"
         android:text="@string/notes_title"
-        android:textSize="40sp"
+        android:textSize="20sp"
         android:textColor="@color/my_black"/>
 
     <include
@@ -47,35 +49,28 @@
         android:layout_height="50dp"
     />
 
-    <include
-        android:id="@+id/homepage_cardview_notes2"
-        layout="@layout/card_view_item_note"
-        android:layout_below="@+id/homepage_cardview_notes"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        />
 
-    <!-- Notes -->
+    <!-- Pictures -->
     <TextView
         android:id="@+id/homepage_pictures_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_below="@+id/homepage_cardview_notes2"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/homepage_cardview_notes"
         android:text="@string/pictures_title"
-        android:textSize="40sp"
+        android:textSize="20sp"
         android:textColor="@color/my_black"/>
 
-    <ImageView
-        android:id="@+id/homepage_img_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <include
+        android:id="@+id/homepage_cardview_add"
+        layout="@layout/card_view_item_add"
         android:layout_below="@+id/homepage_pictures_title"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_plus"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
     <!-- Places -->
     <TextView
@@ -83,19 +78,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_below="@+id/homepage_img_add"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/homepage_cardview_add"
         android:text="@string/places_title"
-        android:textSize="40sp"
+        android:textSize="20sp"
         android:textColor="@color/my_black" />
 
-    <ImageView
-        android:id="@+id/homepage_img_add2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <include
+        android:id="@+id/homepage_cardview_add2"
+        layout="@layout/card_view_item_add"
         android:layout_below="@+id/homepage_places_title"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_plus"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
 
 </RelativeLayout>

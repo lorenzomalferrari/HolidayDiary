@@ -4,7 +4,7 @@
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="190dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
     app:cardCornerRadius="4dp">
@@ -12,23 +12,18 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/travel_img_id"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:scaleType="centerCrop"
-            android:background="#2d2d2d"/>
-        
-        <TextView
-            android:id="@+id/travel_title_id"
-            android:textColor="#2d2d2d"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:layout_width="match_parent"
+            android:id="@+id/homepage_img_add"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/travel_title"/>
+            android:layout_below="@+id/homepage_pictures_title"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_plus"
+            />
 
     </LinearLayout>
 
